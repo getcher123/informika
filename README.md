@@ -200,24 +200,6 @@ console.log(x);
 - PHP Debug — сможем ставить брейки в PHP (когда подключим Xdebug на ВМ).
 - Prettier/EditorConfig/ESLint/Stylelint — “чистые” дифы и единый стиль кода у всей команды.
 
-### Добавляем Лида в репозиторий (https://github.com/EVA99999999)
-Вариант через веб‑интерфейс GitHub (проще):
-- Открой Settings → Collaborators → Add people → введи `EVA99999999` → выдай роль Maintain или Admin.
-
-Вариант через GitHub CLI (`gh`):
-
-```bash
-# 1) Авторизуйся в gh (один раз)
-gh auth login
-
-# 2) Добавь Лида с нужной ролью (запусти из любого каталога)
-# Подставь реальный <owner>/<repo>; роли: pull|triage|push|maintain|admin
-gh api -X PUT repos/<owner>/<repo>/collaborators/EVA99999999 -f permission=admin
-
-# если нужен не admin, а maintain:
-gh api -X PUT repos/<owner>/<repo>/collaborators/EVA99999999 -f permission=maintain
-```
-
 Примечание: для приватных репозиториев в организациях нужны права Owner/Админ организации.
 
 ## Шаг 2 из 7. Поднимаем Bitrix во виртуальной машине (VMware) и готовим доступ
@@ -832,7 +814,7 @@ composer stan        # проверит типовые ошибки
 
 Залей коммиты в ветку → открой PR → на вкладке Checks увидишь результаты CI. Если всё зелёное — отлично.
 
-### 5) Советы джуну «на каждый день»
+### 5) Советы «на каждый день»
 Запускай автоформат перед коммитом:
 
 ```
