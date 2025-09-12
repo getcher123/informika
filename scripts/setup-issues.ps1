@@ -6,7 +6,9 @@ Param(
   [string]$LeadPermission = "maintain",
   [int]$Project,
   [string]$ProjectTitle = "Team Board",
-  [switch]$NoSamples
+  [switch]$NoSamples,
+  [int]$ColumnsCount = 5,
+  [switch]$AssignLeadToAll
 )
 
 $ErrorActionPreference = 'Stop'
@@ -97,7 +99,7 @@ Write-Host "> Lead: $Lead (permission=$LeadPermission)" -ForegroundColor Cyan
 
 # 1) Включаем Issues
 Write-Host "1) Enabling Issues..." -ForegroundColor Yellow
-gh repo edit -R $GHREPO --enable-issues
+gh repo edit $GHREPO --enable-issues
 
 # 2) Добавляем лида с заданными правами
 Write-Host "2) Adding lead as collaborator..." -ForegroundColor Yellow
@@ -113,7 +115,13 @@ Write-Host "3) Creating base labels..." -ForegroundColor Yellow
   gh label create -R $GHREPO "P1"             --color FBCA04   --description "High"     --force
   gh label create -R $GHREPO "P2"             --color 0E8A16   --description "Normal"   --force
 
-# 4) Классический проект (repo-scoped) + колонки
+# 4) Создаём вехи (milestones) проекта
+Write-Host "4) Creating project milestones..." -ForegroundColor Yellow
+try { gh api -X POST "repos/$GHREPO/milestones" -f title="Phase 1 - MVP (Requests and Ideas)" -f due_on="2025-09-29T12:00:00Z" | Out-Null } catch { }
+try { gh api -X POST "repos/$GHREPO/milestones" -f title="Phase 2 - Projects and Collaboration" -f due_on="2025-10-20T12:00:00Z" | Out-Null } catch { }
+try { gh api -X POST "repos/$GHREPO/milestones" -f title="Phase 3 - Events, Analytics, Notifications" -f due_on="2025-11-14T12:00:00Z" | Out-Null } catch { }
+
+# 5) Проект (v2) и поля/«колонки»
 Write-Host "4) Creating/Selecting Project (v2) and fields..." -ForegroundColor Yellow
 if ($Project) {
   $projNumber = $Project
@@ -143,6 +151,14 @@ if ($projNumber) {
       if (-not $priorityField) { try { gh project field-create $projNumber --owner $Owner --name "Priority" --data-type SINGLE_SELECT --single-select-options "P0,P1,P2" 2>$null | Out-Null } catch { } }
       $estimateField = $fields | Where-Object { $_.name -eq 'Estimate' }
       if (-not $estimateField) { try { gh project field-create $projNumber --owner $Owner --name "Estimate" --data-type NUMBER 2>$null | Out-Null } catch { } }
+      # Дополнительное поле для колонок борда (пользовательское), чтобы пользователь мог переименовать опции
+      $columnsField = $fields | Where-Object { $_.name -eq 'Columns' -or $_.name -eq 'Board Columns' } | Select-Object -First 1
+      if (-not $columnsField -and $ColumnsCount -gt 0) {
+        $opts = @()
+        for ($i=1; $i -le $ColumnsCount; $i++) { $opts += "Column $i" }
+        $optsList = ($opts -join ',')
+        try { gh project field-create $projNumber --owner $Owner --name "Columns" --data-type SINGLE_SELECT --single-select-options "$optsList" 2>$null | Out-Null } catch { }
+      }
     }
 
     # Получаем системный Status и ID опции Backlog через GraphQL
@@ -160,10 +176,9 @@ if ($projNumber) {
   }
 }
 
-# 5) Пара тестовых задач и добавление в доску
-Write-Host "5) Creating sample issues..." -ForegroundColor Yellow
+# 5) Одна тестовая задача и добавление в доску
+Write-Host "5) Creating a single sample issue..." -ForegroundColor Yellow
 $i1Num = $null
-$i2Num = $null
 if (-not $NoSamples) {
   # Avoid duplicates by checking existing issues by title
   $cmd1 = ('gh issue list -R "{0}" --search "\"Setup CI (PHP/Node linters)\" in:title" --json number,url -L 1 2>$null' -f $GHREPO)
@@ -175,15 +190,9 @@ if (-not $NoSamples) {
     $i1Url = gh issue create -R $GHREPO -t "Setup CI (PHP/Node linters)" -b "Configure GitHub Actions: php-cs-fixer, phpstan, prettier, eslint, stylelint" -l "chore,P1"
     $i1Num = [int]($i1Url.Trim() -replace '.*/','')
   }
-
-  $cmd2 = ('gh issue list -R "{0}" --search "\"Auth: add password reset\" in:title" --json number,url -L 1 2>$null' -f $GHREPO)
-  $check2 = Invoke-GhJson $cmd2
-  if ($check2 -and $check2.Count -gt 0) {
-    $i2Num = $check2[0].number
-    Write-Host "   • Found existing: Auth: add password reset #$i2Num" -ForegroundColor DarkGray
-  } else {
-    $i2Url = gh issue create -R $GHREPO -t "Auth: add password reset" -b "Context, AC…" -l "enhancement,P2"
-    $i2Num = [int]($i2Url.Trim() -replace '.*/','')
+  # Назначаем лидера исполнителем на тестовую задачу (если это issue)
+  if ($i1Num) {
+    try { gh issue edit -R $GHREPO $i1Num --add-assignee $Lead | Out-Null } catch { Write-Warning "Assign lead failed for sample issue" }
   }
 } else {
   Write-Host "   • Skipped (NoSamples)" -ForegroundColor DarkGray
@@ -197,18 +206,15 @@ if ($projNumber) {
       if ($canEditFields -and $i1Add -and $i1Add.id) { gh project item-edit --id $i1Add.id --project-id $projId --field-id $statusFieldId --single-select-option-id $backlogOptionId | Out-Null }
     } catch { Write-Warning "Skip sample issue #${i1Num}: $($_.Exception.Message)" }
   }
-  if ($i2Num) {
-    try {
-      $i2Add = gh project item-add $projNumber --owner $Owner --url "https://github.com/$GHREPO/issues/$i2Num" --format json | ConvertFrom-Json
-      if ($canEditFields -and $i2Add -and $i2Add.id) { gh project item-edit --id $i2Add.id --project-id $projId --field-id $statusFieldId --single-select-option-id $backlogOptionId | Out-Null }
-    } catch { Write-Warning "Skip sample issue #${i2Num}: $($_.Exception.Message)" }
-  }
 
   # Optionally add all open issues to project and set Backlog
   Write-Host "Adding all open issues (up to 50) to Project..." -ForegroundColor Yellow
   $openIssues = Invoke-GhJson ("gh issue list -R `"$GHREPO`" -s open -L 50 --json number,url 2>`$null")
   foreach ($iss in $openIssues) {
     try {
+      if ($AssignLeadToAll -and $iss.number) {
+        try { gh issue edit -R $GHREPO $iss.number --add-assignee $Lead | Out-Null } catch { Write-Warning "Assign lead failed for #$($iss.number): $($_.Exception.Message)" }
+      }
       $added = gh project item-add $projNumber --owner $Owner --url $iss.url --format json | ConvertFrom-Json
       if ($canEditFields -and $added -and $added.id) { gh project item-edit --id $added.id --project-id $projId --field-id $statusFieldId --single-select-option-id $backlogOptionId | Out-Null }
     } catch { Write-Warning "Skip issue #$($iss.number): $($_.Exception.Message)" }
