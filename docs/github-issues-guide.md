@@ -3,8 +3,11 @@
 ## 0) Подготовка (1 раз)
 - Установите GitHub CLI и войдите:
   - `gh auth login` → выберите HTTPS и вход через браузер.
-- Для Projects нужен дополнительный scope:
-  - `gh auth refresh -s project`
+- Скоупы для Projects v2:
+  - `read:project` — чтение проектов; `project` — чтение/запись.
+  - Обычно `project` достаточно, но некоторые команды gh проверяют наличие `read:project`. Если видите ошибку про недостающий `read:project`, запросите оба:
+    - `gh auth refresh -h github.com -s project -s read:project`
+  - В `gh auth status -t` может отображаться только `project` — это нормально (GitHub может «сворачивать» вложенные права в более высокий скоуп).
 
 Примечание: см. документацию GitHub CLI.
 
@@ -158,6 +161,22 @@ gh api -X DELETE repos/<owner>/<repo>/collaborators/<username>
 5. Работайте по колонкам `Backlog/Ready/In progress/Review/Done`; PR закрывают задачи ключевыми словами. (см. GitHub Docs / GitHub CLI)
 
 ---
+
+## Важно: избегаем частых ошибок команд
+
+- Classic Projects устарели: не используйте `repos/<owner>/<repo>/projects` и API колонок/карт. Вместо этого — Projects v2:
+  - `gh project create --owner <owner> --title "..."`
+  - `gh project field-create <PROJECT_NUMBER> --owner <owner> --name "Status" --data-type SINGLE_SELECT --single-select-options "Backlog,Ready,In progress,Review,Done"`
+  - `gh project item-add <PROJECT_NUMBER> --owner <owner> --url <issue_url>`
+
+- `gh issue create` не поддерживает `--json` на вывод: команда возвращает URL созданной задачи. В PowerShell можно получить номер так:
+  - `$url = gh issue create -R <owner>/<repo> -t "Title" -b "Body" -l "bug"`
+  - `$num = [int]($url.Trim() -replace '.*/','')`
+
+- Если `gh api` ругается на `-R`: используйте полный путь endpoint без `-R`:
+  - Добавить коллаборатора: `gh api -X PUT repos/<owner>/<repo>/collaborators/<username> -f permission=maintain`
+
+- Добавление в Project v2 делается по URL задачи: `gh project item-add <PROJECT_NUMBER> --owner <owner> --url https://github.com/<owner>/<repo>/issues/<num>`
 
 ## Комментарии к Issues
 

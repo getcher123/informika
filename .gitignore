@@ -1,0 +1,54 @@
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npmrc
+.pnpm-store/
+.yarn/cache/
+.yarn/unplugged/
+.yarn/install-state.gz
+.yarn/build-state.yml
+.eslintcache
+coverage/
+dist/
+build/
+
+# PHP / Composer
+vendor/
+.php-cs-fixer.cache
+var/phpstan/
+
+# Bitrix runtime caches
+/bitrix/cache/
+/bitrix/managed_cache/
+/bitrix/html_pages/
+/bitrix/stack_cache/
+/bitrix/tmp/
+/upload/tmp/
+/upload/resize_cache/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+
+# Logs / temp
+*.log
+*.tmp
+*.swp
+*.swo
+
