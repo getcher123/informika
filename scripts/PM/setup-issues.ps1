@@ -1,3 +1,4 @@
+# Location: scripts/PM/setup-issues.ps1
 Param(
   [string]$Owner,
   [string]$Repo,

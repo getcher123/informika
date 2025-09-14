@@ -1,4 +1,5 @@
 <#
+Location: scripts/PM/create-issues-for-lead.ps1
 Creates onboarding/release tasks for lead EVA99999999:
 - Step 1–7 from root README.md
 - Architecture review (docs/architecture.md)
@@ -13,7 +14,7 @@ param(
   [string]$Assignee = "EVA99999999",
   [int]$ProjectNumber = 11,
   [string]$ProjectOwner = "getcher123",
-  [string]$ContentPath = "scripts/issues.ru.json"
+  [string]$ContentPath = "$PSScriptRoot/issues.ru.json"
 )
 
 # Force UTF-8 console encodings (Windows PowerShell 5.1 safety)

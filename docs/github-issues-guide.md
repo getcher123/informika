@@ -11,6 +11,14 @@
 
 Примечание: см. документацию GitHub CLI.
 
+Важно: кодировка и PowerShell (Windows)
+- Рекомендуем запускать скрипты через PowerShell 7+ (`pwsh`), где по умолчанию используется UTF‑8: установите `winget install Microsoft.PowerShell` и запускайте `pwsh ./scripts/PM/create-issues-for-lead.ps1`.
+- Если запускаете в Windows PowerShell 5.1 (`powershell.exe`), сохраните скрипт в кодировке «UTF‑8 with BOM» (VS Code: Save with Encoding → UTF‑8 with BOM) и перед запуском выполните:
+  - `chcp 65001`
+  - `[Console]::InputEncoding = [System.Text.UTF8Encoding]::new($false)`
+  - `[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)`
+- В командах к `gh` используйте массивы аргументов (как в `scripts/PM/create-issues-for-lead.ps1`), а не конкатенацию строки с кавычками — это исключает ошибки парсинга.
+
 ## 1) Репозиторий и доступы
 - Создание репозитория (из UI или CLI) и подключение локального git — стандартно.
 - Добавить/удалить участника:
@@ -34,6 +42,7 @@ gh api -X DELETE \
   - Создайте Team, задайте доступ к репозиторию через команду. (см. GitHub CLI)
 
 ## 2) Проект (GitHub Projects) — ваш канбан/таблица/roadmap
+- Наш проект (Projects v2): https://github.com/users/getcher123/projects/11
 - Создать проект (user/organization-level):
 ```bash
 gh project create --owner @me --title "Web App"

@@ -858,56 +858,9 @@ npm run fmt:write && composer cs:write
 - Branch protection для main → нельзя случайно сломать прод.
 
 ### 1) Базовая структура репозитория
-В корне (то, что уже частично сделали/сделаем):
+Полная структура с описаниями вынесена в отдельный документ: см. «Структура репозитория» в docs/gitflow.md.
 
-```
-/local/                              # весь прикладной код Bitrix (зона изменений)
-  php_interface/
-    migrations/                      # файлы миграций sprint.migration (шаг 6)
-    migrations.cfg.php               # основной конфиг миграций (доп.: migrations.{NAME}.php)
-  modules/
-    sprint.migration/                # модуль миграций (managed by Composer)
-
-/bin/
-  migrate                            # консольный алиас для запуска миграций (шаг 6)
-
-/.github/
-  ISSUE_TEMPLATE/
-    bug.md
-    feature.md
-  PULL_REQUEST_TEMPLATE.md
-  workflows/
-    ci.yml                           # CI: линтеры/форматтеры/phpstan/php-cs-fixer (шаг 4)
-    deploy_staging.yml               # CD на staging (опционально, шаг 6)
-    deploy_prod.yml                  # CD на prod (опционально, шаг 6)
-
-/docs/
-  README.md
-  architecture.md
-  task-flow-guide.md
-  plan-grafik.md
-  gitflow.md
-  remote-dev-workflow.md
-
-/scripts/                            # утилиты/скрипты проекта (по необходимости)
-
-README.md
-CONTRIBUTING.md
-CODEOWNERS
-.editorconfig
-.prettierrc.json
-eslint.config.js
-stylelint.config.mjs
-package.json
-composer.json
-composer.lock
-phpstan.neon
-.php-cs-fixer.php
-```
-
-README.md (минимум):
-- кратко: что это, где живёт код (`/local`), как запустить проверки (`npm run fmt:write`, `composer cs:write`).
-- ссылка на CONTRIBUTING.md (ниже создадим).
+Коротко: работа ведётся только в `/local/`; миграции — через `sprint.migration` и `bin/migrate`; CI/CD — в `/.github/workflows/`; вспомогательные скрипты — в `scripts/`.
 
 ### 2) Ветвление и Conventional Commits
 #### 2.1 Одна защищённая основная ветка
@@ -1036,7 +989,6 @@ PR небольшие (до ~300 строк diff).
 
 ## После merge
 Проверка на staging.
-```
 
 ### 7) Мини-ритуалы и «готов к работе»
 - Issue → ветка → PR — всегда так. Любая работа начинается с задачи (Issue), под неё создаётся ветка, результат заливается только через Pull Request.

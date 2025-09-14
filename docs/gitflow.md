@@ -57,3 +57,66 @@
 - `refactor/project-status-flow` — пересборка статусов проекта без изменения логики
 - `refactor/components-split` — разбиение больших Bitrix‑компонентов на модули
 
+
+## Структура репозитория
+
+В репозитории принята следующая структура (см. комментарии для назначения директорий и файлов):
+
+```
+/local/                              # весь прикладной код Bitrix (единственная зона изменений)
+  php_interface/
+    migrations/                      # файлы миграций sprint.migration (шаг 6)
+    migrations.cfg.php               # основной конфиг миграций (доп.: migrations.{NAME}.php)
+  modules/
+    sprint.migration/                # модуль миграций (под управлением Composer)
+
+/bin/
+  migrate                            # консольный алиас для запуска миграций (шаг 6)
+
+/.github/
+  ISSUE_TEMPLATE/                    # шаблоны задач
+    bug.md
+    feature.md
+  PULL_REQUEST_TEMPLATE.md           # шаблон PR
+  workflows/
+    ci.yml                           # CI: линтеры/форматтеры/phpstan/php-cs-fixer (шаг 4)
+    deploy_staging.yml               # CD на staging (опционально, шаг 6)
+    deploy_prod.yml                  # CD на prod (опционально, шаг 6)
+
+/docs/                               # документация проекта
+  README.md
+  architecture.md
+  task-flow-guide.md
+  plan-grafik.md
+  gitflow.md
+  remote-dev-workflow.md
+  system-restore-test-plan.md        # план теста восстановления среды (шаг 6)
+
+/scripts/                            # утилиты/скрипты проекта
+  PM/                                # автоматизация Project/Issues (PM-инструменты)
+    create-issues-for-lead.ps1       # создание задач для лида/борды
+    setup-issues.ps1                 # первичная настройка репо/лейблов/проекта
+    add-checklist-to-issues.ps1      # массовое добавление чек-листов в задачи
+    issues.ru.json                   # русские тексты задач (UTF-8)
+    checklists/
+      onboarding.ru.md               # Markdown-чек-лист для задач (UTF-8)
+
+README.md                            # обзор и быстрый старт
+CONTRIBUTING.md                      # правила вкладов
+CODEOWNERS                           # владельцы областей кода
+.editorconfig                        # базовые правила форматирования
+.prettierrc.json                     # конфиг Prettier
+eslint.config.js                     # конфиг ESLint
+stylelint.config.mjs                 # конфиг Stylelint
+package.json                         # фронтовые утилиты/скрипты
+composer.json                        # PHP-зависимости/скрипты
+composer.lock
+phpstan.neon                         # статический анализ PHP
+.php-cs-fixer.php                    # автоформат PHP
+```
+
+Пояснения и рекомендации:
+- Рабочая зона — строго `/local/`; системные папки Bitrix не изменяем.
+- Миграции структуры (ИБ/HL/UF и пр.) — через `sprint.migration` и `bin/migrate`.
+- CD‑файлы в `/.github/workflows/` опциональны и подключаются по готовности окружений.
+- Скрипты в `scripts/PM/` требуют GitHub CLI (`gh`) и используются для автоматизации задач/проектов.
