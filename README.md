@@ -224,6 +224,7 @@ console.log(x);
 Почему так: Bitrix — это PHP+MySQL+поиск/кеш. Чем больше памяти, тем меньше «свапа» и лагов. Bridged даёт простой прямой доступ по IP.
 
 ### 1) Создаём ВМ в VMware
+- Сначала скачай готовую виртуальную машину с сайта 1С-Битрикс: [https://www.1c-bitrix.ru/download/vmbitrix.php#tab-section-1](https://www.1c-bitrix.ru/download/vmbitrix.php#tab-section-1). Выбирай вариант **VMBitrix на базе Alma Linux 9** — сейчас это самый стабильный образ.
 - Запусти VMware → Create a New Virtual Machine.
 - Укажи образ BitrixVM (или ISO), тип ОС — Linux (обычно CentOS/Alma/Rocky подходит).
 - Выбери ресурсы из плана выше (vCPU, RAM, диск).
