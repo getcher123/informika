@@ -1,0 +1,7 @@
+parameters:
+  paths:
+    - local
+  level: 5
+  tmpDir: var/phpstan
+  ignoreErrors:
+    - '#Call to unknown method C[^:]+::#'
