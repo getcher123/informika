@@ -1,25 +1,31 @@
 # Gitflow проекта (Trunk‑Based Development)
 
 ## Основы
+
 - Одна основная ветка: `main`.
 - Фичи/фиксы — короткоживущие ветки: `feat/<ключ>`, `fix/<ключ>`, `chore/<ключ>`.
 
 ## PR‑правила
+
 - Малый объём: до ~300 строк diff.
 - Обязательный PR‑шаблон: контекст, скриншоты, чек‑лист.
 - Один аппрув от Lead, сам себе не мержим.
 
 ## Коммиты
+
 - Стиль Conventional Commits: `feat:`, `fix:`, `docs:`, `chore:`, `refactor:`, `test:`, и т.д.
 
 ## Релизы и хотфиксы
+
 - Релизы: теги вида `v0.x.y`, чейнджлог формируется из PR.
 - Хотфиксы: ветка `hotfix/<issue>`, быстрый PR → тег `v0.x.y+1`.
 
 ## Статусы задач
+
 - Стандартный поток: `Backlog → Ready → In Progress → PR → Review → Staging → Done`.
 
 ## Префиксы веток
+
 - `feat/...` — feature: новая функциональность
 - `fix/...` — исправление бага
 - `docs/...` — документация
@@ -30,6 +36,7 @@
 ## Примеры веток
 
 ### 1. Функциональные (`feat`)
+
 - `feat/requests-create-form` — форма создания запроса на инновацию
 - `feat/ideas-catalog-filter` — фильтры и сортировка идей в каталоге
 - `feat/project-initiation-card` — карточка проекта при трансформации идеи
@@ -37,23 +44,26 @@
 - `feat/profile-skills-tags` — расширение профилей участников с тегами навыков
 
 ### 2. Исправления багов (`fix`)
+
 - `fix/idea-submit-validation` — ошибка валидации при подаче идеи
 - `fix/project-doc-upload` — исправление загрузки файлов в проекте
 - `fix/notifications-email-template` — правки шаблонов уведомлений
 - `fix/ui-mobile-layout` — адаптив на мобильных экранах
 
 ### 3. Хозяйственные (`chore`)
+
 - `chore/update-bitrix-modules` — обновление зависимостей/модулей Bitrix
 - `chore/ci-lint-setup` — настройка линтера и CI
 - `chore/repo-cleanup` — очистка `.gitignore`, удаление временных файлов
 - `chore/dev-env-docs` — правки документации для разработчиков (README, setup)
 
 ### 4. Документация (`docs`)
+
 - `docs/api-endpoints` — описание внутренних API Bitrix‑скриптов
 - `docs/user-guide-mvp` — гайд для тестировщиков по Фазе 1
 
 ### 5. Рефакторинг (`refactor`)
+
 - `refactor/idea-model` — упрощение структуры сущности «Идея»
 - `refactor/project-status-flow` — пересборка статусов проекта без изменения логики
 - `refactor/components-split` — разбиение больших Bitrix‑компонентов на модули
-
