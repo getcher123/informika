@@ -12,6 +12,7 @@
 
 Примечание: см. документацию GitHub CLI.
 
+<<<<<<< HEAD
 ## 1) Репозиторий и доступы
 
 - Создание репозитория (из UI или CLI) и подключение локального git — стандартно.
@@ -190,6 +191,159 @@ gh api -X DELETE repos/<owner>/<repo>/collaborators/<username>
 
 ---
 
+=======
+Важно: кодировка и PowerShell (Windows)
+- Рекомендуем запускать скрипты через PowerShell 7+ (`pwsh`), где по умолчанию используется UTF‑8: установите `winget install Microsoft.PowerShell` и запускайте `pwsh ./scripts/PM/create-issues-for-lead.ps1`.
+- Если запускаете в Windows PowerShell 5.1 (`powershell.exe`), сохраните скрипт в кодировке «UTF‑8 with BOM» (VS Code: Save with Encoding → UTF‑8 with BOM) и перед запуском выполните:
+  - `chcp 65001`
+  - `[Console]::InputEncoding = [System.Text.UTF8Encoding]::new($false)`
+  - `[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)`
+- В командах к `gh` используйте массивы аргументов (как в `scripts/PM/create-issues-for-lead.ps1`), а не конкатенацию строки с кавычками — это исключает ошибки парсинга.
+
+## 1) Репозиторий и доступы
+- Создание репозитория (из UI или CLI) и подключение локального git — стандартно.
+- Добавить/удалить участника:
+  - Личный репозиторий (UI): Settings → Collaborators → Add people. (см. GitHub Docs)
+  - Через API/CLI (удобно автоматизировать):
+
+Добавить:
+```bash
+gh api -X PUT \
+  repos/<owner>/<repo>/collaborators/<username> \
+  -f permission=push
+```
+Удалить:
+```bash
+gh api -X DELETE \
+  repos/<owner>/<repo>/collaborators/<username>
+```
+Это обёртка над REST /repos/{owner}/{repo}/collaborators/{username} (см. GitHub Docs).
+
+- Организация и команды (если репозиторий в org):
+  - Создайте Team, задайте доступ к репозиторию через команду. (см. GitHub CLI)
+
+## 2) Проект (GitHub Projects) — ваш канбан/таблица/roadmap
+- Наш проект (Projects v2): https://github.com/users/getcher123/projects/11
+- Создать проект (user/organization-level):
+```bash
+gh project create --owner @me --title "Web App"
+```
+- Посмотреть список: `gh project list` (получите номер/ID — пригодится далее). (см. GitHub CLI)
+
+Поля проекта (метаданные задач):
+- Создайте поля Priority (SINGLE_SELECT), Estimate (NUMBER), Status (SINGLE_SELECT с вашими колонками):
+```bash
+gh project field-create <PROJECT_NUMBER> --owner @me \
+  --name "Priority" --data-type SINGLE_SELECT \
+  --single-select-options "P0,P1,P2"
+
+gh project field-create <PROJECT_NUMBER> --owner @me \
+  --name "Estimate" --data-type NUMBER
+
+gh project field-create <PROJECT_NUMBER> --owner @me \
+  --name "Status" --data-type SINGLE_SELECT \
+  --single-select-options "Backlog,Ready,In progress,Review,Done"
+```
+- Итерации/«спринты» делайте полем Iteration (в UI проекта: Settings → Fields → Iteration), потом используйте их в Roadmap. (см. GitHub Docs)
+
+Представления (views):
+- Таблица/Board/Roadmap — меняются одной кнопкой; для канбана колонками ставьте поле Status. (см. GitHub Docs)
+
+## 3) Бэклог
+- Шаблоны задач: создайте issue templates в `.github/ISSUE_TEMPLATE/` (Bug/Task/Story) — чтобы все тикеты были единообразны.
+- Справочник меток (labels) — P0/P1, type: bug/feature/chore, area: web/api/ui:
+```bash
+gh label create "P0" --color FF0000 --description "Critical"
+gh label create "bug" --color D73A4A
+gh label list
+```
+(см. GitHub CLI)
+
+Быстрое создание проблем:
+```bash
+# одна задача
+gh issue create -t "Auth: add password reset" \
+  -b "Context… Acceptance…" \
+  -l "feature,P1" -a @me
+
+# массово (пример): из файла с заголовками
+while read t; do gh issue create -t "$t" -l "P2"; done < titles.txt
+```
+Команды `create/list/edit` — стандартные подкоманды `gh issue`. (см. GitHub CLI)
+
+Добавить задачи в Project:
+```bash
+# по URL issue
+gh project item-add <PROJECT_NUMBER> --owner @me \
+  --url https://github.com/<owner>/<repo>/issues/123
+```
+(см. GitHub CLI)
+
+## 4) Команда и назначение исполнителей
+- Назначить исполнителя:
+```bash
+gh issue edit 123 --add-assignee <user>
+```
+(или в UI). (см. GitHub CLI)
+- Автозапрос ревьюверов по областям кода — через CODEOWNERS + защиту веток (требовать review, в т.ч. от владельцев кода). (см. GitHub Docs)
+
+## 5) Воронка/статусы (типовой для 1–3 чел.)
+Рекомендуемая «фаза» (Status):
+```
+Backlog → Ready → In progress → Review → Done
+```
+Поменять статус можно перетаскиванием карточки между колонками board (колонка = значение поля). (см. GitHub Docs)
+
+## 6) Автоматизации
+В Projects есть готовые workflow-автоматы (в UI: Workflows):
+- Auto-add: ловить новые issues по фильтрам (например, `label:feature`) и автоматически добавлять в проект. (см. GitHub Docs)
+- Built-in: менять Status при закрытии задачи, и т.п. (встроенные автоматизации Projects).
+
+Также:
+- Закрывайте задачи ключевыми словами в PR (`Fixes #123`, `Closes #123`) — issue закроется при merge. (см. GitHub CLI)
+
+## 7) Минимальные правила качества (PR/ветки)
+- Защита ветки (Settings → Branches → Branch protection rules): требовать PR для `main`, количество аппрувов, статусы CI. (см. GitHub Docs)
+- Ревью: включить «required reviews», опционально — «require review from Code Owners». (см. GitHub Docs)
+
+## 8) Ежедневная рутина Lead/PM (ad‑hoc)
+- Еженедельная итерация: создайте поле Iteration (1 неделя), заведите вид Board (group by Iteration) — видно нагрузку по неделям. (см. GitHub Docs)
+- Grooming/Triage: новые тикеты получают Priority, Estimate, Status=Ready.
+- Dev‑поток из задачи:
+```bash
+# создать/привязать ветку к issue и переключиться на неё
+gh issue develop 123 --name feat/auth-reset --checkout
+```
+Позже `gh pr create` — PR с автоссылкой на issue. (см. GitHub CLI)
+- Еженедельный апдейт статуса проекта (On track/At risk + dates) — через панель проекта. (см. GitHub Docs)
+
+## 9) Шпаргалка CLI (самое частое)
+```bash
+# Issues
+gh issue create -t "<title>" -b "<body>" -l "bug,P1" -a <user>
+gh issue list -s all -L 50
+gh issue edit <num> --add-assignee <user> --remove-label "P2" --add-label "P1"
+
+# Projects
+gh project create --owner @me --title "Web App"
+gh project field-create <PROJ> --owner @me --name "Status" \
+  --data-type SINGLE_SELECT --single-select-options "Backlog,Ready,In progress,Review,Done"
+gh project item-add <PROJ> --owner @me --url https://github.com/<o>/<r>/issues/123
+# узнать/менять значения полей по item-id/field-id
+gh project item-list <PROJ> --owner @me
+gh project field-list <PROJ> --owner @me
+gh project item-edit --id <ITEM_ID> --project-id <PROJ_ID> \
+  --field-id <FIELD_ID_STATUS> --single-select-option-id <OPTION_ID_DONE>
+
+# Команда (через REST → gh api)
+gh api -X PUT repos/<owner>/<repo>/collaborators/<username> -f permission=push
+gh api -X DELETE repos/<owner>/<repo>/collaborators/<username>
+```
+(см. GitHub CLI / GitHub Docs)
+
+---
+
+>>>>>>> 5185d65283f68a5ebeb25938f05523805052b992
 ## Быстрый старт (минимум кликов)
 
 1. Создайте проект: `gh project create …` и поля `Status/Priority/Estimate`. (см. GitHub CLI)
