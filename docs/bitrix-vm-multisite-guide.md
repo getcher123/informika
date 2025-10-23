@@ -80,18 +80,18 @@
 4. Убедитесь, что первый сайт установлен в `/home/bitrix/www`, второй — в `/home/bitrix/ext_www/innovations`. Пропишите оба домена в `hosts` и завершите мастера установки для каждого.
 
 ## 4. Загрузка бэкапа
-1. Переместите файлы в корень сайта (рядом с `restore.php`):
+1. Переместите файлы в корень основного сайта (рядом с `restore.php`):
    ```powershell
-   scp backup-01.tar.gz root@172.19.108.208:/home/bitrix/ext_www/innov.local/
-   scp restore.php root@172.19.108.208:/home/bitrix/ext_www/innov.local/
+   scp backup-01.tar.gz root@172.19.108.208:/home/bitrix/www/
+   scp restore.php root@172.19.108.208:/home/bitrix/www/
    ```
    Если бэкап состоит из нескольких частей (`.tar.gz`, `.tar.gz.1`, `.tar.gz.2`, …) — загрузите **все** файлы в корень сайта. `restore.php` увидит их автоматически, объединять вручную не нужно.
 2. Выдайте права:
    ```bash
-   chown bitrix:bitrix /home/bitrix/ext_www/innov.local/restore.php
-   chmod 644 /home/bitrix/ext_www/innov.local/restore.php
+   chown bitrix:bitrix /home/bitrix/www/restore.php
+   chmod 644 /home/bitrix/www/restore.php
    ```
-3. Чтобы избежать ошибки 413, добавьте в `/etc/nginx/bx/site_enabled/bx_ext_innov.local.conf` строку `client_max_body_size 2048m;`, затем:
+3. Чтобы избежать ошибки 413, добавьте в `/etc/nginx/bx/site_enabled/bx_site_innov.local.conf` строку `client_max_body_size 2048m;`, затем:
    ```bash
    nginx -t
    systemctl reload nginx
@@ -107,7 +107,7 @@
 4. На шаге БД оставьте параметры из `.settings.php` (`localhost / userinnov / dbinnov`) и нажмите «Восстановить».
 5. По завершении:
    ```bash
-   rm -f /home/bitrix/ext_www/innov.local/restore.php
+   rm -f /home/bitrix/www/restore.php
    mkdir -p /home/bitrix/www/bitrix/{cache,managed_cache,stack_cache,html_pages}
    chown -R bitrix:bitrix /home/bitrix/www/bitrix
    ```
