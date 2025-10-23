@@ -13,16 +13,29 @@
 4. При необходимости снимите snapshot VM (точка отката перед дальнейшими настройками).
 
 ## 2. Настройка сети и SSH
-1. Зафиксируйте статический IP:
+1. Получите параметры от DHCP (по умолчанию VM стартует в auto-режиме):
    ```bash
-   nmtui  # Edit a connection → выберите eth0 → IPv4 → Manual
+   nmcli device show eth0 | grep -E 'IP4.ADDRESS|IP4.GATEWAY|IP4.DNS'
    ```
-   - IP: `192.168.100.172/24` (пример).
-   - Gateway: `192.168.100.1`.
-   - DNS: `8.8.8.8` (или корпоративный).
-2. На локальной машине добавьте запись в `hosts`:
+   Запишите выданные значения, например:
+   - адрес: `172.19.108.208/20`;
+   - шлюз: `172.19.96.1`;
+   - DNS: `172.19.96.1`, `8.8.8.8`.
+2. Зафиксируйте эти параметры как статические:
+   ```bash
+   nmcli connection modify "Wired connection 1" \
+     ipv4.method manual \
+     ipv4.addresses "172.19.108.208/20" \
+     ipv4.gateway 172.19.96.1 \
+     ipv4.dns "172.19.96.1 8.8.8.8" \
+     connection.autoconnect yes
+   nmcli connection down "Wired connection 1"
+   nmcli connection up "Wired connection 1"
    ```
-   192.168.100.172 innov.local
+   Проверьте `ip addr show eth0` и `ip route` — должен быть только статический адрес и маршрут по умолчанию.
+3. На локальной машине добавьте запись в `hosts` (подставьте свой IP):
+   ```
+   172.19.108.208 innov.local
    ```
 3. Сгенерируйте SSH-ключ на Windows:
    ```powershell
@@ -31,20 +44,20 @@
 4. Скопируйте ключ пользователю `bitrix` и `root`:
    ```powershell
    type $env:USERPROFILE\.ssh\id_ed25519.pub |
-     ssh bitrix@192.168.100.172 "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
+     ssh bitrix@172.19.108.208 "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
 
    type $env:USERPROFILE\.ssh\id_ed25519.pub |
-     ssh root@192.168.100.172 "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
+     ssh root@172.19.108.208 "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
    ```
 5. В `~/.ssh/config` добавьте:
    ```
    Host bitrix-vm
-       HostName 192.168.100.172
+       HostName 172.19.108.208
        User bitrix
        IdentityFile ~/.ssh/id_ed25519
 
    Host bitrix-vm-root
-       HostName 192.168.100.172
+       HostName 172.19.108.208
        User root
        IdentityFile ~/.ssh/id_ed25519
    ```
@@ -52,18 +65,25 @@
 
 ## 3. Создание пула и основного сайта
 1. `/root/menu.sh` → «Управление пулом» → «Создать пул» → режим *Single* (оставьте nginx/php/mysqld включёнными).
-2. `/root/menu.sh` → «Управление веб-сайтами» → «Создать сайт».
+2. `/root/menu.sh` → «Управление веб-сайтами» → «Создать сайт» (первый, базовый).
    - Тип: `kernel`.
-   - Домен: `innov.local`.
-   - DocumentRoot: `/home/bitrix/ext_www/innov.local`.
+   - Домен: основной (`innov.local` в примере).
+   - DocumentRoot: `/home/bitrix/www`.
+   - SITE_ID: `s1`.
    - Cron: `y`.
-3. Пропишите `innov.local` в `hosts`, откройте `http://innov.local/`, пройдите установку Bitrix.
+3. Для второго сайта (дополнительного) снова «Создать сайт»:
+   - Тип: `kernel`.
+   - Домен: `innovations.local`.
+   - DocumentRoot: `/home/bitrix/ext_www/innovations`.
+   - SITE_ID: `s3`.
+   - Cron при необходимости.
+4. Убедитесь, что первый сайт установлен в `/home/bitrix/www`, второй — в `/home/bitrix/ext_www/innovations`. Пропишите оба домена в `hosts` и завершите мастера установки для каждого.
 
 ## 4. Загрузка бэкапа
 1. Переместите файлы в корень сайта (рядом с `restore.php`):
    ```powershell
-   scp backup-01.tar.gz root@192.168.100.172:/home/bitrix/ext_www/innov.local/
-   scp restore.php root@192.168.100.172:/home/bitrix/ext_www/innov.local/
+   scp backup-01.tar.gz root@172.19.108.208:/home/bitrix/ext_www/innov.local/
+   scp restore.php root@172.19.108.208:/home/bitrix/ext_www/innov.local/
    ```
    Если бэкап состоит из нескольких частей (`.tar.gz`, `.tar.gz.1`, `.tar.gz.2`, …) — загрузите **все** файлы в корень сайта. `restore.php` увидит их автоматически, объединять вручную не нужно.
 2. Выдайте права:
@@ -88,8 +108,8 @@
 5. По завершении:
    ```bash
    rm -f /home/bitrix/ext_www/innov.local/restore.php
-   mkdir -p /home/bitrix/ext_www/innov.local/bitrix/{cache,managed_cache,stack_cache,html_pages}
-   chown -R bitrix:bitrix /home/bitrix/ext_www/innov.local/bitrix
+   mkdir -p /home/bitrix/www/bitrix/{cache,managed_cache,stack_cache,html_pages}
+   chown -R bitrix:bitrix /home/bitrix/www/bitrix
    ```
 6. Если после восстановления появляются ошибки из-за отсутствующих таблиц:
    - Найдите SQL-файл/часть в бэкапе (`*.sql`, `*.sql.gz`).
@@ -100,43 +120,35 @@
      (используйте логин/пароль из `.settings.php`).
 7. При появлении предупреждений о кэше создайте каталоги и сбросьте их:
    ```bash
-   rm -rf /home/bitrix/ext_www/innov.local/bitrix/cache/*
-   rm -rf /home/bitrix/ext_www/innov.local/bitrix/managed_cache/*
-   rm -rf /home/bitrix/ext_www/innov.local/bitrix/stack_cache/*
-   rm -rf /home/bitrix/ext_www/innov.local/bitrix/html_pages/*
+   rm -rf /home/bitrix/www/bitrix/cache/*
+   rm -rf /home/bitrix/www/bitrix/managed_cache/*
+   rm -rf /home/bitrix/www/bitrix/stack_cache/*
+   rm -rf /home/bitrix/www/bitrix/html_pages/*
    ```
 
-## 6. Создание ссылочного сайта (s3) из бэкапа
-1. В бэкапе появится каталог `bitrix/backup/sites/s3` (название = SITE_ID).
-2. `/root/menu.sh` → «Управление веб-сайтами» → «Создать сайт».
-   - Тип: `link`.
-   - Путь к ядру: `/home/bitrix/ext_www/innov.local`.
-   - DocumentRoot: `/home/bitrix/ext_www/s3`.
-   - Cron можно пропустить.
-3. Скопируйте файлы сайта:
+## 6. Перенос файлов второго сайта (s3) и общий код
+1. После восстановления архива проверьте каталог `/home/bitrix/www/bitrix/backup/sites/s3` — в нём лежит снимок второго сайта (SITE_ID `s3`).
+2. Скопируйте содержимое в DocumentRoot второго сайта:
    ```bash
-   sudo -u bitrix cp -a /home/bitrix/ext_www/innov.local/bitrix/backup/sites/s3/. /home/bitrix/ext_www/s3/
-   chown -R bitrix:bitrix /home/bitrix/ext_www/s3
+   sudo -u bitrix cp -a /home/bitrix/www/bitrix/backup/sites/s3/. /home/bitrix/ext_www/innovations/
+   chown -R bitrix:bitrix /home/bitrix/ext_www/innovations
    ```
-4. Создайте симлинки на общее ядро:
+3. Чтобы оба сайта использовали общий код ядра и каталоги `local`/`upload`, замените их на симлинки:
    ```bash
-   cd /home/bitrix/ext_www/s3
+   cd /home/bitrix/ext_www/innovations
    rm -rf bitrix local upload
-   ln -s /home/bitrix/ext_www/innov.local/bitrix bitrix
-   ln -s /home/bitrix/ext_www/innov.local/local local
-   ln -s /home/bitrix/ext_www/innov.local/upload upload
+   ln -s /home/bitrix/www/bitrix bitrix
+   ln -s /home/bitrix/www/local local
+   ln -s /home/bitrix/www/upload upload
    ```
+   (Если требуется полностью изолированный сайт, этот шаг пропустите и используйте собственные каталоги.)
 
 ## 7. Настройка nginx и портов
-1. Откройте `/etc/nginx/bx/site_enabled/bx_ext_innov.local.conf`:
-   ```nginx
-   listen 80;
-   server_name innov.local;
-   ```
-2. Откройте `/etc/nginx/bx/site_enabled/bx_link_s3.conf`:
+1. Откройте конфигурацию первого сайта (обычно `/etc/nginx/bx/site_enabled/bx_site_innov.local.conf`) и убедитесь, что он слушает порт 80 и домен `innov.local`.
+2. Откройте конфигурацию второго сайта (`/etc/nginx/bx/site_enabled/bx_ext_innovations.local.conf`):
    ```nginx
    listen 8080;
-   server_name s3.local;
+   server_name innovations.local;
    server_name_in_redirect off;
    ```
 3. Проверьте и перезагрузите nginx:
@@ -144,19 +156,20 @@
    nginx -t
    systemctl reload nginx
    ```
-4. На локальном ПК добавьте в `hosts`:
+4. На локальном ПК добавьте домены в `hosts`:
    ```
-   192.168.100.172 s3.local
+   172.19.108.208 innov.local
+   172.19.108.208 innovations.local
    ```
-   Сайт будет доступен по `http://s3.local:8080/`.
+   Второй сайт будет доступен по `http://innovations.local:8080/`.
 
 ## 8. Привязка сайтов в Bitrix
 1. Перейдите в `/bitrix/admin/site_admin.php`.
-   - `innov.local`: домен `innov.local`, каталог `/`.
-   - `s3`: домен `s3.local:8080`, каталог `/`.
-2. В `/home/bitrix/ext_www/innov.local/bitrix/php_interface/dbconn.php` добавьте выбор SITE_ID:
+   - `s1`: домен `innov.local`, каталог `/`, DocumentRoot `/home/bitrix/www`.
+   - `s3`: домен `innovations.local:8080`, каталог `/`, DocumentRoot `/home/bitrix/ext_www/innovations`.
+2. В `/home/bitrix/www/bitrix/php_interface/dbconn.php` добавьте выбор SITE_ID:
    ```php
-   if ($_SERVER['HTTP_HOST'] === 's3.local:8080') {
+   if ($_SERVER['HTTP_HOST'] === 'innovations.local:8080') {
        define('SITE_ID', 's3');
    } else {
        define('SITE_ID', 's1');
@@ -164,23 +177,23 @@
    ```
 3. Очистите кэши:
    ```bash
-   rm -rf /home/bitrix/ext_www/innov.local/bitrix/cache/*
-   rm -rf /home/bitrix/ext_www/innov.local/bitrix/managed_cache/*
+   rm -rf /home/bitrix/www/bitrix/cache/*
+   rm -rf /home/bitrix/www/bitrix/managed_cache/*
    ```
 
 ## 9. Проверка и финализация
-1. Проверьте доступность:
+1. Проверьте доступность обоих сайтов:
    - `http://innov.local/`
-   - `http://s3.local:8080/`
-2. Убедитесь, что админка доступна для обоих сайтов, данные бэкапа восстановлены.
+   - `http://innovations.local:8080/`
+2. Убедитесь, что админка открывается по обоим доменам и данные бэкапа восстановлены.
 3. Удалите временные файлы (`restore.php`, архивы, `bitrix/backup/sites/*` при необходимости).
 4. Сделайте snapshot VM после успешного восстановления.
 
 ## 10. Версионирование кода (опционально)
-1. Рабочий корень: `/home/bitrix/ext_www`.
+1. Рабочий корень: `/home/bitrix`.
 2. Инициализация Git и `.gitignore`:
    ```bash
-   cd /home/bitrix/ext_www
+   cd /home/bitrix
    git init
    cat > .gitignore <<'EOF'
    */bitrix/cache/
@@ -190,9 +203,9 @@
    */upload/
    */bitrix/backup/
    EOF
-   git add innov.local s3 .gitignore
-   git commit -m "feat: restore innov.local and s3"
+   git add www ext_www/innovations .gitignore
+   git commit -m "feat: restore www and innovations sites"
    ```
 3. Привяжите удалённый репозиторий и выполните `git push`.
 
-Теперь основной сайт (`innov.local`) обслуживается на порту 80, дополнительный (`s3.local`) — на 8080; оба используют общее ядро через симлинки и полностью восстановлены из бэкапа.
+Теперь основной сайт (`innov.local`) обслуживается на порту 80, дополнительный (`innovations.local`) — на 8080; оба используют общее ядро через симлинки и полностью восстановлены из бэкапа.
