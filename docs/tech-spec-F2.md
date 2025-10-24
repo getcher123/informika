@@ -17,6 +17,7 @@
 
 ### Исключено
 - Полная кастомизация интерфейсов Bitrix24 (используются штатные компоненты).
+- Создание отчетов
 
 ## 3. Роли и права
 | Роль | Основные действия в Ф2 |
@@ -112,5 +113,7 @@
 - Таблица автоматизаций: [automation-table.md](automation-table.md)
 - Таблица уведомлений: [notification-table.md](notification-table.md)
 - Таблица статусов сущностей: [statuses-table.md](statuses-table.md)
+- Таблица отчётности по ролям: [report-table.md](report-table.md)
+- Чек-листы по ролям: [role-checklists.md](role-checklists.md)
 - Описание интерфейсов: [interface-elements.md](interface-elements.md)
 - Отчёт Фазы 1: [reports/phase1-summary.md](reports/phase1-summary.md)
