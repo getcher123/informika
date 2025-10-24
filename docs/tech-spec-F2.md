@@ -115,5 +115,6 @@
 - Таблица статусов сущностей: [statuses-table.md](statuses-table.md)
 - Таблица отчётности по ролям: [report-table.md](report-table.md)
 - Чек-листы по ролям: [role-checklists.md](role-checklists.md)
+- Бизнес-процессы: [business-processes.md](business-processes.md)
 - Описание интерфейсов: [interface-elements.md](interface-elements.md)
 - Отчёт Фазы 1: [reports/phase1-summary.md](reports/phase1-summary.md)
