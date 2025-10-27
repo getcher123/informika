@@ -116,5 +116,7 @@
 - Таблица отчётности по ролям: [report-table.md](report-table.md)
 - Чек-листы по ролям: [role-checklists.md](role-checklists.md)
 - Бизнес-процессы: [business-processes.md](business-processes.md)
+
+- Комплексный пакет Фазы 2: [tech-spec-F2-full.md](tech-spec-F2-full.md)
 - Описание интерфейсов: [interface-elements.md](interface-elements.md)
 - Отчёт Фазы 1: [reports/phase1-summary.md](reports/phase1-summary.md)
