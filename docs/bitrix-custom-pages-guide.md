@@ -1,263 +1,217 @@
-# Цель и рамки
+# О чём это
 
-Полный, практичный гайд по созданию **кастомных страниц на Bitrix**, когда:
+Как сделать страницы на Bitrix **полностью в своём дизайне** двумя способами:
 
-* нужны **полные кастомные дизайны** (без стандартной вёрстки от компонентов);
-* **не используем** концепцию «островов» (никаких вкраплений React в готовую PHP-вёрстку);
-* поддерживаем **два трека**:
-
-  1. **HTML-трек** — кастомный сайт-шаблон + кастомные шаблоны компонентов (PHP/HTML/CSS/JS);
-  2. **React-трек (headless)** — **отдельный фронт-репозиторий** (Next.js/Vite/CRA), Bitrix выступает **API-бэкендом**; релизы фронта независимы от релизов Bitrix.
+* **HTML‑внутри Bitrix** — всё рендерит Bitrix, вы пишете свою вёрстку.
+* **React отдельно (headless)** — фронт и бэкенд живут отдельно, релизятся независимо.
+  Без «островов», без лишней терминологии.
 
 ---
 
-# Общая архитектурная картина
+# Куда мы идём (в 2 словах)
 
-* **Данные/бизнес-логика**: Bitrix (модули, ORM, инфоблоки/HL-блоки, корзина и т.п.).
-* **API-слой**: D7-контроллеры + действия (AJAX) → отдают JSON/файлы/потоки.
-* **Фронт**:
-
-  * HTML-трек: Bitrix рендерит страницы целиком из **кастомных шаблонов компонентов** внутри вашего **site-template**;
-  * React-трек: фронт (Next.js) собирается и деплоится **отдельно**, общаясь с Bitrix через API.
+* **Путь 1: HTML‑внутри Bitrix.** Вы берёте стандартные компоненты, но им делаете **свои шаблоны** (свой HTML/CSS/JS). В итоге страницы выглядят ровно как в макете.
+* **Путь 2: React‑фронт отдельно.** Bitrix отвечает за данные и логику (админка/корзина/каталог), а **фронт — это отдельный проект** (Next.js/Vite). Он ходит к Bitrix за данными по URL и сам рисует страницы.
 
 ---
 
-# Часть I. HTML-трек (полный кастом внутри Bitrix)
+# Путь 1. HTML‑внутри Bitrix (просто и быстро)
 
-## 1. Базовая структура проекта
+## Что это даёт
+
+* Полный контроль над разметкой и стилями.
+* Ничего не ломаем в ядре Bitrix (обновления не страшны).
+
+## Куда класть файлы
 
 ```
-/local
-  /components/                # (опционально) ваши собственные компоненты
-  /templates/<site>/          # ваш сайт-шаблон (шапка/подвал/сетку — сюда)
-    /assets/                  # ваши CSS/JS/шрифты/изображения
-    /components/bitrix/       # КАСТОМНЫЕ шаблоны стандартных компонентов
-      /news.list/card-grid/
-        template.php
-        result_modifier.php
-        component_epilog.php  # опционально
-        style.css / script.js # специфичные ассеты
-    header.php
-    footer.php
-    styles.css
-    scripts.js
-/bitrix                        # ядро (не трогаем)
+/local/templates/<имя_шаблона>/            ← ваш «сайт‑шаблон»: шапка, подвал, стили
+  assets/                                   ← ваши CSS/JS/шрифты/картинки
+  components/bitrix/<компонент>/<шаблон>/   ← ваши шаблоны стандартных компонентов
 ```
 
-**Принцип**: ничего не правим в `/bitrix`. Всё пользовательское — в `/local`.
+Главное правило: **всё своё — в /local** (не в /bitrix).
 
-## 2. Шаблон сайта (site-template)
+## Как «надеть» свой дизайн на компонент
 
-* Весь макет (шапка, подвал, гриды, контейнеры, типографика) живёт в `/local/templates/<site>/`.
-* Подключение ассетов — через **Asset Manager**:
+1. В админке найдите компонент, который рисует нужный блок (список новостей, товары и т.д.).
+2. Скопируйте его шаблон к себе: `/local/templates/<имя>/components/bitrix/<компонент>/<имя_шаблона>/`.
+3. В настройках компонента выберите ваш `<имя_шаблона>`.
+4. Откройте `template.php` и напишите **свой HTML** (классы, BEM — как в макете).
+5. Если данные «кривые» или их надо подготовить — в файле `result_modifier.php` вы их **приводите к удобному виду** (например, собрать заголовок, отформатировать цену).
 
-  ```php
-  use Bitrix\Main\Page\Asset;
-  Asset::getInstance()->addCss(SITE_TEMPLATE_PATH.'/assets/css/app.css');
-  Asset::getInstance()->addJs(SITE_TEMPLATE_PATH.'/assets/js/app.js');
-  ```
-* Разбейте стили: base (reset/variables), layout (grid), components (UI-киты), pages (page-specific).
+### Мини‑пример
 
-## 3. Кастомные шаблоны компонентов
-
-* Копируйте нужный шаблон компонента в путь вида:
-  `/local/templates/<site>/components/bitrix/<компонент>/<имя_шаблона>/`
-* Выберите этот шаблон в настройках компонента на странице.
-* Структура мини-шаблона:
-
-  ```
-  template.php            # чистая семантическая HTML/BEM-вёрстка
-  result_modifier.php     # подготовка $arResult под нужный дизайн/DTO
-  component_epilog.php    # пост-логика после кеша (по надобности)
-  style.css / script.js   # специфичные ассеты шаблона
-  ```
-
-### 3.1. template.php — только разметка/структура
-
-Включите frameMode для совместимости с кешем/композитом:
+**template.php**
 
 ```php
-<?php if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die();
-$this->setFrameMode(true); ?>
-<section class="cards">
-  <?php foreach ($arResult['ITEMS'] as $item): ?>
-    <article class="card">
-      <h3 class="card__title"><?=htmlspecialcharsbx($item['TITLE'])?></h3>
-      <p class="card__text"><?=htmlspecialcharsbx($item['PREVIEW_TEXT'])?></p>
-    </article>
+<?php if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die(); ?>
+<ul class="product-grid">
+  <?php foreach ($arResult['ITEMS'] as $it): ?>
+    <li class="product">
+      <a href="<?=htmlspecialcharsbx($it['URL'])?>" class="product__link">
+        <img src="<?=htmlspecialcharsbx($it['IMG'])?>" alt="" class="product__img">
+        <span class="product__title"><?=htmlspecialcharsbx($it['TITLE'])?></span>
+        <span class="product__price"><?=$it['PRICE']?></span>
+      </a>
+    </li>
   <?php endforeach; ?>
-</section>
+</ul>
 ```
 
-### 3.2. result_modifier.php — адаптация данных под вёрстку
+**result_modifier.php**
 
 ```php
-<?php
-if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die();
-foreach ($arResult['ITEMS'] as &$item) {
-    $item['TITLE'] = $item['~NAME'] ?? $item['NAME'] ?? '';
-    // пример приведения: форматируем цены/даты/ссылки, собираем DTO
+<?php foreach ($arResult['ITEMS'] as &$it) {
+  $it['TITLE'] = $it['~NAME'] ?? '';
+  $it['URL']   = $it['DETAIL_PAGE_URL'] ?? '#';
+  $it['IMG']   = $it['PREVIEW_PICTURE']['SRC'] ?? '/local/templates/<имя>/assets/img/plug.svg';
+  $priceRaw    = (float)($it['PROPERTIES']['PRICE']['VALUE'] ?? 0);
+  $it['PRICE'] = number_format($priceRaw, 0, '.', ' ').' ₽';
 }
 ```
 
-### 3.3. component_epilog.php — «хвосты» (опционально)
+### Стили и скрипты
 
-* Установка метатегов, подключение трекеров, расчёт хлебных крошек.
-* Важно: код исполняется **на каждом хите** (вне кеша шаблона).
+Добавляйте в `header.php` вашего шаблона сайта:
 
-## 4. Формы и корзина (без React)
+```php
+use Bitrix\Main\Page\Asset;
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH.'/assets/css/app.css');
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH.'/assets/js/app.js');
+```
 
-* Используйте стандартные компоненты форм/корзины, но с **кастомными шаблонами**.
-* JS-валидация/маски/UX — в ваших ассетах. Серверная валидация — в компоненте/обработчике.
-* Для AJAX-поведения у стандартных компонентов — в шаблоне аккуратно подключайте JS-хендлеры; возвращайте компактные HTML-фрагменты или JSON через включаемые области/мини-компоненты.
+### Как проверить
 
-## 5. Производительность и кеш
+* Страница открывается — выглядит как макет.
+* Вёрстка идёт из ваших файлов в `/local/templates/...`.
+* Никаких «лишних» дивов/классов от Bitrix — всё ваше.
 
-* Включайте `$this->setFrameMode(true)` в каждом шаблоне.
-* Следите, чтобы **динамические** куски (счётчики, персонализация) не ломали кеш страницы.
-* Готовьте `$arResult` максимально «плоским» в `result_modifier.php` (меньше работы в `template.php`).
-* Включайте/настраивайте кеш компонентов (по времени и по ключам).
+### Частые ошибки
 
-## 6. SEO/маркетинг
-
-* Метаданные (title/description/h1) — проставляйте в `component_epilog.php` или из включаемых областей.
-* ЧПУ-шаблоны и правила — через настройки компонента/модуля и URL-Rewrite.
-* Схемы/микроразметка — генерируйте в `template.php` (JSON-LD).
-
-## 7. Тестирование и CI/CD
-
-* Юнит-тесты PHP (в т.ч. на формат $arResult).
-* Визуальные регрессионные тесты (Backstop/Chromatic-аналог через Puppeteer).
-* Сборка и минификация ассетов в pipeline; деплой `/local/templates/<site>/assets` атомарно.
+* Поменяли файлы в `/bitrix` → при обновлении всё пропало. Делайте **только в /local**.
+* Пихаете обработку данных в HTML → выносите в `result_modifier.php`.
+* Стили подключаете тегами `<link>` в шаблонах компонентов → лучше через `Asset::getInstance()` в шаблоне сайта.
 
 ---
 
-# Часть II. React-трек (HEADLESS, отдельные релизы фронта)
+# Путь 2. React отдельно (headless, независимые релизы)
 
-**Цель:** фронт — это **отдельный проект** (Next.js/Vite/CRA), деплоится независимо, Bitrix отдаёт API. Никаких PHP-шаблонов для вёрстки страниц.
+## Что это даёт
 
-## 1. Архитектура
+* Фронт живёт своей жизнью: отдельный репозиторий, любые современные фреймворки и сборки.
+* Обновляете фронт без касания Bitrix.
 
-* **Bitrix-бэкенд**: бизнес-логика, ORM, инфоблоки/HL-блоки, сессии/пользователи.
-* **API-слой в Bitrix**: D7-контроллеры и действия (`/bitrix/services/main/ajax.php?action=vendor.module.api…`).
-* **Фронт (Next.js)**: SSR/SSG/ISR для SEO-страниц, CSR для интерактива. Деплой отдельно (Vercel/Docker/K8s/VM/CDN).
+## Как это устроено в целом
 
-## 2. Проектирование API
+* **Bitrix** отдаёт **данные** по URL (например: `/bitrix/services/main/ajax.php?action=shop.api.products.list`).
+* **React‑приложение** (например, Next.js) делает запросы на эти URL и **рисует** страницы само.
 
-### 2.1. Версионирование и контракты
+## Что сделать на стороне Bitrix
 
-* Простая схема: `action=vendor.module.api.v1.catalog.list`.
-* Документируйте ответы (JSON Schema/OpenAPI). Храните DTO отдельно от ORM-моделей.
+1. Создать «ручки» для данных (простые методы‑адреса). В Bitrix они называются **контроллеры** и **действия**.
+2. В методе достаём товары/посты и возвращаем **чистый массив**, Bitrix сам отдаст его как JSON.
 
-### 2.2. Контроллер (скелет)
+**Очень короткий пример «ручки» (упрощённо):**
 
 ```php
-// /bitrix/modules/vendor.module/lib/controller/catalog.php
-namespace Vendor\Module\Controller;
-
-use Bitrix\Main\Engine\Controller;
-use Bitrix\Main\Engine\ActionFilter;
-
-class Catalog extends Controller
-{
-    public function configureActions(): array
-    {
-        return [
-            'list' => [
-                'prefilters' => [
-                    new ActionFilter\HttpMethod([ActionFilter\HttpMethod::METHOD_GET]),
-                    new ActionFilter\Cors('https://app.example.com', true), // whitelist фронта
-                    new ActionFilter\Authentication(),                      // при необходимости
-                ],
-            ],
-        ];
-    }
-
-    public function listAction(int $page = 1, int $limit = 20): array
-    {
-        // ORM/инфоблоки → DTO
-        return [
-            'items' => [/* ... */],
-            'page'  => $page,
-            'limit' => $limit,
-            'total' => 123,
-        ];
-    }
+class Catalog extends BitrixController {
+  public function listAction($page = 1, $limit = 20) {
+    // тут берём данные из инфоблоков/HL и т.д.
+    return [
+      'items' => [ /* ...товары... */ ],
+      'page'  => (int)$page,
+      'limit' => (int)$limit,
+      'total' => 123,
+    ];
+  }
 }
 ```
 
-**Советы:**
-
-* В `configureActions()` добавляйте фильтры: `Cors`, `HttpMethod`, `Csrf`, `Authentication`, `RateLimit` (если используете кастомный), `ContentType`.
-* Возвращайте только **DTO**, не «сырые» массивы ядра.
-
-### 2.3. Безопасность, сессии и CSRF
-
-* Один домен/поддомен → cookie-сессия + `credentials: 'include'`.
-* Разные домены → **CORS + SameSite=None; Secure** для PHPSESSID.
-* CSRF для state-изменяющих методов: заголовок `X-Bitrix-Csrf-Token` или `sessid` в параметрах.
-
-### 2.4. Авторизация
-
-* Вариант A: родная сессия Bitrix (простые проекты, админка/ЛК на том же домене).
-* Вариант B: свой JWT-слой поверх Bitrix (отдельный домен, мобильные клиенты).
-
-### 2.5. Файлы/медиа
-
-* Отдавайте presigned-URL или статический CDN-префикс.
-* Загрузки через выделенное действие, проверяющее права и размер/тип.
-
-## 3. React/Next.js фронт
-
-### 3.1. Структура проекта (пример Next.js)
+После подключения такой «ручки» вы сможете получить JSON по адресу типа:
 
 ```
-app/
-  (marketing)/
-    layout.tsx
-    page.tsx               # SSR/SSG/ISR страницы
-  (shop)/
-    products/
-      page.tsx
-    product/[slug]/
-      page.tsx
-lib/api.ts                 # обёртка над fetch к Bitrix API
-lib/config.ts              # ENV/константы (API_ORIGIN, маршруты)
-components/ui/*            # дизайн-система
-components/sections/*      # независимые секции
-styles/*                   # глобальные/модульные стили
+/bitrix/services/main/ajax.php?action=shop.api.catalog.list&page=1
 ```
 
-### 3.2. Вызовы API
+## Что сделать на стороне React (Next.js)
+
+* Завести переменную окружения `NEXT_PUBLIC_API_ORIGIN` (где крутится Bitrix).
+* Написать маленькую функцию для запросов:
 
 ```ts
-// lib/api.ts
-export async function api<T>(action: string, params: Record<string, any> = {}, init?: RequestInit) {
+export async function api(action: string, params: Record<string,string|number> = {}) {
   const url = new URL('/bitrix/services/main/ajax.php', process.env.NEXT_PUBLIC_API_ORIGIN);
   url.searchParams.set('action', action);
-  for (const [k, v] of Object.entries(params)) url.searchParams.set(k, String(v));
-  const res = await fetch(url, {
-    ...init,
-    credentials: 'include',
-    headers: { 'Accept': 'application/json', ...(init?.headers || {}) },
-    cache: 'no-store', // или revalidate в Next 13+
-  });
+  for (const [k,v] of Object.entries(params)) url.searchParams.set(k, String(v));
+  const res  = await fetch(url.toString(), { credentials: 'include' });
   const json = await res.json();
-  if (json.status !== 'success') throw new Error(json.errors?.[0]?.message || 'API error');
-  return json.data as T;
+  if (json.status !== 'success') throw new Error('API error');
+  return json.data;
 }
 ```
 
-### 3.3. SSR/SSG/ISR
+* На странице:
 
-* SEO-страницы (карточки/категории/блог) — SSR/SSG/ISR.
-* Часто обновляющиеся — ISR с `revalidate`.
-* Кабинеты/корзина — CSR (client components) + SWR/React-Query.
+```tsx
+const data = await api('shop.api.catalog.list', { page: 1 });
+```
 
-### 3.4. Маршрутизация и ЧПУ
+* Дальше — просто рисуем свои компоненты и страницы как в обычном React‑проекте.
 
-* ЧПУ держим на фронте; на бэке — действия принимают ID/slug.
-* Синхронизацию sitemap/robots делаем в фронтовом проекте (эндпоинты `/sitemap.xml`, `/robots.txt`) с данными из Bitrix API.
+## Авторизация и «куки» (простыми словами)
 
-### 3.5. Стили/дизайн-система
+* **Фронт и Bitrix на одном домене/поддоменах** → всё просто, `credentials: 'include'` и работает.
+* **На разных доменах** → нужно разрешить запросы с фронта на бэкенд (включают «CORS» в Bitrix) и настроить куки так, чтобы они ходили между доменами (флаг `SameSite=None; Secure`). Это делает ваш разработчик/админ.
 
+## Где хранить картинки/файлы
+
+* Либо отдаём прямые ссылки Bitrix, либо используем CDN. Для загрузок делаем отдельный адрес («ручку»), где проверяются права и размер файла.
+
+## Как выпускать отдельно
+
+* **Фронт**: свой репозиторий, сборка и деплой (Vercel/Docker/сервер).
+* **Bitrix**: свой деплой (как обычно). Важное правило — **не ломать адреса «ручек» и формат ответа**.
+
+### Частые ошибки
+
+* Меняют структуру ответа API без предупреждения → фронт падает. Решение: договориться и «заморозить» ответ (простая схема полей), если нужен редизайн — делайте `v2`.
+* Слишком тяжёлые ответы (10000 товаров за раз) → пагинация: отдаём порциями.
+* Фронт и бэкенд на разных доменах, а куки не ходят → включить CORS и `SameSite=None; Secure`.
+
+---
+
+# Когда что выбрать
+
+* **Нужно быстро и всё в Bitrix** → HTML‑внутри Bitrix.
+* **Нужен современный фронт, независимые релизы, гибкий роутинг** → React отдельно (headless).
+
+---
+
+# Короткие чек‑листы
+
+## HTML‑внутри Bitrix
+
+* [ ] Все файлы только в `/local`.
+* [ ] У каждого компонента свой шаблон в `/local/templates/.../components/bitrix/...`.
+* [ ] Данные готовим в `result_modifier.php`, а не в HTML.
+* [ ] Стили/скрипты подключаем в шаблоне сайта через `Asset::getInstance()`.
+
+## React отдельно
+
+* [ ] На Bitrix есть «ручки» для нужных данных.
+* [ ] Ответы простые и стабильные (список полей согласован).
+* [ ] Во фронте есть функция `api(...)` и адрес Bitrix.
+* [ ] Если домены разные — включён CORS и настроены куки.
+
+---
+
+# План запуска (минимум действий)
+
+1. Выберите путь: **HTML** или **React отдельно**.
+2. Подготовьте макеты и список страниц/блоков.
+3. Сделайте по одной «эталонной» странице.
+4. Проверьте данные/ответы (что приходит, какие поля нужны).
+5. Заводите остальные страницы по шаблону.
+
+Если нужно — могу приложить готовые заготовки папок/файлов под ваш проект и расписать пошагово под ваши конкретные сущности: каталог, корзина, блог, личный кабинет.
