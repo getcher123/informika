@@ -111,11 +111,7 @@
 }
 
 .description-card {
-  background: var(--color-bg-white);
-  border-radius: var(--radius-lg);
   padding: var(--spacing-2xl);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-border-light);
 }
 
 .description-card__title {
@@ -168,14 +164,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
-}
-
-.sidebar-card {
-  background: var(--color-bg-white);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-border-light);
 }
 
 .sidebar-card__title {
