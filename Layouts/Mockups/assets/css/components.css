@@ -900,6 +900,21 @@
   color: var(--color-primary);
 }
 
+.cta-card {
+  background: linear-gradient(135deg, rgba(247, 249, 251, 0.8) 0%, rgba(232, 237, 242, 0.8) 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-light);
+}
+
+.cta-card__text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+  line-height: var(--line-height-normal);
+}
+
 .description-section {
   margin-bottom: var(--spacing-xl);
 }
