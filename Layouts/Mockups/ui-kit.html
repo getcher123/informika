@@ -139,6 +139,13 @@
     margin-top: 0.5rem;
   }
 
+  .code-example {
+    background: var(--color-bg-light);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+  }
+
   .ui-kit-description {
     margin-bottom: 1.5rem;
   }
@@ -532,6 +539,10 @@
           <h2 class="ui-kit-title">Табы и фильтры</h2>
           
           <h3 class="ui-kit-subtitle">Табы</h3>
+          <p class="ui-kit-description">Контейнер `.tabs` + кнопки `.tabs__item` создают адаптивные вкладки. Добавьте `data-tabs` и `data-tab` при необходимости JS-переключения.</p>
+          <div class="code-example">
+            <code>&lt;div class="tabs" data-tabs&gt;\n  &lt;button class="tabs__item tabs__item--active" data-tab="first"&gt;Вкладка 1&lt;/button&gt;\n  &lt;button class="tabs__item" data-tab="second"&gt;Вкладка 2&lt;/button&gt;\n&lt;/div&gt;</code>
+          </div>
           <div class="tabs">
             <button class="tabs__item tabs__item--active">Запросы на инновацию</button>
             <button class="tabs__item">Заявки в команду</button>

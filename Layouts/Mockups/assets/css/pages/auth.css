@@ -35,7 +35,7 @@
   padding: var(--spacing-3xl);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xl);
+  gap: var(--spacing-lg);
 }
 
 .auth-card__header {
@@ -86,44 +86,14 @@
 .auth-tabs {
   display: flex;
   gap: var(--spacing-md);
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: 0;
+  justify-content: center;
 }
 
-.auth-tab {
-  flex: 1;
-  padding: var(--spacing-md);
+.auth-tabs .tabs__item {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-text-muted);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: color var(--transition-base);
-  position: relative;
-}
-
-.auth-tab::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--color-primary);
-  transform: scaleX(0);
-  transition: transform var(--transition-base);
-}
-
-.auth-tab--active {
-  color: var(--color-text-primary);
-}
-
-.auth-tab--active::after {
-  transform: scaleX(1);
-}
-
-.auth-tab:hover {
-  color: var(--color-primary);
+  max-width: 50%;
 }
 
 /* Auth Form */

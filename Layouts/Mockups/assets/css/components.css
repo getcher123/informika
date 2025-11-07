@@ -561,31 +561,53 @@
 /* Tabs */
 .tabs {
   display: flex;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-xl);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
   overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: var(--spacing-xs);
 }
 
 .tabs__item {
-  padding: var(--spacing-md) var(--spacing-xl);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-primary);
-  background: var(--color-bg-white);
-  border: 2px solid var(--color-border-light);
-  border-radius: var(--radius-full);
-  transition: all var(--transition-base);
+  flex: 1;
+  padding: var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) + 4px);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  background: transparent;
+  border: none;
   cursor: pointer;
-  white-space: nowrap;
+  transition: color var(--transition-base);
+  position: relative;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
 }
 
-.tabs__item:hover {
-  border-color: var(--color-primary);
+.tabs__item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform var(--transition-base);
 }
 
 .tabs__item--active {
-  color: var(--color-bg-white);
-  background: var(--color-primary);
-  border-color: var(--color-primary);
+  color: var(--color-text-primary);
+}
+
+.tabs__item--active::after {
+  transform: scaleX(1);
+}
+
+.tabs__item:hover {
+  color: var(--color-primary);
 }
 
 /* Filter Pills */
@@ -764,10 +786,23 @@
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   transition: color var(--transition-base);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-full);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--color-bg-white);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  line-height: 1;
 }
 
 .filter-reset:hover {
   color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+.filter-reset--inline {
+  padding: var(--spacing-md) var(--spacing-xl);
 }
 
 /* Layout spacing helpers */

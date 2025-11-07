@@ -7,17 +7,17 @@
 }
 
 .profile-page .main--with-gradient {
-  padding-top: var(--spacing-xl);
-  padding-bottom: var(--spacing-3xl);
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-2xl);
 }
 
 /* Profile Header */
 .profile-header {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-2xl);
-  padding-bottom: var(--spacing-2xl);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
   border-bottom: 1px solid var(--color-border-light);
 }
 
@@ -93,6 +93,7 @@
   font-size: var(--font-size-base);
   color: var(--color-text-secondary);
   line-height: var(--line-height-normal);
+  margin-bottom: 0;
 }
 
 /* Profile Form */
@@ -104,7 +105,7 @@
   display: grid;
   gap: var(--spacing-lg);
   grid-template-columns: 1fr;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
 }
 
 @media (min-width: 768px) {
@@ -114,8 +115,8 @@
 }
 
 .password-section {
-  margin-top: var(--spacing-2xl);
-  padding-top: var(--spacing-2xl);
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
   border-top: 1px solid var(--color-border-light);
 }
 
@@ -123,14 +124,14 @@
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
 }
 
 .profile-form .form-actions {
   display: flex;
   justify-content: flex-end;
-  margin-top: var(--spacing-2xl);
-  padding-top: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
   border-top: 1px solid var(--color-border-light);
 }
 
