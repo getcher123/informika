@@ -2,12 +2,7 @@
    PROFILE.CSS - Страница профиля
    =================================== */
 
-.profile-page {
-  background: var(--gradient-bg);
-}
-
 .profile-page .main--with-gradient {
-  padding-top: var(--spacing-lg);
   padding-bottom: var(--spacing-2xl);
 }
 
@@ -118,13 +113,6 @@
   margin-top: var(--spacing-lg);
   padding-top: var(--spacing-lg);
   border-top: 1px solid var(--color-border-light);
-}
-
-.section-title {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-md);
 }
 
 .profile-form .form-actions {

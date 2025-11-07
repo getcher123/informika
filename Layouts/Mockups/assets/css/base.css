@@ -247,17 +247,3 @@ button {
 .fw-bold {
   font-weight: var(--font-weight-bold);
 }
-
-/* Body Gradient для страниц кабинета */
-.body--gradient {
-  background: linear-gradient(135deg, #00A8CC 0%, #8B5CF6 100%);
-  min-height: 100vh;
-}
-
-.body--gradient .layout {
-  background: transparent;
-}
-
-.body--gradient .main {
-  background: transparent;
-}
