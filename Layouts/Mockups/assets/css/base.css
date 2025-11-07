@@ -17,7 +17,7 @@
   /* Градиенты */
   --gradient-main: linear-gradient(135deg, #00D4AA 0%, #00A8CC 50%, #9B7EDE 100%);
   --gradient-button: linear-gradient(90deg, #9B7EDE 0%, #00A8CC 100%);
-  --gradient-bg: linear-gradient(180deg, #00D4AA 0%, #9B7EDE 100%);
+  --gradient-bg: linear-gradient(135deg, #00A8CC 0%, #8B5CF6 100%);
   
   /* Текст */
   --color-text-primary: #003D5C;
@@ -110,6 +110,12 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+html {
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
 }
 
 body {

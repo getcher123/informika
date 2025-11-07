@@ -168,7 +168,7 @@
 **CSS:**
 ```css
 .body--gradient {
-  background: linear-gradient(135deg, #00A8CC 0%, #8B5CF6 100%);
+  background: var(--gradient-bg); /* linear-gradient(135deg, #00A8CC 0%, #8B5CF6 100%) */
   min-height: 100vh;
 }
 ```

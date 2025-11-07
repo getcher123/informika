@@ -28,68 +28,6 @@
   line-height: var(--line-height-relaxed);
 }
 
-/* Team Section */
-.team-section {
-  margin-bottom: var(--spacing-xl);
-}
-
-.team-card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
-}
-
-.team-grid {
-  display: grid;
-  gap: var(--spacing-lg);
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .team-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.team-member {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
-}
-
-.team-member__role {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: var(--spacing-xs);
-}
-
-.team-member__name {
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-xs);
-}
-
-.team-member__position {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--spacing-xs);
-  line-height: var(--line-height-normal);
-}
-
-.team-member__department {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-}
-
 /* Ideas Section */
 .ideas-section {
   margin-bottom: var(--spacing-xl);

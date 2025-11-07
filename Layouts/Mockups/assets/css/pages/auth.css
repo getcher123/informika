@@ -8,8 +8,8 @@
 }
 
 .auth-main {
-  padding-top: var(--spacing-3xl);
-  padding-bottom: var(--spacing-4xl);
+  padding-top: var(--spacing-2xl);
+  padding-bottom: var(--spacing-3xl);
 }
 
 .auth-main .container {
@@ -35,7 +35,7 @@
   padding: var(--spacing-3xl);
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
 }
 
 .auth-card__header {
@@ -66,8 +66,8 @@
 
 @media (max-width: 768px) {
   .auth-main {
-    padding-top: var(--spacing-2xl);
-    padding-bottom: var(--spacing-3xl);
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-2xl);
   }
 
   .auth-container {
@@ -116,7 +116,7 @@
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
   text-align: left;
 }
 
@@ -267,7 +267,7 @@
   text-align: right;
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
 }
 
 /* Password Input */

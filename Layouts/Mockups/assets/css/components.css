@@ -915,6 +915,10 @@
   line-height: var(--line-height-normal);
 }
 
+.cta-card__text:last-child {
+  margin-bottom: 0;
+}
+
 .description-section {
   margin-bottom: var(--spacing-xl);
 }
@@ -982,6 +986,159 @@
 
 .main--with-gradient {
   background: var(--gradient-bg);
+}
+
+/* ========================================
+   Team Block
+   ======================================== */
+.team-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.team-card {
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.team-grid {
+  display: grid;
+  gap: var(--spacing-lg);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.team-member__role {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.team-member__name {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.team-member__position {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+.team-member__department {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* ========================================
+   Evaluation Table
+   ======================================== */
+.evaluation-section {
+  margin-bottom: var(--spacing-xl);
+  overflow-x: auto;
+}
+
+.evaluation-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-bg-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.evaluation-table thead {
+  background: var(--color-primary);
+  color: var(--color-bg-white);
+}
+
+.evaluation-table th {
+  padding: var(--spacing-md) var(--spacing-lg);
+  text-align: left;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.evaluation-table tbody tr {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.evaluation-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.evaluation-row--approved {
+  background: rgba(0, 212, 170, 0.08);
+}
+
+.evaluation-row--pending {
+  background: rgba(255, 184, 0, 0.08);
+}
+
+.evaluation-row--rejected {
+  background: rgba(255, 77, 79, 0.08);
+}
+
+.evaluation-cell {
+  padding: var(--spacing-lg);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  vertical-align: middle;
+}
+
+.evaluation-score {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.evaluation-rating {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.evaluation-status {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 767px) {
+  .evaluation-section {
+    margin-left: calc(var(--spacing-md) * -1);
+    margin-right: calc(var(--spacing-md) * -1);
+  }
+
+  .evaluation-table {
+    font-size: var(--font-size-sm);
+  }
+
+  .evaluation-table th,
+  .evaluation-cell {
+    padding: var(--spacing-sm);
+  }
 }
 
 /* ========================================

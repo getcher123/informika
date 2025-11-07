@@ -47,6 +47,12 @@
       border-radius: var(--radius-lg);
       border: 2px solid var(--color-border);
     }
+
+    .ui-kit-section--plain .ui-kit-example {
+      border: none;
+      background: transparent;
+      box-shadow: none;
+    }
     
     .ui-kit-code {
       background: var(--color-bg-dark);
@@ -100,6 +106,180 @@
     
   .typography-example {
     margin-bottom: var(--spacing-lg);
+  }
+
+  .ui-kit-gradient-demo {
+    height: 180px;
+    border-radius: var(--radius-xl);
+    background: var(--gradient-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-white);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    box-shadow: var(--shadow-md);
+    margin-top: var(--spacing-md);
+  }
+
+  .ui-kit-tabs-demo {
+    padding: var(--spacing-lg);
+    background: var(--color-bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .ui-kit-tabs-demo .tabs {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .ui-kit-tabs-panels > div {
+    display: none;
+  }
+
+  .ui-kit-tabs-panels > div.is-active {
+    display: block;
+  }
+
+  .ui-kit-tabs-panels {
+    min-height: 100px;
+  }
+
+  .ui-kit-tabs-panels .tabs-panel {
+    background: var(--color-bg-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+  }
+
+  .ui-kit-detail-demo {
+    margin-top: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: var(--color-bg-light);
+    border-radius: var(--radius-lg);
+  }
+
+  .ui-kit-detail-demo .cta-card {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .ui-kit-detail-demo .detail-content > *:not(:last-child) {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .ui-kit-detail-demo .detail-sidebar .card {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .ui-kit-lk-demo {
+    display: flex;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-xl);
+    background: var(--color-bg-white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    flex-wrap: wrap;
+  }
+
+  .ui-kit-lk-main {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .ui-kit-lk-sidebar {
+    width: 240px;
+    min-width: 200px;
+    background: var(--color-bg-light);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .ui-kit-lk-nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-white);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-sm);
+  }
+
+  .ui-kit-lk-nav-item--active {
+    background: var(--color-primary);
+    color: var(--color-text-white);
+  }
+
+  .ui-kit-lk-search {
+    display: flex;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
+
+  .ui-kit-lk-cards {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+
+  .ui-kit-flow-block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .ui-kit-flow-step {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .ui-kit-flow-step::before {
+    content: attr(data-step);
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--color-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
+  }
+
+  .ui-kit-lk-demo .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: 0;
+  }
+
+  .ui-kit-lk-demo .filter-reset {
+    margin-left: auto;
+  }
+
+  .ui-kit-detail-demo .detail-layout {
+    margin-top: var(--spacing-lg);
+  }
+
+  .ui-kit-detail-demo .detail-sidebar {
+    align-self: flex-start;
+  }
+
+  @media (max-width: 768px) {
+    .ui-kit-lk-demo {
+      flex-direction: column;
+    }
   }
 
   .ui-kit__container {
@@ -272,38 +452,16 @@
         <!-- Отступы -->
         <section class="ui-kit-section">
           <h2 class="ui-kit-title">Вертикальные отступы</h2>
-          <p class="ui-kit-description">Используйте готовые utility-классы, чтобы секции и элементы автоматически сохраняли согласованный вертикальный ритм.</p>
+          <p class="ui-kit-description">Utility-классы задают расстояния между блоками личного кабинета и деталей. Держим их под рукой.</p>
 
-          <div class="ui-kit-grid ui-kit-grid--auto">
-            <div class="card">
-              <h3 class="ui-kit-subtitle">Секции</h3>
-              <p>Соседние  разделяются отступом  — достаточно добавить класс к блоку.</p>
-              <pre class="ui-kit-code">&lt;section class=&quot;section&quot;&gt;...&lt;/section&gt;
-&lt;section class=&quot;section&quot;&gt;...&lt;/section&gt;</pre>
-            </div>
-
-            <div class="card">
-              <h3 class="ui-kit-subtitle">Поиск и фильтры</h3>
-              <p> → ,  /  → . Карточки всегда находятся на одинаковом расстоянии от фильтров.</p>
-              <pre class="ui-kit-code">&lt;div class=&quot;search&quot;&gt;...&lt;/div&gt;
-&lt;div class=&quot;filters filters-section&quot;&gt;...&lt;/div&gt;</pre>
-            </div>
-
-            <div class="card">
-              <h3 class="ui-kit-subtitle">Ссылки «Назад»</h3>
-              <p> автоматически оставляет  до следующего блока.</p>
-              <pre class="ui-kit-code">&lt;a class=&quot;back-link&quot; href=&quot;#&quot;&gt;← Назад&lt;/a&gt;
-&lt;div class=&quot;card&quot;&gt;Контент&lt;/div&gt;</pre>
-            </div>
-
-            <div class="card">
-              <h3 class="ui-kit-subtitle">Карточки</h3>
-              <p> управляет внутренними паддингами () и ритмом заголовков ().</p>
-              <pre class="ui-kit-code">&lt;div class=&quot;card&quot;&gt;
-  &lt;h3 class=&quot;card__title&quot;&gt;Заголовок&lt;/h3&gt;
-  ...
-&lt;/div&gt;</pre>
-            </div>
+          <div class="ui-kit-example">
+            <ul class="ui-kit-list">
+              <li><strong>.section</strong> — соседние разделы отделяются на <code>var(--spacing-2xl)</code>. Используем на карточках запросов, командах и любых больших блоках.</li>
+              <li><strong>.search</strong> — поиск держит <code>spacing-lg</code> до фильтров и списков.</li>
+              <li><strong>.filters</strong> / <strong>.filters-section</strong> — фильтры и панели состояний имеют <code>spacing-xl</code> снизу.</li>
+              <li><strong>.back-link</strong> — ссылка «Назад» оставляет <code>spacing-lg</code> до следующего блока автоматически.</li>
+              <li><strong>.card</strong> — внутренние паддинги карточек <code>spacing-xl</code>, заголовки и параграфы внутри следуют ритму <code>spacing-md / spacing-sm</code>.</li>
+            </ul>
           </div>
         </section>
 
@@ -540,13 +698,42 @@
           
           <h3 class="ui-kit-subtitle">Табы</h3>
           <p class="ui-kit-description">Контейнер `.tabs` + кнопки `.tabs__item` создают адаптивные вкладки. Добавьте `data-tabs` и `data-tab` при необходимости JS-переключения.</p>
-          <div class="code-example">
-            <code>&lt;div class="tabs" data-tabs&gt;\n  &lt;button class="tabs__item tabs__item--active" data-tab="first"&gt;Вкладка 1&lt;/button&gt;\n  &lt;button class="tabs__item" data-tab="second"&gt;Вкладка 2&lt;/button&gt;\n&lt;/div&gt;</code>
-          </div>
-          <div class="tabs">
-            <button class="tabs__item tabs__item--active">Запросы на инновацию</button>
-            <button class="tabs__item">Заявки в команду</button>
-            <button class="tabs__item">Архив</button>
+                    <p class="ui-kit-description">Контрол работает от атрибутов <code>data-tabs</code> / <code>data-tab</code>. Ниже интерактивный пример.</p>
+
+          <div class="ui-kit-example ui-kit-tabs-demo" data-tabs>
+
+            <div class="tabs">
+
+              <button class="tabs__item tabs__item--active" data-tab="lk-tabs">Личный кабинет</button>
+
+              <button class="tabs__item" data-tab="requests-tabs">Заявки</button>
+
+              <button class="tabs__item" data-tab="archive-tabs">Архив</button>
+
+            </div>
+
+            <div class="ui-kit-tabs-panels">
+
+              <div class="tabs-panel is-active" data-tab-panel="lk-tabs">
+
+                <p>Показываем фильтры, поиск и карточки пользователя.</p>
+
+              </div>
+
+              <div class="tabs-panel" data-tab-panel="requests-tabs" hidden>
+
+                <p>Табы помогают переключаться между «Мои запросы», «Мои заявки» и панелью стейкхолдера.</p>
+
+              </div>
+
+              <div class="tabs-panel" data-tab-panel="archive-tabs" hidden>
+
+                <p>Архив — такой же таб, у которого меняется только подпись и данные.</p>
+
+              </div>
+
+            </div>
+
           </div>
 
           <h3 class="ui-kit-subtitle">Фильтры (Pills)</h3>
@@ -612,93 +799,301 @@
         </section>
 
         <!-- Градиентный фон -->
-        <section class="ui-kit-section">
+        <section class="ui-kit-section ui-kit-section--plain">
           <h2 class="ui-kit-title">Градиентный фон кабинета</h2>
           
-          <div class="ui-kit-example">
-            <p><strong>Класс для body:</strong> <code>body--gradient</code></p>
-            <p>Применяется на всех страницах личного кабинета:</p>
-            <ul class="ui-kit-list">
-              <li>profile.html</li>
-              <li>my-requests.html</li>
-              <li>my-applications.html</li>
-            </ul>
+                    <div class="ui-kit-example">
+
+            <h3 class="ui-kit-subtitle">Фон кабинета</h3>
+
+            <div class="ui-kit-gradient-demo">
+
+              <span>Личный кабинет</span>
+
+            </div>
+
+            <p>Диагональный градиент (#00A8CC → #8B5CF6) создаёт атмосферу и подчёркивает карточки. Он используется на всех экранах личного кабинета.</p>
+
           </div>
         </section>
 
-        <!-- Form Container -->
-        <section class="ui-kit-section">
-          <h2 class="ui-kit-title">Form Container (Центральный блок форм)</h2>
-          
-          <p class="ui-kit-description">Унифицированный контейнер для всех форм (регистрация, вход, подача заявок).</p>
-          
-          <h3 class="ui-kit-subtitle">Стандартный размер</h3>
-          <div class="form-container">
-            <div class="form-container__header">
-              <h2 class="form-container__title">Заголовок формы</h2>
-              <p class="form-container__subtitle">Подзаголовок или описание</p>
-            </div>
-            <div class="form-container__body">
-              <div class="form-group">
-                <label class="form-label">Email</label>
-                <input type="email" class="form-input" placeholder="example@mail.com">
+        <!-- Личный кабинет -->
+        <section class="ui-kit-section ui-kit-section--plain">
+          <h2 class="ui-kit-title">Личный кабинет</h2>
+          <p class="ui-kit-description">Слева — меню, в контенте строгая последовательность: вкладки → крупный заголовок → поиск → фильтры → карточки списка.</p>
+
+          <div class="ui-kit-lk-demo">
+            <aside class="ui-kit-lk-sidebar">
+              <span class="ui-kit-flow-step" data-step="0">Меню</span>
+              <div class="ui-kit-lk-nav-item ui-kit-lk-nav-item--active">
+                <span>Мои запросы</span>
+                <span>12</span>
               </div>
-              <div class="form-group">
-                <label class="form-label">Пароль</label>
-                <input type="password" class="form-input" placeholder="••••••••">
+              <div class="ui-kit-lk-nav-item">
+                <span>Мои заявки</span>
+                <span>4</span>
               </div>
-              <button class="btn btn--primary btn--block">Войти</button>
-            </div>
-            <div class="form-container__footer">
-              <p>Нет аккаунта? <a href="#">Зарегистрироваться</a></p>
+              <div class="ui-kit-lk-nav-item">
+                <span>Избранное</span>
+                <span>3</span>
+              </div>
+              <div class="ui-kit-lk-nav-item">
+                <span>Поддержка</span>
+                <span>2</span>
+              </div>
+            </aside>
+
+            <div class="ui-kit-lk-main">
+              <div class="ui-kit-flow-block">
+                <span class="ui-kit-flow-step" data-step="1">Вкладки</span>
+                <div class="tabs">
+                  <button class="tabs__item tabs__item--active">Мои запросы</button>
+                  <button class="tabs__item">Мои заявки</button>
+                  <button class="tabs__item">Архив</button>
+                </div>
+              </div>
+
+              <div class="ui-kit-flow-block">
+                <span class="ui-kit-flow-step" data-step="2">Заголовок страницы</span>
+                <h2 class="section-title">Мои запросы</h2>
+              </div>
+
+              <div class="ui-kit-flow-block">
+                <span class="ui-kit-flow-step" data-step="3">Строка поиска</span>
+                <div class="search">
+                  <svg class="search__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                    <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  <input type="text" class="form-input search__input" placeholder="Поиск по запросам">
+                </div>
+              </div>
+
+              <div class="ui-kit-flow-block">
+                <span class="ui-kit-flow-step" data-step="4">Фильтры</span>
+                <div class="filters filters-section">
+                  <button class="filter-pill filter-pill--active">Все</button>
+                  <button class="filter-pill">На рассмотрении</button>
+                  <button class="filter-pill">Одобренные</button>
+                  <button class="filter-pill">Черновики</button>
+                  <button class="filter-pill">Архив</button>
+                  <button class="btn btn--reset filter-reset filter-reset--inline" type="button">
+                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="btn__text">Сбросить фильтры</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="ui-kit-flow-block">
+                <span class="ui-kit-flow-step" data-step="5">Карточки списка</span>
+                <div class="ui-kit-lk-cards">
+                  <div class="card">
+                    <div class="card__header">
+                      <div>
+                        <p class="text-muted">14 апреля</p>
+                        <h3 class="card__title">Замена профессий</h3>
+                      </div>
+                      <span class="badge badge--primary">HR</span>
+                    </div>
+                    <p>Сокращаем цикл подбора сотрудников за счёт автоматизации.</p>
+                    <div class="card__footer">
+                      <span class="text-muted">Автор: Ирина К.</span>
+                      <button class="btn btn--primary btn--sm">Подробнее</button>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card__header">
+                      <div>
+                        <p class="text-muted">2 мая</p>
+                        <h3 class="card__title">Портал обучения</h3>
+                      </div>
+                      <span class="badge badge--success">В работе</span>
+                    </div>
+                    <p>Платформа с персональными маршрутами развития сотрудников.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          
-          <h3 class="ui-kit-subtitle">Большой размер (.form-container--large)</h3>
-          <div class="form-container form-container--large">
-            <div class="form-container__header">
-              <h2 class="form-container__title">Форма подачи заявки</h2>
+
+          <ul class="ui-kit-list ui-kit-list--compact">
+            <li>Меню и градиент задаются каркасом <code>.sidebar-layout</code> + <code>.content-card</code>.</li>
+            <li>Вкладки идут первыми, затем крупный заголовок — как на страницах my-requests / my-applications.</li>
+            <li>Поиск и фильтры используют отступы из раздела «Вертикальные отступы».</li>
+          </ul>
+        </section>
+
+        <!-- Детальные страницы -->
+        <section class="ui-kit-section ui-kit-section--plain">
+          <h2 class="ui-kit-title">Детальные страницы</h2>
+          <p class="ui-kit-description">Каркас един для request-detail и idea-detail: ссылка «Назад», хиро-блок, карточки контента и правая колонка со статусами и документами.</p>
+
+          <div class="ui-kit-detail-demo">
+            <div class="ui-kit-flow-block">
+              <span class="ui-kit-flow-step" data-step="1">Навигация</span>
+              <a class="back-link" href="#">← Назад к списку</a>
             </div>
-            <div class="form-container__body">
-              <p>Используется для больших форм с множеством полей (max-width: 800px)</p>
+
+            <div class="detail-layout">
+              <div class="detail-content">
+                <div class="ui-kit-flow-block">
+                  <span class="ui-kit-flow-step" data-step="2">Хиро-блок</span>
+                  <div class="cta-card">
+                    <h3 class="section-title">Оптимизация найма</h3>
+                    <p class="cta-card__text">Короткий пич описывает проблему и ожидаемый эффект. Карточка завершает вводный экран.</p>
+                    <div class="button-grid">
+                      <span class="badge badge--primary">HR</span>
+                      <span class="badge badge--success">В работе</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="ui-kit-flow-block">
+                  <span class="ui-kit-flow-step" data-step="3">Контентные секции</span>
+                  <div class="card">
+                    <h3 class="section-title">Описание</h3>
+                    <p>Свободный текст, списки и таблицы следуют ритму карточек и классам <code>.section</code>.</p>
+                  </div>
+                  <div class="card">
+                    <h3 class="section-title">План действий</h3>
+                    <p>Каждая новая тема — отдельная карточка. Между ними используется <code>var(--spacing-2xl)</code>.</p>
+                  </div>
+                </div>
+
+                <div class="ui-kit-flow-block">
+                  <span class="ui-kit-flow-step" data-step="4">Команда и оценки</span>
+                  <div class="card">
+                    <p>Подключите блоки <code>.team-card</code> и таблицу оценок из раздела ниже, чтобы показать роли и статусы.</p>
+                  </div>
+                </div>
+              </div>
+
+              <aside class="detail-sidebar">
+                <div class="ui-kit-flow-block">
+                  <span class="ui-kit-flow-step" data-step="5">Сводка и статусы</span>
+                  <div class="card sidebar-card">
+                    <div class="sidebar-card__title">Текущий статус</div>
+                    <p class="sidebar-card__value">На рассмотрении</p>
+                    <p class="ui-kit-text--sm">Обновлено 12.04.2025</p>
+                  </div>
+                </div>
+
+                <div class="ui-kit-flow-block">
+                  <span class="ui-kit-flow-step" data-step="6">Документы и действия</span>
+                  <div class="card sidebar-card">
+                    <h3 class="sidebar-card__title">Документы</h3>
+                    <div class="document-list">
+                      <a class="document-item" href="#">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
+                          <path d="M14 2V8H20" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span>Brief.pdf</span>
+                      </a>
+                      <a class="document-item" href="#">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
+                          <path d="M14 2V8H20" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span>Timeline.xlsx</span>
+                      </a>
+                    </div>
+                    <button class="btn btn--primary btn--sm">Скачать всё</button>
+                  </div>
+                </div>
+              </aside>
             </div>
           </div>
-          
-          <h3 class="ui-kit-subtitle">Маленький размер (.form-container--small)</h3>
-          <div class="form-container form-container--small">
-            <div class="form-container__header">
-              <h2 class="form-container__title">Компактная форма</h2>
+
+          <ul class="ui-kit-list ui-kit-list--compact">
+            <li>После ссылки «Назад» всегда идёт хиро-блок с названием и описанием запроса/идеи.</li>
+            <li>Карточки контента располагаются в основной колонке, команда и оценки подключаются отдельными секциями.</li>
+            <li>Справа — повторяющийся набор: статусы, действия, документы.</li>
+          </ul>
+        </section>
+
+        <!-- Команды и оценки -->
+        <section class="ui-kit-section ui-kit-section--plain">
+          <h2 class="ui-kit-title">Компоненты команд и оценок</h2>
+
+          <div class="ui-kit-example">
+            <h3 class="ui-kit-subtitle">Блок команды</h3>
+            <div class="cta-card team-card">
+              <h3 class="section-title">Команда запроса</h3>
+              <div class="team-grid">
+                <div class="team-member">
+                  <div class="team-member__role">Стейкхолдер</div>
+                  <div class="team-member__name">Инна Громова</div>
+                  <div class="team-member__position">Директор цифровой трансформации</div>
+                  <div class="team-member__department">HR департамент</div>
+                </div>
+                <div class="team-member">
+                  <div class="team-member__role">Куратор</div>
+                  <div class="team-member__name">Антон Мельник</div>
+                  <div class="team-member__position">Руководитель проектного офиса</div>
+                  <div class="team-member__department">Цифровой блок</div>
+                </div>
+                <div class="team-member">
+                  <div class="team-member__role">Эксперт</div>
+                  <div class="team-member__name">Марина Дроздова</div>
+                  <div class="team-member__position">Lead по HR-аналитике</div>
+                  <div class="team-member__department">АО «НИЦ»</div>
+                </div>
+                <div class="team-member">
+                  <div class="team-member__role">Автор</div>
+                  <div class="team-member__name">Михаил Шестаков</div>
+                  <div class="team-member__position">Руководитель отдела данных</div>
+                  <div class="team-member__department">АО «НИЦ»</div>
+                </div>
+              </div>
             </div>
-            <div class="form-container__body">
-              <p>Используется для простых форм (max-width: 480px)</p>
-            </div>
+            <p class="ui-kit-text--sm">Используйте комбинацию <code>.cta-card.team-card</code> + <code>.team-grid</code>, чтобы получить единую рамку с адаптивными колонками.</p>
+            
           </div>
-          
-          <h3 class="ui-kit-subtitle">Классы</h3>
-          <div class="code-example">
-            <code>.form-container</code> - основной контейнер (max-width: 600px)<br>
-            <code>.form-container--large</code> - большой контейнер (max-width: 800px)<br>
-            <code>.form-container--small</code> - маленький контейнер (max-width: 480px)<br>
-            <code>.form-container__header</code> - шапка формы<br>
-            <code>.form-container__title</code> - заголовок формы<br>
-            <code>.form-container__subtitle</code> - подзаголовок формы<br>
-            <code>.form-container__body</code> - тело формы<br>
-            <code>.form-container__footer</code> - футер формы
-          </div>
-          
-          <h3 class="ui-kit-subtitle">Использование на страницах</h3>
-          <div class="code-example">
-            <strong>Страницы с form-container:</strong>
-            <ul class="ui-kit-list ui-kit-list--compact">
-              <li>login.html - форма входа/регистрации</li>
-              <li>register-step1.html - регистрация (шаг 1)</li>
-              <li>register-step2.html - регистрация (шаг 2)</li>
-              <li>request-form.html - форма подачи заявки (large)</li>
-            </ul>
+
+          <div class="ui-kit-example">
+            <h3 class="ui-kit-subtitle">Таблица оценок</h3>
+            <section class="evaluation-section">
+              <table class="evaluation-table">
+                <thead>
+                  <tr>
+                    <th>Роль</th>
+                    <th>ФИО</th>
+                    <th>Комментарий</th>
+                    <th>Статус</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="evaluation-row evaluation-row--approved">
+                    <td class="evaluation-cell">Стейкхолдер</td>
+                    <td class="evaluation-cell">Инна Громова</td>
+                    <td class="evaluation-cell">Готовы перейти к реализации</td>
+                    <td class="evaluation-cell">8 / 10</td>
+                  </tr>
+                  <tr class="evaluation-row evaluation-row--pending">
+                    <td class="evaluation-cell">Эксперт</td>
+                    <td class="evaluation-cell">Марина Дроздова</td>
+                    <td class="evaluation-cell">Нужна доработка загрузки данных</td>
+                    <td class="evaluation-cell">ожидает</td>
+                  </tr>
+                  <tr class="evaluation-row evaluation-row--rejected">
+                    <td class="evaluation-cell">Автор</td>
+                    <td class="evaluation-cell">Михаил Шестаков</td>
+                    <td class="evaluation-cell">Версию 1.1 закрываем</td>
+                    <td class="evaluation-cell">отклонено</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <p class="ui-kit-text--sm">Класс строки — <code>.evaluation-row--approved</code> / <code>.evaluation-row--pending</code> / <code>.evaluation-row--rejected</code>.</p>
+            
           </div>
         </section>
 
       </div>
+
     </main>
   </div>
 

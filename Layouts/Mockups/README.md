@@ -215,7 +215,7 @@ mosobgaz-mockup/
 
 /* Градиенты */
 --gradient-button: linear-gradient(90deg, #9B7EDE 0%, #00A8CC 100%);
---gradient-background: linear-gradient(135deg, #00A8CC 0%, #8B5CF6 100%);
+--gradient-bg: linear-gradient(135deg, #00A8CC 0%, #8B5CF6 100%);
 ```
 
 ### Типографика
