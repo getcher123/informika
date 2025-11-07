@@ -751,7 +751,7 @@
   text-decoration: none;
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
   transition: color var(--transition-base);
 }
 
@@ -778,6 +778,10 @@
 
 .search {
   margin-bottom: var(--spacing-lg);
+}
+
+.section + .section {
+  margin-top: var(--spacing-2xl);
 }
 
 /* ========================================

@@ -215,6 +215,42 @@
 
 ---
 
+### 6. Отступы и вертикальный ритм
+
+Чтобы страницы выглядели цельно, основные блоки используют единые классы для отступов:
+
+```html
+<a href="./requests.html" class="back-link">← Назад</a>
+
+<div class="search">
+  <svg class="search__icon" ...></svg>
+  <input type="text" class="form-input search__input" placeholder="Поиск">
+</div>
+
+<div class="filters filters-section">
+  <button class="filter-pill filter-pill--active">Все</button>
+  <button class="btn btn--reset filter-reset">Сбросить фильтры</button>
+</div>
+
+<section class="section">
+  <div class="card">...</div>
+</section>
+
+<section class="section">
+  <div class="card">...</div>
+</section>
+```
+
+**Правила отступов:**
+- `.back-link` всегда оставляет `var(--spacing-lg)` до контента.
+- `.search` → `var(--spacing-lg)`; `.filters` и `.filters-section` → `var(--spacing-xl)` — между фильтрами и карточками.
+- Соседние `.section` получают автоматический разрыв `var(--spacing-2xl)`.
+- Внутри карточек (`.card`) используются стандартные паддинги (`var(--spacing-xl)`), а заголовки/подзаголовки имеют сокращённые `var(--spacing-md/sm)`.
+
+Используя эти классы, любые новые страницы автоматически наследуют единую сетку вертикальных отступов без локальных значений `margin-bottom`.
+
+---
+
 ## Страницы и их классы
 
 ### Публичные страницы

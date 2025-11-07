@@ -6,7 +6,7 @@
 .idea-header {
   display: flex;
   gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-xl);
   align-items: flex-start;
 }
 
@@ -30,7 +30,7 @@
 
 /* Evaluation Table */
 .evaluation-section {
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-xl);
   overflow-x: auto;
 }
 
@@ -99,7 +99,7 @@
 
 /* Status Section */
 .status-section {
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-xl);
 }
 
 .status-options {
@@ -131,7 +131,7 @@
 
 /* Rating Section */
 .rating-section {
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-xl);
 }
 
 .star-rating {
@@ -162,7 +162,7 @@
 
 /* Comment Section */
 .comment-section {
-  margin-bottom: var(--spacing-2xl);
+  margin-bottom: var(--spacing-xl);
 }
 
 .comment-textarea {
