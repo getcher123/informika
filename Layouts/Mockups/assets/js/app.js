@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initTabs();
   initFilters();
   initFavorites();
+  initSearch();
+  initPasswordStrength();
+  initPhoneMasks();
 });
 
 /**
@@ -115,6 +118,18 @@ function initForms() {
   const forms = document.querySelectorAll('form[data-validate]');
 
   forms.forEach(form => {
+    // Добавляем контейнеры для ошибок по умолчанию
+    form.querySelectorAll('.form-group').forEach(group => {
+      const control = group.querySelector('.form-input, .form-textarea, .form-select');
+      if (control && !group.querySelector('.form-error')) {
+        const errorElement = document.createElement('span');
+        errorElement.className = 'form-error form-error--hidden';
+        errorElement.setAttribute('role', 'alert');
+        errorElement.setAttribute('aria-live', 'polite');
+        group.appendChild(errorElement);
+      }
+    });
+
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       
@@ -155,13 +170,10 @@ function initForms() {
   passwordToggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
       const input = toggle.previousElementSibling;
-      if (input && input.type === 'password') {
-        input.type = 'text';
-        toggle.textContent = '🙈';
-      } else if (input) {
-        input.type = 'password';
-        toggle.textContent = '👁';
-      }
+      if (!input) return;
+      const isHidden = input.type === 'password';
+      input.type = isHidden ? 'text' : 'password';
+      toggle.setAttribute('aria-pressed', String(isHidden));
     });
   });
 }
@@ -235,16 +247,20 @@ function showFieldError(field, message) {
   if (!errorElement) {
     errorElement = document.createElement('span');
     errorElement.className = 'form-error';
+    errorElement.setAttribute('role', 'alert');
+    errorElement.setAttribute('aria-live', 'polite');
     field.parentElement.appendChild(errorElement);
   }
   
   errorElement.textContent = message;
+  errorElement.classList.remove('form-error--hidden');
 }
 
 function hideFieldError(field) {
   const errorElement = field.parentElement.querySelector('.form-error');
   if (errorElement) {
-    errorElement.remove();
+    errorElement.textContent = '';
+    errorElement.classList.add('form-error--hidden');
   }
 }
 
@@ -255,25 +271,43 @@ function initTabs() {
   const tabContainers = document.querySelectorAll('[data-tabs]');
 
   tabContainers.forEach(container => {
-    const tabs = container.querySelectorAll('.tabs__item');
+    const tabs = container.querySelectorAll('[data-tab]');
     const panels = container.querySelectorAll('[data-tab-panel]');
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         const targetId = tab.getAttribute('data-tab');
 
-        // Деактивировать все табы
-        tabs.forEach(t => t.classList.remove('tabs__item--active'));
-        panels.forEach(p => p.style.display = 'none');
+        tabs.forEach(t => {
+          t.classList.remove('is-active', 'tabs__item--active', 'auth-tab--active');
+        });
 
-        // Активировать выбранный таб
-        tab.classList.add('tabs__item--active');
+        panels.forEach(panel => {
+          panel.classList.remove('is-active');
+          panel.setAttribute('hidden', 'hidden');
+        });
+
+        tab.classList.add('is-active');
+        if (tab.classList.contains('tabs__item')) {
+          tab.classList.add('tabs__item--active');
+        }
+        if (tab.classList.contains('auth-tab')) {
+          tab.classList.add('auth-tab--active');
+        }
+
         const targetPanel = container.querySelector(`[data-tab-panel="${targetId}"]`);
         if (targetPanel) {
-          targetPanel.style.display = 'block';
+          targetPanel.classList.add('is-active');
+          targetPanel.removeAttribute('hidden');
         }
       });
     });
+
+    // Активировать первый таб по умолчанию
+    const defaultTab = container.querySelector('[data-tab].auth-tab--active') || container.querySelector('[data-tab].tabs__item--active') || tabs[0];
+    if (defaultTab) {
+      defaultTab.click();
+    }
   });
 }
 
@@ -359,6 +393,83 @@ function performSearch(query) {
 }
 
 /**
+ * Password strength
+ */
+function initPasswordStrength() {
+  const strengthInputs = document.querySelectorAll('[data-strength-target]');
+
+  strengthInputs.forEach(input => {
+    const barId = input.getAttribute('data-strength-target');
+    const bar = document.getElementById(barId);
+    if (!bar) return;
+
+    input.addEventListener('input', () => {
+      const value = input.value;
+      let strength = 0;
+
+      if (value.length >= 8) strength += 25;
+      if (/[a-z]/.test(value)) strength += 25;
+      if (/[A-Z]/.test(value)) strength += 25;
+      if (/[0-9]/.test(value)) strength += 25;
+
+      bar.style.width = `${strength}%`;
+
+      if (strength <= 25) {
+        bar.style.background = 'var(--color-error)';
+      } else if (strength <= 50) {
+        bar.style.background = 'var(--color-warning)';
+      } else if (strength <= 75) {
+        bar.style.background = 'var(--color-primary)';
+      } else {
+        bar.style.background = 'var(--color-success)';
+      }
+    });
+  });
+}
+
+/**
+ * Phone mask
+ */
+function initPhoneMasks() {
+  const phoneInputs = document.querySelectorAll('[data-phone-mask="ru"]');
+
+  phoneInputs.forEach(input => {
+    input.addEventListener('input', (e) => {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.startsWith('7')) {
+        value = value.substring(1);
+      }
+
+      let formatted = '+7 ';
+      if (value.length > 0) {
+        formatted += `(${value.substring(0, 3)}`;
+      }
+      if (value.length >= 4) {
+        formatted += `) ${value.substring(3, 6)}`;
+      }
+      if (value.length >= 7) {
+        formatted += `-${value.substring(6, 8)}`;
+      }
+      if (value.length >= 9) {
+        formatted += `-${value.substring(8, 10)}`;
+      }
+
+      e.target.value = formatted.trim();
+    });
+  });
+}
+
+/**
+ * Auth helpers
+ */
+function initAuth() {
+  const firstInput = document.querySelector('.auth-card input');
+  if (firstInput) {
+    firstInput.focus();
+  }
+}
+
+/**
  * Утилиты
  */
 
@@ -387,5 +498,9 @@ window.App = {
   closeModal,
   validateForm,
   formatDate,
-  debounce
+  debounce,
+  initForms,
+  initFavorites,
+  initSearch,
+  initAuth
 };

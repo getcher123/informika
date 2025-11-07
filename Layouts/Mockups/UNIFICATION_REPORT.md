@@ -7,12 +7,12 @@
 ## Выполненные работы
 
 ### Обновление от 08.11.2025
-- Переработаны все страницы авторизации: добавлены уровни `.auth-main → .auth-container → .auth-card` и вспомогательные блоки `.auth-card__header`/`__body`.
-- Обновлены кнопки сброса фильтров — новый модификатор `.btn--reset`, элементы `.btn__icon`, `.btn__text` и единая разметка на `requests.html`, `my-requests.html`, `my-applications.html`.
+- Переработаны все страницы авторизации: добавлены уровни `.auth-main → .auth-container → .auth-card`, вспомогательные блоки `.auth-card__header`/`__body` и вынос логики в `auth.js`.
+- Обновлены кнопки сброса фильтров и добавлены utility-классы (`.btn--reset`, `.btn__icon`, `.btn__text`, `.btn--block`, `.btn--spaced`, `.page-card--highlight`) — теперь inline-стили не используются.
 - Исправлена структура выбора роли в `register-step2.html` (`.role-selection`, `.role-option__content`) и добавлены стили `.radio-label` для всех радиокнопок.
-- Шапки страниц входа/регистрации теперь используют стандартный header (логотип ведет на `index.html`, кнопка пользователя — `.header__user-btn`).
-- Удалено дублирование классов `body` на `profile.html`.
-- Карточки `my-requests.html` используют базовый класс `.request-card`, но внутреннее расположение (статус-индикатор, кнопка избранного, футер) повторяет карточки `request-detail.html`.
+- Хлебные крошки на детальных страницах переведены на семантическую структуру `nav > ol` с классами `.breadcrumbs__list`, `.breadcrumbs__item`, `.breadcrumbs__current`.
+- Добавлены новые страницы `team-requests.html` и `stake-holder-dashboard.html`, подключены соответствующие CSS-файлы и ссылки на `index.html`.
+- Inline-скрипты вынесены в `vendor.js`, `app.js`, `auth.js`, `requests.js`, `idea.js`, `forms.js`; формы получают маску телефона, проверку силы пароля и предсозданные блоки ошибок (`.form-error--hidden`).
 
 ### 1. ✅ Унификация верхнего меню (Header)
 
@@ -219,13 +219,13 @@
 | UI Kit | 1 (новая) | - |
 
 **Всего:**
-- Обновлено страниц: 10
-- Создано новых страниц: 1 (ui-kit.html)
-- Добавлено CSS классов: 19
+- Обновлено страниц: 12
+- Создано новых страниц: 3 (ui-kit.html, team-requests.html, stake-holder-dashboard.html)
+- Добавлено CSS классов: 30+
 - Создано документации: 3 файла
-- Создано скриптов: 2
+- Создано скриптов: 5
 
-**Новые классы 08.11.2025:** `.btn--reset`, `.btn__icon`, `.btn__text`, `.auth-main`, `.auth-container`, `.auth-container--wide`, `.auth-card`, `.auth-card__header`, `.auth-card__body`, `.auth-card__footer`, `.radio-label`.
+**Новые классы 08.11.2025:** `.btn--reset`, `.btn__icon`, `.btn__text`, `.btn--block`, `.btn--spaced`, `.auth-main`, `.auth-container`, `.auth-container--wide`, `.auth-card`, `.auth-card__header`, `.auth-card__body`, `.auth-card__footer`, `.radio-label`, `.breadcrumbs__list`, `.breadcrumbs__item`, `.breadcrumbs__current`, `.color-swatch--*`, `.ui-kit__container`, `.ui-kit__title`, `.ui-kit-grid--auto`, `.ui-kit-list`, `.ui-kit-description`, `.form-error--hidden`, `.team-card`, `.dashboard-card`.
 
 ---
 

@@ -31,11 +31,15 @@
       color: var(--color-text-primary);
     }
     
-    .ui-kit-grid {
-      display: grid;
-      gap: var(--spacing-lg);
-      margin-bottom: var(--spacing-lg);
-    }
+  .ui-kit-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .ui-kit-grid--auto {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
     
     .ui-kit-example {
       padding: var(--spacing-lg);
@@ -94,9 +98,50 @@
       align-items: center;
     }
     
-    .typography-example {
-      margin-bottom: var(--spacing-lg);
-    }
+  .typography-example {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .ui-kit__container {
+    padding-top: var(--spacing-3xl);
+    padding-bottom: var(--spacing-3xl);
+  }
+
+  .ui-kit__title {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-2xl);
+    text-align: center;
+  }
+
+  .color-swatch--primary .color-swatch__color { background: #00A8CC; }
+  .color-swatch--secondary .color-swatch__color { background: #9B7EDE; }
+  .color-swatch--accent .color-swatch__color { background: #00D4AA; }
+  .color-swatch--warning .color-swatch__color { background: #FFB800; }
+  .color-swatch--error .color-swatch__color { background: #FF4D4F; }
+  .color-swatch--success .color-swatch__color { background: #00D4AA; }
+  .color-swatch--gradient-main .color-swatch__color { background: linear-gradient(90deg, #9B7EDE 0%, #00A8CC 100%); }
+  .color-swatch--gradient-alt .color-swatch__color { background: linear-gradient(135deg, #00A8CC 0%, #8B5CF6 100%); }
+
+  .ui-kit-text--sm {
+    font-size: var(--font-size-sm);
+  }
+
+  .ui-kit-text--xs {
+    font-size: var(--font-size-xs);
+  }
+
+  .ui-kit-list {
+    list-style: disc;
+    margin-left: var(--spacing-xl);
+  }
+
+  .ui-kit-list--compact {
+    margin-top: 0.5rem;
+  }
+
+  .ui-kit-description {
+    margin-bottom: 1.5rem;
+  }
   </style>
 </head>
 <body>
@@ -137,8 +182,8 @@
 
     <!-- Main Content -->
     <main class="main layout__main">
-      <div class="container" style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);">
-        <h1 style="font-size: var(--font-size-4xl); margin-bottom: var(--spacing-2xl); text-align: center;">
+      <div class="container ui-kit__container">
+        <h1 class="ui-kit__title">
           UI Kit - Инноватика Мособлгаз
         </h1>
 
@@ -148,48 +193,48 @@
           
           <h3 class="ui-kit-subtitle">Основные цвета</h3>
           <div class="color-palette">
-            <div class="color-swatch">
-              <div class="color-swatch__color" style="background: #00A8CC;"></div>
+            <div class="color-swatch color-swatch--primary">
+              <div class="color-swatch__color"></div>
               <div class="color-swatch__info">
                 <div class="color-swatch__name">Primary</div>
                 <div class="color-swatch__value">#00A8CC</div>
               </div>
             </div>
             
-            <div class="color-swatch">
-              <div class="color-swatch__color" style="background: #9B7EDE;"></div>
+            <div class="color-swatch color-swatch--secondary">
+              <div class="color-swatch__color"></div>
               <div class="color-swatch__info">
                 <div class="color-swatch__name">Secondary</div>
                 <div class="color-swatch__value">#9B7EDE</div>
               </div>
             </div>
             
-            <div class="color-swatch">
-              <div class="color-swatch__color" style="background: #00D4AA;"></div>
+            <div class="color-swatch color-swatch--accent">
+              <div class="color-swatch__color"></div>
               <div class="color-swatch__info">
                 <div class="color-swatch__name">Accent</div>
                 <div class="color-swatch__value">#00D4AA</div>
               </div>
             </div>
             
-            <div class="color-swatch">
-              <div class="color-swatch__color" style="background: #FFB800;"></div>
+            <div class="color-swatch color-swatch--warning">
+              <div class="color-swatch__color"></div>
               <div class="color-swatch__info">
                 <div class="color-swatch__name">Warning</div>
                 <div class="color-swatch__value">#FFB800</div>
               </div>
             </div>
             
-            <div class="color-swatch">
-              <div class="color-swatch__color" style="background: #FF4D4F;"></div>
+            <div class="color-swatch color-swatch--error">
+              <div class="color-swatch__color"></div>
               <div class="color-swatch__info">
                 <div class="color-swatch__name">Error</div>
                 <div class="color-swatch__value">#FF4D4F</div>
               </div>
             </div>
             
-            <div class="color-swatch">
-              <div class="color-swatch__color" style="background: #00D4AA;"></div>
+            <div class="color-swatch color-swatch--success">
+              <div class="color-swatch__color"></div>
               <div class="color-swatch__info">
                 <div class="color-swatch__name">Success</div>
                 <div class="color-swatch__value">#00D4AA</div>
@@ -199,16 +244,16 @@
 
           <h3 class="ui-kit-subtitle">Градиенты</h3>
           <div class="color-palette">
-            <div class="color-swatch">
-              <div class="color-swatch__color" style="background: linear-gradient(90deg, #9B7EDE 0%, #00A8CC 100%);"></div>
+            <div class="color-swatch color-swatch--gradient-main">
+              <div class="color-swatch__color"></div>
               <div class="color-swatch__info">
                 <div class="color-swatch__name">Button Gradient</div>
                 <div class="color-swatch__value">90deg, #9B7EDE → #00A8CC</div>
               </div>
             </div>
             
-            <div class="color-swatch">
-              <div class="color-swatch__color" style="background: linear-gradient(135deg, #00A8CC 0%, #8B5CF6 100%);"></div>
+            <div class="color-swatch color-swatch--gradient-alt">
+              <div class="color-swatch__color"></div>
               <div class="color-swatch__info">
                 <div class="color-swatch__name">Background Gradient</div>
                 <div class="color-swatch__value">135deg, #00A8CC → #8B5CF6</div>
@@ -229,8 +274,8 @@
             <h5>Заголовок H5 (18px / 1.125rem)</h5>
             <h6>Заголовок H6 (16px / 1rem)</h6>
             <p>Обычный текст (16px / 1rem) - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p style="font-size: var(--font-size-sm);">Маленький текст (14px / 0.875rem) - Lorem ipsum dolor sit amet.</p>
-            <p style="font-size: var(--font-size-xs);">Очень маленький текст (12px / 0.75rem) - Lorem ipsum.</p>
+            <p class="ui-kit-text--sm">Маленький текст (14px / 0.875rem) - Lorem ipsum dolor sit amet.</p>
+            <p class="ui-kit-text--xs">Очень маленький текст (12px / 0.75rem) - Lorem ipsum.</p>
           </div>
         </section>
 
@@ -272,7 +317,7 @@
         <section class="ui-kit-section">
           <h2 class="ui-kit-title">Формы</h2>
           
-          <div class="ui-kit-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+          <div class="ui-kit-grid ui-kit-grid--auto">
             <div class="ui-kit-example">
               <div class="form-group">
                 <label class="form-label">Текстовое поле</label>
@@ -375,7 +420,7 @@
         <section class="ui-kit-section">
           <h2 class="ui-kit-title">Карточки</h2>
           
-          <div class="ui-kit-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+          <div class="ui-kit-grid ui-kit-grid--auto">
             <div class="card">
               <div class="card__header">
                 <div>
@@ -444,7 +489,7 @@
           
           <div class="ui-kit-example">
             <p><strong>Общие классы:</strong></p>
-            <ul style="list-style: disc; margin-left: var(--spacing-xl);">
+            <ul class="ui-kit-list">
               <li><code>.header</code> - основной контейнер</li>
               <li><code>.header__container</code> - внутренний контейнер</li>
               <li><code>.header__logo</code> - логотип</li>
@@ -466,7 +511,7 @@
           
           <div class="ui-kit-example">
             <p><strong>Общие классы:</strong></p>
-            <ul style="list-style: disc; margin-left: var(--spacing-xl);">
+            <ul class="ui-kit-list">
               <li><code>.sidebar</code> - основной контейнер</li>
               <li><code>.sidebar-layout__sidebar</code> - позиционирование</li>
               <li><code>.sidebar__nav</code> - навигация</li>
@@ -486,7 +531,7 @@
           <div class="ui-kit-example">
             <p><strong>Класс для body:</strong> <code>body--gradient</code></p>
             <p>Применяется на всех страницах личного кабинета:</p>
-            <ul style="list-style: disc; margin-left: var(--spacing-xl);">
+            <ul class="ui-kit-list">
               <li>profile.html</li>
               <li>my-requests.html</li>
               <li>my-applications.html</li>
@@ -498,7 +543,7 @@
         <section class="ui-kit-section">
           <h2 class="ui-kit-title">Form Container (Центральный блок форм)</h2>
           
-          <p style="margin-bottom: 1.5rem;">Унифицированный контейнер для всех форм (регистрация, вход, подача заявок).</p>
+          <p class="ui-kit-description">Унифицированный контейнер для всех форм (регистрация, вход, подача заявок).</p>
           
           <h3 class="ui-kit-subtitle">Стандартный размер</h3>
           <div class="form-container">
@@ -515,7 +560,7 @@
                 <label class="form-label">Пароль</label>
                 <input type="password" class="form-input" placeholder="••••••••">
               </div>
-              <button class="btn btn--primary" style="width: 100%;">Войти</button>
+              <button class="btn btn--primary btn--block">Войти</button>
             </div>
             <div class="form-container__footer">
               <p>Нет аккаунта? <a href="#">Зарегистрироваться</a></p>
@@ -557,7 +602,7 @@
           <h3 class="ui-kit-subtitle">Использование на страницах</h3>
           <div class="code-example">
             <strong>Страницы с form-container:</strong>
-            <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+            <ul class="ui-kit-list ui-kit-list--compact">
               <li>login.html - форма входа/регистрации</li>
               <li>register-step1.html - регистрация (шаг 1)</li>
               <li>register-step2.html - регистрация (шаг 2)</li>
@@ -570,6 +615,7 @@
     </main>
   </div>
 
+  <script src="./assets/js/vendor.js"></script>
   <script src="./assets/js/app.js"></script>
 </body>
 </html>

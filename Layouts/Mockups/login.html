@@ -49,17 +49,17 @@
     <main class="main auth-main layout__main">
       <div class="container">
         <div class="auth-container">
-          <div class="auth-card">
+          <div class="auth-card" data-tabs="auth">
             <div class="auth-card__header">
               <div class="auth-tabs">
-                <button class="auth-tab auth-tab--active" data-tab="login">ВОЙТИ</button>
-                <button class="auth-tab" data-tab="register">РЕГИСТРАЦИЯ</button>
+                <button class="auth-tab auth-tab--active" type="button" data-tab="login" aria-controls="auth-login-panel">ВОЙТИ</button>
+                <button class="auth-tab" type="button" data-tab="register" aria-controls="auth-register-panel">РЕГИСТРАЦИЯ</button>
               </div>
             </div>
 
             <div class="auth-card__body">
               <!-- Login Form -->
-              <div class="auth-form" data-tab-panel="login">
+              <div class="auth-form is-active" data-tab-panel="login" id="auth-login-panel">
                 <form data-validate>
                   <div class="form-group">
                     <label class="form-label" for="login-email">E-mail или телефон</label>
@@ -87,12 +87,12 @@
                     <a href="#" class="link-secondary">Восстановить пароль</a>
                   </div>
 
-                  <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">Войти</button>
+                  <button type="submit" class="btn btn--primary btn--lg btn--block">Войти</button>
                 </form>
               </div>
 
               <!-- Register Form -->
-              <div class="auth-form" data-tab-panel="register" style="display: none;">
+              <div class="auth-form" data-tab-panel="register" id="auth-register-panel" hidden>
                 <p class="auth-description">
                   Наша платформа открывает уникальные возможности для различных категорий пользователей. 
                   <strong>Сотрудники Мособлгаз</strong> могут развивать свои профессиональные компетенции и участвовать в корпоративных инициативах. 
@@ -101,7 +101,7 @@
                   <strong>Бизнес-партнеры</strong> могут расширить свою сеть профессиональных контактов, а <strong>гости</strong> — знакомиться с возможностями платформы.
                 </p>
                 
-                <a href="./register-step1.html" class="btn btn--primary btn--lg" style="width: 100%;">Продолжить</a>
+                <a href="./register-step1.html" class="btn btn--primary btn--lg btn--block">Продолжить</a>
               </div>
             </div>
           </div>
@@ -110,22 +110,8 @@
     </main>
   </div>
 
+  <script src="./assets/js/vendor.js"></script>
   <script src="./assets/js/app.js"></script>
-  <script>
-    // Переключение табов
-    document.querySelectorAll('.auth-tab').forEach(tab => {
-      tab.addEventListener('click', () => {
-        const targetTab = tab.getAttribute('data-tab');
-        
-        // Деактивировать все табы
-        document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('auth-tab--active'));
-        document.querySelectorAll('[data-tab-panel]').forEach(p => p.style.display = 'none');
-        
-        // Активировать выбранный таб
-        tab.classList.add('auth-tab--active');
-        document.querySelector(`[data-tab-panel="${targetTab}"]`).style.display = 'block';
-      });
-    });
-  </script>
+  <script src="./assets/js/auth.js"></script>
 </body>
 </html>

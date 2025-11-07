@@ -54,6 +54,10 @@
       margin-bottom: var(--spacing-xl);
     }
 
+    .section--centered {
+      text-align: center;
+    }
+
     .section-title {
       font-size: var(--font-size-2xl);
       font-weight: var(--font-weight-bold);
@@ -103,6 +107,26 @@
       color: var(--color-primary);
       font-family: monospace;
       margin-top: var(--spacing-xs);
+    }
+
+    .page-card--highlight {
+      border: 3px solid var(--color-primary);
+    }
+
+    .text-secondary {
+      color: var(--color-text-secondary);
+    }
+
+    .text-muted {
+      color: var(--color-text-muted);
+    }
+
+    .section__note {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .section__meta {
+      font-size: var(--font-size-sm);
     }
 
     @media (max-width: 767px) {
@@ -212,11 +236,28 @@
         </div>
       </div>
 
+      <div class="section">
+        <h2 class="section-title">📊 Дополнительные страницы</h2>
+        <div class="page-grid">
+          <a href="./team-requests.html" class="page-card">
+            <div class="page-card__title">Командные запросы</div>
+            <div class="page-card__desc">Карточки для подбора участников проектных команд</div>
+            <div class="page-card__file">team-requests.html</div>
+          </a>
+
+          <a href="./stake-holder-dashboard.html" class="page-card">
+            <div class="page-card__title">Дашборд стейкхолдера</div>
+            <div class="page-card__desc">Сводные показатели и последние действия по запросам</div>
+            <div class="page-card__file">stake-holder-dashboard.html</div>
+          </a>
+        </div>
+      </div>
+
       <!-- UI Kit -->
       <div class="section">
         <h2 class="section-title">🎨 UI Kit</h2>
         <div class="page-grid">
-          <a href="./ui-kit.html" class="page-card" style="border: 3px solid var(--color-primary);">
+          <a href="./ui-kit.html" class="page-card page-card--highlight">
             <div class="page-card__title">UI Kit - Все компоненты</div>
             <div class="page-card__desc">Демонстрация всех UI компонентов, цветов, типографики и документация по классам</div>
             <div class="page-card__file">ui-kit.html</div>
@@ -225,15 +266,17 @@
       </div>
 
       <!-- Footer -->
-      <div class="section" style="text-align: center;">
-        <p style="color: var(--color-text-secondary); margin-bottom: var(--spacing-sm);">
+      <div class="section section--centered">
+        <p class="text-secondary section__note">
           <strong>Технологии:</strong> HTML5, CSS3 (Variables, Flexbox, Grid), Vanilla JavaScript ES6+
         </p>
-        <p style="color: var(--color-text-muted); font-size: var(--font-size-sm);">
+        <p class="text-muted section__meta">
           Всего страниц: 10 | Готово к адаптации под Bitrix CMS | Версия 1.0
         </p>
       </div>
     </div>
   </div>
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
 </body>
 </html>

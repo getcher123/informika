@@ -51,8 +51,18 @@
     <main class="main layout__main">
       <div class="container">
         <!-- Breadcrumbs -->
-        <nav class="breadcrumbs">
-          <a href="./request-detail.html" class="breadcrumbs__link">← Назад</a>
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <ol class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a href="./requests.html" class="breadcrumbs__link">Банк инноваций</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <a href="./request-detail.html" class="breadcrumbs__link">Замена профессий</a>
+            </li>
+            <li class="breadcrumbs__item">
+              <span class="breadcrumbs__current" aria-current="page">Система предиктивного кадрового планирования «HR-Foresight»</span>
+            </li>
+          </ol>
         </nav>
 
         <div class="detail-layout">
@@ -256,8 +266,8 @@
 
             <!-- Actions Card -->
             <div class="sidebar-card">
-              <button class="btn btn--secondary btn--lg" style="width: 100%; margin-bottom: var(--spacing-md);">Одобрить в Проектный комитет</button>
-              <button class="btn btn--ghost btn--lg" style="width: 100%;">Рассмотреть на научном совете</button>
+              <button class="btn btn--secondary btn--lg btn--block btn--spaced">Одобрить в Проектный комитет</button>
+              <button class="btn btn--ghost btn--lg btn--block">Рассмотреть на научном совете</button>
             </div>
 
             <!-- Info Card -->
@@ -302,53 +312,8 @@
     </main>
   </div>
 
+  <script src="./assets/js/vendor.js"></script>
   <script src="./assets/js/app.js"></script>
-  <script>
-    // Star rating functionality
-    document.querySelectorAll('.star-btn').forEach((btn, index) => {
-      btn.addEventListener('click', function() {
-        const value = parseInt(this.dataset.value);
-        const container = this.closest('.star-rating');
-        container.dataset.rating = value;
-        
-        // Update all stars
-        container.querySelectorAll('.star-btn').forEach((star, i) => {
-          const starPath = star.querySelector('path');
-          if (i < value) {
-            starPath.setAttribute('fill', '#00A8CC');
-          } else {
-            starPath.setAttribute('fill', 'none');
-          }
-        });
-      });
-      
-      // Hover effect
-      btn.addEventListener('mouseenter', function() {
-        const value = parseInt(this.dataset.value);
-        const container = this.closest('.star-rating');
-        
-        container.querySelectorAll('.star-btn').forEach((star, i) => {
-          const starPath = star.querySelector('path');
-          if (i < value) {
-            starPath.setAttribute('fill', '#00D4AA');
-          }
-        });
-      });
-      
-      btn.addEventListener('mouseleave', function() {
-        const container = this.closest('.star-rating');
-        const currentRating = parseInt(container.dataset.rating);
-        
-        container.querySelectorAll('.star-btn').forEach((star, i) => {
-          const starPath = star.querySelector('path');
-          if (i < currentRating) {
-            starPath.setAttribute('fill', '#00A8CC');
-          } else {
-            starPath.setAttribute('fill', 'none');
-          }
-        });
-      });
-    });
-  </script>
+  <script src="./assets/js/idea.js"></script>
 </body>
 </html>

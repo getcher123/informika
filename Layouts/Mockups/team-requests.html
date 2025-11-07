@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Командные запросы | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/team-requests.css">
+</head>
+<body>
+  <div class="layout">
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/826-1724.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+            <div class="header__logo-text">
+              ИННОВАТИКА<br>
+              <strong>МОСОБЛГАЗ</strong>
+            </div>
+          </a>
+
+          <nav class="header__nav" aria-label="Основная навигация">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+
+          <div class="header__actions">
+            <a href="./login.html" class="btn btn--ghost header__user-btn">
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="header__user-text">ВОЙТИ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main layout__main">
+      <div class="container">
+        <div class="team-requests__intro">
+          <h1>Командные запросы</h1>
+          <p>Список активных запросов на формирование проектных команд. Используйте карточки ниже, чтобы быстро подобрать специалистов или присоединиться к инициативе.</p>
+        </div>
+
+        <div class="team-requests__grid">
+          <article class="team-card">
+            <div class="team-card__meta">
+              <span class="badge badge--primary">IT-команда</span>
+              <span class="status-indicator status-indicator--pending">
+                <span class="status-indicator__dot"></span>
+                Подбор участников
+              </span>
+            </div>
+            <h2 class="team-card__title">Подготовка MVP для HR-платформы</h2>
+            <p class="team-card__desc">Нужны аналитик, backend разработчик и product designer для пилота автоматизации подбора персонала.</p>
+            <div class="request-card__meta">
+              <div class="request-card__author">
+                <div class="avatar avatar--sm">HR</div>
+                <div>
+                  <div class="request-card__author-label">Куратор</div>
+                  <div class="request-card__author-name">Андрей К.</div>
+                </div>
+              </div>
+              <a href="./request-detail.html" class="btn btn--primary btn--sm">Подробнее</a>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <div class="team-card__meta">
+              <span class="badge badge--warning">Операции</span>
+              <span class="status-indicator status-indicator--approved">
+                <span class="status-indicator__dot"></span>
+                Команда собрана на 70%
+              </span>
+            </div>
+            <h2 class="team-card__title">Сопровождение внедрения AR-обучения</h2>
+            <p class="team-card__desc">Требуются наставники из филиалов для пилотного обучения линейного персонала с использованием AR.</p>
+            <div class="request-card__meta">
+              <div class="request-card__author">
+                <div class="avatar avatar--sm">OP</div>
+                <div>
+                  <div class="request-card__author-label">Стейкхолдер</div>
+                  <div class="request-card__author-name">Светлана П.</div>
+                </div>
+              </div>
+              <a href="./request-detail.html" class="btn btn--primary btn--sm">Подробнее</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/requests.js"></script>
+</body>
+</html>
