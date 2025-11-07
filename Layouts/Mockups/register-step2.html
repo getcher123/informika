@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация - Шаг 2 | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/auth.css">
+</head>
+<body class="auth-page">
+  <div class="layout">
+    <!-- Header -->
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/826-1724.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+            <div class="header__logo-text">
+              ИННОВАТИКА<br>
+              <strong>МОСОБЛГАЗ</strong>
+            </div>
+          </a>
+
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+
+          <div class="header__actions">
+            <a href="./login.html" class="btn btn--ghost header__user-btn">
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="header__user-text">ВОЙТИ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main auth-main layout__main">
+      <div class="container">
+        <div class="auth-container auth-container--wide">
+          <div class="auth-card form-container form-container--large">
+            <div class="auth-card__header">
+              <!-- Tabs -->
+              <div class="auth-tabs">
+                <a href="./login.html" class="auth-tab">ВОЙТИ</a>
+                <a href="./register-step2.html" class="auth-tab auth-tab--active">РЕГИСТРАЦИЯ</a>
+              </div>
+
+              <!-- Step Indicator -->
+              <div class="step-indicator">Шаг 2 из 2</div>
+            </div>
+
+            <div class="auth-card__body">
+              <!-- Description -->
+              <div class="auth-description">
+                <p>Наша платформа открывает уникальные возможности для различных категорий пользователей. <strong>Сотрудники Мособлгаз</strong> могут развивать свои профессиональные компетенции и участвовать в корпоративных инициативах. <strong>Представители учебных заведений</strong> получают шанс находить талантливых студентов и делиться своей экспертизой. <strong>Студенты</strong> имеют возможность получать доступ к уникальным образовательным программам и стажировкам. <strong>Бизнес-партнёры</strong> могут расширить свою сеть профессиональных контактов, а гости — знакомиться с возможностями платформы.</p>
+              </div>
+
+              <!-- Registration Form Step 2 -->
+              <form class="auth-form" data-validate>
+                <!-- Role Selection -->
+                <div class="form-group">
+                  <label class="form-label form-label--required">Выберите свою роль</label>
+                  <div class="role-selection">
+                    <label class="role-option">
+                      <input type="radio" name="role" value="employee" checked>
+                      <div class="role-option__content">
+                        <div class="role-option__title">Работник АО «Мособлгаз»</div>
+                      </div>
+                    </label>
+                    <label class="role-option">
+                      <input type="radio" name="role" value="educator">
+                      <div class="role-option__content">
+                        <div class="role-option__title">Представитель учебного заведения</div>
+                      </div>
+                    </label>
+                    <label class="role-option">
+                      <input type="radio" name="role" value="business">
+                      <div class="role-option__content">
+                        <div class="role-option__title">Представитель бизнеса</div>
+                      </div>
+                    </label>
+                    <label class="role-option">
+                      <input type="radio" name="role" value="student">
+                      <div class="role-option__content">
+                        <div class="role-option__title">Студент</div>
+                      </div>
+                    </label>
+                    <label class="role-option">
+                      <input type="radio" name="role" value="guest">
+                      <div class="role-option__content">
+                        <div class="role-option__title">Гость</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="branch" class="form-label form-label--required">Филиал</label>
+                  <input 
+                    type="text" 
+                    id="branch" 
+                    name="branch" 
+                    class="form-input" 
+                    placeholder="Юго-Запад"
+                    required
+                    aria-required="true"
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="department" class="form-label form-label--required">Отдел</label>
+                  <input 
+                    type="text" 
+                    id="department" 
+                    name="department" 
+                    class="form-input" 
+                    placeholder="Отдел строительства"
+                    required
+                    aria-required="true"
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="position" class="form-label">Должность</label>
+                  <input 
+                    type="text" 
+                    id="position" 
+                    name="position" 
+                    class="form-input" 
+                    placeholder="Инженер"
+                  >
+                </div>
+
+                <!-- Mentor Option -->
+                <div class="form-group">
+                  <label class="form-label">Хочу стать ментором</label>
+                  <div class="radio-group">
+                    <label class="radio-label">
+                      <input type="radio" name="mentor" value="yes">
+                      <span>Да</span>
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="mentor" value="no" checked>
+                      <span>Нет</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Expert Option -->
+                <div class="form-group">
+                  <label class="form-label">Хочу стать экспертом</label>
+                  <div class="radio-group">
+                    <label class="radio-label">
+                      <input type="radio" name="expert" value="yes">
+                      <span>Да</span>
+                    </label>
+                    <label class="radio-label">
+                      <input type="radio" name="expert" value="no" checked>
+                      <span>Нет</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Info Message -->
+                <div class="info-message">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2"/>
+                    <path d="M10 6V10M10 14H10.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  <p>При регистрации в качестве эксперта или ментора ваша заявка будет направлена на рассмотрение экспертной комиссии, после чего вы получите уведомление о принятом решении в личном кабинете. Доступ ко всем функциям эксперта или ментора будет предоставлен только после подтверждения вашей кандидатуры.</p>
+                </div>
+
+                <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">Зарегистрироваться</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

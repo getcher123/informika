@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Профиль | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/profile.css">
+</head>
+<body class="profile-page body--gradient">
+  <div class="layout">    <!-- Header -->
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <!-- Logo -->
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/826-1724.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+            <div class="header__logo-text">
+              ИННОВАТИКА<br>
+              <strong>МОСОБЛГАЗ</strong>
+            </div>
+          </a>
+
+          <!-- Navigation -->
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+
+          <!-- Actions -->
+          <div class="header__actions">
+            <a href="./profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
+              <span class="header__user-initials">ОЧ</span>
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main main--with-gradient layout__main">
+      <div class="container">
+        <div class="sidebar-layout">          <!-- Sidebar -->
+          <aside class="sidebar sidebar-layout__sidebar">
+            <nav class="sidebar__nav">
+              <a href="./profile.html" class="sidebar__link sidebar__link--active">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                  <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Профиль</span>
+              </a>
+              <a href="./my-requests.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M9 9H15M9 13H15M9 17H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Заявки</span>
+                <span class="sidebar__badge">2</span>
+              </a>
+              <a href="#" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 14L12 3M12 3L8 7M12 3L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 17V19C4 20.1046 4.89543 21 6 21H18C19.1046 21 20 20.1046 20 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Обучение</span>
+                <span class="sidebar__badge sidebar__badge--warning">10</span>
+              </a>
+              <a href="#" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Уведомления</span>
+                <span class="sidebar__badge sidebar__badge--error">11</span>
+              </a>
+              <a href="#" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 21L10.55 19.7C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 19.7L12 21Z" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span class="sidebar__text">Избранное</span>
+                <span class="sidebar__badge sidebar__badge--error">12</span>
+              </a>
+              <a href="#" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M9 9H15M9 13H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Поддержка</span>
+                <span class="sidebar__badge sidebar__badge--success">13</span>
+              </a>
+            </nav>
+          </aside>
+
+          <!-- Content -->
+          <div class="content-card sidebar-layout__content">
+            <!-- Profile Header -->
+            <div class="profile-header">
+              <div class="profile-avatar-section">
+                <div class="profile-avatar">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="64" height="64" rx="32" fill="#E8EDF2"/>
+                    <path d="M32 28C35.3137 28 38 25.3137 38 22C38 18.6863 35.3137 16 32 16C28.6863 16 26 18.6863 26 22C26 25.3137 28.6863 28 32 28Z" fill="#5A7184"/>
+                    <path d="M20 48C20 40.268 26.268 34 34 34H30C37.732 34 44 40.268 44 48H20Z" fill="#5A7184"/>
+                  </svg>
+                  <button class="profile-avatar-upload">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </button>
+                </div>
+                <button class="btn btn--ghost btn--icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="profile-info">
+                <h1 class="profile-name">Чижикова<br>Ольга Владимировна</h1>
+                <p class="profile-company">АО "Мособлгаз"</p>
+                <p class="profile-position">Аппарат управления, Начальник Управления по работе с персоналом</p>
+              </div>
+            </div>
+
+            <!-- Profile Form -->
+            <form class="profile-form" data-validate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="birthdate">Дата рождения</label>
+                  <input 
+                    type="text" 
+                    class="form-input" 
+                    id="birthdate" 
+                    value="31 декабря"
+                    placeholder="31 декабря"
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="phone">Телефон</label>
+                  <input 
+                    type="tel" 
+                    class="form-input" 
+                    id="phone" 
+                    value="+7 (999) 000 00-00"
+                    placeholder="+7 (999) 000 00-00"
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="email">e-mail</label>
+                  <input 
+                    type="email" 
+                    class="form-input" 
+                    id="email" 
+                    value="info@mail.ru"
+                    placeholder="info@mail.ru"
+                  >
+                </div>
+              </div>
+
+              <!-- Password Change -->
+              <div class="password-section">
+                <h3 class="section-title">Смена пароля</h3>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="current-password">Введите текущий пароль</label>
+                    <input 
+                      type="password" 
+                      class="form-input" 
+                      id="current-password" 
+                      placeholder="••••••••"
+                    >
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="new-password">Введите новый пароль</label>
+                    <input 
+                      type="password" 
+                      class="form-input" 
+                      id="new-password" 
+                      placeholder="••••••••"
+                    >
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="confirm-password">Повторите новый пароль</label>
+                    <input 
+                      type="password" 
+                      class="form-input" 
+                      id="confirm-password" 
+                      placeholder="••••••••"
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn--secondary btn--lg">Сохранить</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

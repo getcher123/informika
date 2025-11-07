@@ -1,0 +1,145 @@
+/* ===================================
+   PROFILE.CSS - Страница профиля
+   =================================== */
+
+.profile-page {
+  background: var(--gradient-bg);
+}
+
+.profile-page .main--with-gradient {
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-3xl);
+}
+
+/* Profile Header */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-2xl);
+  padding-bottom: var(--spacing-2xl);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+@media (min-width: 768px) {
+  .profile-header {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.profile-avatar-section {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+}
+
+.profile-avatar {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.profile-avatar svg {
+  width: 100%;
+  height: 100%;
+}
+
+.profile-avatar-upload {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary);
+  color: var(--color-text-white);
+  border-radius: 50%;
+  border: 3px solid var(--color-bg-white);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.profile-avatar-upload:hover {
+  background: var(--color-primary-dark);
+  transform: scale(1.1);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+  line-height: var(--line-height-tight);
+}
+
+.profile-company {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.profile-position {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-normal);
+}
+
+/* Profile Form */
+.profile-form {
+  max-width: 100%;
+}
+
+.form-row {
+  display: grid;
+  gap: var(--spacing-lg);
+  grid-template-columns: 1fr;
+  margin-bottom: var(--spacing-xl);
+}
+
+@media (min-width: 768px) {
+  .form-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.password-section {
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-2xl);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.section-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-lg);
+}
+
+.profile-form .form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--color-border-light);
+}
+
+@media (max-width: 767px) {
+  .profile-form .form-actions {
+    justify-content: stretch;
+  }
+
+  .profile-form .form-actions .btn {
+    width: 100%;
+  }
+}

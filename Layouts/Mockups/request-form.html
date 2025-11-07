@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Подача запроса на инновацию | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/request-form.css">
+</head>
+<body>
+  <div class="layout">    <!-- Header -->
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <!-- Logo -->
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/826-1724.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+            <div class="header__logo-text">
+              ИННОВАТИКА<br>
+              <strong>МОСОБЛГАЗ</strong>
+            </div>
+          </a>
+
+          <!-- Navigation -->
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+
+          <!-- Actions -->
+          <div class="header__actions">
+            <a href="./login.html" class="btn btn--ghost header__user-btn">
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="header__user-text">ВОЙТИ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main layout__main">
+      <div class="container">
+        <a href="./requests.html" class="back-link">← Назад</a>
+        <div class="form-container form-container--large">
+          <div class="form-container__header">
+            <h1 class="form-container__title">Эта форма предназначена для подачи запроса на инновацию</h1>
+            <p class="form-container__subtitle">
+              Запрос на инновацию - сбор идей от участников Акселлератора для решения вашей задачи в АО "Мособлгаз"
+            </p>
+          </div>
+
+          <form class="request-form form-container__body" data-validate>
+            <!-- Направление -->
+            <div class="form-group">
+              <label class="form-label form-label--required" for="direction">Выберете направление</label>
+              <select class="form-select" id="direction" required>
+                <option value="">Выбор направления</option>
+                <option value="it">IT-технологии</option>
+                <option value="construction">Строительство</option>
+                <option value="exploitation">Эксплуатация</option>
+                <option value="management">Управление</option>
+              </select>
+            </div>
+
+            <!-- Название запроса -->
+            <div class="form-group">
+              <label class="form-label form-label--required" for="title">Название запроса</label>
+              <input 
+                type="text" 
+                class="form-input" 
+                id="title" 
+                placeholder="Введите название запроса"
+                required
+              >
+            </div>
+
+            <!-- Описание запроса -->
+            <div class="form-group">
+              <label class="form-label form-label--required" for="description">Описание запроса</label>
+              <span class="form-hint">Напишите основные задачи, которые решает ваш запрос</span>
+              <textarea 
+                class="form-textarea" 
+                id="description" 
+                placeholder="Опишите запрос подробно..."
+                required
+              ></textarea>
+            </div>
+
+            <!-- Основные этапы реализации -->
+            <div class="form-group">
+              <label class="form-label form-label--required" for="stages">Основные этапы реализации идеи</label>
+              <span class="form-hint">Напишите основные этапы, которые необходимы для реализации вашего запроса</span>
+              <textarea 
+                class="form-textarea" 
+                id="stages" 
+                placeholder="Опишите этапы реализации..."
+                required
+              ></textarea>
+            </div>
+
+            <!-- Ожидаемый результат -->
+            <div class="form-group">
+              <label class="form-label form-label--required" for="result">Ожидаемый результат</label>
+              <span class="form-hint">Напишите ожидаемый результат от реализации вашего запроса</span>
+              <textarea 
+                class="form-textarea" 
+                id="result" 
+                placeholder="Опишите ожидаемый результат..."
+                required
+              ></textarea>
+            </div>
+
+            <!-- Есть ли у вас наработки -->
+            <div class="form-group">
+              <label class="form-label form-label--required">Есть ли у вас наработки по данному запросу?</label>
+              <div class="radio-group">
+                <label class="form-check">
+                  <input type="radio" name="has_work" value="yes" class="form-check__input">
+                  <span class="form-check__label">Да</span>
+                </label>
+                <label class="form-check">
+                  <input type="radio" name="has_work" value="no" class="form-check__input" checked>
+                  <span class="form-check__label">Нет</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Файлы к запросу -->
+            <div class="form-group">
+              <label class="form-label">Файлы к запросу</label>
+              <span class="form-hint">Ниже вы можете вложить файлы, которые помогут лучше понять ваш запрос на инновацию</span>
+              <div class="file-upload">
+                <input type="file" id="files" class="file-upload__input" multiple>
+                <label for="files" class="file-upload__label">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  <span>Выберите файлы или перетащите их сюда</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="form-actions">
+              <button type="button" class="btn btn--secondary btn--lg">Сохранить черновик</button>
+              <button type="submit" class="btn btn--primary btn--lg">Опубликовать</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

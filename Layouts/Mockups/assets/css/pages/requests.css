@@ -1,0 +1,191 @@
+/* ===================================
+   REQUESTS.CSS - Страница банка инноваций
+   =================================== */
+
+/* Hero Section */
+.hero {
+  display: grid;
+  gap: var(--spacing-2xl);
+  margin-bottom: var(--spacing-3xl);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr 400px;
+    align-items: start;
+  }
+}
+
+.hero__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-lg);
+  line-height: var(--line-height-tight);
+}
+
+.hero__description {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: 0;
+}
+
+/* CTA Card */
+.cta-card {
+  background: linear-gradient(135deg, rgba(247, 249, 251, 0.8) 0%, rgba(232, 237, 242, 0.8) 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-light);
+}
+
+.cta-card__text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-lg);
+  line-height: var(--line-height-normal);
+}
+
+/* Filters Section */
+.filters-section {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.search {
+  margin-bottom: var(--spacing-lg);
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .filters {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+}
+
+.filters__row {
+  display: grid;
+  gap: var(--spacing-md);
+  grid-template-columns: 1fr;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .filters__row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.filters .form-group {
+  margin-bottom: 0;
+}
+
+/* Ideas Grid */
+.ideas-grid {
+  display: grid;
+  gap: var(--spacing-xl);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .ideas-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .ideas-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Idea Card */
+.idea-card {
+  background: var(--color-bg-white);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: 0 2px 8px rgba(0, 61, 92, 0.06);
+  transition: all var(--transition-base);
+  border: 1px solid rgba(217, 226, 236, 0.6);
+  display: flex;
+  flex-direction: column;
+}
+
+.idea-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 61, 92, 0.12);
+  transform: translateY(-2px);
+  border-color: var(--color-border);
+}
+
+.idea-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+}
+
+.idea-card__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-md);
+  line-height: var(--line-height-tight);
+}
+
+.idea-card__title a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.idea-card__title a:hover {
+  color: var(--color-primary);
+}
+
+.idea-card__description {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-lg);
+  flex: 1;
+}
+
+.idea-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .hero__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .hero__description {
+    font-size: var(--font-size-base);
+  }
+
+  .idea-card {
+    padding: var(--spacing-lg);
+  }
+
+  .idea-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .idea-card__footer .btn {
+    width: 100%;
+  }
+}

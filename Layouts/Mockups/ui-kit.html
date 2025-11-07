@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Kit | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <style>
+    .ui-kit-section {
+      margin-bottom: var(--spacing-3xl);
+      padding-bottom: var(--spacing-2xl);
+      border-bottom: 2px solid var(--color-border-light);
+    }
+    
+    .ui-kit-section:last-child {
+      border-bottom: none;
+    }
+    
+    .ui-kit-title {
+      font-size: var(--font-size-3xl);
+      margin-bottom: var(--spacing-xl);
+      color: var(--color-primary);
+    }
+    
+    .ui-kit-subtitle {
+      font-size: var(--font-size-xl);
+      margin-top: var(--spacing-xl);
+      margin-bottom: var(--spacing-md);
+      color: var(--color-text-primary);
+    }
+    
+    .ui-kit-grid {
+      display: grid;
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .ui-kit-example {
+      padding: var(--spacing-lg);
+      background: var(--color-bg-light);
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--color-border);
+    }
+    
+    .ui-kit-code {
+      background: var(--color-bg-dark);
+      color: var(--color-text-white);
+      padding: var(--spacing-md);
+      border-radius: var(--radius-md);
+      font-family: 'Courier New', monospace;
+      font-size: var(--font-size-sm);
+      overflow-x: auto;
+      margin-top: var(--spacing-md);
+    }
+    
+    .color-palette {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--spacing-md);
+    }
+    
+    .color-swatch {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .color-swatch__color {
+      height: 100px;
+    }
+    
+    .color-swatch__info {
+      padding: var(--spacing-md);
+      background: var(--color-bg-white);
+    }
+    
+    .color-swatch__name {
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .color-swatch__value {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-muted);
+      font-family: 'Courier New', monospace;
+    }
+    
+    .button-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+      align-items: center;
+    }
+    
+    .typography-example {
+      margin-bottom: var(--spacing-lg);
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <!-- Header -->
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/826-1724.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+            <div class="header__logo-text">
+              ИННОВАТИКА<br>
+              <strong>МОСОБЛГАЗ</strong>
+            </div>
+          </a>
+
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+
+          <div class="header__actions">
+            <a href="./login.html" class="btn btn--ghost header__user-btn">
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="header__user-text">ВОЙТИ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main layout__main">
+      <div class="container" style="padding-top: var(--spacing-3xl); padding-bottom: var(--spacing-3xl);">
+        <h1 style="font-size: var(--font-size-4xl); margin-bottom: var(--spacing-2xl); text-align: center;">
+          UI Kit - Инноватика Мособлгаз
+        </h1>
+
+        <!-- Цвета -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Цветовая палитра</h2>
+          
+          <h3 class="ui-kit-subtitle">Основные цвета</h3>
+          <div class="color-palette">
+            <div class="color-swatch">
+              <div class="color-swatch__color" style="background: #00A8CC;"></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Primary</div>
+                <div class="color-swatch__value">#00A8CC</div>
+              </div>
+            </div>
+            
+            <div class="color-swatch">
+              <div class="color-swatch__color" style="background: #9B7EDE;"></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Secondary</div>
+                <div class="color-swatch__value">#9B7EDE</div>
+              </div>
+            </div>
+            
+            <div class="color-swatch">
+              <div class="color-swatch__color" style="background: #00D4AA;"></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Accent</div>
+                <div class="color-swatch__value">#00D4AA</div>
+              </div>
+            </div>
+            
+            <div class="color-swatch">
+              <div class="color-swatch__color" style="background: #FFB800;"></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Warning</div>
+                <div class="color-swatch__value">#FFB800</div>
+              </div>
+            </div>
+            
+            <div class="color-swatch">
+              <div class="color-swatch__color" style="background: #FF4D4F;"></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Error</div>
+                <div class="color-swatch__value">#FF4D4F</div>
+              </div>
+            </div>
+            
+            <div class="color-swatch">
+              <div class="color-swatch__color" style="background: #00D4AA;"></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Success</div>
+                <div class="color-swatch__value">#00D4AA</div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="ui-kit-subtitle">Градиенты</h3>
+          <div class="color-palette">
+            <div class="color-swatch">
+              <div class="color-swatch__color" style="background: linear-gradient(90deg, #9B7EDE 0%, #00A8CC 100%);"></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Button Gradient</div>
+                <div class="color-swatch__value">90deg, #9B7EDE → #00A8CC</div>
+              </div>
+            </div>
+            
+            <div class="color-swatch">
+              <div class="color-swatch__color" style="background: linear-gradient(135deg, #00A8CC 0%, #8B5CF6 100%);"></div>
+              <div class="color-swatch__info">
+                <div class="color-swatch__name">Background Gradient</div>
+                <div class="color-swatch__value">135deg, #00A8CC → #8B5CF6</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Типографика -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Типографика</h2>
+          
+          <div class="typography-example">
+            <h1>Заголовок H1 (36px / 2.25rem)</h1>
+            <h2>Заголовок H2 (30px / 1.875rem)</h2>
+            <h3>Заголовок H3 (24px / 1.5rem)</h3>
+            <h4>Заголовок H4 (20px / 1.25rem)</h4>
+            <h5>Заголовок H5 (18px / 1.125rem)</h5>
+            <h6>Заголовок H6 (16px / 1rem)</h6>
+            <p>Обычный текст (16px / 1rem) - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p style="font-size: var(--font-size-sm);">Маленький текст (14px / 0.875rem) - Lorem ipsum dolor sit amet.</p>
+            <p style="font-size: var(--font-size-xs);">Очень маленький текст (12px / 0.75rem) - Lorem ipsum.</p>
+          </div>
+        </section>
+
+        <!-- Кнопки -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Кнопки</h2>
+          
+          <h3 class="ui-kit-subtitle">Основные варианты</h3>
+          <div class="button-grid">
+            <button class="btn btn--primary">Primary Button</button>
+            <button class="btn btn--secondary">Secondary Button</button>
+            <button class="btn btn--outline">Outline Button</button>
+            <button class="btn btn--ghost">Ghost Button</button>
+            <button class="btn btn--primary" disabled>Disabled Button</button>
+          </div>
+
+          <h3 class="ui-kit-subtitle">Размеры</h3>
+          <div class="button-grid">
+            <button class="btn btn--primary btn--sm">Small Button</button>
+            <button class="btn btn--primary">Default Button</button>
+            <button class="btn btn--primary btn--lg">Large Button</button>
+          </div>
+
+          <h3 class="ui-kit-subtitle">Специальные кнопки</h3>
+          <div class="button-grid">
+            <button class="btn btn--ghost filter-reset">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              Сбросить фильтры
+            </button>
+            
+            <button class="filter-pill">Фильтр</button>
+            <button class="filter-pill filter-pill--active">Активный фильтр</button>
+          </div>
+        </section>
+
+        <!-- Формы -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Формы</h2>
+          
+          <div class="ui-kit-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <div class="ui-kit-example">
+              <div class="form-group">
+                <label class="form-label">Текстовое поле</label>
+                <input type="text" class="form-input" placeholder="Введите текст">
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label form-label--required">Обязательное поле</label>
+                <input type="text" class="form-input" placeholder="Обязательное поле">
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Текстовая область</label>
+                <textarea class="form-textarea" placeholder="Введите текст"></textarea>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Выпадающий список</label>
+                <select class="form-select">
+                  <option>Выберите опцию</option>
+                  <option>Опция 1</option>
+                  <option>Опция 2</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="ui-kit-example">
+              <div class="form-group">
+                <label class="form-label">Поле с ошибкой</label>
+                <input type="text" class="form-input form-input--error" value="Неверное значение">
+                <span class="form-error">Это поле обязательно для заполнения</span>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">Поле с подсказкой</label>
+                <input type="text" class="form-input" placeholder="Введите email">
+                <span class="form-hint">Например: example@mail.ru</span>
+              </div>
+              
+              <div class="form-group">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check__input" id="check1">
+                  <label class="form-check__label" for="check1">Чекбокс</label>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <div class="form-check">
+                  <input type="radio" class="form-check__input" name="radio" id="radio1">
+                  <label class="form-check__label" for="radio1">Радио кнопка 1</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" class="form-check__input" name="radio" id="radio2">
+                  <label class="form-check__label" for="radio2">Радио кнопка 2</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Бейджи -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Бейджи и индикаторы</h2>
+          
+          <h3 class="ui-kit-subtitle">Бейджи</h3>
+          <div class="button-grid">
+            <span class="badge badge--primary">Primary</span>
+            <span class="badge badge--success">Success</span>
+            <span class="badge badge--warning">Warning</span>
+            <span class="badge badge--error">Error</span>
+            <span class="badge badge--gray">Gray</span>
+          </div>
+
+          <h3 class="ui-kit-subtitle">Индикаторы статуса</h3>
+          <div class="button-grid">
+            <span class="status-indicator status-indicator--published">
+              <span class="status-indicator__dot"></span>
+              Опубликовано
+            </span>
+            <span class="status-indicator status-indicator--approved">
+              <span class="status-indicator__dot"></span>
+              Одобрено
+            </span>
+            <span class="status-indicator status-indicator--pending">
+              <span class="status-indicator__dot"></span>
+              На рассмотрении
+            </span>
+            <span class="status-indicator status-indicator--draft">
+              <span class="status-indicator__dot"></span>
+              Черновик
+            </span>
+            <span class="status-indicator status-indicator--rejected">
+              <span class="status-indicator__dot"></span>
+              Отклонено
+            </span>
+          </div>
+        </section>
+
+        <!-- Карточки -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Карточки</h2>
+          
+          <div class="ui-kit-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+            <div class="card">
+              <div class="card__header">
+                <div>
+                  <h3 class="card__title">Заголовок карточки</h3>
+                  <p class="card__subtitle">Подзаголовок</p>
+                </div>
+                <span class="badge badge--primary">Новое</span>
+              </div>
+              <div class="card__body">
+                <p>Это пример содержимого карточки. Здесь может быть любой контент.</p>
+              </div>
+              <div class="card__footer">
+                <span class="text-muted">14 апреля 2025</span>
+                <button class="btn btn--primary btn--sm">Подробнее</button>
+              </div>
+            </div>
+            
+            <div class="card">
+              <div class="card__header">
+                <div>
+                  <h3 class="card__title">Простая карточка</h3>
+                </div>
+              </div>
+              <div class="card__body">
+                <p>Карточка с минимальным содержимым.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Табы -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Табы и фильтры</h2>
+          
+          <h3 class="ui-kit-subtitle">Табы</h3>
+          <div class="tabs">
+            <button class="tabs__item tabs__item--active">Запросы на инновацию</button>
+            <button class="tabs__item">Заявки в команду</button>
+            <button class="tabs__item">Архив</button>
+          </div>
+
+          <h3 class="ui-kit-subtitle">Фильтры (Pills)</h3>
+          <div class="filter-pills">
+            <button class="filter-pill filter-pill--active">Все</button>
+            <button class="filter-pill">На рассмотрении</button>
+            <button class="filter-pill">Одобренные</button>
+            <button class="filter-pill">Отклоненные</button>
+            <button class="filter-pill">Черновики</button>
+          </div>
+        </section>
+
+        <!-- Аватары -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Аватары</h2>
+          
+          <div class="button-grid">
+            <div class="avatar avatar--sm">АБ</div>
+            <div class="avatar">ОЧ</div>
+            <div class="avatar avatar--lg">ИП</div>
+          </div>
+        </section>
+
+        <!-- Header -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Header (Верхнее меню)</h2>
+          
+          <div class="ui-kit-example">
+            <p><strong>Общие классы:</strong></p>
+            <ul style="list-style: disc; margin-left: var(--spacing-xl);">
+              <li><code>.header</code> - основной контейнер</li>
+              <li><code>.header__container</code> - внутренний контейнер</li>
+              <li><code>.header__logo</code> - логотип</li>
+              <li><code>.header__nav</code> - навигация</li>
+              <li><code>.nav__list</code> - список навигации</li>
+              <li><code>.nav__link</code> - ссылка навигации</li>
+              <li><code>.nav__link--active</code> - активная ссылка</li>
+              <li><code>.header__actions</code> - правая часть с действиями</li>
+              <li><code>.header__user-btn</code> - кнопка пользователя</li>
+              <li><code>.header__user-btn--logged</code> - для авторизованного пользователя</li>
+              <li><code>.header__user-initials</code> - инициалы пользователя</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Sidebar -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Sidebar (Боковая панель)</h2>
+          
+          <div class="ui-kit-example">
+            <p><strong>Общие классы:</strong></p>
+            <ul style="list-style: disc; margin-left: var(--spacing-xl);">
+              <li><code>.sidebar</code> - основной контейнер</li>
+              <li><code>.sidebar-layout__sidebar</code> - позиционирование</li>
+              <li><code>.sidebar__nav</code> - навигация</li>
+              <li><code>.sidebar__link</code> - ссылка меню</li>
+              <li><code>.sidebar__link--active</code> - активная ссылка</li>
+              <li><code>.sidebar__icon</code> - иконка пункта меню</li>
+              <li><code>.sidebar__text</code> - текст пункта меню</li>
+              <li><code>.sidebar__badge</code> - бейдж с количеством</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Градиентный фон -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Градиентный фон кабинета</h2>
+          
+          <div class="ui-kit-example">
+            <p><strong>Класс для body:</strong> <code>body--gradient</code></p>
+            <p>Применяется на всех страницах личного кабинета:</p>
+            <ul style="list-style: disc; margin-left: var(--spacing-xl);">
+              <li>profile.html</li>
+              <li>my-requests.html</li>
+              <li>my-applications.html</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Form Container -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Form Container (Центральный блок форм)</h2>
+          
+          <p style="margin-bottom: 1.5rem;">Унифицированный контейнер для всех форм (регистрация, вход, подача заявок).</p>
+          
+          <h3 class="ui-kit-subtitle">Стандартный размер</h3>
+          <div class="form-container">
+            <div class="form-container__header">
+              <h2 class="form-container__title">Заголовок формы</h2>
+              <p class="form-container__subtitle">Подзаголовок или описание</p>
+            </div>
+            <div class="form-container__body">
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-input" placeholder="example@mail.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Пароль</label>
+                <input type="password" class="form-input" placeholder="••••••••">
+              </div>
+              <button class="btn btn--primary" style="width: 100%;">Войти</button>
+            </div>
+            <div class="form-container__footer">
+              <p>Нет аккаунта? <a href="#">Зарегистрироваться</a></p>
+            </div>
+          </div>
+          
+          <h3 class="ui-kit-subtitle">Большой размер (.form-container--large)</h3>
+          <div class="form-container form-container--large">
+            <div class="form-container__header">
+              <h2 class="form-container__title">Форма подачи заявки</h2>
+            </div>
+            <div class="form-container__body">
+              <p>Используется для больших форм с множеством полей (max-width: 800px)</p>
+            </div>
+          </div>
+          
+          <h3 class="ui-kit-subtitle">Маленький размер (.form-container--small)</h3>
+          <div class="form-container form-container--small">
+            <div class="form-container__header">
+              <h2 class="form-container__title">Компактная форма</h2>
+            </div>
+            <div class="form-container__body">
+              <p>Используется для простых форм (max-width: 480px)</p>
+            </div>
+          </div>
+          
+          <h3 class="ui-kit-subtitle">Классы</h3>
+          <div class="code-example">
+            <code>.form-container</code> - основной контейнер (max-width: 600px)<br>
+            <code>.form-container--large</code> - большой контейнер (max-width: 800px)<br>
+            <code>.form-container--small</code> - маленький контейнер (max-width: 480px)<br>
+            <code>.form-container__header</code> - шапка формы<br>
+            <code>.form-container__title</code> - заголовок формы<br>
+            <code>.form-container__subtitle</code> - подзаголовок формы<br>
+            <code>.form-container__body</code> - тело формы<br>
+            <code>.form-container__footer</code> - футер формы
+          </div>
+          
+          <h3 class="ui-kit-subtitle">Использование на страницах</h3>
+          <div class="code-example">
+            <strong>Страницы с form-container:</strong>
+            <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+              <li>login.html - форма входа/регистрации</li>
+              <li>register-step1.html - регистрация (шаг 1)</li>
+              <li>register-step2.html - регистрация (шаг 2)</li>
+              <li>request-form.html - форма подачи заявки (large)</li>
+            </ul>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

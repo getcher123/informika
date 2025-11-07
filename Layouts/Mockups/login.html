@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/auth.css">
+</head>
+<body class="auth-page">
+  <div class="layout">
+    <!-- Header -->
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/826-1724.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+            <div class="header__logo-text">
+              ИННОВАТИКА<br>
+              <strong>МОСОБЛГАЗ</strong>
+            </div>
+          </a>
+
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+
+          <div class="header__actions">
+            <a href="./login.html" class="btn btn--ghost header__user-btn">
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="header__user-text">ВОЙТИ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main auth-main layout__main">
+      <div class="container">
+        <div class="auth-container">
+          <div class="auth-card">
+            <div class="auth-card__header">
+              <div class="auth-tabs">
+                <button class="auth-tab auth-tab--active" data-tab="login">ВОЙТИ</button>
+                <button class="auth-tab" data-tab="register">РЕГИСТРАЦИЯ</button>
+              </div>
+            </div>
+
+            <div class="auth-card__body">
+              <!-- Login Form -->
+              <div class="auth-form" data-tab-panel="login">
+                <form data-validate>
+                  <div class="form-group">
+                    <label class="form-label" for="login-email">E-mail или телефон</label>
+                    <input 
+                      type="text" 
+                      class="form-input" 
+                      id="login-email" 
+                      placeholder="example@mail.com"
+                      required
+                    >
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="login-password">Введите пароль</label>
+                    <input 
+                      type="password" 
+                      class="form-input" 
+                      id="login-password" 
+                      placeholder="••••••••"
+                      required
+                    >
+                  </div>
+
+                  <div class="form-group">
+                    <a href="#" class="link-secondary">Восстановить пароль</a>
+                  </div>
+
+                  <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">Войти</button>
+                </form>
+              </div>
+
+              <!-- Register Form -->
+              <div class="auth-form" data-tab-panel="register" style="display: none;">
+                <p class="auth-description">
+                  Наша платформа открывает уникальные возможности для различных категорий пользователей. 
+                  <strong>Сотрудники Мособлгаз</strong> могут развивать свои профессиональные компетенции и участвовать в корпоративных инициативах. 
+                  <strong>Представители учебных заведений</strong> получают шанс находить талантливых студентов и делиться своей экспертизой. 
+                  <strong>Студенты</strong> имеют возможность получать доступ к уникальным образовательным программам и стажировкам. 
+                  <strong>Бизнес-партнеры</strong> могут расширить свою сеть профессиональных контактов, а <strong>гости</strong> — знакомиться с возможностями платформы.
+                </p>
+                
+                <a href="./register-step1.html" class="btn btn--primary btn--lg" style="width: 100%;">Продолжить</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/app.js"></script>
+  <script>
+    // Переключение табов
+    document.querySelectorAll('.auth-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetTab = tab.getAttribute('data-tab');
+        
+        // Деактивировать все табы
+        document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('auth-tab--active'));
+        document.querySelectorAll('[data-tab-panel]').forEach(p => p.style.display = 'none');
+        
+        // Активировать выбранный таб
+        tab.classList.add('auth-tab--active');
+        document.querySelector(`[data-tab-panel="${targetTab}"]`).style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
