@@ -48,15 +48,6 @@
   line-height: var(--line-height-normal);
 }
 
-/* Filters Section */
-.filters-section {
-  margin-bottom: var(--spacing-2xl);
-}
-
-.search {
-  margin-bottom: var(--spacing-lg);
-}
-
 .filters {
   display: flex;
   flex-direction: column;

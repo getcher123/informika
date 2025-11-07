@@ -770,6 +770,16 @@
   color: var(--color-error);
 }
 
+/* Layout spacing helpers */
+.filters,
+.filters-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.search {
+  margin-bottom: var(--spacing-lg);
+}
+
 /* ========================================
    Form Container (Центральный блок форм)
    ======================================== */
