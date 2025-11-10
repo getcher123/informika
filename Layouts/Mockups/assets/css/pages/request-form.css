@@ -2,6 +2,14 @@
    REQUEST-FORM.CSS - Форма подачи запроса
    =================================== */
 
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--spacing-xs);
+}
+
 .form-page {
   max-width: 1200px;
   margin: 0 auto;

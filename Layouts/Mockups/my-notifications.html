@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Уведомления | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/my-requests.css">
+</head>
+<body class="body--gradient">
+  <div class="layout">
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/826-1724.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+            <div class="header__logo-text">
+              ИННОВАТИКА<br>
+              <strong>МОСОБЛГАЗ</strong>
+            </div>
+          </a>
+
+          <nav class="header__nav" aria-label="Основная навигация">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+
+          <div class="header__actions">
+            <a href="./profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
+              <span class="header__user-initials">ОВ</span>
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main main--with-gradient layout__main">
+      <div class="container">
+        <div class="sidebar-layout">
+          <aside class="sidebar sidebar-layout__sidebar" aria-label="Навигация по кабинету">
+            <nav class="sidebar__nav">
+              <a href="./my-requests.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M9 9H15M9 13H15M9 17H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Мои идеи</span>
+              </a>
+              <a href="./my-applications.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 14L12 3M12 3L8 7M12 3L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 17V19C4 20.1046 4.89543 21 6 21H18C19.1046 21 20 20.1046 20 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Заявки в команду</span>
+              </a>
+              <a href="./my-notifications.html" class="sidebar__link sidebar__link--active">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10 3 9 3.89543 9 5V5.34142C6.66962 6.16509 5 8.38757 5 11V14.1585C5 14.6973 4.78595 15.2141 4.40493 15.5951L3 17H8M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Уведомления</span>
+                <span class="sidebar__badge sidebar__badge--error">11</span>
+              </a>
+              <a href="./profile.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                  <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Профиль</span>
+              </a>
+            </nav>
+          </aside>
+
+          <div class="content-card sidebar-layout__content">
+            <section class="page-header">
+              <div>
+                <p class="eyebrow">Центр уведомлений</p>
+                <h1>Уведомления</h1>
+                <p class="page-header__description">
+                  Вся активность по идеям, запросам, заявкам и документам в одном месте. Выберите тип события, чтобы быстро обработать задачи.
+                </p>
+              </div>
+              <div class="page-header__actions">
+                <button type="button" class="btn btn--ghost btn--lg">Очистить прочитанные</button>
+                <button type="button" class="btn btn--primary btn--lg">Настройки</button>
+              </div>
+            </section>
+
+            <section class="filters-panel card">
+              <div class="filters-panel__row filters-panel__row--condensed">
+                <div class="form-group">
+                  <label class="form-label" for="notification-period">Период</label>
+                  <select class="form-select" id="notification-period">
+                    <option>Последние 7 дней</option>
+                    <option>Последние 30 дней</option>
+                    <option>За весь период</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="notification-entity">Тип сущности</label>
+                  <select class="form-select" id="notification-entity">
+                    <option>Все</option>
+                    <option>Идеи</option>
+                    <option>Заявки</option>
+                    <option>Документы</option>
+                  </select>
+                </div>
+                <label class="search" aria-label="Поиск по уведомлениям">
+                  <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                    <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  <input type="search" class="form-input search__input" placeholder="Найти по идее или запросу">
+                </label>
+              </div>
+              <div class="status-pills" role="group" aria-label="Категории уведомлений">
+                <button type="button" class="filter-pill is-active">Все</button>
+                <button type="button" class="filter-pill">Статусы</button>
+                <button type="button" class="filter-pill">Комментарии</button>
+                <button type="button" class="filter-pill">Bitrix24</button>
+                <button type="button" class="filter-pill">Документы</button>
+                <button type="button" class="filter-pill">Команда</button>
+              </div>
+            </section>
+
+            <section class="notification-groups" aria-label="Список уведомлений">
+              <article class="notification-group">
+                <header class="notification-group__header">
+                  <h2>12 мая · Сегодня</h2>
+                  <button type="button" class="btn btn--text">Отметить как прочитанные</button>
+                </header>
+                <div class="notification-card is-unread">
+                  <div class="notification-card__icon" aria-hidden="true">
+                    <span class="badge badge--primary">ID</span>
+                  </div>
+                  <div class="notification-card__body">
+                    <p class="notification-card__title">Стейкхолдер одобрил идею «HR-Foresight»</p>
+                    <p class="notification-card__meta">Запрос «Замена профессий» · 10:14 · Журнал обновлён</p>
+                    <div class="notification-card__actions">
+                      <a href="./idea-detail.html" class="btn btn--secondary btn--sm">Открыть идею</a>
+                      <button type="button" class="btn btn--ghost btn--sm">Скрыть</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="notification-card">
+                  <div class="notification-card__icon" aria-hidden="true">
+                    <span class="badge badge--warning">BC</span>
+                  </div>
+                  <div class="notification-card__body">
+                    <p class="notification-card__title">Поступило замечание модератора по идее «Телеметрия ПРГ»</p>
+                    <p class="notification-card__meta">Нужно обновить блок «Экономический эффект» · 09:32</p>
+                    <div class="notification-card__actions">
+                      <a href="./idea-detail.html" class="btn btn--ghost btn--sm">Ответить</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <article class="notification-group">
+                <header class="notification-group__header">
+                  <h2>11 мая</h2>
+                </header>
+                <div class="notification-card">
+                  <div class="notification-card__icon" aria-hidden="true">
+                    <span class="badge badge--info">BX</span>
+                  </div>
+                  <div class="notification-card__body">
+                    <p class="notification-card__title">В Bitrix24 просрочена задача «Обновить презентацию для ПК»</p>
+                    <p class="notification-card__meta">Идея «HR-Foresight» · Исполнитель: Петров А. · Просрочка 1 день</p>
+                    <div class="notification-card__actions">
+                      <button type="button" class="btn btn--ghost btn--sm">Напомнить исполнителю</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="notification-card">
+                  <div class="notification-card__icon" aria-hidden="true">
+                    <span class="badge badge--success">TM</span>
+                  </div>
+                  <div class="notification-card__body">
+                    <p class="notification-card__title">Ваша заявка на роль «Наставник филиала» одобрена</p>
+                    <p class="notification-card__meta">Команда «Диагностика без подключений» · Старт 15.05</p>
+                    <div class="notification-card__actions">
+                      <a href="./my-applications.html" class="btn btn--ghost btn--sm">Перейти к заявке</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

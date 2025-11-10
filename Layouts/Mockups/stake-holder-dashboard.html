@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Дашборд стейкхолдера | Инноватика Мособлгаз</title>
+  <title>Кабинет стейкхолдера | Инноватика Мособлгаз</title>
   <link rel="stylesheet" href="./assets/css/base.css">
   <link rel="stylesheet" href="./assets/css/layout.css">
   <link rel="stylesheet" href="./assets/css/components.css">
@@ -22,7 +22,7 @@
             </div>
           </a>
 
-          <nav class="header__nav" aria-label="Навигация">
+          <nav class="header__nav" aria-label="Основная навигация">
             <ul class="nav__list">
               <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
               <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
@@ -33,7 +33,7 @@
 
           <div class="header__actions">
             <a href="./profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
-              <span class="header__user-initials">ОЧ</span>
+              <span class="header__user-initials">СТ</span>
               <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
                 <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -44,90 +44,262 @@
       </div>
     </header>
 
-    <main class="main layout__main">
+    <main class="main main--with-gradient layout__main">
       <div class="container">
-        <div class="dashboard-header">
+        <section class="page-header">
           <div>
-            <h1>Дашборд стейкхолдера</h1>
-            <p>Следите за прогрессом запросов, статусами команд и активностью участников в реальном времени.</p>
+            <p class="eyebrow">Кабинет стейкхолдера</p>
+            <h1>Контроль запросов и портфеля идей</h1>
+            <p class="page-header__description">Следите за статусами запросов, одобренных идей и административных задач. Быстро переходите в Bitrix24 и управляйте уведомлениями.</p>
           </div>
-          <a href="./team-requests.html" class="btn btn--primary">Открыть командные запросы</a>
-        </div>
+          <div class="page-header__actions">
+            <button type="button" class="btn btn--ghost btn--lg">Настроить роли</button>
+            <button type="button" class="btn btn--primary btn--lg">Создать запрос</button>
+          </div>
+        </section>
 
-        <div class="dashboard-cards">
-          <div class="card dashboard-card">
-            <div class="dashboard-card__value">12</div>
-            <div class="dashboard-card__label">Запросов в работе</div>
-          </div>
-          <div class="card dashboard-card">
-            <div class="dashboard-card__value">4</div>
-            <div class="dashboard-card__label">Требуют оценки</div>
-          </div>
-          <div class="card dashboard-card">
-            <div class="dashboard-card__value">8</div>
-            <div class="dashboard-card__label">Команд в сборе</div>
-          </div>
-          <div class="card dashboard-card">
-            <div class="dashboard-card__value">3</div>
-            <div class="dashboard-card__label">Идей на доработке</div>
-          </div>
-        </div>
+        <section class="dashboard-cards">
+          <article class="card dashboard-card">
+            <p class="dashboard-card__label">Активные запросы</p>
+            <p class="dashboard-card__value">12</p>
+            <p class="dashboard-card__hint">3 ожидают решения</p>
+          </article>
+          <article class="card dashboard-card">
+            <p class="dashboard-card__label">Одобренные идеи</p>
+            <p class="dashboard-card__value">8</p>
+            <p class="dashboard-card__hint">2 готовы к ПК</p>
+          </article>
+          <article class="card dashboard-card">
+            <p class="dashboard-card__label">Вакансии в командах</p>
+            <p class="dashboard-card__value">5</p>
+            <p class="dashboard-card__hint">Нужно назначить роли</p>
+          </article>
+        </section>
 
-        <div class="card">
-          <div class="card__header">
-            <h2 class="card__title">Последние действия</h2>
-            <a href="./requests.html" class="btn btn--sm btn--secondary">Все запросы</a>
+        <section class="stakeholder-tabs-card" data-tabs>
+          <div class="tabs" role="tablist">
+            <button type="button" class="tabs__item tabs__item--active" data-tab="requests">Мои запросы</button>
+            <button type="button" class="tabs__item" data-tab="portfolio">Портфель одобренных идей</button>
+            <button type="button" class="tabs__item" data-tab="panel">Панель управления</button>
+            <button type="button" class="tabs__item" data-tab="notifications">Уведомления</button>
           </div>
-          <div class="card__body">
-            <table class="table dashboard-table">
-              <thead>
-                <tr>
-                  <th>Команда/Инициатива</th>
-                  <th>Статус</th>
-                  <th>Дата</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Замена профессий</td>
-                  <td>
-                    <span class="status-indicator status-indicator--pending">
-                      <span class="status-indicator__dot"></span>
-                      Требуется подтверждение
-                    </span>
-                  </td>
-                  <td>12.05.2025</td>
-                </tr>
-                <tr>
-                  <td>HR-Foresight</td>
-                  <td>
-                    <span class="status-indicator status-indicator--approved">
-                      <span class="status-indicator__dot"></span>
-                      Одобрено
-                    </span>
-                  </td>
-                  <td>10.05.2025</td>
-                </tr>
-                <tr>
-                  <td>AR-обучение мастеров</td>
-                  <td>
-                    <span class="status-indicator status-indicator--draft">
-                      <span class="status-indicator__dot"></span>
-                      Черновик
-                    </span>
-                  </td>
-                  <td>08.05.2025</td>
-                </tr>
-              </tbody>
-            </table>
+
+          <div class="tab-panels">
+            <!-- Requests -->
+            <section class="tab-panel is-active" data-tab-panel="requests">
+              <div class="filters-panel card">
+                <div class="filters-panel__row">
+                  <label class="search" aria-label="Поиск запросов">
+                    <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                      <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <input type="search" class="form-input search__input" placeholder="Название запроса или направления">
+                  </label>
+                  <div class="form-group">
+                    <label class="form-label" for="request-status">Статус</label>
+                    <select class="form-select" id="request-status">
+                      <option>На сборе идей</option>
+                      <option>Закрыт</option>
+                      <option>Ожидает решения</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="request-direction">Направление</label>
+                    <select class="form-select" id="request-direction">
+                      <option>Любое</option>
+                      <option>Цифровизация</option>
+                      <option>Строительство</option>
+                      <option>Эксплуатация</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="status-pills">
+                  <button type="button" class="filter-pill is-active">Все запросы</button>
+                  <button type="button" class="filter-pill">С активными идеями</button>
+                  <button type="button" class="filter-pill">Есть новые предложения</button>
+                  <button type="button" class="filter-pill">Требует решения</button>
+                </div>
+              </div>
+
+              <div class="requests-layout">
+                <div class="request-grid">
+                  <article class="request-card">
+                    <div class="request-card__header">
+                      <span class="badge badge--primary">Цифровизация</span>
+                      <span class="request-card__status badge badge--outline">На сборе идей</span>
+                      <span class="request-card__new">+3</span>
+                    </div>
+                    <h3 class="request-card__title">Замена профессий</h3>
+                    <p class="request-card__description">Ищем решения по автоматизации HR-процессов и прогнозирование дефицита компетенций.</p>
+                    <dl class="request-card__meta">
+                      <div>
+                        <dt>Идей</dt>
+                        <dd>12</dd>
+                      </div>
+                      <div>
+                        <dt>Дедлайн</dt>
+                        <dd>20.05.2025</dd>
+                      </div>
+                      <div>
+                        <dt>Координатор</dt>
+                        <dd>Анна С.</dd>
+                      </div>
+                    </dl>
+                    <div class="request-card__actions">
+                      <a href="./request-detail.html" class="btn btn--secondary btn--sm">Открыть</a>
+                      <button type="button" class="btn btn--ghost btn--sm">Принять решение</button>
+                    </div>
+                  </article>
+
+                  <article class="request-card">
+                    <div class="request-card__header">
+                      <span class="badge badge--warning">Эксплуатация</span>
+                      <span class="request-card__status badge badge--outline badge--warning">Ожидает решения</span>
+                      <span class="request-card__new">+1</span>
+                    </div>
+                    <h3 class="request-card__title">Диагностика без подключений</h3>
+                    <p class="request-card__description">Ищем идею по дистанционному контролю ПРГ без отключения потребителей.</p>
+                    <dl class="request-card__meta">
+                      <div>
+                        <dt>Идей</dt>
+                        <dd>6</dd>
+                      </div>
+                      <div>
+                        <dt>Дедлайн</dt>
+                        <dd>18.05.2025</dd>
+                      </div>
+                      <div>
+                        <dt>Координатор</dt>
+                        <dd>Игорь В.</dd>
+                      </div>
+                    </dl>
+                    <div class="request-card__actions">
+                      <button type="button" class="btn btn--ghost btn--sm">Вернуть на доработку</button>
+                      <button type="button" class="btn btn--primary btn--sm">Одобрить лучшую идею</button>
+                    </div>
+                  </article>
+                </div>
+
+                <aside class="notes-card">
+                  <h3>Примечания координатора</h3>
+                  <ul>
+                    <li>
+                      <p>«Замена профессий»: есть 2 идеи без обратной связи более 5 дней.</p>
+                      <span>12.05 · Анна С.</span>
+                    </li>
+                    <li>
+                      <p>«Диагностика без подключений»: необходимо подтвердить состав экспертов на этап НТК.</p>
+                      <span>11.05 · Игорь В.</span>
+                    </li>
+                  </ul>
+                  <button type="button" class="btn btn--ghost btn--sm">Добавить комментарий</button>
+                </aside>
+              </div>
+            </section>
+
+            <!-- Portfolio -->
+            <section class="tab-panel" data-tab-panel="portfolio" hidden>
+              <div class="portfolio-board">
+                <div class="portfolio-column">
+                  <h3>Одобрена</h3>
+                  <article class="portfolio-card">
+                    <header>
+                      <div>
+                        <p class="portfolio-card__eyebrow">Запрос: Замена профессий</p>
+                        <h4>HR-Foresight</h4>
+                      </div>
+                      <span class="badge badge--primary">Одобрена</span>
+                    </header>
+                    <p>Команда собрана на 90%. 12 задач активны.</p>
+                    <div class="portfolio-card__actions">
+                      <a href="./idea-detail.html" class="btn btn--ghost btn--sm">Задачи</a>
+                      <button type="button" class="btn btn--ghost btn--sm">Документы</button>
+                      <button type="button" class="btn btn--ghost btn--sm">Админ-доска</button>
+                    </div>
+                  </article>
+                </div>
+                <div class="portfolio-column">
+                  <h3>Готово к ПК</h3>
+                  <article class="portfolio-card">
+                    <header>
+                      <div>
+                        <p class="portfolio-card__eyebrow">Запрос: AR-обучение</p>
+                        <h4>AR-симулятор мастера</h4>
+                      </div>
+                      <span class="badge badge--info">Готово к ПК</span>
+                    </header>
+                    <p>Комплект документов загружен, требуется подтверждение чек-листа.</p>
+                    <div class="portfolio-card__actions">
+                      <button type="button" class="btn btn--secondary btn--sm">Проверить чек-лист</button>
+                      <button type="button" class="btn btn--ghost btn--sm">Отчёты Bitrix24</button>
+                    </div>
+                  </article>
+                </div>
+                <div class="portfolio-column">
+                  <h3>Готово к НТК</h3>
+                  <article class="portfolio-card">
+                    <header>
+                      <div>
+                        <p class="portfolio-card__eyebrow">Запрос: Диагностика</p>
+                        <h4>Телеметрия ПРГ</h4>
+                      </div>
+                      <span class="badge badge--success">Готово к НТК</span>
+                    </header>
+                    <p>Чек-лист НТК выполнен на 100%. Нужно назначить дату защиты.</p>
+                    <div class="portfolio-card__actions">
+                      <button type="button" class="btn btn--ghost btn--sm">Назначить дату</button>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </section>
+
+            <!-- Panel -->
+            <section class="tab-panel" data-tab-panel="panel" hidden>
+              <article class="admin-card card">
+                <h2>Административная доска</h2>
+                <p>Единое пространство задач Bitrix24 для модератора, координатора и стейкхолдера. Контролируйте дедлайны ПК/НТК и заполненность ролей.</p>
+                <ul>
+                  <li>Колонки: Новая → В работе → Ожидает данных → На согласовании → Готово</li>
+                  <li>Типы задач: модерация, контроль бизнес-процессов, формирование команд, решения стейкхолдера</li>
+                  <li>Доступ: вы видите задачи координатора для эскалации</li>
+                </ul>
+                <a href="#" class="btn btn--primary btn--lg">Открыть административную доску</a>
+              </article>
+            </section>
+
+            <!-- Notifications -->
+            <section class="tab-panel" data-tab-panel="notifications" hidden>
+              <div class="stakeholder-notifications">
+                <article class="notification-card is-unread">
+                  <div class="notification-card__body">
+                    <p class="notification-card__title">Координатор отправил идею «HR-Foresight» на ваш отзыв</p>
+                    <p class="notification-card__meta">Срок ответа до 14.05 · Инициатор: Анна С.</p>
+                    <div class="notification-card__actions">
+                      <a href="./idea-detail.html" class="btn btn--secondary btn--sm">Перейти к решению</a>
+                      <button type="button" class="btn btn--ghost btn--sm">Отметить прочитанным</button>
+                    </div>
+                  </div>
+                </article>
+                <article class="notification-card">
+                  <div class="notification-card__body">
+                    <p class="notification-card__title">Команда «Телеметрия ПРГ» загрузила комплект для НТК</p>
+                    <p class="notification-card__meta">Папка /ПК-НТК обновлена · 10 файлов</p>
+                    <div class="notification-card__actions">
+                      <button type="button" class="btn btn--ghost btn--sm">Проверить документы</button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
           </div>
-        </div>
+        </section>
       </div>
     </main>
   </div>
 
   <script src="./assets/js/vendor.js"></script>
   <script src="./assets/js/app.js"></script>
-  <script src="./assets/js/idea.js"></script>
 </body>
 </html>

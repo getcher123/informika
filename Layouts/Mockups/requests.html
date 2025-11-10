@@ -1,21 +1,20 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Банк идей для инновационных запросов | Инноватика Мособлгаз</title>
-  <meta name="description" content="Динамичная площадка для коллаборации, где стейкхолдеры публикуют актуальные бизнес-задачи">
+  <title>Банк инноваций | Инноватика Мособлгаз</title>
+  <meta name="description" content="Каталог запросов и идей для платформы «Инноватика Мособлгаз»">
   <link rel="stylesheet" href="./assets/css/base.css">
   <link rel="stylesheet" href="./assets/css/layout.css">
   <link rel="stylesheet" href="./assets/css/components.css">
   <link rel="stylesheet" href="./assets/css/pages/requests.css">
 </head>
 <body>
-  <div class="layout">    <!-- Header -->
+  <div class="layout">
     <header class="header layout__header">
       <div class="container">
         <div class="header__container">
-          <!-- Logo -->
           <a href="./index.html" class="header__logo">
             <img src="./assets/img/826-1724.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
             <div class="header__logo-text">
@@ -24,182 +23,218 @@
             </div>
           </a>
 
-          <!-- Navigation -->
           <nav class="header__nav">
             <ul class="nav__list">
               <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
-              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="./requests.html" class="nav__link nav__link--active">БАНК ИННОВАЦИЙ</a></li>
               <li><a href="#" class="nav__link">КОНКУРС</a></li>
               <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
             </ul>
           </nav>
 
-          <!-- Actions -->
           <div class="header__actions">
             <a href="./login.html" class="btn btn--ghost header__user-btn">
               <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
                 <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               </svg>
-              <span class="header__user-text">ВОЙТИ</span>
+              <span class="header__user-text">Войти</span>
             </a>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- Main Content -->
     <main class="main layout__main">
       <div class="container">
-        <!-- Hero Section -->
         <section class="hero">
           <div class="hero__content">
-            <h1 class="hero__title">Банк идей для инновационных запросов</h1>
-            <p class="hero__description">
-              Это динамичная площадка для коллаборации, где стейкхолдеры публикуют актуальные бизнес-задачи, 
-              а участники акселератора предлагают инновационные решения и развивают собственные идеи при 
-              экспертной поддержке.
-            </p>
+            <p class="eyebrow">Публичный каталог запросов</p>
+            <h1 class="hero__title">Банк инноваций</h1>
+            <p class="hero__description">Стейкхолдеры публикуют бизнес-вызовы, а участники подают идеи, объединяются в команды и выводят решения на проектные комитеты.</p>
+            <div class="hero__stats">
+              <div>
+                <p class="hero__stats-value">48</p>
+                <p class="hero__stats-label">активных запросов</p>
+              </div>
+              <div>
+                <p class="hero__stats-value">126</p>
+                <p class="hero__stats-label">идей в обработке</p>
+              </div>
+              <div>
+                <p class="hero__stats-value">18</p>
+                <p class="hero__stats-label">готовятся к ПК/НТК</p>
+              </div>
+            </div>
           </div>
-
           <div class="hero__cta">
             <div class="cta-card">
-              <p class="cta-card__text">
-                Опишите запрос на инновацию — и мы реализуем её, чтобы сделать работу «Мособлгаза» ещё эффективнее.
-              </p>
-              <a href="./request-form.html" class="btn btn--primary btn--lg">Подать заявку</a>
+              <p class="cta-card__text">Есть задача для акселератора? Опишите запрос и получите пул идей за 2 недели.</p>
+              <a href="./request-form.html" class="btn btn--primary btn--lg">Подать запрос</a>
+            </div>
+            <div class="cta-card">
+              <p class="cta-card__text">Уже есть решение? Расскажите о нём и соберите команду.</p>
+              <a href="./idea-form.html" class="btn btn--secondary btn--lg">Создать идею</a>
             </div>
           </div>
         </section>
 
-        <!-- Search & Filters -->
-        <section class="filters-section">
-          <div class="search">
-            <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
-              <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            <input type="text" class="form-input search__input" placeholder="Поиск">
-          </div>
-
-          <div class="filters">
-            <div class="filters__row">
-              <div class="form-group">
-                <select class="form-select">
-                  <option>Статус</option>
-                  <option>Требуется доработка</option>
-                  <option>Одобрено</option>
-                  <option>В архиве</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <select class="form-select">
-                  <option>Направление</option>
-                  <option>IT-технологии</option>
-                  <option>Строительство</option>
-                  <option>Эксплуатация</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <input type="text" class="form-input" placeholder="Автор">
-              </div>
-            </div>
-
-            <button class="btn btn--reset filter-reset filter-reset--inline" type="button" data-clear-filters>
-              <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <section class="filters-section card">
+          <div class="filters-section__row">
+            <label class="search" aria-label="Поиск по каталогу">
+              <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               </svg>
-              <span class="btn__text">Сбросить фильтры</span>
-            </button>
+              <input type="search" class="form-input search__input" placeholder="Название запроса или идея">
+            </label>
+            <div class="form-group">
+              <label class="form-label" for="filter-status">Статус</label>
+              <select class="form-select" id="filter-status">
+                <option>На сборе идей</option>
+                <option>Закрыт</option>
+                <option>Ожидает решения</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="filter-direction">Направление</label>
+              <select class="form-select" id="filter-direction">
+                <option>Любое</option>
+                <option>Строительство</option>
+                <option>Эксплуатация</option>
+                <option>Цифровизация</option>
+                <option>Безопасность</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="filter-author">Стейкхолдер</label>
+              <input type="text" class="form-input" id="filter-author" placeholder="Например, HR-департамент">
+            </div>
+            <div class="view-switcher" role="group" aria-label="Представление">
+              <button type="button" class="icon-btn icon-btn--active" aria-label="Сетки">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="3" width="6" height="6" rx="1" stroke="currentColor" stroke-width="2"/>
+                  <rect x="11" y="3" width="6" height="6" rx="1" stroke="currentColor" stroke-width="2"/>
+                  <rect x="3" y="11" width="6" height="6" rx="1" stroke="currentColor" stroke-width="2"/>
+                  <rect x="11" y="11" width="6" height="6" rx="1" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </button>
+              <button type="button" class="icon-btn" aria-label="Список">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 6H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 14H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="filter-pills">
+            <button type="button" class="filter-pill is-active">Все</button>
+            <button type="button" class="filter-pill">Новые запросы</button>
+            <button type="button" class="filter-pill">Есть обратная связь</button>
+            <button type="button" class="filter-pill">Скоро дедлайн</button>
           </div>
         </section>
 
-        <!-- Ideas Grid -->
-        <section class="ideas-grid">
-          <!-- Idea Card 1 -->
+        <section class="ideas-grid" aria-label="Каталог запросов">
           <article class="idea-card">
             <div class="idea-card__header">
-              <span class="badge badge--primary">IT-технологии</span>
-              <button class="icon-btn" data-favorite aria-label="Добавить в избранное">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 21L10.55 19.7C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 19.7L12 21Z" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </button>
-            </div>
-
-            <h3 class="idea-card__title">
-              <a href="./request-detail.html">Оптимизация Ops: Умный контроль</a>
-            </h3>
-
-            <p class="idea-card__description">
-              Внедрение АС управления операционной деятельностью на базе современных IT-решений для повышения 
-              эффективности бизнес-процессов.
-            </p>
-
-            <div class="idea-card__footer">
-              <div class="status-indicator status-indicator--pending">
+              <span class="badge badge--primary">Цифровизация</span>
+              <span class="status-indicator status-indicator--active">
                 <span class="status-indicator__dot"></span>
-                <span>Требуется доработка</span>
+                На сборе идей
+              </span>
+            </div>
+            <div class="idea-card__title-row">
+              <h3 class="idea-card__title"><a href="./request-detail.html">Замена профессий: цифровой сотрудник</a></h3>
+              <span class="idea-card__new">+3 новых идеи</span>
+            </div>
+            <p class="idea-card__description">Ищем решения для прогнозирования и замены устаревающих профессий в HR-процессах. Важны сценарии автоматизации и применение AI.</p>
+            <dl class="idea-card__meta">
+              <div>
+                <dt>Дедлайн</dt>
+                <dd>20 мая 2025</dd>
               </div>
-              <a href="./request-detail.html" class="btn btn--primary">Подробнее</a>
+              <div>
+                <dt>Стейкхолдер</dt>
+                <dd>HR-департамент</dd>
+              </div>
+              <div>
+                <dt>Идей</dt>
+                <dd>12</dd>
+              </div>
+            </dl>
+            <div class="idea-card__footer">
+              <a href="./request-detail.html" class="btn btn--secondary">Подробнее</a>
+              <span class="idea-card__submit">
+                <span>Доступно до 20.05</span>
+                <a href="./idea-form.html" class="btn btn--ghost btn--sm">Подать идею</a>
+              </span>
             </div>
           </article>
 
-          <!-- Idea Card 2 -->
-          <article class="idea-card">
-            <div class="idea-card__header">
-              <span class="badge badge--success">Строительство</span>
-              <button class="icon-btn" data-favorite aria-label="Добавить в избранное">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 21L10.55 19.7C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 19.7L12 21Z" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </button>
-            </div>
-
-            <h3 class="idea-card__title">
-              <a href="./request-detail.html">Модернизация систем газораспределения</a>
-            </h3>
-
-            <p class="idea-card__description">
-              Реконструкция сетей ГР и ГП в старой жилой застройке с минимизацией земляных работ
-            </p>
-
-            <div class="idea-card__footer">
-              <div class="status-indicator status-indicator--approved">
-                <span class="status-indicator__dot"></span>
-                <span>Одобрено</span>
-              </div>
-              <a href="./request-detail.html" class="btn btn--primary">Подробнее</a>
-            </div>
-          </article>
-
-          <!-- Idea Card 3 -->
           <article class="idea-card">
             <div class="idea-card__header">
               <span class="badge badge--warning">Эксплуатация</span>
-              <button class="icon-btn" data-favorite aria-label="Добавить в избранное">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 21L10.55 19.7C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 19.7L12 21Z" stroke="currentColor" stroke-width="2"/>
-                </svg>
-              </button>
-            </div>
-
-            <h3 class="idea-card__title">
-              <a href="./request-detail.html">Диагностика без подключений</a>
-            </h3>
-
-            <p class="idea-card__description">
-              Телеметрия, мониторинг и диагностика ПРГ, датчики, планшет, диагностика без отключения в ходе выезда
-            </p>
-
-            <div class="idea-card__footer">
-              <div class="status-indicator status-indicator--draft">
+              <span class="status-indicator status-indicator--pending">
                 <span class="status-indicator__dot"></span>
-                <span>В архиве</span>
+                Ожидает решения
+              </span>
+            </div>
+            <div class="idea-card__title-row">
+              <h3 class="idea-card__title"><a href="./request-detail.html">Диагностика без подключений</a></h3>
+              <span class="chip chip--warning">Приём идей закрыт</span>
+            </div>
+            <p class="idea-card__description">Нужна система удалённого мониторинга ПРГ и сетей без отключения потребителей. Приоритет — надёжность и простота внедрения на объектах.</p>
+            <dl class="idea-card__meta">
+              <div>
+                <dt>Стейкхолдер</dt>
+                <dd>Управление эксплуатации</dd>
               </div>
-              <a href="./request-detail.html" class="btn btn--primary">Подробнее</a>
+              <div>
+                <dt>Идей</dt>
+                <dd>6 · 1 в доработке</dd>
+              </div>
+              <div>
+                <dt>Следующее действие</dt>
+                <dd>Выбор победителя</dd>
+              </div>
+            </dl>
+            <div class="idea-card__footer">
+              <a href="./request-detail.html" class="btn btn--secondary">Открыть запрос</a>
+              <span class="idea-card__submit">Решение ожидается до 18.05</span>
+            </div>
+          </article>
+
+          <article class="idea-card">
+            <div class="idea-card__header">
+              <span class="badge badge--success">Строительство</span>
+              <span class="status-indicator status-indicator--closed">
+                <span class="status-indicator__dot"></span>
+                Закрыт
+              </span>
+            </div>
+            <div class="idea-card__title-row">
+              <h3 class="idea-card__title"><a href="./request-detail.html">Модернизация систем газораспределения</a></h3>
+              <span class="chip">Архив</span>
+            </div>
+            <p class="idea-card__description">Реконструкция сетей ГР и ГП с минимизацией земляных работ. Проект переведён в стадию «Архив» и сопровождается вне платформы.</p>
+            <dl class="idea-card__meta">
+              <div>
+                <dt>Стейкхолдер</dt>
+                <dd>Департамент строительства</dd>
+              </div>
+              <div>
+                <dt>Идей</dt>
+                <dd>5 · 1 одобрена</dd>
+              </div>
+              <div>
+                <dt>Переход</dt>
+                <dd>ПК проведён 02.04</dd>
+              </div>
+            </dl>
+            <div class="idea-card__footer">
+              <a href="./request-detail.html" class="btn btn--ghost">Смотреть архив</a>
             </div>
           </article>
         </section>

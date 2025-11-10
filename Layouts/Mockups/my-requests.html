@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мои запросы | Инноватика Мособлгаз</title>
+  <title>Мои идеи | Инноватика Мособлгаз</title>
   <link rel="stylesheet" href="./assets/css/base.css">
   <link rel="stylesheet" href="./assets/css/layout.css">
   <link rel="stylesheet" href="./assets/css/components.css">
@@ -11,11 +11,9 @@
 </head>
 <body class="body--gradient">
   <div class="layout">
-    <!-- Header -->
     <header class="header layout__header">
       <div class="container">
         <div class="header__container">
-          <!-- Logo -->
           <a href="./index.html" class="header__logo">
             <img src="./assets/img/826-1724.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
             <div class="header__logo-text">
@@ -24,8 +22,7 @@
             </div>
           </a>
 
-          <!-- Navigation -->
-          <nav class="header__nav">
+          <nav class="header__nav" aria-label="Основная навигация">
             <ul class="nav__list">
               <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
               <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
@@ -34,10 +31,9 @@
             </ul>
           </nav>
 
-          <!-- Actions -->
           <div class="header__actions">
             <a href="./profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
-              <span class="header__user-initials">ОЧ</span>
+              <span class="header__user-initials">ОВ</span>
               <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
                 <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -48,13 +44,34 @@
       </div>
     </header>
 
-    <!-- Main Content -->
     <main class="main main--with-gradient layout__main">
       <div class="container">
         <div class="sidebar-layout">
-          <!-- Sidebar -->
-          <aside class="sidebar sidebar-layout__sidebar">
+          <aside class="sidebar sidebar-layout__sidebar" aria-label="Навигация по кабинету">
             <nav class="sidebar__nav">
+              <a href="./my-requests.html" class="sidebar__link sidebar__link--active">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M9 9H15M9 13H15M9 17H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Мои идеи</span>
+                <span class="sidebar__badge">8</span>
+              </a>
+              <a href="./my-applications.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 14L12 3M12 3L8 7M12 3L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M4 17V19C4 20.1046 4.89543 21 6 21H18C19.1046 21 20 20.1046 20 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Заявки в команду</span>
+                <span class="sidebar__badge sidebar__badge--warning">3</span>
+              </a>
+              <a href="./my-notifications.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10 3 9 3.89543 9 5V5.34142C6.66962 6.16509 5 8.38757 5 11V14.1585C5 14.6973 4.78595 15.2141 4.40493 15.5951L3 17H8M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Уведомления</span>
+                <span class="sidebar__badge sidebar__badge--error">11</span>
+              </a>
               <a href="./profile.html" class="sidebar__link">
                 <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
@@ -62,164 +79,237 @@
                 </svg>
                 <span class="sidebar__text">Профиль</span>
               </a>
-              <a href="./my-requests.html" class="sidebar__link sidebar__link--active">
-                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                  <path d="M9 9H15M9 13H15M9 17H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <span class="sidebar__text">Заявки</span>
-                <span class="sidebar__badge">2</span>
-              </a>
-              <a href="#" class="sidebar__link">
-                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 14L12 3M12 3L8 7M12 3L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M4 17V19C4 20.1046 4.89543 21 6 21H18C19.1046 21 20 20.1046 20 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <span class="sidebar__text">Обучение</span>
-                <span class="sidebar__badge sidebar__badge--warning">10</span>
-              </a>
-              <a href="#" class="sidebar__link">
-                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="sidebar__text">Уведомления</span>
-                <span class="sidebar__badge sidebar__badge--error">11</span>
-              </a>
-              <a href="#" class="sidebar__link">
-                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 21L10.55 19.7C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 19.7L12 21Z" stroke="currentColor" stroke-width="2"/>
-                </svg>
-                <span class="sidebar__text">Избранное</span>
-                <span class="sidebar__badge sidebar__badge--error">12</span>
-              </a>
-              <a href="#" class="sidebar__link">
-                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                  <path d="M9 9H15M9 13H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <span class="sidebar__text">Поддержка</span>
-                <span class="sidebar__badge sidebar__badge--success">13</span>
-              </a>
             </nav>
           </aside>
 
-          <!-- Content -->
           <div class="content-card sidebar-layout__content">
-              <!-- Tabs -->
-              <div class="tabs">
-                <button class="tabs__item tabs__item--active">Запросы на инновацию</button>
-                <button class="tabs__item">Заявки в команду</button>
+            <section class="page-header">
+              <div>
+                <p class="eyebrow">Личный кабинет участника</p>
+                <h1>Мои идеи</h1>
+                <p class="page-header__description">
+                  Отслеживайте статусы, комментарии модераторов и подготовки к Bitrix24 для всех идей, которые вы подали на запросы платформы.
+                </p>
               </div>
-
-              <div class="card__header">
-                <h1 class="card__title">Мои запросы</h1>
+              <div class="page-header__actions">
+                <a href="./idea-form.html" class="btn btn--primary btn--lg">Создать идею</a>
+                <button type="button" class="btn btn--ghost btn--lg">Сохранить фильтр</button>
               </div>
+            </section>
 
-              <div class="search">
-                <svg class="search__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
-                  <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <input type="text" class="form-input search__input" placeholder="Поиск">
-              </div>
-
-              <!-- Filters -->
-              <div class="filters">
-                <button class="filter-pill filter-pill--active">Все</button>
-                <button class="filter-pill">На рассмотрении модератора</button>
-                <button class="filter-pill">Ждет вашего решения</button>
-                <button class="filter-pill">Одобренные</button>
-                <button class="filter-pill">Отклоненные</button>
-                <button class="filter-pill">Черновики</button>
-                <button class="filter-pill">Архив</button>
-                <button class="btn btn--reset filter-reset" type="button" data-clear-filters>
-                  <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <section class="filters-panel card">
+              <div class="filters-panel__row">
+                <label class="search" aria-label="Поиск по идеям">
+                  <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                    <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                   </svg>
-                  <span class="btn__text">Сбросить фильтры</span>
+                  <input type="search" class="form-input search__input" placeholder="Название идеи или запроса">
+                </label>
+                <div class="form-group">
+                  <label class="form-label" for="filter-request">Запрос</label>
+                  <select class="form-select" id="filter-request">
+                    <option>Все запросы</option>
+                    <option>Замена профессий</option>
+                    <option>AR-обучение мастеров</option>
+                    <option>Диагностика без подключений</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="filter-direction">Направление</label>
+                  <select class="form-select" id="filter-direction">
+                    <option>Все направления</option>
+                    <option>Строительство</option>
+                    <option>Эксплуатация</option>
+                    <option>Цифровизация</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="filter-stage">Стадия</label>
+                  <select class="form-select" id="filter-stage">
+                    <option>Все стадии</option>
+                    <option>Одобрена</option>
+                    <option>Готово к ПК</option>
+                    <option>Готово к НТК</option>
+                  </select>
+                </div>
+              </div>
+              <div class="status-pills" role="group" aria-label="Фильтр по статусам">
+                <button type="button" class="filter-pill is-active">Все статусы</button>
+                <button type="button" class="filter-pill">
+                  Черновик
+                  <span class="filter-pill__count">2</span>
                 </button>
+                <button type="button" class="filter-pill">На модерации</button>
+                <button type="button" class="filter-pill">На доработке</button>
+                <button type="button" class="filter-pill">На рассмотрении</button>
+                <button type="button" class="filter-pill">Одобрена</button>
+                <button type="button" class="filter-pill">Архив</button>
               </div>
+            </section>
 
-              <!-- Request Cards -->
-              <div class="request-list">
-                <!-- Request Card 1 -->
-                <div class="request-card">
-                  <div class="request-card__header">
-                    <div class="request-card__badges">
-                      <span class="badge badge--primary">Управление</span>
-                    </div>
-                    <div class="status-indicator status-indicator--pending">
-                      <span class="status-indicator__dot"></span>
-                      <span>На модерации</span>
-                    </div>
-                    <button class="icon-btn" data-favorite aria-label="Добавить в избранное">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 21L10.55 19.7C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 19.7L12 21Z" stroke="currentColor" stroke-width="2"/>
-                      </svg>
-                    </button>
+            <section class="metrics-grid">
+              <article class="metric-card">
+                <p class="metric-card__label">Идей на рассмотрении</p>
+                <p class="metric-card__value">3</p>
+                <p class="metric-card__hint">Срок ответа до 15 мая</p>
+              </article>
+              <article class="metric-card">
+                <p class="metric-card__label">Одобрено и в Bitrix24</p>
+                <p class="metric-card__value">4</p>
+                <p class="metric-card__hint">2 в стадии «Готово к ПК»</p>
+              </article>
+              <article class="metric-card">
+                <p class="metric-card__label">Новых комментариев</p>
+                <p class="metric-card__value metric-card__value--warning">7</p>
+                <p class="metric-card__hint">Ответьте, чтобы не потерять дедлайны</p>
+              </article>
+            </section>
+
+            <section class="idea-list" aria-label="Список идей">
+              <article class="card idea-card">
+                <div class="idea-card__header">
+                  <div class="idea-card__meta">
+                    <span class="badge badge--primary">Цифровизация</span>
+                    <span class="idea-card__request">Запрос: Замена профессий</span>
+                    <span class="idea-card__stage badge badge--outline">Стадия: Одобрена</span>
                   </div>
-                  
-                  <h3 class="request-card__title">Замена профессий</h3>
-                  <p class="request-card__description">
-                    Цифровой сотрудник – анализ наличия и подготовка замены «устаревающих» профессий на основе автоматизации, цифровизации, искусственного интеллекта
-                  </p>
-                  
-                  <div class="request-card__meta">
-                    <div class="request-card__author">
-                      <div class="avatar avatar--sm">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
-                          <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <div class="request-card__author-label">Ваша роль</div>
-                        <div class="request-card__author-name">Стейкхолдер</div>
-                      </div>
-                    </div>
-                    <a href="./request-detail.html" class="btn btn--primary">Подробнее</a>
+                  <span class="status-indicator status-indicator--approved">
+                    <span class="status-indicator__dot"></span>
+                    Одобрена
+                  </span>
+                </div>
+                <h3 class="idea-card__title">
+                  <a href="./idea-detail.html">HR-Foresight: предиктивное кадровое планирование</a>
+                </h3>
+                <p class="idea-card__description">
+                  Цифровой сервис прогнозирует дефицит компетенций в филиалах, автоматически формирует план обучения и показывает влияние на KPI запросов.
+                </p>
+                <dl class="idea-card__details">
+                  <div>
+                    <dt>Обновлено</dt>
+                    <dd>12 мая, 09:40</dd>
+                  </div>
+                  <div>
+                    <dt>Ответственный</dt>
+                    <dd>Петров Алексей</dd>
+                  </div>
+                  <div>
+                    <dt>Команда</dt>
+                    <dd>6 участников · 1 вакансия</dd>
+                  </div>
+                </dl>
+                <div class="idea-card__footer">
+                  <div class="idea-card__stats">
+                    <span>Комментарии · 4</span>
+                    <span>Документы · 6</span>
+                    <span>Bitrix24 · 12 задач</span>
+                  </div>
+                  <div class="idea-card__actions">
+                    <button type="button" class="btn btn--ghost btn--sm">Редактировать</button>
+                    <a href="./idea-detail.html" class="btn btn--secondary btn--sm">Открыть карточку</a>
                   </div>
                 </div>
+              </article>
 
-                <!-- Request Card 2 -->
-                <div class="request-card">
-                  <div class="request-card__header">
-                    <div class="request-card__badges">
-                      <span class="badge badge--warning">Операционная деятельность</span>
-                    </div>
-                    <div class="status-indicator status-indicator--draft">
-                      <span class="status-indicator__dot"></span>
-                      <span>Черновик</span>
-                    </div>
-                    <button class="icon-btn" data-favorite aria-label="Добавить в избранное">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 21L10.55 19.7C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 19.7L12 21Z" stroke="currentColor" stroke-width="2"/>
-                      </svg>
-                    </button>
+              <article class="card idea-card">
+                <div class="idea-card__header">
+                  <div class="idea-card__meta">
+                    <span class="badge badge--warning">Эксплуатация</span>
+                    <span class="idea-card__request">Запрос: Диагностика без подключений</span>
+                    <span class="idea-card__stage badge badge--outline badge--warning">Стадия: На доработке</span>
                   </div>
-                  
-                  <h3 class="request-card__title">Внесение изменений в регламент закупки</h3>
-                  <p class="request-card__description">
-                    Создание единого реестра поставщиков с автоматизированной системой формирования коммерческих предложений
-                  </p>
-                  
-                  <div class="request-card__meta">
-                    <div class="request-card__author">
-                      <div class="avatar avatar--sm">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
-                          <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                      </div>
-                      <div>
-                        <div class="request-card__author-label">Ваша роль</div>
-                        <div class="request-card__author-name">Автор</div>
-                      </div>
-                    </div>
-                    <a href="./request-detail.html" class="btn btn--primary">Подробнее</a>
+                  <span class="status-indicator status-indicator--pending">
+                    <span class="status-indicator__dot"></span>
+                    На доработке (2 замечания)
+                  </span>
+                </div>
+                <h3 class="idea-card__title">
+                  <a href="./idea-detail.html">Телеметрия ПРГ без остановки поставок</a>
+                </h3>
+                <p class="idea-card__description">
+                  Комплекс датчиков и ПО для дистанционного мониторинга пунктов редуцирования газа с аналитикой утечек и автоматическими уведомлениями в Bitrix24.
+                </p>
+                <dl class="idea-card__details">
+                  <div>
+                    <dt>Замечания</dt>
+                    <dd>Добавить расчёт эффекта · Обновить смету</dd>
+                  </div>
+                  <div>
+                    <dt>Срок повторной подачи</dt>
+                    <dd>до 20 мая</dd>
+                  </div>
+                  <div>
+                    <dt>Наставник</dt>
+                    <dd>Иванова Светлана</dd>
+                  </div>
+                </dl>
+                <div class="idea-card__footer">
+                  <div class="idea-card__stats">
+                    <span>Комментарии · 8</span>
+                    <span>Файлы · 3</span>
+                    <span>История · 5 событий</span>
+                  </div>
+                  <div class="idea-card__actions">
+                    <button type="button" class="btn btn--ghost btn--sm">Ответить на замечания</button>
+                    <a href="./idea-detail.html" class="btn btn--primary btn--sm">Отправить повторно</a>
                   </div>
                 </div>
+              </article>
+
+              <article class="card idea-card idea-card--draft">
+                <div class="idea-card__header">
+                  <div class="idea-card__meta">
+                    <span class="badge badge--secondary">Строительство</span>
+                    <span class="idea-card__stage badge badge--outline badge--muted">Черновик</span>
+                  </div>
+                  <span class="status-indicator status-indicator--draft">
+                    <span class="status-indicator__dot"></span>
+                    Черновик не отправлен
+                  </span>
+                </div>
+                <h3 class="idea-card__title">Беспилотный контроль строительных площадок</h3>
+                <p class="idea-card__description">
+                  Проект цифрового надзора за складом труб и строительными площадками с использованием дронов и CV-аналитики.
+                </p>
+                <div class="idea-card__footer">
+                  <div class="idea-card__stats">
+                    <span>Последнее редактирование · 7 мая</span>
+                  </div>
+                  <div class="idea-card__actions">
+                    <button type="button" class="btn btn--ghost btn--sm">Удалить черновик</button>
+                    <a href="./idea-form.html" class="btn btn--secondary btn--sm">Продолжить заполнение</a>
+                  </div>
+                </div>
+              </article>
+            </section>
+
+            <section class="history-panel card">
+              <div class="card__header">
+                <h2 class="card__title">История изменений</h2>
+                <button type="button" class="btn btn--text">Экспортировать CSV</button>
               </div>
+              <ol class="timeline" aria-label="Журнал действий по идеям">
+                <li class="timeline__item">
+                  <div>
+                    <p class="timeline__title">HR-Foresight переведена в «Одобрена»</p>
+                    <p class="timeline__meta">Стейкхолдер, 12.05.2025 · 10:18</p>
+                  </div>
+                </li>
+                <li class="timeline__item">
+                  <div>
+                    <p class="timeline__title">Поступил отзыв по диаграммам эффектов</p>
+                    <p class="timeline__meta">Модератор, 11.05.2025 · 16:42</p>
+                  </div>
+                </li>
+                <li class="timeline__item">
+                  <div>
+                    <p class="timeline__title">Создана новая идея «Беспилотный контроль строительных площадок»</p>
+                    <p class="timeline__meta">Вы, 08.05.2025 · 21:03</p>
+                  </div>
+                </li>
+              </ol>
+            </section>
           </div>
         </div>
       </div>

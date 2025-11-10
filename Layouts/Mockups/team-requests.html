@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Командные запросы | Инноватика Мособлгаз</title>
+  <title>Заявка в команду | Инноватика Мособлгаз</title>
   <link rel="stylesheet" href="./assets/css/base.css">
   <link rel="stylesheet" href="./assets/css/layout.css">
   <link rel="stylesheet" href="./assets/css/components.css">
@@ -46,62 +46,83 @@
 
     <main class="main layout__main">
       <div class="container">
-        <div class="team-requests__intro">
-          <h1>Командные запросы</h1>
-          <p>Список активных запросов на формирование проектных команд. Используйте карточки ниже, чтобы быстро подобрать специалистов или присоединиться к инициативе.</p>
-        </div>
+        <a href="./my-applications.html" class="back-link">← Вернуться в кабинет</a>
+        <section class="team-request">
+          <div class="team-request__intro">
+            <p class="eyebrow">Форма заявки</p>
+            <h1>Присоединиться к команде</h1>
+            <p>Укажите роль, уровень компетенций и прикрепите опыт. Координатор получит заявку и ответит в течение двух рабочих дней.</p>
+          </div>
 
-        <div class="team-requests__grid">
-          <article class="card team-card">
-            <div class="team-card__meta">
-              <span class="badge badge--primary">IT-команда</span>
-              <span class="status-indicator status-indicator--pending">
-                <span class="status-indicator__dot"></span>
-                Подбор участников
-              </span>
+          <form class="team-request__form card" data-validate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label form-label--required" for="team-request">Запрос</label>
+                <select class="form-select" id="team-request" required>
+                  <option value="">Выберите запрос</option>
+                  <option value="replacement">Замена профессий</option>
+                  <option value="diagnostic">Диагностика без подключений</option>
+                  <option value="ar">AR-обучение</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="team-role">Целевая роль</label>
+                <select class="form-select" id="team-role" required>
+                  <option value="">Выберите роль</option>
+                  <option value="lead">Тимлид</option>
+                  <option value="analyst">Аналитик</option>
+                  <option value="designer">UX/UI дизайнер</option>
+                  <option value="mentor">Наставник</option>
+                  <option value="devops">DevOps / Инженер внедрения</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="team-level">Уровень компетенции</label>
+                <select class="form-select" id="team-level" required>
+                  <option value="">Выберите уровень</option>
+                  <option value="junior">Junior</option>
+                  <option value="middle">Middle</option>
+                  <option value="senior">Senior</option>
+                  <option value="expert">Expert</option>
+                </select>
+              </div>
             </div>
-            <h2 class="team-card__title">Подготовка MVP для HR-платформы</h2>
-            <p class="team-card__desc">Нужны аналитик, backend разработчик и product designer для пилота автоматизации подбора персонала.</p>
-            <div class="request-card__meta">
-              <div class="request-card__author">
-                <div class="avatar avatar--sm">HR</div>
-                <div>
-                  <div class="request-card__author-label">Куратор</div>
-                  <div class="request-card__author-name">Андрей К.</div>
+
+            <div class="form-group">
+              <label class="form-label form-label--required" for="team-experience">Опыт и достижения</label>
+              <textarea class="form-textarea" id="team-experience" placeholder="Опишите ключевые проекты, метрики, участие в акселераторах" required></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="team-portfolio">Портфолио / резюме</label>
+                <div class="file-upload">
+                  <input type="file" id="team-portfolio" class="file-upload__input" accept=".pdf,.doc,.docx">
+                  <label for="team-portfolio" class="file-upload__label">Перетащите файл или выберите с устройства</label>
                 </div>
               </div>
-              <a href="./request-detail.html" class="btn btn--primary btn--sm">Подробнее</a>
-            </div>
-          </article>
-
-          <article class="card team-card">
-            <div class="team-card__meta">
-              <span class="badge badge--warning">Операции</span>
-              <span class="status-indicator status-indicator--approved">
-                <span class="status-indicator__dot"></span>
-                Команда собрана на 70%
-              </span>
-            </div>
-            <h2 class="team-card__title">Сопровождение внедрения AR-обучения</h2>
-            <p class="team-card__desc">Требуются наставники из филиалов для пилотного обучения линейного персонала с использованием AR.</p>
-            <div class="request-card__meta">
-              <div class="request-card__author">
-                <div class="avatar avatar--sm">OP</div>
-                <div>
-                  <div class="request-card__author-label">Стейкхолдер</div>
-                  <div class="request-card__author-name">Светлана П.</div>
-                </div>
+              <div class="form-group">
+                <label class="form-label" for="team-comment">Комментарий координатору</label>
+                <textarea class="form-textarea" id="team-comment" placeholder="Укажите доступность, желаемую занятость и др."></textarea>
               </div>
-              <a href="./request-detail.html" class="btn btn--primary btn--sm">Подробнее</a>
             </div>
-          </article>
-        </div>
+
+            <div class="form-check">
+              <input type="checkbox" class="form-check__input" id="team-consent" required>
+              <label class="form-check__label" for="team-consent">Согласен на обработку персональных данных и правила участия</label>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn--ghost btn--lg">Сохранить черновик</button>
+              <button type="submit" class="btn btn--primary btn--lg">Отправить заявку</button>
+            </div>
+          </form>
+        </section>
       </div>
     </main>
   </div>
 
   <script src="./assets/js/vendor.js"></script>
   <script src="./assets/js/app.js"></script>
-  <script src="./assets/js/requests.js"></script>
 </body>
 </html>

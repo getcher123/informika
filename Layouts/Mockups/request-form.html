@@ -120,6 +120,28 @@
               ></textarea>
             </div>
 
+            <!-- Критерии оценки -->
+            <div class="form-group">
+              <label class="form-label" for="criteria">Критерии оценки идей</label>
+              <span class="form-hint">Например: срок внедрения, требуемый эффект, уровень готовности решения</span>
+              <textarea 
+                class="form-textarea" 
+                id="criteria" 
+                placeholder="Опишите критерии, по которым будут оцениваться идеи"
+              ></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label form-label--required" for="deadline">Срок приёма идей</label>
+                <input type="date" class="form-input" id="deadline" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact">Контакт для уточнений</label>
+                <input type="email" class="form-input" id="contact" placeholder="name@company.ru">
+              </div>
+            </div>
+
             <!-- Есть ли у вас наработки -->
             <div class="form-group">
               <label class="form-label form-label--required">Есть ли у вас наработки по данному запросу?</label>
