@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./assets/css/base.css">
   <link rel="stylesheet" href="./assets/css/layout.css">
   <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/request-form.css">
   <link rel="stylesheet" href="./assets/css/pages/team-requests.css">
 </head>
 <body>
@@ -48,75 +49,77 @@
       <div class="container">
         <a href="./my-applications.html" class="back-link">← Вернуться в кабинет</a>
         <section class="team-request">
-          <div class="team-request__intro">
-            <p class="eyebrow">Форма заявки</p>
-            <h1>Присоединиться к команде</h1>
-            <p>Укажите роль, уровень компетенций и прикрепите опыт. Координатор получит заявку и ответит в течение двух рабочих дней.</p>
-          </div>
-
-          <form class="team-request__form card" data-validate>
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label form-label--required" for="team-request">Запрос</label>
-                <select class="form-select" id="team-request" required>
-                  <option value="">Выберите запрос</option>
-                  <option value="replacement">Замена профессий</option>
-                  <option value="diagnostic">Диагностика без подключений</option>
-                  <option value="ar">AR-обучение</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label form-label--required" for="team-role">Целевая роль</label>
-                <select class="form-select" id="team-role" required>
-                  <option value="">Выберите роль</option>
-                  <option value="lead">Тимлид</option>
-                  <option value="analyst">Аналитик</option>
-                  <option value="designer">UX/UI дизайнер</option>
-                  <option value="mentor">Наставник</option>
-                  <option value="devops">DevOps / Инженер внедрения</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label form-label--required" for="team-level">Уровень компетенции</label>
-                <select class="form-select" id="team-level" required>
-                  <option value="">Выберите уровень</option>
-                  <option value="junior">Junior</option>
-                  <option value="middle">Middle</option>
-                  <option value="senior">Senior</option>
-                  <option value="expert">Expert</option>
-                </select>
-              </div>
+          <div class="form-container form-container--large">
+            <div class="form-container__header">
+              <p class="eyebrow">Форма заявки</p>
+              <h1 class="form-container__title">Присоединиться к команде</h1>
+              <p class="form-container__subtitle">Укажите роль, уровень компетенций и прикрепите опыт. Координатор получит заявку и ответит в течение двух рабочих дней.</p>
             </div>
 
-            <div class="form-group">
-              <label class="form-label form-label--required" for="team-experience">Опыт и достижения</label>
-              <textarea class="form-textarea" id="team-experience" placeholder="Опишите ключевые проекты, метрики, участие в акселераторах" required></textarea>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="team-portfolio">Портфолио / резюме</label>
-                <div class="file-upload">
-                  <input type="file" id="team-portfolio" class="file-upload__input" accept=".pdf,.doc,.docx">
-                  <label for="team-portfolio" class="file-upload__label">Перетащите файл или выберите с устройства</label>
+            <form class="form-container__body request-form" data-validate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label form-label--required" for="team-request">Запрос</label>
+                  <select class="form-select" id="team-request" required>
+                    <option value="">Выберите запрос</option>
+                    <option value="replacement">Замена профессий</option>
+                    <option value="diagnostic">Диагностика без подключений</option>
+                    <option value="ar">AR-обучение</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label form-label--required" for="team-role">Целевая роль</label>
+                  <select class="form-select" id="team-role" required>
+                    <option value="">Выберите роль</option>
+                    <option value="lead">Тимлид</option>
+                    <option value="analyst">Аналитик</option>
+                    <option value="designer">UX/UI дизайнер</option>
+                    <option value="mentor">Наставник</option>
+                    <option value="devops">DevOps / Инженер внедрения</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label form-label--required" for="team-level">Уровень компетенции</label>
+                  <select class="form-select" id="team-level" required>
+                    <option value="">Выберите уровень</option>
+                    <option value="junior">Junior</option>
+                    <option value="middle">Middle</option>
+                    <option value="senior">Senior</option>
+                    <option value="expert">Expert</option>
+                  </select>
                 </div>
               </div>
+
               <div class="form-group">
-                <label class="form-label" for="team-comment">Комментарий координатору</label>
-                <textarea class="form-textarea" id="team-comment" placeholder="Укажите доступность, желаемую занятость и др."></textarea>
+                <label class="form-label form-label--required" for="team-experience">Опыт и достижения</label>
+                <textarea class="form-textarea" id="team-experience" placeholder="Опишите ключевые проекты, метрики, участие в акселераторах" required></textarea>
               </div>
-            </div>
 
-            <div class="form-check">
-              <input type="checkbox" class="form-check__input" id="team-consent" required>
-              <label class="form-check__label" for="team-consent">Согласен на обработку персональных данных и правила участия</label>
-            </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="team-portfolio">Портфолио / резюме</label>
+                  <div class="file-upload">
+                    <input type="file" id="team-portfolio" class="file-upload__input" accept=".pdf,.doc,.docx">
+                    <label for="team-portfolio" class="file-upload__label">Перетащите файл или выберите с устройства</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="team-comment">Комментарий координатору</label>
+                  <textarea class="form-textarea" id="team-comment" placeholder="Укажите доступность, желаемую занятость и др."></textarea>
+                </div>
+              </div>
 
-            <div class="form-actions">
-              <button type="button" class="btn btn--ghost btn--lg">Сохранить черновик</button>
-              <button type="submit" class="btn btn--primary btn--lg">Отправить заявку</button>
-            </div>
-          </form>
+              <div class="form-check">
+                <input type="checkbox" class="form-check__input" id="team-consent" required>
+                <label class="form-check__label" for="team-consent">Согласен на обработку персональных данных и правила участия</label>
+              </div>
+
+              <div class="form-actions">
+                <button type="button" class="btn btn--ghost btn--lg">Сохранить черновик</button>
+                <button type="submit" class="btn btn--primary btn--lg">Отправить заявку</button>
+              </div>
+            </form>
+          </div>
         </section>
       </div>
     </main>

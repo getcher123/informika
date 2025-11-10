@@ -10,31 +10,6 @@
   margin-bottom: var(--spacing-xs);
 }
 
-.form-page {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.form-page__header {
-  text-align: center;
-  margin-bottom: var(--spacing-3xl);
-}
-
-.form-page__title {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-md);
-}
-
-.form-page__subtitle {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-secondary);
-  line-height: var(--line-height-relaxed);
-  max-width: 900px;
-  margin: 0 auto;
-}
-
 .request-form {
   background: var(--color-bg-white);
   border-radius: var(--radius-xl);
@@ -46,6 +21,12 @@
   .request-form {
     padding: var(--spacing-lg);
   }
+}
+
+.form-row {
+  display: grid;
+  gap: var(--spacing-md);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .radio-group {
