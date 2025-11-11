@@ -109,17 +109,50 @@
   }
 
   .ui-kit-gradient-demo {
-    height: 180px;
+    position: relative;
+    overflow: hidden;
+    height: 220px;
     border-radius: var(--radius-xl);
-    background: var(--gradient-bg);
+    background: var(--color-bg-white);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-text-white);
+    color: var(--color-text-primary);
     font-size: var(--font-size-xl);
     font-weight: var(--font-weight-bold);
     box-shadow: var(--shadow-md);
     margin-top: var(--spacing-md);
+  }
+
+  .ui-kit-gradient-demo::before,
+  .ui-kit-gradient-demo::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    pointer-events: none;
+  }
+
+  .ui-kit-gradient-demo::before {
+    width: 420px;
+    height: 280px;
+    left: -140px;
+    top: -120px;
+    background: radial-gradient(ellipse 50% 50% at 50% 50%, #00C1D4 0%, rgba(0, 193, 212, 0) 95%);
+  }
+
+  .ui-kit-gradient-demo::after {
+    width: 460px;
+    height: 300px;
+    right: -80px;
+    top: -140px;
+    background: radial-gradient(ellipse 50% 50% at 50% 50%, #A78BFA 0%, rgba(167, 139, 250, 0) 95%);
+  }
+
+  .ui-kit-gradient-demo span {
+    position: relative;
+    z-index: 1;
+    color: var(--color-text-primary);
   }
 
   .ui-kit-tabs-demo {
@@ -300,7 +333,6 @@
   .color-swatch--error .color-swatch__color { background: #FF4D4F; }
   .color-swatch--success .color-swatch__color { background: #00D4AA; }
   .color-swatch--gradient-main .color-swatch__color { background: linear-gradient(90deg, #9B7EDE 0%, #00A8CC 100%); }
-  .color-swatch--gradient-alt .color-swatch__color { background: linear-gradient(135deg, #00A8CC 0%, #8B5CF6 100%); }
 
   .ui-kit-text--sm {
     font-size: var(--font-size-sm);
@@ -438,14 +470,6 @@
                 <div class="color-swatch__value">90deg, #9B7EDE → #00A8CC</div>
               </div>
             </div>
-            
-            <div class="color-swatch color-swatch--gradient-alt">
-              <div class="color-swatch__color"></div>
-              <div class="color-swatch__info">
-                <div class="color-swatch__name">Background Gradient</div>
-                <div class="color-swatch__value">135deg, #00A8CC → #8B5CF6</div>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -462,44 +486,6 @@
               <li><strong>.back-link</strong> — ссылка «Назад» оставляет <code>spacing-lg</code> до следующего блока автоматически.</li>
               <li><strong>.card</strong> — внутренние паддинги карточек <code>spacing-xl</code>, заголовки и параграфы внутри следуют ритму <code>spacing-md / spacing-sm</code>.</li>
             </ul>
-          </div>
-        </section>
-
-        <!-- Отступы -->
-        <section class="ui-kit-section">
-          <h2 class="ui-kit-title">Вертикальные отступы</h2>
-          <p class="ui-kit-description">Используйте готовые utility-классы, чтобы секции и элементы автоматически сохраняли согласованный вертикальный ритм.</p>
-
-          <div class="ui-kit-grid ui-kit-grid--auto">
-            <div class="card">
-              <h3 class="ui-kit-subtitle">Секции</h3>
-              <p>Соседние .section разделяются отступом var(--spacing-2xl) — достаточно добавить класс к блоку.</p>
-              <pre class="ui-kit-code">&lt;section class=&quot;section&quot;&gt;...&lt;/section&gt;
-&lt;section class=&quot;section&quot;&gt;...&lt;/section&gt;</pre>
-            </div>
-
-            <div class="card">
-              <h3 class="ui-kit-subtitle">Поиск и фильтры</h3>
-              <p>.search → spacing-lg, .filters / .filters-section → spacing-xl. Карточки всегда находятся на одинаковом расстоянии от фильтров.</p>
-              <pre class="ui-kit-code">&lt;div class=&quot;search&quot;&gt;...&lt;/div&gt;
-&lt;div class=&quot;filters filters-section&quot;&gt;...&lt;/div&gt;</pre>
-            </div>
-
-            <div class="card">
-              <h3 class="ui-kit-subtitle">Ссылки «Назад»</h3>
-              <p>.back-link автоматически оставляет spacing-lg до следующего блока.</p>
-              <pre class="ui-kit-code">&lt;a class=&quot;back-link&quot; href=&quot;#&quot;&gt;← Назад&lt;/a&gt;
-&lt;div class=&quot;card&quot;&gt;Контент&lt;/div&gt;</pre>
-            </div>
-
-            <div class="card">
-              <h3 class="ui-kit-subtitle">Карточки</h3>
-              <p>.card управляет внутренними паддингами (spacing-xl) и ритмом заголовков (spacing-md/sm).</p>
-              <pre class="ui-kit-code">&lt;div class=&quot;card&quot;&gt;
-  &lt;h3 class=&quot;card__title&quot;&gt;Заголовок&lt;/h3&gt;
-  ...
-&lt;/div&gt;</pre>
-            </div>
           </div>
         </section>
 
@@ -800,7 +786,7 @@
 
         <!-- Градиентный фон -->
         <section class="ui-kit-section ui-kit-section--plain">
-          <h2 class="ui-kit-title">Градиентный фон кабинета</h2>
+          <h2 class="ui-kit-title">Градиентный фон</h2>
           
                     <div class="ui-kit-example">
 
@@ -812,7 +798,92 @@
 
             </div>
 
-            <p>Диагональный градиент (#00A8CC → #8B5CF6) создаёт атмосферу и подчёркивает карточки. Он используется на всех экранах личного кабинета.</p>
+            <p>Фон строится из двух размытых окружностей (бирюзовой и фиолетовой), которые закреплены на body и подходят для всех внутренних экранов.</p>
+
+            <pre class="ui-kit-code">.body--gradient {
+  position: relative;
+  min-height: 100vh;
+  background: var(--color-bg-white);
+  overflow-x: hidden;
+}
+
+.body--gradient::before,
+.body--gradient::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+
+.body--gradient::before {
+  width: calc(min(2800px, 110vw) * 1.5);
+  height: calc(min(1800px, 110vh) * 1.5);
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    ellipse 50% 50% at 50% 50%,
+    #00C1D4 0%,
+    rgba(0, 193, 212, 0) 97%
+  );
+}
+
+.body--gradient::after {
+  width: calc(min(3200px, 120vw) * 1.5);
+  height: calc(min(2000px, 120vh) * 1.5);
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+  background: radial-gradient(
+    ellipse 50% 50% at 50% 50%,
+    #A78BFA 0%,
+    rgba(167, 139, 250, 0) 97%
+  );
+}
+
+@media (max-width: 1024px) {
+  .body--gradient::before {
+    width: calc(min(2200px, 140vw) * 1.5);
+    height: calc(min(1400px, 120vh) * 1.5);
+    transform: translate(-55%, -50%);
+  }
+
+  .body--gradient::after {
+    width: calc(min(2400px, 150vw) * 1.5);
+    height: calc(min(1500px, 130vh) * 1.5);
+    transform: translate(55%, -50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .body--gradient::before {
+    width: calc(min(1600px, 160vw) * 1.5);
+    height: calc(min(1100px, 130vh) * 1.5);
+    transform: translate(-55%, -50%);
+  }
+
+  .body--gradient::after {
+    width: calc(min(1800px, 170vw) * 1.5);
+    height: calc(min(1200px, 135vh) * 1.5);
+    transform: translate(55%, -50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .body--gradient::before {
+    width: calc(min(1400px, 200vw) * 1.5);
+    height: calc(min(1000px, 150vh) * 1.5);
+    transform: translate(-55%, -50%);
+  }
+
+  .body--gradient::after {
+    width: calc(min(1600px, 210vw) * 1.5);
+    height: calc(min(1100px, 160vh) * 1.5);
+    transform: translate(55%, -50%);
+  }
+}</pre>
+
+            <p class="ui-kit-text--sm">Добавляйте класс <code>.main--with-gradient</code> только для сохранения прозрачного фона контента — сам градиент задаёт <code>.body--gradient</code>.</p>
 
           </div>
         </section>

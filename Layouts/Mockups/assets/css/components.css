@@ -975,8 +975,43 @@
 
 /* Background helpers */
 .body--gradient {
-  background: var(--gradient-bg);
+  position: relative;
   min-height: 100vh;
+  background: var(--color-bg-white);
+  overflow-x: hidden;
+}
+
+.body--gradient::before,
+.body--gradient::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(80px);
+}
+
+.body--gradient::before {
+  width: calc(min(2800px, 110vw) * 1.5);
+  height: calc(min(1800px, 110vh) * 1.5);
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, #00C1D4 0%, rgba(0, 193, 212, 0) 97%);
+}
+
+.body--gradient::after {
+  width: calc(min(3200px, 120vw) * 1.5);
+  height: calc(min(2000px, 120vh) * 1.5);
+  right: 0;
+  top: 0;
+  transform: translate(50%, -50%);
+  background: radial-gradient(ellipse 50% 50% at 50% 50%, #A78BFA 0%, rgba(167, 139, 250, 0) 97%);
+}
+
+.body--gradient > * {
+  position: relative;
+  z-index: 1;
 }
 
 .body--gradient .layout,
@@ -985,7 +1020,49 @@
 }
 
 .main--with-gradient {
-  background: var(--gradient-bg);
+  background: transparent;
+}
+
+@media (max-width: 1024px) {
+  .body--gradient::before {
+    width: calc(min(2200px, 140vw) * 1.5);
+    height: calc(min(1400px, 120vh) * 1.5);
+    transform: translate(-55%, -50%);
+  }
+
+  .body--gradient::after {
+    width: calc(min(2400px, 150vw) * 1.5);
+    height: calc(min(1500px, 130vh) * 1.5);
+    transform: translate(55%, -50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .body--gradient::before {
+    width: calc(min(1600px, 160vw) * 1.5);
+    height: calc(min(1100px, 130vh) * 1.5);
+    transform: translate(-55%, -50%);
+  }
+
+  .body--gradient::after {
+    width: calc(min(1800px, 170vw) * 1.5);
+    height: calc(min(1200px, 135vh) * 1.5);
+    transform: translate(55%, -50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .body--gradient::before {
+    width: calc(min(1400px, 200vw) * 1.5);
+    height: calc(min(1000px, 150vh) * 1.5);
+    transform: translate(-55%, -50%);
+  }
+
+  .body--gradient::after {
+    width: calc(min(1600px, 210vw) * 1.5);
+    height: calc(min(1100px, 160vh) * 1.5);
+    transform: translate(55%, -50%);
+  }
 }
 
 /* ========================================
@@ -1178,10 +1255,6 @@
 .form-container__subtitle {
   font-size: 1rem;
   color: var(--color-text-secondary);
-}
-
-.form-container__body {
-  margin-bottom: 1.5rem;
 }
 
 .form-container__footer {
