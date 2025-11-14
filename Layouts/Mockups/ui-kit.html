@@ -480,65 +480,21 @@
           </div>
         </section>
 
-        <!-- Отступы -->
-        <section class="ui-kit-section">
-          <h2 class="ui-kit-title">Вертикальные отступы</h2>
-          <p class="ui-kit-description">Utility-классы задают расстояния между блоками личного кабинета и деталей. Держим их под рукой.</p>
-
-          <div class="ui-kit-example">
-            <ul class="ui-kit-list">
-              <li><strong>.section</strong> — соседние разделы отделяются на <code>var(--spacing-2xl)</code>. Используем на карточках запросов, командах и любых больших блоках.</li>
-              <li><strong>.search</strong> — поиск держит <code>spacing-lg</code> до фильтров и списков.</li>
-              <li><strong>.filters</strong> / <strong>.filters-section</strong> — фильтры и панели состояний имеют <code>spacing-xl</code> снизу.</li>
-              <li><strong>.back-link</strong> — ссылка «Назад» оставляет <code>spacing-lg</code> до следующего блока автоматически.</li>
-              <li><strong>.card</strong> — внутренние паддинги карточек <code>spacing-xl</code>, заголовки и параграфы внутри следуют ритму <code>spacing-md / spacing-sm</code>.</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Типографика -->
-        <section class="ui-kit-section">
-          <h2 class="ui-kit-title">Типографика</h2>
-          
-          <div class="typography-example">
-            <h1>Заголовок H1 (36px / 2.25rem)</h1>
-            <h2>Заголовок H2 (30px / 1.875rem)</h2>
-            <h3>Заголовок H3 (24px / 1.5rem)</h3>
-            <h4>Заголовок H4 (20px / 1.25rem)</h4>
-            <h5>Заголовок H5 (18px / 1.125rem)</h5>
-            <h6>Заголовок H6 (16px / 1rem)</h6>
-            <p>Обычный текст (16px / 1rem) - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <p class="ui-kit-text--sm">Маленький текст (14px / 0.875rem) - Lorem ipsum dolor sit amet.</p>
-            <p class="ui-kit-text--xs">Очень маленький текст (12px / 0.75rem) - Lorem ipsum.</p>
-          </div>
-
-          <h3 class="ui-kit-subtitle">Utility-классы для текста</h3>
           <div class="ui-kit-grid ui-kit-grid--auto">
             <div class="ui-kit-example">
-              <p class="heading-display">.heading-display — крупный герой-заголовок</p>
-              <p class="heading-page">.heading-page — основной заголовок страницы</p>
-              <p class="heading-section">.heading-section — заголовок секции или карточки</p>
-              <p class="heading-subtitle">.heading-subtitle — подзаголовок внутри карточек</p>
+              <p class="heading-display">Hero / .heading-display</p>
+              <p class="heading-page">Основной заголовок / .heading-page</p>
+              <p class="heading-section">Секция / .heading-section</p>
+              <p class="heading-subtitle">Подзаголовок / .heading-subtitle</p>
             </div>
             <div class="ui-kit-example">
-              <p class="text-lead">.text-lead — лид-абзац, вводный текст для блоков</p>
-              <p class="text-muted">.text-muted — вспомогательный или поясняющий текст</p>
-              <p>Комбинируйте их с тегами <code>h1–h4</code> и стандартными параграфами — классы задают типографику и отступы, поэтому страницы используют единый источник.</p>
+              <p class="text-lead">Вводный абзац / .text-lead</p>
+              <p>Базовый текст / default</p>
+              <p class="text-meta">Подпись / .text-meta</p>
+              <p class="text-caption text-muted">Метка / .text-caption</p>
             </div>
           </div>
-          <div class="ui-kit-example">
-            <h3 class="ui-kit-subtitle">Рекомендации по применению</h3>
-            <ul class="ui-kit-list">
-              <li><strong>H1 + .heading-display</strong> — лендинги, hero-блоки публичных страниц.</li>
-              <li><strong>H1/H2 + .heading-page</strong> — титулы разделов (банк запросов, детальные страницы, формы).</li>
-              <li><strong>H2 + .heading-section</strong> — заголовки карточек и секций внутри страницы.</li>
-              <li><strong>H3 + .heading-subtitle</strong> — подзаголовки в карточках, списках, таблицах.</li>
-              <li><strong>P + .text-lead</strong> — вводные описания под заголовками.</li>
-              <li><strong>P + .text-strong</strong> — имена, ключевые значения в карточках.</li>
-              <li><strong>P + .text-meta</strong> — подписи и описания с второстепенным приоритетом.</li>
-              <li><strong>P + .text-caption</strong> — маленькие метки/ролей, заголовки сайдбара.</li>
-            </ul>
-          </div>
+
         </section>
 
         <!-- Кнопки -->
@@ -572,6 +528,32 @@
             
             <button class="filter-pill">Фильтр</button>
             <button class="filter-pill filter-pill--active">Активный фильтр</button>
+          </div>
+        </section>
+
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Кнопки авторизации</h2>
+          <div class="ui-kit-grid ui-kit-grid--auto">
+            <div class="ui-kit-example">
+              <h3 class="ui-kit-subtitle">Неавторизованный пользователь</h3>
+              <a href="./login.html" class="btn btn--ghost header__user-btn">
+                <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                  <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="header__user-text">Войти</span>
+              </a>
+            </div>
+            <div class="ui-kit-example">
+              <h3 class="ui-kit-subtitle">Авторизованный пользователь</h3>
+              <a href="./profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
+                <span class="header__user-initials">ОЧ</span>
+                <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                  <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </section>
 
@@ -643,94 +625,30 @@
         <!-- Бейджи -->
         <section class="ui-kit-section">
           <h2 class="ui-kit-title">Бейджи и индикаторы</h2>
-          <p class="ui-kit-description">Статусы всегда показываем с помощью <code>.status-indicator</code>, а бейджи используем для направлений запросов (см. раздел «Направления» в README).</p>
+          <p class="ui-kit-description">Бейджи показывают направление, индикаторы — статус процесса.</p>
           
-          <h3 class="ui-kit-subtitle">Направления (бейджи)</h3>
           <div class="ui-kit-grid ui-kit-grid--auto">
             <div class="ui-kit-example">
-              <span class="badge badge--primary">Цифровизация</span>
-              <p class="text-meta">Проекты по автоматизации, аналитике, IT-сервисам.</p>
+              <h3 class="ui-kit-subtitle">Направления</h3>
+              <div class="ui-kit-inline-list" style="gap: var(--spacing-lg); flex-wrap: wrap;">
+                <span class="badge badge--primary">Цифровизация</span>
+                <span class="badge badge--warning">Строительство</span>
+                <span class="badge badge--success">Эксплуатация</span>
+                <span class="badge badge--error">Безопасность</span>
+                <span class="badge badge--teal">Клиентский сервис</span>
+                <span class="badge badge--purple">Управление</span>
+                <span class="badge badge--gray">Другое</span>
+              </div>
             </div>
             <div class="ui-kit-example">
-              <span class="badge badge--warning">Строительство</span>
-              <p class="text-meta">Инфраструктура, новые объекты, проектные работы.</p>
-            </div>
-            <div class="ui-kit-example">
-              <span class="badge badge--success">Эксплуатация</span>
-              <p class="text-meta">Эксплуатация сетей, ремонт, сервисные команды.</p>
-            </div>
-            <div class="ui-kit-example">
-              <span class="badge badge--error">Безопасность</span>
-              <p class="text-meta">Охрана труда, промышленная и информационная безопасность.</p>
-            </div>
-            <div class="ui-kit-example">
-              <span class="badge badge--teal">Клиентский сервис</span>
-              <p class="text-meta">Работа с клиентами, улучшение сервисных процессов.</p>
-            </div>
-            <div class="ui-kit-example">
-              <span class="badge badge--purple">Управление</span>
-              <p class="text-meta">Управленческие идеи, HR, организационное развитие.</p>
-            </div>
-            <div class="ui-kit-example">
-              <span class="badge badge--gray">Другое</span>
-              <p class="text-meta">Направления, не попавшие в основные категории.</p>
-            </div>
-          </div>
-
-          <h3 class="ui-kit-subtitle">Базовые индикаторы</h3>
-          <div class="button-grid">
-            <span class="status-indicator status-indicator--published">
-              <span class="status-indicator__dot"></span>
-              Опубликовано
-            </span>
-            <span class="status-indicator status-indicator--approved">
-              <span class="status-indicator__dot"></span>
-              Одобрено
-            </span>
-            <span class="status-indicator status-indicator--pending">
-              <span class="status-indicator__dot"></span>
-              На рассмотрении
-            </span>
-            <span class="status-indicator status-indicator--draft">
-              <span class="status-indicator__dot"></span>
-              Черновик
-            </span>
-            <span class="status-indicator status-indicator--rejected">
-              <span class="status-indicator__dot"></span>
-              Отклонено
-            </span>
-          </div>
-
-          <h3 class="ui-kit-subtitle">Статусы по сущностям</h3>
-          <div class="ui-kit-grid ui-kit-grid--auto">
-            <div class="ui-kit-example">
-              <h4 class="heading-subtitle">Запрос на инновацию</h4>
-              <ul class="ui-kit-list">
-                <li><span class="status-indicator status-indicator--draft"><span class="status-indicator__dot"></span>Черновик</span> — подготовка и редактирование стейкхолдером.</li>
-                <li><span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>На сборе идей</span> — запрос опубликован и доступен для подачи.</li>
-                <li><span class="status-indicator status-indicator--rejected"><span class="status-indicator__dot"></span>Закрыт</span> — завершён по дедлайну или вручную, скрывает кнопку подачи.</li>
-              </ul>
-            </div>
-            <div class="ui-kit-example">
-              <h4 class="heading-subtitle">Идея</h4>
-              <ul class="ui-kit-list">
-                <li><span class="status-indicator status-indicator--draft"><span class="status-indicator__dot"></span>Черновик</span> — личная подготовка автора.</li>
-                <li><span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>На модерации</span> — проверка координатором.</li>
-                <li><span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>На доработке</span> — возврат с замечаниями (до 3 попыток).</li>
-                <li><span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>На рассмотрении</span> — стейкхолдер принимает решение.</li>
-                <li><span class="status-indicator status-indicator--approved"><span class="status-indicator__dot"></span>Одобрена</span> — старт рабочего пространства Bitrix24.</li>
-                <li><span class="status-indicator status-indicator--draft"><span class="status-indicator__dot"></span>Архив</span> — фиксация завершённых решений.</li>
-                <li><span class="status-indicator status-indicator--rejected"><span class="status-indicator__dot"></span>Отклонена</span> — финальное решение с обоснованием.</li>
-              </ul>
-            </div>
-            <div class="ui-kit-example">
-              <h4 class="heading-subtitle">Заявка в команду</h4>
-              <ul class="ui-kit-list">
-                <li><span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>На рассмотрении</span> — заявка попала во «Входящие».</li>
-                <li><span class="status-indicator status-indicator--approved"><span class="status-indicator__dot"></span>Принята</span> — участник закреплён в команде.</li>
-                <li><span class="status-indicator status-indicator--rejected"><span class="status-indicator__dot"></span>Отклонена</span> — есть причина в «Отправленных».</li>
-                <li><span class="status-indicator status-indicator--draft"><span class="status-indicator__dot"></span>Архив</span> — сохранённые истории завершений.</li>
-              </ul>
+              <h3 class="ui-kit-subtitle">Статусы</h3>
+              <div class="button-grid">
+                <span class="status-indicator status-indicator--published"><span class="status-indicator__dot"></span>Опубликовано</span>
+                <span class="status-indicator status-indicator--approved"><span class="status-indicator__dot"></span>Одобрено</span>
+                <span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>На рассмотрении</span>
+                <span class="status-indicator status-indicator--draft"><span class="status-indicator__dot"></span>Черновик</span>
+                <span class="status-indicator status-indicator--rejected"><span class="status-indicator__dot"></span>Отклонено</span>
+              </div>
             </div>
           </div>
         </section>
@@ -773,54 +691,39 @@
         <!-- Табы -->
         <section class="ui-kit-section">
           <h2 class="ui-kit-title">Табы и фильтры</h2>
-          
-          <h3 class="ui-kit-subtitle">Табы</h3>
-          <p class="ui-kit-description">Контейнер `.tabs` + кнопки `.tabs__item` создают адаптивные вкладки. Добавьте `data-tabs` и `data-tab` при необходимости JS-переключения.</p>
-                    <p class="ui-kit-description">Контрол работает от атрибутов <code>data-tabs</code> / <code>data-tab</code>. Ниже интерактивный пример.</p>
+          <p class="ui-kit-description">Живой пример с переключаемыми вкладками (атрибуты <code>data-tabs</code> / <code>data-tab</code>) и набором pill-фильтров.</p>
 
-          <div class="ui-kit-example ui-kit-tabs-demo" data-tabs>
+          <div class="ui-kit-grid ui-kit-grid--auto">
+            <div class="ui-kit-example ui-kit-tabs-demo" data-tabs>
+              <h3 class="ui-kit-subtitle">Табы</h3>
+              <div class="tabs">
+                <button class="tabs__item tabs__item--active" data-tab="lk-tabs">Личный кабинет</button>
+                <button class="tabs__item" data-tab="requests-tabs">Заявки</button>
+                <button class="tabs__item" data-tab="archive-tabs">Архив</button>
+              </div>
 
-            <div class="tabs">
-
-              <button class="tabs__item tabs__item--active" data-tab="lk-tabs">Личный кабинет</button>
-
-              <button class="tabs__item" data-tab="requests-tabs">Заявки</button>
-
-              <button class="tabs__item" data-tab="archive-tabs">Архив</button>
-
+              <div class="ui-kit-tabs-panels">
+                <div class="tabs-panel is-active" data-tab-panel="lk-tabs">
+                  <p>Вкладки переключают карточки пользователя: «Мои запросы», «Мои заявки», «Архив».</p>
+                </div>
+                <div class="tabs-panel" data-tab-panel="requests-tabs" hidden>
+                  <p>Используем там, где нужно разделить заявки по статусам или ролям.</p>
+                </div>
+                <div class="tabs-panel" data-tab-panel="archive-tabs" hidden>
+                  <p>Архив показывает историю и скрывает действия.</p>
+                </div>
+              </div>
             </div>
-
-            <div class="ui-kit-tabs-panels">
-
-              <div class="tabs-panel is-active" data-tab-panel="lk-tabs">
-
-                <p>Показываем фильтры, поиск и карточки пользователя.</p>
-
+            <div class="ui-kit-example">
+              <h3 class="ui-kit-subtitle">Pill-фильтры</h3>
+              <div class="filter-pills">
+                <button class="filter-pill filter-pill--active">Все</button>
+                <button class="filter-pill">На рассмотрении</button>
+                <button class="filter-pill">Одобренные</button>
+                <button class="filter-pill">Отклоненные</button>
+                <button class="btn btn--reset filter-reset" type="button">Сбросить фильтр</button>
               </div>
-
-              <div class="tabs-panel" data-tab-panel="requests-tabs" hidden>
-
-                <p>Табы помогают переключаться между «Мои запросы», «Мои заявки» и панелью стейкхолдера.</p>
-
-              </div>
-
-              <div class="tabs-panel" data-tab-panel="archive-tabs" hidden>
-
-                <p>Архив — такой же таб, у которого меняется только подпись и данные.</p>
-
-              </div>
-
             </div>
-
-          </div>
-
-          <h3 class="ui-kit-subtitle">Фильтры (Pills)</h3>
-          <div class="filter-pills">
-            <button class="filter-pill filter-pill--active">Все</button>
-            <button class="filter-pill">На рассмотрении</button>
-            <button class="filter-pill">Одобренные</button>
-            <button class="filter-pill">Отклоненные</button>
-            <button class="filter-pill">Черновики</button>
           </div>
         </section>
 
@@ -859,44 +762,6 @@
             <span class="avatar avatar--sm">АБ</span>
             <span class="avatar">ОЧ</span>
             <span class="avatar avatar--lg">ИП</span>
-          </div>
-        </section>
-
-        <!-- Header -->
-        <section class="ui-kit-section">
-          <h2 class="ui-kit-title">Header (Верхнее меню)</h2>
-          
-          <div class="ui-kit-example">
-            <header class="header">
-              <div class="container">
-                <div class="header__container">
-                  <a href="./index.html" class="header__logo" aria-label="Инноватика Мособлгаз">
-                    <img src="./assets/img/826-1724.svg" alt="" class="header__logo-img">
-                    <p class="header__logo-text">
-                      ИННОВАТИКА<br>
-                      <strong>МОСОБЛГАЗ</strong>
-                    </p>
-                  </a>
-                  <nav class="header__nav" aria-label="Основное меню">
-                    <ul class="nav__list">
-                      <li><a href="#" class="nav__link nav__link--active">МЕДИАЦЕНТР</a></li>
-                      <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
-                      <li><a href="#" class="nav__link">КОНКУРС</a></li>
-                      <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
-                    </ul>
-                  </nav>
-                  <div class="header__actions">
-                    <a href="./profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
-                      <span class="header__user-initials">ОЧ</span>
-                      <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
-                        <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </header>
           </div>
         </section>
 
@@ -979,72 +844,79 @@
           <p class="ui-kit-description">Слева — меню, в контенте строгая последовательность: вкладки → крупный заголовок → поиск → фильтры → карточки списка.</p>
 
           <div class="ui-kit-lk-demo">
-            <aside class="ui-kit-lk-sidebar">
-              <span class="ui-kit-flow-step" data-step="0">Меню</span>
-              <div class="ui-kit-lk-nav-item ui-kit-lk-nav-item--active">
-                <span>Мои запросы</span>
-                <span>12</span>
-              </div>
-              <div class="ui-kit-lk-nav-item">
-                <span>Мои заявки</span>
-                <span>4</span>
-              </div>
-              <div class="ui-kit-lk-nav-item">
-                <span>Избранное</span>
-                <span>3</span>
-              </div>
-              <div class="ui-kit-lk-nav-item">
-                <span>Поддержка</span>
-                <span>2</span>
-              </div>
-            </aside>
-
-            <div class="ui-kit-lk-main">
-              <div class="ui-kit-flow-block">
-                <span class="ui-kit-flow-step" data-step="1">Вкладки</span>
-                <div class="tabs">
-                  <button class="tabs__item tabs__item--active">Мои запросы</button>
-                  <button class="tabs__item">Мои заявки</button>
-                  <button class="tabs__item">Архив</button>
-                </div>
-              </div>
-
-              <div class="ui-kit-flow-block">
-                <span class="ui-kit-flow-step" data-step="2">Заголовок страницы</span>
-                <h2 class="section-title">Мои запросы</h2>
-              </div>
-
-              <div class="ui-kit-flow-block">
-                <span class="ui-kit-flow-step" data-step="3">Строка поиска</span>
-                <div class="search">
-                  <svg class="search__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
-                    <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                  <input type="text" class="form-input search__input" placeholder="Поиск по запросам">
-                </div>
-              </div>
-
-              <div class="ui-kit-flow-block">
-                <span class="ui-kit-flow-step" data-step="4">Фильтры</span>
-                <div class="filters filters-section">
-                  <button class="filter-pill filter-pill--active">Все</button>
-                  <button class="filter-pill">На рассмотрении</button>
-                  <button class="filter-pill">Одобренные</button>
-                  <button class="filter-pill">Черновики</button>
-                  <button class="filter-pill">Архив</button>
-                  <button class="btn btn--reset filter-reset filter-reset--inline" type="button">
-                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <div class="sidebar-layout">
+              <aside class="sidebar sidebar-layout__sidebar">
+                <span class="ui-kit-flow-step" data-step="0">Меню</span>
+                <nav class="sidebar__nav" aria-label="Навигация кабинета">
+                  <a href="#" class="sidebar__link sidebar__link--active">
+                    <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                      <path d="M9 9H15M9 13H15M9 17H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                     </svg>
-                    <span class="btn__text">Сбросить фильтры</span>
-                  </button>
-                </div>
-              </div>
+                    <span class="sidebar__text">Мои запросы</span>
+                    <span class="sidebar__badge">12</span>
+                  </a>
+                  <a href="#" class="sidebar__link">
+                    <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                      <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="sidebar__text">Профиль</span>
+                  </a>
+                  <a href="#" class="sidebar__link">
+                    <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 14L12 3M12 3L8 7M12 3L16 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M4 17V19C4 20.1046 4.89543 21 6 21H18C19.1046 21 20 20.1046 20 19V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span class="sidebar__text">Обучение</span>
+                  </a>
+                </nav>
+              </aside>
 
-              <div class="ui-kit-flow-block">
-                <span class="ui-kit-flow-step" data-step="5">Карточки списка</span>
-                <div class="ui-kit-lk-cards">
+              <div class="content-card sidebar-layout__content">
+                <div class="ui-kit-flow-block">
+                  <span class="ui-kit-flow-step" data-step="1">Вкладки</span>
+                  <div class="tabs">
+                    <button class="tabs__item tabs__item--active">Мои запросы</button>
+                    <button class="tabs__item">Мои заявки</button>
+                    <button class="tabs__item">Архив</button>
+                  </div>
+                </div>
+
+                <div class="ui-kit-flow-block">
+                  <span class="ui-kit-flow-step" data-step="2">Заголовок</span>
+                  <h2 class="section-title">Мои запросы</h2>
+                </div>
+
+                <div class="ui-kit-flow-block">
+                  <span class="ui-kit-flow-step" data-step="3">Поиск</span>
+                  <div class="search">
+                    <svg class="search__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                      <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <input type="text" class="form-input search__input" placeholder="Поиск по запросам">
+                  </div>
+                </div>
+
+                <div class="ui-kit-flow-block">
+                  <span class="ui-kit-flow-step" data-step="4">Фильтры</span>
+                  <div class="filters filters-section">
+                    <button class="filter-pill filter-pill--active">Все</button>
+                    <button class="filter-pill">На рассмотрении</button>
+                    <button class="filter-pill">Одобренные</button>
+                    <button class="filter-pill">Черновики</button>
+                    <button class="btn btn--reset filter-reset filter-reset--inline" type="button">
+                      <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                      <span class="btn__text">Сбросить фильтры</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="ui-kit-flow-block">
+                  <span class="ui-kit-flow-step" data-step="5">Карточки</span>
                   <div class="card">
                     <div class="card__header">
                       <div>
@@ -1059,167 +931,137 @@
                       <button class="btn btn--primary btn--sm">Подробнее</button>
                     </div>
                   </div>
-                  <div class="card">
-                    <div class="card__header">
-                      <div>
-                        <p class="text-muted">2 мая</p>
-                        <h3 class="card__title">Портал обучения</h3>
-                      </div>
-                      <span class="badge badge--success">В работе</span>
-                    </div>
-                    <p>Платформа с персональными маршрутами развития сотрудников.</p>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <ul class="ui-kit-list ui-kit-list--compact">
-            <li>Меню и градиент задаются каркасом <code>.sidebar-layout</code> + <code>.content-card</code>.</li>
-            <li>Вкладки идут первыми, затем крупный заголовок — как на страницах my-requests / my-applications.</li>
-            <li>Поиск и фильтры используют отступы из раздела «Вертикальные отступы».</li>
-          </ul>
         </section>
 
         <!-- Детальные страницы -->
         <section class="ui-kit-section ui-kit-section--plain">
           <h2 class="ui-kit-title">Детальные страницы</h2>
-          <p class="ui-kit-description">Разметка повторяет idea-detail/request-detail: хлебные крошки, хиро-блок, карточки описаний и правая колонка со статусами и документами.</p>
+          <p class="ui-kit-description">Схема для request-detail и idea-detail: хлебные крошки → герой-блок → карточки → сайдбар.</p>
 
-          <nav class="breadcrumbs" aria-label="Хлебные крошки">
-            <ol class="breadcrumbs__list">
-              <li class="breadcrumbs__item">
-                <a href="#" class="breadcrumbs__link">Банк инноваций</a>
-              </li>
-              <li class="breadcrumbs__item">
-                <a href="#" class="breadcrumbs__link">Замена профессий</a>
-              </li>
-              <li class="breadcrumbs__item">
-                <span class="breadcrumbs__current" aria-current="page">Система предиктивного кадрового планирования</span>
-              </li>
-            </ol>
-          </nav>
+         <div class="detail-layout">
+           <div class="detail-content">
+              <div class="ui-kit-flow-block">
+                <span class="ui-kit-flow-step" data-step="1">Хлебные крошки</span>
+                <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                  <ol class="breadcrumbs__list">
+                    <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Банк инноваций</a></li>
+                    <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Название запроса</span></li>
+                  </ol>
+                </nav>
+              </div>
 
-          <div class="detail-layout">
-            <div class="detail-content">
-              <div class="idea-header">
-                <div class="idea-header__icon">
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="48" height="48" rx="8" fill="#E8F5F8"/>
-                    <path d="M24 14V20M24 28V34M14 24H20M28 24H34M18 18L22 22M26 26L30 30M30 18L26 22M22 26L18 30" stroke="#00A8CC" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                </div>
-                <div class="idea-header__content">
-                  <h1 class="heading-page idea-header__title">Система предиктивного кадрового планирования «HR-Foresight»</h1>
-                  <p class="text-lead idea-header__author">
-                    Автор: Петров Алексей Семенович, ведущий инженер ОСМР, филиал «Запад»
-                  </p>
+              <div class="ui-kit-flow-block">
+                <span class="ui-kit-flow-step" data-step="2">Хиро-блок</span>
+                <div class="idea-header">
+                  <div class="idea-header__icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="48" height="48" rx="8" fill="#E8F5F8"/>
+                      <path d="M24 14V20M24 28V34M14 24H20M28 24H34M18 18L22 22M26 26L30 30M30 18L26 22M22 26L18 30" stroke="#00A8CC" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </div>
+                  <div class="idea-header__content">
+                    <h1 class="heading-page detail-heading-row">
+                      Заголовок детали
+                      <span class="badge badge--primary">Цифровизация</span>
+                    </h1>
+                    <p class="text-lead idea-header__author">Автор: Имя, должность</p>
+                  </div>
                 </div>
               </div>
 
-              <section class="description-section">
+              <div class="ui-kit-flow-block">
+                <span class="ui-kit-flow-step" data-step="3">Команда</span>
+                <div class="cta-card team-card">
+                  <h3 class="heading-section">Команда проекта</h3>
+                  <div class="team-grid">
+                    <div class="team-member">
+                      <p class="text-caption">Стейкхолдер</p>
+                      <p class="text-strong">Инна Громова</p>
+                      <p class="text-meta">Директор цифровой трансформации</p>
+                    </div>
+                    <div class="team-member">
+                      <p class="text-caption">Эксперт</p>
+                      <p class="text-strong">Марина Дроздова</p>
+                      <p class="text-meta">HR-аналитик</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ui-kit-flow-block">
+                <span class="ui-kit-flow-step" data-step="4">Карточки контента</span>
                 <div class="card description-card">
                   <h2 class="description-card__title">Описание</h2>
                   <div class="description-card__content">
-                    <p>Онлайн-сервис прогнозирует риски автоматизации профессий и выдаёт рекомендации по переобучению. Сотрудники получают уведомления и материалы, а HR-аналитики видят дашборды с вероятностью сокращений.</p>
+                    <p>Краткий текст и несколько преимуществ.</p>
                     <ul class="feature-list">
-                      <li class="feature-list__item">Автоматическое выявление групп риска.</li>
-                      <li class="feature-list__item">Готовые программы обучения и цифровые ассистенты.</li>
-                      <li class="feature-list__item">Метрики эффективности в единой панели управления.</li>
+                      <li class="feature-list__item">Преимущество 1</li>
+                      <li class="feature-list__item">Преимущество 2</li>
                     </ul>
                   </div>
                 </div>
-              </section>
+              </div>
 
-              <section class="description-section">
-                <div class="card description-card">
-                  <h2 class="description-card__title">Цели и метрики</h2>
-                  <div class="description-card__content">
-                    <p>В карточке можно собрать ключевые цели, KPI и показатели эффективности. Каждый подпункт оформляется через <code>.description-card__subtitle</code>, чтобы сохранить вертикальный ритм.</p>
-                  </div>
-                  <h3 class="description-card__subtitle">Бизнес-цель</h3>
-                  <div class="description-card__content">
-                    <p class="text-strong">Снизить время закрытия вакансий на 30%</p>
-                  </div>
-                  <h3 class="description-card__subtitle">Метрики</h3>
-                  <div class="description-card__content">
-                    <ol class="feature-list feature-list--ordered">
-                      <li class="feature-list__item">Количество сотрудников из групп риска</li>
-                      <li class="feature-list__item">Процент завершённых программ переобучения</li>
-                      <li class="feature-list__item">Экономический эффект (₽)</li>
-                    </ol>
+              <div class="ui-kit-flow-block">
+                <span class="ui-kit-flow-step" data-step="5">Таблица оценок</span>
+                <table class="evaluation-table">
+                  <thead>
+                    <tr>
+                      <th>Роль</th>
+                      <th>ФИО</th>
+                      <th>Комментарий</th>
+                      <th>Статус</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="evaluation-row evaluation-row--approved">
+                      <td>Стейкхолдер</td>
+                      <td>Инна Громова</td>
+                      <td>Готовы перейти к реализации</td>
+                      <td>8 / 10</td>
+                    </tr>
+                    <tr class="evaluation-row evaluation-row--pending">
+                      <td>Эксперт</td>
+                      <td>Марина Дроздова</td>
+                      <td>Нужна доработка данных</td>
+                      <td>ожидает</td>
+                    </tr>
+                    <tr class="evaluation-row evaluation-row--rejected">
+                      <td>Автор</td>
+                      <td>Михаил Шестаков</td>
+                      <td>Версию 1.1 закрываем</td>
+                      <td>отклонено</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="ui-kit-flow-block">
+                <span class="ui-kit-flow-step" data-step="6">Оценка / комментарий</span>
+                <div class="rating-section">
+                  <div class="star-rating">
+                    <button type="button" class="star-btn" aria-label="1 звезда">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4L24.9389 14.2451L36 15.9098L28 23.5902L29.8779 34.5902L20 29.2451L10.1221 34.5902L12 23.5902L4 15.9098L15.0611 14.2451L20 4Z" stroke="#00A8CC" stroke-width="2" fill="none"/>
+                      </svg>
+                    </button>
+                    <button type="button" class="star-btn" aria-label="2 звезды">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4L24.9389 14.2451L36 15.9098L28 23.5902L29.8779 34.5902L20 29.2451L10.1221 34.5902L12 23.5902L4 15.9098L15.0611 14.2451L20 4Z" stroke="#00A8CC" stroke-width="2" fill="none"/>
+                      </svg>
+                    </button>
                   </div>
                 </div>
-              </section>
-
-              <section class="rating-section">
-                <h2 class="section-title">Ваша оценка</h2>
-                <div class="star-rating" data-rating="0">
-                  <button type="button" class="star-btn" aria-label="1 звезда" data-value="1">
-                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 4L24.9389 14.2451L36 15.9098L28 23.5902L29.8779 34.5902L20 29.2451L10.1221 34.5902L12 23.5902L4 15.9098L15.0611 14.2451L20 4Z" stroke="#00A8CC" stroke-width="2" fill="none"/>
-                      </svg>
-                    </button>
-                    <button type="button" class="star-btn" aria-label="2 звезды" data-value="2">
-                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 4L24.9389 14.2451L36 15.9098L28 23.5902L29.8779 34.5902L20 29.2451L10.1221 34.5902L12 23.5902L4 15.9098L15.0611 14.2451L20 4Z" stroke="#00A8CC" stroke-width="2" fill="none"/>
-                      </svg>
-                    </button>
-                    <button type="button" class="star-btn" aria-label="3 звезды" data-value="3">
-                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 4L24.9389 14.2451L36 15.9098L28 23.5902L29.8779 34.5902L20 29.2451L10.1221 34.5902L12 23.5902L4 15.9098L15.0611 14.2451L20 4Z" stroke="#00A8CC" stroke-width="2" fill="none"/>
-                      </svg>
-                    </button>
-                    <button type="button" class="star-btn" aria-label="4 звезды" data-value="4">
-                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 4L24.9389 14.2451L36 15.9098L28 23.5902L29.8779 34.5902L20 29.2451L10.1221 34.5902L12 23.5902L4 15.9098L15.0611 14.2451L20 4Z" stroke="#00A8CC" stroke-width="2" fill="none"/>
-                      </svg>
-                    </button>
-                    <button type="button" class="star-btn" aria-label="5 звезд" data-value="5">
-                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 4L24.9389 14.2451L36 15.9098L28 23.5902L29.8779 34.5902L20 29.2451L10.1221 34.5902L12 23.5902L4 15.9098L15.0611 14.2451L20 4Z" stroke="#00A8CC" stroke-width="2" fill="none"/>
-                      </svg>
-                    </button>
-                    <button type="button" class="star-btn" aria-label="6 звезд" data-value="6">
-                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 4L24.9389 14.2451L36 15.9098L28 23.5902L29.8779 34.5902L20 29.2451L10.1221 34.5902L12 23.5902L4 15.9098L15.0611 14.2451L20 4Z" stroke="#00A8CC" stroke-width="2" fill="none"/>
-                      </svg>
-                    </button>
-                    <button type="button" class="star-btn" aria-label="7 звезд" data-value="7">
-                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 4L24.9389 14.2451L36 15.9098L28 23.5902L29.8779 34.5902L20 29.2451L10.1221 34.5902L12 23.5902L4 15.9098L15.0611 14.2451L20 4Z" stroke="#00A8CC" stroke-width="2" fill="none"/>
-                      </svg>
-                    </button>
-                    <button type="button" class="star-btn" aria-label="8 звезд" data-value="8">
-                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 4L24.9389 14.2451L36 15.9098L28 23.5902L29.8779 34.5902L20 29.2451L10.1221 34.5902L12 23.5902L4 15.9098L15.0611 14.2451L20 4Z" stroke="#00A8CC" stroke-width="2" fill="none"/>
-                      </svg>
-                    </button>
-                    <button type="button" class="star-btn" aria-label="9 звезд" data-value="9">
-                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 4L24.9389 14.2451L36 15.9098L28 23.5902L29.8779 34.5902L20 29.2451L10.1221 34.5902L12 23.5902L4 15.9098L15.0611 14.2451L20 4Z" stroke="#00A8CC" stroke-width="2" fill="none"/>
-                      </svg>
-                    </button>
-                    <button type="button" class="star-btn" aria-label="10 звезд" data-value="10">
-                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 4L24.9389 14.2451L36 15.9098L28 23.5902L29.8779 34.5902L20 29.2451L10.1221 34.5902L12 23.5902L4 15.9098L15.0611 14.2451L20 4Z" stroke="#00A8CC" stroke-width="2" fill="none"/>
-                      </svg>
-                    </button>
-                </div>
-              </section>
-
-              <section class="comment-section">
-                <h2 class="section-title">Ваш комментарий</h2>
-                <textarea class="comment-textarea" rows="5" placeholder="Введите ваш комментарий..."></textarea>
-              </section>
-
-              <section class="submit-section">
-                <button type="submit" class="btn btn--primary btn--lg">Отправить</button>
-              </section>
+              </div>
             </div>
 
             <aside class="detail-sidebar">
-              <div class="card sidebar-card">
+              <span class="ui-kit-flow-step" data-step="5">Сайдбар</span>
+              <div class="card sidebar-card sidebar-card--status">
                 <div class="status-indicator status-indicator--approved">
                   <span class="status-indicator__dot"></span>
                   <span>Опубликовано</span>
@@ -1230,131 +1072,58 @@
                   </svg>
                 </button>
               </div>
-
               <div class="card sidebar-card">
-                <a href="#" class="btn btn--secondary btn--lg btn--block btn--spaced">Одобрить в проектный комитет</a>
-                <button class="btn btn--ghost btn--lg btn--block">Рассмотреть на научном совете</button>
+                <button class="btn btn--secondary btn--block btn--spaced">Действие 1</button>
+                <button class="btn btn--ghost btn--block">Действие 2</button>
               </div>
-
               <div class="card sidebar-card">
-                <h3 class="sidebar-card__title text-caption">Дата публикации идеи</h3>
-                <p class="sidebar-card__value">20 апреля 2025</p>
-              </div>
-
-              <div class="card sidebar-card">
-                <h3 class="sidebar-card__title text-caption">Получение обратной связи</h3>
-                <p class="sidebar-card__value">до 30 июня 2025</p>
-              </div>
-
-              <div class="card sidebar-card">
-                <h3 class="sidebar-card__title text-caption">Стейкхолдер</h3>
-                <p class="sidebar-card__value">Чижикова Ольга</p>
-              </div>
-
-              <div class="card sidebar-card">
-                <h3 class="sidebar-card__title text-caption">Документы идеи</h3>
+                <h3 class="sidebar-card__title text-caption">Документы</h3>
                 <div class="document-list">
                   <a href="#" class="document-item">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
                       <path d="M14 2V8H20" stroke="currentColor" stroke-width="2"/>
                     </svg>
-                    <span>Наработки.pdf</span>
-                  </a>
-                  <a href="#" class="document-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
-                      <path d="M14 2V8H20" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                    <span>Анализ.pdf</span>
+                    <span>Document.pdf</span>
                   </a>
                 </div>
               </div>
-            </aside>
-          </div>
+           </aside>
+         </div>
 
-          <ul class="ui-kit-list ui-kit-list--compact">
-            <li>Каркас <code>.detail-layout</code> объединяет <code>.detail-content</code> и <code>.detail-sidebar</code>.</li>
-            <li>Внутри контента повторяются блоки <code>.idea-header</code>, <code>.description-card</code>, <code>.rating-section</code>, <code>.comment-section</code>.</li>
-            <li>Сайдбар строится на карточках и обязательном <code>.status-indicator</code>, кнопках действий и списке документов.</li>
-          </ul>
+
         </section>
 
-        <!-- Команды и оценки -->
         <section class="ui-kit-section ui-kit-section--plain">
-          <h2 class="ui-kit-title">Компоненты команд и оценок</h2>
-
-          <div class="ui-kit-example">
-            <h3 class="ui-kit-subtitle">Блок команды</h3>
-            <div class="cta-card team-card">
-              <h3 class="section-title">Команда запроса</h3>
-              <div class="team-grid">
-                <div class="team-member">
-                  <p class="text-caption">Стейкхолдер</p>
-                  <p class="text-strong">Инна Громова</p>
-                  <p class="text-meta">Директор цифровой трансформации</p>
-                  <p class="text-caption text-muted">HR департамент</p>
-                </div>
-                <div class="team-member">
-                  <p class="text-caption">Куратор</p>
-                  <p class="text-strong">Антон Мельник</p>
-                  <p class="text-meta">Руководитель проектного офиса</p>
-                  <p class="text-caption text-muted">Цифровой блок</p>
-                </div>
-                <div class="team-member">
-                  <p class="text-caption">Эксперт</p>
-                  <p class="text-strong">Марина Дроздова</p>
-                  <p class="text-meta">Lead по HR-аналитике</p>
-                  <p class="text-caption text-muted">АО «НИЦ»</p>
-                </div>
-                <div class="team-member">
-                  <p class="text-caption">Автор</p>
-                  <p class="text-strong">Михаил Шестаков</p>
-                  <p class="text-meta">Руководитель отдела данных</p>
-                  <p class="text-caption text-muted">АО «НИЦ»</p>
-                </div>
-              </div>
+          <h2 class="ui-kit-title">Общие требования верстке</h2>
+          <div class="ui-kit-grid ui-kit-grid--auto">
+            <div class="ui-kit-example">
+              <h3 class="ui-kit-subtitle">Типографика</h3>
+              <ul class="ui-kit-list ui-kit-list--compact">
+                <li><code>H1/H2 + .heading-page</code> — главные заголовки страниц.</li>
+                <li><code>H2/H3 + .heading-section</code> — карточки и блоки.</li>
+                <li><code>.heading-subtitle</code> и <code>.text-lead</code> идут сразу под заголовком.</li>
+                <li>Любой текст размещаем в <code>p</code>, <code>ul</code>, <code>ol</code>; без «голых» <code>div</code>.</li>
+              </ul>
             </div>
-            <p class="ui-kit-text--sm">Используйте комбинацию <code>.cta-card.team-card</code> + <code>.team-grid</code>, чтобы получить единую рамку с адаптивными колонками.</p>
-            
-          </div>
-
-          <div class="ui-kit-example">
-            <h3 class="ui-kit-subtitle">Таблица оценок</h3>
-            <section class="evaluation-section">
-              <table class="evaluation-table">
-                <thead>
-                  <tr>
-                    <th>Роль</th>
-                    <th>ФИО</th>
-                    <th>Комментарий</th>
-                    <th>Статус</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="evaluation-row evaluation-row--approved">
-                    <td class="evaluation-cell">Стейкхолдер</td>
-                    <td class="evaluation-cell">Инна Громова</td>
-                    <td class="evaluation-cell">Готовы перейти к реализации</td>
-                    <td class="evaluation-cell">8 / 10</td>
-                  </tr>
-                  <tr class="evaluation-row evaluation-row--pending">
-                    <td class="evaluation-cell">Эксперт</td>
-                    <td class="evaluation-cell">Марина Дроздова</td>
-                    <td class="evaluation-cell">Нужна доработка загрузки данных</td>
-                    <td class="evaluation-cell">ожидает</td>
-                  </tr>
-                  <tr class="evaluation-row evaluation-row--rejected">
-                    <td class="evaluation-cell">Автор</td>
-                    <td class="evaluation-cell">Михаил Шестаков</td>
-                    <td class="evaluation-cell">Версию 1.1 закрываем</td>
-                    <td class="evaluation-cell">отклонено</td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
-            <p class="ui-kit-text--sm">Класс строки — <code>.evaluation-row--approved</code> / <code>.evaluation-row--pending</code> / <code>.evaluation-row--rejected</code>.</p>
-            
+            <div class="ui-kit-example">
+              <h3 class="ui-kit-subtitle">Каркас страниц</h3>
+              <ul class="ui-kit-list ui-kit-list--compact">
+                <li><code>.body--gradient</code> + <code>.main--with-gradient</code> для всех внутренних экранов.</li>
+                <li>Личный кабинет: <code>.sidebar-layout</code> = меню (<code>.sidebar</code>) + контент (<code>.content-card</code>).</li>
+                <li>Детальная страница: <code>.detail-layout</code> = основная колонка + <code>.detail-sidebar</code>.</li>
+                <li><code>.section</code> и <code>.card</code> поддерживают вертикальный ритм (<code>spacing-xl → spacing-md</code>).</li>
+              </ul>
+            </div>
+            <div class="ui-kit-example">
+              <h3 class="ui-kit-subtitle">Компоненты и классы</h3>
+              <ul class="ui-kit-list ui-kit-list--compact">
+                <li>Статусы всегда через <code>.status-indicator--*</code>; направления — <code>.badge--*</code>.</li>
+                <li>Списки преимуществ и шагов — <code>.feature-list</code> / <code>.feature-list--ordered</code>.</li>
+                <li>Поиск — <code>.search</code>; фильтры — <code>.filters</code> + <code>.filter-pill</code>.</li>
+                <li>Документы в карточках выводим только через <code>.document-list</code>.</li>
+              </ul>
+            </div>
           </div>
         </section>
 

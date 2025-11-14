@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./assets/css/layout.css">
   <link rel="stylesheet" href="./assets/css/components.css">
   <link rel="stylesheet" href="./assets/css/pages/my-requests.css">
+  <link rel="stylesheet" href="assets/css/gradient-background.css">
 </head>
 <body class="body--gradient">
   <div class="layout">
@@ -18,10 +19,10 @@
           <!-- Logo -->
           <a href="./index.html" class="header__logo">
             <img src="./assets/img/826-1724.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
-            <p class="header__logo-text">
+            <div class="header__logo-text">
               ИННОВАТИКА<br>
               <strong>МОСОБЛГАЗ</strong>
-            </p>
+            </div>
           </a>
 
           <!-- Navigation -->
@@ -49,7 +50,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="main main--with-gradient layout__main">
+    <main class="main layout__main">
       <div class="container">
         <div class="sidebar-layout">
           <!-- Sidebar -->
@@ -104,23 +105,25 @@
           </aside>
 
           <!-- Content -->
-          <div class="content-card sidebar-layout__content">
+          <div class="sidebar-layout__content">
+            <div class="card">
               <div class="card__header">
-                <h1 class="heading-page">Заявки</h1>
+                <h1 class="card__title">Мои заявки</h1>
+                
+                <!-- Search -->
+                <div class="search-box">
+                  <svg class="search-box__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                    <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  <input type="text" class="search-box__input" placeholder="Поиск">
+                </div>
               </div>
 
               <!-- Tabs -->
               <div class="tabs">
-                <a class="tabs__item" href="./my-requests.html">Заявки на публикацию решений</a>
-                <a class="tabs__item tabs__item--active" href="./my-applications.html">Заявки в команду</a>
-              </div>
-
-              <div class="search">
-                <svg class="search__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
-                  <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <input type="text" class="form-input search__input" placeholder="Поиск">
+                <button class="tabs__item tabs__item--active">Заявки на публикацию решений</button>
+                <button class="tabs__item">Заявки в команду</button>
               </div>
 
               <!-- Filters -->
@@ -132,12 +135,7 @@
                 <button class="filter-pill">Отклоненные</button>
                 <button class="filter-pill">Черновики</button>
                 <button class="filter-pill">Архив</button>
-                <button class="btn btn--reset filter-reset" type="button" data-clear-filters>
-                  <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                  <span class="btn__text">Сбросить фильтры</span>
-                </button>
+                <button class="btn btn--reset filter-reset">✕ Сбросить фильтры</button>
               </div>
 
               <!-- Request Cards -->
@@ -146,8 +144,13 @@
                 <div class="request-card">
                   <div class="request-card__header">
                     <div class="request-card__badges">
-                      <span class="badge badge--purple">Управление</span>
-                      <span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>На модерации</span>
+                      <span class="badge badge--primary">Управление</span>
+                      <span class="badge badge--gray">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                          <circle cx="12" cy="12" r="4"/>
+                        </svg>
+                        На модерации
+                      </span>
                     </div>
                     <button class="btn btn--ghost btn--icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -169,10 +172,11 @@
                       </svg>
                     </div>
                     <div>
-                      <p class="request-card__author-label">Ваша роль</p>
-                      <p class="request-card__author-name">Стейкхолдер</p>
+                      <div class="request-card__author-label">Ваша роль</div>
+                      <div class="request-card__author-name">Стейкхолдер</div>
                     </div>
                   </div>
+                  
                   <div class="request-card__footer">
                     <a href="./request-detail.html" class="btn btn--primary">Подробнее</a>
                   </div>
@@ -182,8 +186,13 @@
                 <div class="request-card">
                   <div class="request-card__header">
                     <div class="request-card__badges">
-                      <span class="badge badge--success">Эксплуатация</span>
-                      <span class="status-indicator status-indicator--draft"><span class="status-indicator__dot"></span>Черновик</span>
+                      <span class="badge badge--warning">Операционная деятельность</span>
+                      <span class="badge badge--gray">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                          <circle cx="12" cy="12" r="4"/>
+                        </svg>
+                        Черновик
+                      </span>
                     </div>
                     <button class="btn btn--ghost btn--icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -205,22 +214,23 @@
                       </svg>
                     </div>
                     <div>
-                      <p class="request-card__author-label">Ваша роль</p>
-                      <p class="request-card__author-name">Автор</p>
+                      <div class="request-card__author-label">Ваша роль</div>
+                      <div class="request-card__author-name">Автор</div>
                     </div>
                   </div>
+                  
                   <div class="request-card__footer">
                     <a href="./request-detail.html" class="btn btn--primary">Подробнее</a>
                   </div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
   </div>
 
-  <script src="./assets/js/vendor.js"></script>
   <script src="./assets/js/app.js"></script>
 </body>
 </html>

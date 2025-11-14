@@ -105,14 +105,14 @@
 
           <!-- Content -->
           <div class="content-card sidebar-layout__content">
-              <!-- Tabs -->
-              <div class="tabs">
-                <button class="tabs__item tabs__item--active">Запросы на инновацию</button>
-                <button class="tabs__item">Заявки в команду</button>
+              <div class="card__header">
+                <h1 class="heading-page">Заявки</h1>
               </div>
 
-              <div class="card__header">
-                <h1 class="card__title">Мои запросы</h1>
+              <!-- Tabs -->
+              <div class="tabs">
+                <a class="tabs__item tabs__item--active" href="./my-requests.html">Запросы на инновацию</a>
+                <a class="tabs__item" href="./my-applications.html">Заявки в команду</a>
               </div>
 
               <div class="search">
@@ -147,13 +147,8 @@
                   <div class="request-card__header">
                     <div class="request-card__badges">
                       <span class="badge badge--purple">Управление</span>
-                      <span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>На модерации</span>
                     </div>
-                    <button class="btn btn--ghost btn--icon" aria-label="Добавить в избранное">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 21L10.55 19.7C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 19.7L12 21Z" stroke="currentColor" stroke-width="2"/>
-                      </svg>
-                    </button>
+                    <span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>На модерации</span>
                   </div>
                   
                   <h3 class="request-card__title">Замена профессий</h3>
@@ -183,13 +178,8 @@
                   <div class="request-card__header">
                     <div class="request-card__badges">
                       <span class="badge badge--success">Эксплуатация</span>
-                      <span class="status-indicator status-indicator--draft"><span class="status-indicator__dot"></span>Черновик</span>
                     </div>
-                    <button class="btn btn--ghost btn--icon" aria-label="Добавить в избранное">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 21L10.55 19.7C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 19.7L12 21Z" stroke="currentColor" stroke-width="2"/>
-                      </svg>
-                    </button>
+                    <span class="status-indicator status-indicator--draft"><span class="status-indicator__dot"></span>Черновик</span>
                   </div>
                   
                   <h3 class="request-card__title">Внесение изменений в регламент закупки</h3>
