@@ -732,6 +732,32 @@
           </div>
         </section>
 
+        <!-- Текстовые списки -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Текстовые списки</h2>
+          <p class="ui-kit-description">`.feature-list` используется для перечисления преимуществ, шагов и особенностей внутри карточек. Класс управляет отступами и декоративными маркерами, поэтому его можно применять на любой странице.</p>
+
+          <div class="ui-kit-grid ui-kit-grid--auto">
+            <div class="ui-kit-example">
+              <h3 class="ui-kit-subtitle">Список преимуществ</h3>
+              <ul class="feature-list">
+                <li class="feature-list__item">Маркированные элементы получают единый отступ слева</li>
+                <li class="feature-list__item">Декоративный индикатор цвета `--color-secondary`</li>
+                <li class="feature-list__item">Гибкая высота — блок растягивается по содержимому</li>
+              </ul>
+            </div>
+
+            <div class="ui-kit-example">
+              <h3 class="ui-kit-subtitle">Шаги процесса</h3>
+              <ul class="feature-list">
+                <li class="feature-list__item">Исследование задачи и сбор требований</li>
+                <li class="feature-list__item">Формирование команды и запуск пилота</li>
+                <li class="feature-list__item">Сбор обратной связи и масштабирование решения</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         <!-- Аватары -->
         <section class="ui-kit-section">
           <h2 class="ui-kit-title">Аватары</h2>
@@ -799,89 +825,6 @@
             </div>
 
             <p>Фон строится из двух размытых окружностей (бирюзовой и фиолетовой), которые закреплены на body и подходят для всех внутренних экранов.</p>
-
-            <pre class="ui-kit-code">.body--gradient {
-  position: relative;
-  min-height: 100vh;
-  background: var(--color-bg-white);
-  overflow-x: hidden;
-}
-
-.body--gradient::before,
-.body--gradient::after {
-  content: '';
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(80px);
-}
-
-.body--gradient::before {
-  width: calc(min(2800px, 110vw) * 1.5);
-  height: calc(min(1800px, 110vh) * 1.5);
-  left: 0;
-  top: 0;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(
-    ellipse 50% 50% at 50% 50%,
-    #00C1D4 0%,
-    rgba(0, 193, 212, 0) 97%
-  );
-}
-
-.body--gradient::after {
-  width: calc(min(3200px, 120vw) * 1.5);
-  height: calc(min(2000px, 120vh) * 1.5);
-  right: 0;
-  top: 0;
-  transform: translate(50%, -50%);
-  background: radial-gradient(
-    ellipse 50% 50% at 50% 50%,
-    #A78BFA 0%,
-    rgba(167, 139, 250, 0) 97%
-  );
-}
-
-@media (max-width: 1024px) {
-  .body--gradient::before {
-    width: calc(min(2200px, 140vw) * 1.5);
-    height: calc(min(1400px, 120vh) * 1.5);
-    transform: translate(-55%, -50%);
-  }
-
-  .body--gradient::after {
-    width: calc(min(2400px, 150vw) * 1.5);
-    height: calc(min(1500px, 130vh) * 1.5);
-    transform: translate(55%, -50%);
-  }
-}
-
-@media (max-width: 768px) {
-  .body--gradient::before {
-    width: calc(min(1600px, 160vw) * 1.5);
-    height: calc(min(1100px, 130vh) * 1.5);
-    transform: translate(-55%, -50%);
-  }
-
-  .body--gradient::after {
-    width: calc(min(1800px, 170vw) * 1.5);
-    height: calc(min(1200px, 135vh) * 1.5);
-    transform: translate(55%, -50%);
-  }
-}
-
-@media (max-width: 480px) {
-  .body--gradient::before {
-    width: calc(min(1400px, 200vw) * 1.5);
-    height: calc(min(1000px, 150vh) * 1.5);
-    transform: translate(-55%, -50%);
-  }
-
-  .body--gradient::after {
-    width: calc(min(1600px, 210vw) * 1.5);
-    height: calc(min(1100px, 160vh) * 1.5);
-    transform: translate(55%, -50%);
-  }
-}</pre>
 
             <p class="ui-kit-text--sm">Добавляйте класс <code>.main--with-gradient</code> только для сохранения прозрачного фона контента — сам градиент задаёт <code>.body--gradient</code>.</p>
 
