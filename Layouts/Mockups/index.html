@@ -11,7 +11,7 @@
     .index-page {
       min-height: 100vh;
       padding: var(--spacing-2xl);
-      background: var(--gradient-bg);
+      background: transparent;
     }
 
     .index-container {
@@ -93,12 +93,6 @@
       margin-bottom: var(--spacing-xs);
     }
 
-    .page-card__desc {
-      font-size: var(--font-size-sm);
-      color: var(--color-text-muted);
-      line-height: var(--line-height-relaxed);
-    }
-
     .page-card__file {
       font-size: var(--font-size-xs);
       color: var(--color-primary);
@@ -145,7 +139,7 @@
     }
   </style>
 </head>
-<body>
+<body class="body--gradient">
   <div class="index-page">
     <div class="index-container">
       <!-- Header -->
@@ -153,6 +147,18 @@
         <img src="./assets/img/826-1724.svg" alt="Инноватика Мособлгаз" class="index-logo">
         <h1 class="heading-display index-title">Инноватика Мособлгаз</h1>
         <p class="index-subtitle">HTML/CSS/JS Мокапы для Bitrix CMS</p>
+      </div>
+
+      <!-- UI Kit -->
+      <div class="section">
+        <h2 class="section-title">🎨 UI Kit</h2>
+        <div class="page-grid">
+          <a href="./ui-kit.html" class="page-card page-card--highlight">
+            <p class="page-card__title">UI Kit - Все компоненты</p>
+            <p class="page-card__desc">Демонстрация всех UI компонентов, цветов, типографики и документация по классам</p>
+            <p class="page-card__file">ui-kit.html</p>
+          </a>
+        </div>
       </div>
 
       <!-- Public Pages -->
@@ -235,19 +241,6 @@
             <p class="page-card__title">Мои заявки</p>
             <p class="page-card__desc">Управление заявками в команду с расширенными фильтрами</p>
             <p class="page-card__file">my-applications.html</p>
-          </a>
-        </div>
-      </div>
-
-
-      <!-- UI Kit -->
-      <div class="section">
-        <h2 class="section-title">🎨 UI Kit</h2>
-        <div class="page-grid">
-          <a href="./ui-kit.html" class="page-card page-card--highlight">
-            <p class="page-card__title">UI Kit - Все компоненты</p>
-            <p class="page-card__desc">Демонстрация всех UI компонентов, цветов, типографики и документация по классам</p>
-            <p class="page-card__file">ui-kit.html</p>
           </a>
         </div>
       </div>

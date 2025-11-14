@@ -71,13 +71,13 @@
             <!-- Idea Header -->
             <div class="idea-header">
               <div class="idea-header__icon">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="48" height="48" rx="8" fill="#E8F5F8"/>
-                  <path d="M24 14V20M24 28V34M14 24H20M28 24H34M18 18L22 22M26 26L30 30M30 18L26 22M22 26L18 30" stroke="#00A8CC" stroke-width="2" stroke-linecap="round"/>
-                </svg>
+                <img src="./assets/img/6176435.svg" alt="" width="120" height="120">
               </div>
               <div class="idea-header__content">
-                <h1 class="heading-page idea-header__title">Система предиктивного кадрового планирования «HR-Foresight»</h1>
+                <h1 class="heading-page idea-header__title detail-heading-row">
+                  Система предиктивного кадрового планирования «HR-Foresight»
+                  <span class="badge badge--purple">Управление</span>
+                </h1>
                 <p class="text-lead idea-header__author">
                   Автор: Петров Алексей Семенович, ведущий инженер ОСМР, филиал "Запад"
                 </p>
@@ -165,7 +165,7 @@
 
             <!-- Status Section -->
             <section class="status-section">
-              <h2 class="section-title">Статус</h2>
+              <h2 class="heading-section">Статус</h2>
               <div class="status-options">
                 <label class="radio-option">
                   <input type="radio" name="status" value="rejected" class="radio-option__input">
@@ -184,7 +184,7 @@
 
             <!-- Rating Section -->
             <section class="rating-section">
-              <h2 class="section-title">Ваша оценка</h2>
+              <h2 class="heading-section">Ваша оценка</h2>
               <div class="star-rating" data-rating="0">
                 <button type="button" class="star-btn" data-value="1" aria-label="1 звезда">
                   <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -241,7 +241,7 @@
 
             <!-- Comment Section -->
             <section class="comment-section">
-              <h2 class="section-title">Ваш комментарий</h2>
+              <h2 class="heading-section">Ваш комментарий</h2>
               <textarea class="comment-textarea" placeholder="Введите ваш комментарий..." rows="5"></textarea>
             </section>
 
@@ -254,7 +254,7 @@
           <!-- Sidebar -->
           <aside class="detail-sidebar">
             <!-- Status Card -->
-            <div class="card sidebar-card">
+            <div class="card sidebar-card sidebar-card--status">
               <div class="status-indicator status-indicator--approved">
                 <span class="status-indicator__dot"></span>
                 <span>Опубликовано</span>
