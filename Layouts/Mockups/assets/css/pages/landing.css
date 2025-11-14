@@ -58,12 +58,6 @@
   line-height: var(--line-height-relaxed);
 }
 
-.landing-hero__title {
-  font-size: var(--font-size-4xl);
-  line-height: var(--line-height-tight);
-  margin-bottom: var(--spacing-md);
-}
-
 .landing-hero__stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

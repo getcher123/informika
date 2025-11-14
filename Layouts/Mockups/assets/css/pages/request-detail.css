@@ -14,20 +14,6 @@
   flex-shrink: 0;
 }
 
-.request-header__title {
-  font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-primary);
-  margin-bottom: var(--spacing-md);
-  line-height: var(--line-height-tight);
-}
-
-.request-header__description {
-  font-size: var(--font-size-base);
-  color: var(--color-text-secondary);
-  line-height: var(--line-height-relaxed);
-}
-
 /* Ideas Section */
 .ideas-section {
   margin-bottom: var(--spacing-xl);
@@ -37,10 +23,6 @@
 @media (max-width: 767px) {
   .request-header {
     flex-direction: column;
-  }
-
-  .request-header__title {
-    font-size: var(--font-size-2xl);
   }
 
   .idea-submission {

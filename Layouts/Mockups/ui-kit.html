@@ -371,10 +371,10 @@
         <div class="header__container">
           <a href="./index.html" class="header__logo">
             <img src="./assets/img/826-1724.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
-            <div class="header__logo-text">
+            <p class="header__logo-text">
               ИННОВАТИКА<br>
               <strong>МОСОБЛГАЗ</strong>
-            </div>
+            </p>
           </a>
 
           <nav class="header__nav">
@@ -415,48 +415,48 @@
             <div class="color-swatch color-swatch--primary">
               <div class="color-swatch__color"></div>
               <div class="color-swatch__info">
-                <div class="color-swatch__name">Primary</div>
-                <div class="color-swatch__value">#00A8CC</div>
+                <p class="color-swatch__name">Primary</p>
+                <p class="color-swatch__value">#00A8CC</p>
               </div>
             </div>
             
             <div class="color-swatch color-swatch--secondary">
               <div class="color-swatch__color"></div>
               <div class="color-swatch__info">
-                <div class="color-swatch__name">Secondary</div>
-                <div class="color-swatch__value">#9B7EDE</div>
+                <p class="color-swatch__name">Secondary</p>
+                <p class="color-swatch__value">#9B7EDE</p>
               </div>
             </div>
             
             <div class="color-swatch color-swatch--accent">
               <div class="color-swatch__color"></div>
               <div class="color-swatch__info">
-                <div class="color-swatch__name">Accent</div>
-                <div class="color-swatch__value">#00D4AA</div>
+                <p class="color-swatch__name">Accent</p>
+                <p class="color-swatch__value">#00D4AA</p>
               </div>
             </div>
             
             <div class="color-swatch color-swatch--warning">
               <div class="color-swatch__color"></div>
               <div class="color-swatch__info">
-                <div class="color-swatch__name">Warning</div>
-                <div class="color-swatch__value">#FFB800</div>
+                <p class="color-swatch__name">Warning</p>
+                <p class="color-swatch__value">#FFB800</p>
               </div>
             </div>
             
             <div class="color-swatch color-swatch--error">
               <div class="color-swatch__color"></div>
               <div class="color-swatch__info">
-                <div class="color-swatch__name">Error</div>
-                <div class="color-swatch__value">#FF4D4F</div>
+                <p class="color-swatch__name">Error</p>
+                <p class="color-swatch__value">#FF4D4F</p>
               </div>
             </div>
             
             <div class="color-swatch color-swatch--success">
               <div class="color-swatch__color"></div>
               <div class="color-swatch__info">
-                <div class="color-swatch__name">Success</div>
-                <div class="color-swatch__value">#00D4AA</div>
+                <p class="color-swatch__name">Success</p>
+                <p class="color-swatch__value">#00D4AA</p>
               </div>
             </div>
           </div>
@@ -466,8 +466,15 @@
             <div class="color-swatch color-swatch--gradient-main">
               <div class="color-swatch__color"></div>
               <div class="color-swatch__info">
-                <div class="color-swatch__name">Button Gradient</div>
-                <div class="color-swatch__value">90deg, #9B7EDE → #00A8CC</div>
+                <p class="color-swatch__name">Button Gradient</p>
+                <p class="color-swatch__value">90deg, #9B7EDE → #00A8CC</p>
+              </div>
+            </div>
+            <div class="color-swatch color-swatch--gradient-secondary">
+              <div class="color-swatch__color"></div>
+              <div class="color-swatch__info">
+                <p class="color-swatch__name">Button Gradient 2</p>
+                <p class="color-swatch__value">90deg, #FF3E82 → #A78BFA</p>
               </div>
             </div>
           </div>
@@ -503,6 +510,34 @@
             <p>Обычный текст (16px / 1rem) - Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <p class="ui-kit-text--sm">Маленький текст (14px / 0.875rem) - Lorem ipsum dolor sit amet.</p>
             <p class="ui-kit-text--xs">Очень маленький текст (12px / 0.75rem) - Lorem ipsum.</p>
+          </div>
+
+          <h3 class="ui-kit-subtitle">Utility-классы для текста</h3>
+          <div class="ui-kit-grid ui-kit-grid--auto">
+            <div class="ui-kit-example">
+              <p class="heading-display">.heading-display — крупный герой-заголовок</p>
+              <p class="heading-page">.heading-page — основной заголовок страницы</p>
+              <p class="heading-section">.heading-section — заголовок секции или карточки</p>
+              <p class="heading-subtitle">.heading-subtitle — подзаголовок внутри карточек</p>
+            </div>
+            <div class="ui-kit-example">
+              <p class="text-lead">.text-lead — лид-абзац, вводный текст для блоков</p>
+              <p class="text-muted">.text-muted — вспомогательный или поясняющий текст</p>
+              <p>Комбинируйте их с тегами <code>h1–h4</code> и стандартными параграфами — классы задают типографику и отступы, поэтому страницы используют единый источник.</p>
+            </div>
+          </div>
+          <div class="ui-kit-example">
+            <h3 class="ui-kit-subtitle">Рекомендации по применению</h3>
+            <ul class="ui-kit-list">
+              <li><strong>H1 + .heading-display</strong> — лендинги, hero-блоки публичных страниц.</li>
+              <li><strong>H1/H2 + .heading-page</strong> — титулы разделов (банк запросов, детальные страницы, формы).</li>
+              <li><strong>H2 + .heading-section</strong> — заголовки карточек и секций внутри страницы.</li>
+              <li><strong>H3 + .heading-subtitle</strong> — подзаголовки в карточках, списках, таблицах.</li>
+              <li><strong>P + .text-lead</strong> — вводные описания под заголовками.</li>
+              <li><strong>P + .text-strong</strong> — имена, ключевые значения в карточках.</li>
+              <li><strong>P + .text-meta</strong> — подписи и описания с второстепенным приоритетом.</li>
+              <li><strong>P + .text-caption</strong> — маленькие метки/ролей, заголовки сайдбара.</li>
+            </ul>
           </div>
         </section>
 
@@ -608,17 +643,41 @@
         <!-- Бейджи -->
         <section class="ui-kit-section">
           <h2 class="ui-kit-title">Бейджи и индикаторы</h2>
+          <p class="ui-kit-description">Статусы всегда показываем с помощью <code>.status-indicator</code>, а бейджи используем для направлений запросов (см. раздел «Направления» в README).</p>
           
-          <h3 class="ui-kit-subtitle">Бейджи</h3>
-          <div class="button-grid">
-            <span class="badge badge--primary">Primary</span>
-            <span class="badge badge--success">Success</span>
-            <span class="badge badge--warning">Warning</span>
-            <span class="badge badge--error">Error</span>
-            <span class="badge badge--gray">Gray</span>
+          <h3 class="ui-kit-subtitle">Направления (бейджи)</h3>
+          <div class="ui-kit-grid ui-kit-grid--auto">
+            <div class="ui-kit-example">
+              <span class="badge badge--primary">Цифровизация</span>
+              <p class="text-meta">Проекты по автоматизации, аналитике, IT-сервисам.</p>
+            </div>
+            <div class="ui-kit-example">
+              <span class="badge badge--warning">Строительство</span>
+              <p class="text-meta">Инфраструктура, новые объекты, проектные работы.</p>
+            </div>
+            <div class="ui-kit-example">
+              <span class="badge badge--success">Эксплуатация</span>
+              <p class="text-meta">Эксплуатация сетей, ремонт, сервисные команды.</p>
+            </div>
+            <div class="ui-kit-example">
+              <span class="badge badge--error">Безопасность</span>
+              <p class="text-meta">Охрана труда, промышленная и информационная безопасность.</p>
+            </div>
+            <div class="ui-kit-example">
+              <span class="badge badge--teal">Клиентский сервис</span>
+              <p class="text-meta">Работа с клиентами, улучшение сервисных процессов.</p>
+            </div>
+            <div class="ui-kit-example">
+              <span class="badge badge--purple">Управление</span>
+              <p class="text-meta">Управленческие идеи, HR, организационное развитие.</p>
+            </div>
+            <div class="ui-kit-example">
+              <span class="badge badge--gray">Другое</span>
+              <p class="text-meta">Направления, не попавшие в основные категории.</p>
+            </div>
           </div>
 
-          <h3 class="ui-kit-subtitle">Индикаторы статуса</h3>
+          <h3 class="ui-kit-subtitle">Базовые индикаторы</h3>
           <div class="button-grid">
             <span class="status-indicator status-indicator--published">
               <span class="status-indicator__dot"></span>
@@ -641,6 +700,39 @@
               Отклонено
             </span>
           </div>
+
+          <h3 class="ui-kit-subtitle">Статусы по сущностям</h3>
+          <div class="ui-kit-grid ui-kit-grid--auto">
+            <div class="ui-kit-example">
+              <h4 class="heading-subtitle">Запрос на инновацию</h4>
+              <ul class="ui-kit-list">
+                <li><span class="status-indicator status-indicator--draft"><span class="status-indicator__dot"></span>Черновик</span> — подготовка и редактирование стейкхолдером.</li>
+                <li><span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>На сборе идей</span> — запрос опубликован и доступен для подачи.</li>
+                <li><span class="status-indicator status-indicator--rejected"><span class="status-indicator__dot"></span>Закрыт</span> — завершён по дедлайну или вручную, скрывает кнопку подачи.</li>
+              </ul>
+            </div>
+            <div class="ui-kit-example">
+              <h4 class="heading-subtitle">Идея</h4>
+              <ul class="ui-kit-list">
+                <li><span class="status-indicator status-indicator--draft"><span class="status-indicator__dot"></span>Черновик</span> — личная подготовка автора.</li>
+                <li><span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>На модерации</span> — проверка координатором.</li>
+                <li><span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>На доработке</span> — возврат с замечаниями (до 3 попыток).</li>
+                <li><span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>На рассмотрении</span> — стейкхолдер принимает решение.</li>
+                <li><span class="status-indicator status-indicator--approved"><span class="status-indicator__dot"></span>Одобрена</span> — старт рабочего пространства Bitrix24.</li>
+                <li><span class="status-indicator status-indicator--draft"><span class="status-indicator__dot"></span>Архив</span> — фиксация завершённых решений.</li>
+                <li><span class="status-indicator status-indicator--rejected"><span class="status-indicator__dot"></span>Отклонена</span> — финальное решение с обоснованием.</li>
+              </ul>
+            </div>
+            <div class="ui-kit-example">
+              <h4 class="heading-subtitle">Заявка в команду</h4>
+              <ul class="ui-kit-list">
+                <li><span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>На рассмотрении</span> — заявка попала во «Входящие».</li>
+                <li><span class="status-indicator status-indicator--approved"><span class="status-indicator__dot"></span>Принята</span> — участник закреплён в команде.</li>
+                <li><span class="status-indicator status-indicator--rejected"><span class="status-indicator__dot"></span>Отклонена</span> — есть причина в «Отправленных».</li>
+                <li><span class="status-indicator status-indicator--draft"><span class="status-indicator__dot"></span>Архив</span> — сохранённые истории завершений.</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <!-- Карточки -->
@@ -654,7 +746,7 @@
                   <h3 class="card__title">Заголовок карточки</h3>
                   <p class="card__subtitle">Подзаголовок</p>
                 </div>
-                <span class="badge badge--primary">Новое</span>
+                <span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>Новое</span>
               </div>
               <div class="card__body">
                 <p>Это пример содержимого карточки. Здесь может быть любой контент.</p>
@@ -739,7 +831,7 @@
 
           <div class="ui-kit-grid ui-kit-grid--auto">
             <div class="ui-kit-example">
-              <h3 class="ui-kit-subtitle">Список преимуществ</h3>
+              <h3 class="ui-kit-subtitle">Ненумерованные списки</h3>
               <ul class="feature-list">
                 <li class="feature-list__item">Маркированные элементы получают единый отступ слева</li>
                 <li class="feature-list__item">Декоративный индикатор цвета `--color-secondary`</li>
@@ -748,14 +840,15 @@
             </div>
 
             <div class="ui-kit-example">
-              <h3 class="ui-kit-subtitle">Шаги процесса</h3>
-              <ul class="feature-list">
+              <h3 class="ui-kit-subtitle">Нумерованные списки</h3>
+              <ol class="feature-list feature-list--ordered">
                 <li class="feature-list__item">Исследование задачи и сбор требований</li>
                 <li class="feature-list__item">Формирование команды и запуск пилота</li>
                 <li class="feature-list__item">Сбор обратной связи и масштабирование решения</li>
-              </ul>
+              </ol>
             </div>
           </div>
+
         </section>
 
         <!-- Аватары -->
@@ -763,9 +856,9 @@
           <h2 class="ui-kit-title">Аватары</h2>
           
           <div class="button-grid">
-            <div class="avatar avatar--sm">АБ</div>
-            <div class="avatar">ОЧ</div>
-            <div class="avatar avatar--lg">ИП</div>
+            <span class="avatar avatar--sm">АБ</span>
+            <span class="avatar">ОЧ</span>
+            <span class="avatar avatar--lg">ИП</span>
           </div>
         </section>
 
@@ -909,7 +1002,7 @@
                         <p class="text-muted">14 апреля</p>
                         <h3 class="card__title">Замена профессий</h3>
                       </div>
-                      <span class="badge badge--primary">HR</span>
+                      <span class="badge badge--purple">Управление</span>
                     </div>
                     <p>Сокращаем цикл подбора сотрудников за счёт автоматизации.</p>
                     <div class="card__footer">
@@ -923,7 +1016,7 @@
                         <p class="text-muted">2 мая</p>
                         <h3 class="card__title">Портал обучения</h3>
                       </div>
-                      <span class="badge badge--success">В работе</span>
+                      <span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>В работе</span>
                     </div>
                     <p>Платформа с персональными маршрутами развития сотрудников.</p>
                   </div>
@@ -958,8 +1051,8 @@
                     <h3 class="section-title">Оптимизация найма</h3>
                     <p class="cta-card__text">Короткий пич описывает проблему и ожидаемый эффект. Карточка завершает вводный экран.</p>
                     <div class="button-grid">
-                      <span class="badge badge--primary">HR</span>
-                      <span class="badge badge--success">В работе</span>
+                      <span class="badge badge--purple">Управление</span>
+                      <span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span>В работе</span>
                     </div>
                   </div>
                 </div>
@@ -988,7 +1081,7 @@
                 <div class="ui-kit-flow-block">
                   <span class="ui-kit-flow-step" data-step="5">Сводка и статусы</span>
                   <div class="card sidebar-card">
-                    <div class="sidebar-card__title">Текущий статус</div>
+                    <p class="sidebar-card__title text-caption">Текущий статус</div>
                     <p class="sidebar-card__value">На рассмотрении</p>
                     <p class="ui-kit-text--sm">Обновлено 12.04.2025</p>
                   </div>
@@ -997,7 +1090,7 @@
                 <div class="ui-kit-flow-block">
                   <span class="ui-kit-flow-step" data-step="6">Документы и действия</span>
                   <div class="card sidebar-card">
-                    <h3 class="sidebar-card__title">Документы</h3>
+                    <h3 class="sidebar-card__title text-caption">Документы</h3>
                     <div class="document-list">
                       <a class="document-item" href="#">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1038,28 +1131,28 @@
               <h3 class="section-title">Команда запроса</h3>
               <div class="team-grid">
                 <div class="team-member">
-                  <div class="team-member__role">Стейкхолдер</div>
-                  <div class="team-member__name">Инна Громова</div>
-                  <div class="team-member__position">Директор цифровой трансформации</div>
-                  <div class="team-member__department">HR департамент</div>
+                  <p class="text-caption">Стейкхолдер</p>
+                  <p class="text-strong">Инна Громова</p>
+                  <p class="text-meta">Директор цифровой трансформации</p>
+                  <p class="text-caption text-muted">HR департамент</p>
                 </div>
                 <div class="team-member">
-                  <div class="team-member__role">Куратор</div>
-                  <div class="team-member__name">Антон Мельник</div>
-                  <div class="team-member__position">Руководитель проектного офиса</div>
-                  <div class="team-member__department">Цифровой блок</div>
+                  <p class="text-caption">Куратор</p>
+                  <p class="text-strong">Антон Мельник</p>
+                  <p class="text-meta">Руководитель проектного офиса</p>
+                  <p class="text-caption text-muted">Цифровой блок</p>
                 </div>
                 <div class="team-member">
-                  <div class="team-member__role">Эксперт</div>
-                  <div class="team-member__name">Марина Дроздова</div>
-                  <div class="team-member__position">Lead по HR-аналитике</div>
-                  <div class="team-member__department">АО «НИЦ»</div>
+                  <p class="text-caption">Эксперт</p>
+                  <p class="text-strong">Марина Дроздова</p>
+                  <p class="text-meta">Lead по HR-аналитике</p>
+                  <p class="text-caption text-muted">АО «НИЦ»</p>
                 </div>
                 <div class="team-member">
-                  <div class="team-member__role">Автор</div>
-                  <div class="team-member__name">Михаил Шестаков</div>
-                  <div class="team-member__position">Руководитель отдела данных</div>
-                  <div class="team-member__department">АО «НИЦ»</div>
+                  <p class="text-caption">Автор</p>
+                  <p class="text-strong">Михаил Шестаков</p>
+                  <p class="text-meta">Руководитель отдела данных</p>
+                  <p class="text-caption text-muted">АО «НИЦ»</p>
                 </div>
               </div>
             </div>
