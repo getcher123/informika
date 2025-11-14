@@ -119,13 +119,32 @@
   border-top: 1px solid var(--color-border-light);
 }
 
-.submit-section .btn {
-  min-width: 200px;
+.submit-section .role-actions__buttons {
+  justify-content: center;
+  width: 100%;
+}
+
+.role-actions__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.role-actions__buttons .btn {
+  min-width: 140px;
+}
+
+.role-actions__buttons .btn.btn--ghost {
+  border: 1px dashed var(--color-border);
 }
 
 /* Responsive */
 @media (max-width: 767px) {
   .idea-header {
+    flex-direction: column;
+  }
+
+  .role-actions__buttons {
     flex-direction: column;
   }
 
@@ -147,4 +166,3 @@
     height: 32px;
   }
 }
-

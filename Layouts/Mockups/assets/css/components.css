@@ -131,8 +131,29 @@
   display: inline-flex;
 }
 
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.btn-group--center {
+  justify-content: center;
+}
+
 .btn--spaced {
   margin-bottom: var(--spacing-md);
+}
+
+/* Sidebar Card Actions */
+.sidebar-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.sidebar-card__actions .btn {
+  width: 100%;
 }
 
 .btn__icon {
