@@ -161,10 +161,6 @@ h6 {
   font-size: var(--font-size-base);
 }
 
-p:not(:last-child) {
-  margin-bottom: var(--spacing-sm);
-}
-
 a {
   color: var(--color-primary);
   text-decoration: none;

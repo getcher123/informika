@@ -59,11 +59,11 @@
             </p>
           </div>
 
-          <form class="request-form" data-validate>
+          <form data-validate>
             <!-- Направление -->
             <div class="form-group">
               <label class="form-label form-label--required" for="direction">Выберете направление</label>
-              <select class="form-select" id="direction" required>
+              <select class="form-select form-select--decorated js-custom-select" id="direction" required>
                 <option value="">Выбор направления</option>
                 <option value="it">IT-технологии</option>
                 <option value="construction">Строительство</option>
@@ -123,14 +123,14 @@
             <!-- Есть ли у вас наработки -->
             <div class="form-group">
               <label class="form-label form-label--required">Есть ли у вас наработки по данному запросу?</label>
-              <div class="radio-group">
-                <label class="form-check">
-                  <input type="radio" name="has_work" value="yes" class="form-check__input">
-                  <span class="form-check__label">Да</span>
+              <div class="form-radio-group">
+                <label class="form-radio">
+                  <input type="radio" name="has_work" value="yes">
+                  <span>Да</span>
                 </label>
-                <label class="form-check">
-                  <input type="radio" name="has_work" value="no" class="form-check__input" checked>
-                  <span class="form-check__label">Нет</span>
+                <label class="form-radio">
+                  <input type="radio" name="has_work" value="no" checked>
+                  <span>Нет</span>
                 </label>
               </div>
             </div>

@@ -72,37 +72,37 @@
                 <!-- Role Selection -->
                 <div class="form-group">
                   <label class="form-label form-label--required">Выберите свою роль</label>
-                  <div class="role-selection">
-                    <label class="role-option">
-                      <input type="radio" name="role" value="employee" checked>
-                      <div class="role-option__content">
-                        <p class="role-option__title">Работник АО «Мособлгаз»</p>
-                      </div>
-                    </label>
-                    <label class="role-option">
-                      <input type="radio" name="role" value="educator">
-                      <div class="role-option__content">
-                        <p class="role-option__title">Представитель учебного заведения</p>
-                      </div>
-                    </label>
-                    <label class="role-option">
-                      <input type="radio" name="role" value="business">
-                      <div class="role-option__content">
-                        <p class="role-option__title">Представитель бизнеса</p>
-                      </div>
-                    </label>
-                    <label class="role-option">
-                      <input type="radio" name="role" value="student">
-                      <div class="role-option__content">
-                        <p class="role-option__title">Студент</p>
-                      </div>
-                    </label>
-                    <label class="role-option">
-                      <input type="radio" name="role" value="guest">
-                      <div class="role-option__content">
-                        <p class="role-option__title">Гость</p>
-                      </div>
-                    </label>
+                  <div class="form-options">
+                    <div class="form-option">
+                      <input type="radio" name="role" id="role-employee" value="employee" class="form-option__control" checked>
+                      <label for="role-employee" class="form-option__label">
+                        <span class="form-option__title">Работник АО «Мособлгаз»</span>
+                      </label>
+                    </div>
+                    <div class="form-option">
+                      <input type="radio" name="role" id="role-educator" value="educator" class="form-option__control">
+                      <label for="role-educator" class="form-option__label">
+                        <span class="form-option__title">Представитель учебного заведения</span>
+                      </label>
+                    </div>
+                    <div class="form-option">
+                      <input type="radio" name="role" id="role-business" value="business" class="form-option__control">
+                      <label for="role-business" class="form-option__label">
+                        <span class="form-option__title">Представитель бизнеса</span>
+                      </label>
+                    </div>
+                    <div class="form-option">
+                      <input type="radio" name="role" id="role-student" value="student" class="form-option__control">
+                      <label for="role-student" class="form-option__label">
+                        <span class="form-option__title">Студент</span>
+                      </label>
+                    </div>
+                    <div class="form-option">
+                      <input type="radio" name="role" id="role-guest" value="guest" class="form-option__control">
+                      <label for="role-guest" class="form-option__label">
+                        <span class="form-option__title">Гость</span>
+                      </label>
+                    </div>
                   </div>
                 </div>
 
@@ -146,12 +146,12 @@
                 <!-- Mentor Option -->
                 <div class="form-group">
                   <label class="form-label">Хочу стать ментором</label>
-                  <div class="radio-group">
-                    <label class="radio-label">
+                  <div class="form-radio-group">
+                    <label class="form-radio">
                       <input type="radio" name="mentor" value="yes">
                       <span>Да</span>
                     </label>
-                    <label class="radio-label">
+                    <label class="form-radio">
                       <input type="radio" name="mentor" value="no" checked>
                       <span>Нет</span>
                     </label>
@@ -161,12 +161,12 @@
                 <!-- Expert Option -->
                 <div class="form-group">
                   <label class="form-label">Хочу стать экспертом</label>
-                  <div class="radio-group">
-                    <label class="radio-label">
+                  <div class="form-radio-group">
+                    <label class="form-radio">
                       <input type="radio" name="expert" value="yes">
                       <span>Да</span>
                     </label>
-                    <label class="radio-label">
+                    <label class="form-radio">
                       <input type="radio" name="expert" value="no" checked>
                       <span>Нет</span>
                     </label>
