@@ -664,6 +664,7 @@
   align-items: center;
   padding: var(--spacing-xs) var(--spacing-md);
   border-radius: var(--radius-full);
+  font-family: var(--font-family-base);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
   white-space: nowrap;
