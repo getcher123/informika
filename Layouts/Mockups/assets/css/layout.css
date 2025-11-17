@@ -71,8 +71,9 @@
 }
 
 .header__logo-img {
-  width: 48px;
-  height: 48px;
+  width: 216px;
+  height: 216px;
+  margin: calc(var(--spacing-3xl) * -1.25) 0;
 }
 
 .header__logo-text {
