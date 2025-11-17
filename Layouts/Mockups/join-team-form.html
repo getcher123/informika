@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вступить в команду | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/request-form.css">
+</head>
+<body>
+  <div class="layout">    <!-- Header -->
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <!-- Logo -->
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/826-1724.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+            <p class="header__logo-text">
+              ИННОВАТИКА<br>
+              <strong>МОСОБЛГАЗ</strong>
+            </p>
+          </a>
+
+          <!-- Navigation -->
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+
+          <!-- Actions -->
+          <div class="header__actions">
+            <a href="./login.html" class="btn btn--ghost header__user-btn">
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="header__user-text">ВОЙТИ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main layout__main">
+      <div class="container">
+        <a href="./requests.html" class="back-link">← Назад</a>
+          <div class="form-container form-container--large">
+          <div class="form-container__header">
+            <h1 class="heading-page form-container__title">Вступить в команду акселератора</h1>
+            <p class="text-lead form-container__subtitle">
+              Расскажите о своих компетенциях и достижениях, чтобы присоединиться к проектным командам «Инноватики Мособлгаз».
+            </p>
+          </div>
+
+          <form data-validate>
+            <!-- Целевая роль -->
+            <div class="form-group">
+              <label class="form-label form-label--required" for="role">Целевая роль</label>
+              <select class="form-select form-select--decorated js-custom-select" id="role" required>
+                <option value="">Выберите роль</option>
+                <option value="lead">Тимлид</option>
+                <option value="analyst">Аналитик</option>
+                <option value="developer">Разработчик</option>
+                <option value="qa">Тестировщик</option>
+                <option value="communications">Коммуникационный специалист</option>
+                <option value="mentor">Эксперт/Ментор</option>
+                <option value="designer">Дизайнер</option>
+                <option value="devops">DevOps/Инженер внедрения</option>
+              </select>
+            </div>
+
+            <!-- Уровень компетенции -->
+            <div class="form-group">
+              <label class="form-label form-label--required" for="competence">Уровень компетенции</label>
+              <span class="form-hint">Выберите основной уровень своей экспертизы</span>
+              <select
+                class="form-select form-select--decorated js-custom-select"
+                id="competence"
+                name="competence"
+                required
+              >
+                <option value="">Выберите уровень</option>
+                <option value="junior">Junior</option>
+                <option value="middle">Middle</option>
+                <option value="senior">Senior</option>
+                <option value="expert">Expert</option>
+              </select>
+            </div>
+
+            <!-- Опыт -->
+            <div class="form-group">
+              <label class="form-label form-label--required" for="experience">Опыт/успехи</label>
+              <span class="form-hint">Опишите ключевые проекты, достижения и область экспертизы</span>
+              <textarea 
+                class="form-textarea" 
+                id="experience" 
+                placeholder="Расскажите об опыте, который поможет команде"
+                required
+              ></textarea>
+            </div>
+
+            <!-- Портфолио -->
+            <div class="form-group">
+              <label class="form-label" for="portfolio">Портфолио</label>
+              <span class="form-hint">Приложите презентации, ссылки на проекты или другие материалы</span>
+              <div class="file-upload">
+                <input type="file" id="portfolio" class="file-upload__input" multiple>
+                <label for="portfolio" class="file-upload__label">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  <span>Загрузите портфолио или перетащите файлы сюда</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Agreement -->
+            <div class="form-group">
+              <div class="form-check">
+                <input type="checkbox" class="form-check__input" id="rules" required>
+                <label class="form-check__label" for="rules">
+                  Согласен с правилами участия
+                </label>
+              </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary btn--lg">Отправить заявку</button>
+              <button type="button" class="btn btn--ghost btn--lg">Отмена</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/forms.js"></script>
+</body>
+</html>
