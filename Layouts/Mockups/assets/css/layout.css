@@ -71,8 +71,8 @@
 }
 
 .header__logo-img {
-  width: 216px;
-  height: 216px;
+  width: var(--logo-width-header);
+  height: auto;
   margin: calc(var(--spacing-3xl) * -1.25) 0;
 }
 

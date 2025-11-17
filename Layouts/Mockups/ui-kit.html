@@ -367,44 +367,65 @@
   .ui-kit-description {
     margin-bottom: 1.5rem;
   }
+
+  .ui-kit-example--stacked {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .ui-kit-grid--single {
+    grid-template-columns: 1fr;
+  }
+
+  .header--demo {
+    position: static;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+  }
+
+  .header--demo .header__container {
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .header--demo .header__logo-img {
+    width: var(--logo-width-header);
+    height: auto;
+    margin: calc(var(--spacing-lg) * -1) 0;
+  }
+
+  .header--demo .header__nav {
+    display: flex;
+  }
+
+  .header--demo .header__nav .nav__list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer--demo {
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border-light);
+  }
+
+  .footer--demo .footer__logo {
+    width: var(--logo-width-footer);
+    height: auto;
+  }
+
+  .footer--demo .footer__content {
+    gap: var(--spacing-lg);
+  }
   </style>
 </head>
 <body>
-  <div class="layout">
-    <!-- Header -->
-    <header class="header layout__header">
-      <div class="container">
-        <div class="header__container">
-          <a href="./index.html" class="header__logo">
-            <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
-          </a>
-
-          <nav class="header__nav">
-            <ul class="nav__list">
-              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
-              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
-              <li><a href="#" class="nav__link">КОНКУРС</a></li>
-              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
-            </ul>
-          </nav>
-
-          <div class="header__actions">
-            <a href="./login.html" class="btn btn--ghost header__user-btn">
-              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
-                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              <span class="header__user-text">ВОЙТИ</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Main Content -->
+  <main class="main layout__main">
+<!-- Main Content -->
     <main class="main layout__main">
       <div class="container ui-kit__container">
-        <h1 class="ui-kit__title">
+        <h1 class="ui-kit__title heading-display">
           UI Kit - Инноватика Мособлгаз
         </h1>
 
@@ -482,7 +503,7 @@
           </div>
         </section>
 
-          <div class="ui-kit-grid ui-kit-grid--auto">
+          <div class="ui-kit-grid ui-kit-grid--auto ui-kit-grid--single">
             <div class="ui-kit-example">
               <p class="heading-display">Hero / .heading-display</p>
               <p class="heading-page">Основной заголовок / .heading-page</p>
@@ -517,6 +538,7 @@
             <button class="btn btn--primary btn--sm">Small Button</button>
             <button class="btn btn--primary">Default Button</button>
             <button class="btn btn--primary btn--lg">Large Button</button>
+            <button class="btn btn--gradient-secondary btn--lg">Large Button Gradient 2</button>
           </div>
 
           <h3 class="ui-kit-subtitle">Специальные кнопки</h3>
@@ -535,7 +557,7 @@
 
         <section class="ui-kit-section">
           <h2 class="ui-kit-title">Кнопки авторизации</h2>
-          <div class="ui-kit-grid ui-kit-grid--auto">
+          <div class="ui-kit-grid ui-kit-grid--single">
             <div class="ui-kit-example">
               <h3 class="ui-kit-subtitle">Неавторизованный пользователь</h3>
               <a href="./login.html" class="btn btn--ghost header__user-btn">
@@ -555,6 +577,73 @@
                   <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
               </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Навигация и футер -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Верхнее меню и футер</h2>
+          <div class="ui-kit-grid ui-kit-grid--single">
+            <div class="ui-kit-example ui-kit-example--stacked">
+              <h3 class="ui-kit-subtitle">Хедер с логотипом, меню и действиями</h3>
+              <div class="header header--demo">
+                <div class="container">
+                  <div class="header__container">
+                    <a href="./index.html" class="header__logo">
+                      <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+                    </a>
+                    <nav class="header__nav">
+                      <ul class="nav__list">
+                        <li><a href="#" class="nav__link">Медиацентр</a></li>
+                        <li><a href="#" class="nav__link">Банк инноваций</a></li>
+                        <li><a href="#" class="nav__link">Конкурсы</a></li>
+                        <li><a href="#" class="nav__link">Обучение</a></li>
+                      </ul>
+                    </nav>
+                    <div class="header__actions">
+                      <a href="./login.html" class="btn btn--ghost header__user-btn">
+                        <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                          <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span class="header__user-text">Войти</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ui-kit-example ui-kit-example--stacked">
+              <h3 class="ui-kit-subtitle">Футер с колонками ссылок</h3>
+              <footer class="footer footer--demo">
+                <div class="container">
+                  <div class="footer__content">
+                    <div class="footer__column footer__column--brand">
+                      <div class="footer__brand">
+                        <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="footer__logo">
+                      </div>
+                      <p class="footer__description">Инновационные решения для развития компании и поддержки талантов.</p>
+                    </div>
+                    <div class="footer__column">
+                      <h4 class="footer__title heading-subtitle">Платформа</h4>
+                      <ul class="footer__list">
+                        <li><a href="./requests.html" class="footer__link">Банк инноваций</a></li>
+                        <li><a href="#" class="footer__link">Конкурсы</a></li>
+                        <li><a href="#" class="footer__link">Обучение</a></li>
+                      </ul>
+                    </div>
+                    <div class="footer__column">
+                      <h4 class="footer__title heading-subtitle">Связаться</h4>
+                      <ul class="footer__list">
+                        <li><a href="mailto:info@inn.mosoblgaz.ru" class="footer__link">info@inn.mosoblgaz.ru</a></li>
+                        <li><a href="tel:+74951234567" class="footer__link">+7 (495) 123-45-67</a></li>
+                        <li><a href="#" class="footer__link">Поддержка</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </footer>
             </div>
           </div>
         </section>
