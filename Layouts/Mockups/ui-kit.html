@@ -306,6 +306,14 @@
     gap: var(--spacing-md);
   }
 
+  .ui-kit-inline-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    row-gap: var(--spacing-sm);
+    align-items: center;
+  }
+
   .ui-kit-grid--single {
     grid-template-columns: 1fr;
   }
@@ -693,7 +701,7 @@
           <div class="ui-kit-grid ui-kit-grid--auto">
             <div class="ui-kit-example">
               <h3 class="ui-kit-subtitle">Направления</h3>
-              <div class="ui-kit-inline-list" style="gap: var(--spacing-lg); flex-wrap: wrap;">
+              <div class="ui-kit-inline-list">
                 <span class="badge badge--primary">Цифровизация</span>
                 <span class="badge badge--warning">Строительство</span>
                 <span class="badge badge--success">Эксплуатация</span>
@@ -705,7 +713,7 @@
             </div>
             <div class="ui-kit-example">
               <h3 class="ui-kit-subtitle">Спец бейджи</h3>
-              <div class="ui-kit-inline-list" style="gap: var(--spacing-lg); flex-wrap: wrap;">
+              <div class="ui-kit-inline-list">
                 <span class="badge badge--deadline-danger">Сбор идей до завтра</span>
                 <span class="badge badge--deadline-muted">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -776,7 +784,6 @@
 
           <div class="ui-kit-grid ui-kit-grid--auto">
             <div class="ui-kit-example ui-kit-tabs-demo" data-tabs>
-              <h3 class="ui-kit-subtitle">Табы</h3>
               <div class="tabs">
                 <button class="tabs__item tabs__item--active" data-tab="lk-tabs">Личный кабинет</button>
                 <button class="tabs__item" data-tab="requests-tabs">Заявки</button>
@@ -891,10 +898,10 @@
         <!-- Градиентный фон -->
         <section class="ui-kit-section">
           <h2 class="ui-kit-title">Градиентный фон</h2>
-          
+                    <p class="ui-kit-description">Фон строится из двух размытых окружностей (бирюзовой и фиолетовой), которые закреплены на body и подходят для всех внутренних экранов.</p>
+
                     <div class="ui-kit-example">
 
-            <h3 class="ui-kit-subtitle">Фон кабинета</h3>
 
             <div class="ui-kit-gradient-demo">
 
@@ -902,9 +909,7 @@
 
             </div>
 
-            <p>Фон строится из двух размытых окружностей (бирюзовой и фиолетовой), которые закреплены на body и подходят для всех внутренних экранов.</p>
 
-            <p class="ui-kit-text--sm">Добавляйте класс <code>.main--with-gradient</code> только для сохранения прозрачного фона контента — сам градиент задаёт <code>.body--gradient</code>.</p>
 
           </div>
         </section>
