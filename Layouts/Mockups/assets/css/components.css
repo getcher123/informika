@@ -431,6 +431,55 @@
   color: var(--color-text-secondary);
 }
 
+/* File upload */
+.file-upload {
+  position: relative;
+}
+
+.file-upload__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.file-upload__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-2xl);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-light);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  min-height: 150px;
+}
+
+.file-upload__label:hover {
+  border-color: var(--color-primary);
+  background: var(--color-bg-white);
+}
+
+.file-upload__label svg {
+  width: 48px;
+  height: 48px;
+  color: var(--color-primary);
+}
+
+.file-upload__input:focus + .file-upload__label {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
 .form-input::placeholder,
 .form-textarea::placeholder {
   color: var(--color-text-muted);
@@ -615,6 +664,7 @@
   align-items: center;
   padding: var(--spacing-xs) var(--spacing-md);
   border-radius: var(--radius-full);
+  font-family: var(--font-family-base);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
   white-space: nowrap;
@@ -781,11 +831,13 @@
 }
 
 .idea-submission__header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-md);
+  min-height: 32px;
 }
 
 .idea-submission__meta {
@@ -793,6 +845,17 @@
   align-items: center;
   flex-wrap: wrap;
   gap: var(--spacing-md);
+}
+
+.idea-submission__date {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .idea-submission__title {
@@ -1344,6 +1407,7 @@
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
+  font-family: 'Russo One', var(--font-family-heading);
   margin-bottom: var(--spacing-md);
 }
 
@@ -1351,6 +1415,7 @@
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
+  font-family: 'Russo One', var(--font-family-heading);
   margin-bottom: var(--spacing-md);
 }
 
@@ -1767,6 +1832,81 @@ table.evaluation-table tbody tr {
     border-radius: 12px;
   }
 }
+
+/* Site Footer */
+.footer {
+  background: var(--color-bg-white);
+  border-top: 1px solid var(--color-border-light);
+  padding: var(--spacing-2xl) 0;
+}
+
+.footer__content {
+  display: grid;
+  gap: var(--spacing-xl);
+}
+
+@media (min-width: 768px) {
+  .footer__content {
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: flex-start;
+  }
+}
+
+.footer__column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.footer__logo {
+  width: var(--logo-width-footer);
+  height: auto;
+  display: block;
+  margin: calc(var(--spacing-md) * -1) 0 var(--spacing-sm);
+}
+
+.footer__logo-text {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: 1.2;
+}
+
+.footer__description {
+  margin-top: var(--spacing-sm);
+  max-width: 320px;
+  color: var(--color-text-secondary);
+}
+
+.footer__title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-xs);
+}
+
+.footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.footer__link {
+  color: var(--color-text-secondary);
+  transition: color var(--transition-base);
+}
+
+.footer__link:hover {
+  color: var(--color-primary);
+}
+
 [data-favorite]:hover {
   color: var(--color-error);
 }

@@ -53,4 +53,4 @@ var/phpstan/
 *.swo
 
 # Assets to ignore
-img/
+/img/

@@ -41,12 +41,17 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
     
-    .ui-kit-example {
-      padding: var(--spacing-lg);
-      background: var(--color-bg-light);
-      border-radius: var(--radius-lg);
-      border: 2px solid var(--color-border);
-    }
+  .ui-kit-example {
+    padding: var(--spacing-lg);
+    background: var(--color-bg-light);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-border);
+  }
+
+  .ui-kit-example--plain {
+    background: transparent;
+    box-shadow: none;
+  }
 
     .ui-kit-section--plain .ui-kit-example {
       border: none;
@@ -195,6 +200,7 @@
     padding: var(--spacing-lg);
     background: var(--color-bg-light);
     border-radius: var(--radius-lg);
+    border: 2px solid var(--color-border);
   }
 
   .ui-kit-detail-demo .cta-card {
@@ -207,63 +213,6 @@
 
   .ui-kit-detail-demo .detail-sidebar .card {
     margin-bottom: var(--spacing-lg);
-  }
-
-  .ui-kit-lk-demo {
-    display: flex;
-    gap: var(--spacing-lg);
-    padding: var(--spacing-xl);
-    background: var(--color-bg-white);
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-md);
-    flex-wrap: wrap;
-  }
-
-  .ui-kit-lk-main {
-    flex: 1;
-    min-width: 280px;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-  }
-
-  .ui-kit-lk-sidebar {
-    width: 240px;
-    min-width: 200px;
-    background: var(--color-bg-light);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-md);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-sm);
-  }
-
-  .ui-kit-lk-nav-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--spacing-sm) var(--spacing-md);
-    border-radius: var(--radius-md);
-    background: var(--color-bg-white);
-    color: var(--color-text-primary);
-    font-size: var(--font-size-sm);
-  }
-
-  .ui-kit-lk-nav-item--active {
-    background: var(--color-primary);
-    color: var(--color-text-white);
-  }
-
-  .ui-kit-lk-search {
-    display: flex;
-    gap: var(--spacing-sm);
-    align-items: center;
-  }
-
-  .ui-kit-lk-cards {
-    display: grid;
-    gap: var(--spacing-md);
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 
   .ui-kit-flow-block {
@@ -296,29 +245,12 @@
     font-size: var(--font-size-sm);
   }
 
-  .ui-kit-lk-demo .filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);
-    margin-bottom: 0;
-  }
-
-  .ui-kit-lk-demo .filter-reset {
-    margin-left: auto;
-  }
-
   .ui-kit-detail-demo .detail-layout {
     margin-top: var(--spacing-lg);
   }
 
   .ui-kit-detail-demo .detail-sidebar {
     align-self: flex-start;
-  }
-
-  @media (max-width: 768px) {
-    .ui-kit-lk-demo {
-      flex-direction: column;
-    }
   }
 
   .ui-kit__container {
@@ -367,48 +299,73 @@
   .ui-kit-description {
     margin-bottom: 1.5rem;
   }
+
+  .ui-kit-example--stacked {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .ui-kit-inline-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+    row-gap: var(--spacing-sm);
+    align-items: center;
+  }
+
+  .ui-kit-grid--single {
+    grid-template-columns: 1fr;
+  }
+
+  .header--demo {
+    position: static;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+  }
+
+  .header--demo .header__container {
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .header--demo .header__logo-img {
+    width: var(--logo-width-header);
+    height: auto;
+    margin: calc(var(--spacing-lg) * -1) 0;
+  }
+
+  .header--demo .header__nav {
+    display: flex;
+  }
+
+  .header--demo .header__nav .nav__list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer--demo {
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--color-border-light);
+  }
+
+  .footer--demo .footer__logo {
+    width: var(--logo-width-footer);
+    height: auto;
+  }
+
+  .footer--demo .footer__content {
+    gap: var(--spacing-lg);
+  }
   </style>
 </head>
 <body>
-  <div class="layout">
-    <!-- Header -->
-    <header class="header layout__header">
-      <div class="container">
-        <div class="header__container">
-          <a href="./index.html" class="header__logo">
-            <img src="./assets/img/826-1724.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
-            <p class="header__logo-text">
-              ИННОВАТИКА<br>
-              <strong>МОСОБЛГАЗ</strong>
-            </p>
-          </a>
-
-          <nav class="header__nav">
-            <ul class="nav__list">
-              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
-              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
-              <li><a href="#" class="nav__link">КОНКУРС</a></li>
-              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
-            </ul>
-          </nav>
-
-          <div class="header__actions">
-            <a href="./login.html" class="btn btn--ghost header__user-btn">
-              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
-                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              <span class="header__user-text">ВОЙТИ</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <!-- Main Content -->
+  <main class="main layout__main">
+<!-- Main Content -->
     <main class="main layout__main">
       <div class="container ui-kit__container">
-        <h1 class="ui-kit__title">
+        <h1 class="ui-kit__title heading-display">
           UI Kit - Инноватика Мособлгаз
         </h1>
 
@@ -486,7 +443,7 @@
           </div>
         </section>
 
-          <div class="ui-kit-grid ui-kit-grid--auto">
+          <div class="ui-kit-grid ui-kit-grid--auto ui-kit-grid--single">
             <div class="ui-kit-example">
               <p class="heading-display">Hero / .heading-display</p>
               <p class="heading-page">Основной заголовок / .heading-page</p>
@@ -506,59 +463,129 @@
         <!-- Кнопки -->
         <section class="ui-kit-section">
           <h2 class="ui-kit-title">Кнопки</h2>
+          <p class="ui-kit-description">Кнопки `btn--primary` используют брендовый градиент, чтобы отличаться от плоских кнопок фильтров и вспомогательных действий.</p>
           
-          <h3 class="ui-kit-subtitle">Основные варианты</h3>
-          <div class="button-grid">
-            <button class="btn btn--primary">Primary Button</button>
-            <button class="btn btn--secondary">Secondary Button</button>
-            <button class="btn btn--outline">Outline Button</button>
-            <button class="btn btn--ghost">Ghost Button</button>
-            <button class="btn btn--primary" disabled>Disabled Button</button>
-          </div>
+          <div class="ui-kit-grid ui-kit-grid--single">
+            <div class="ui-kit-example ui-kit-example--plain">
+              <h3 class="ui-kit-subtitle">Основные варианты</h3>
+              <div class="button-grid">
+                <button class="btn btn--primary">Primary Button</button>
+                <button class="btn btn--secondary">Secondary Button</button>
+                <button class="btn btn--outline">Outline Button</button>
+                <button class="btn btn--ghost">Ghost Button</button>
+                <button class="btn btn--primary" disabled>Disabled Button</button>
+              </div>
+            </div>
 
-          <h3 class="ui-kit-subtitle">Размеры</h3>
-          <div class="button-grid">
-            <button class="btn btn--primary btn--sm">Small Button</button>
-            <button class="btn btn--primary">Default Button</button>
-            <button class="btn btn--primary btn--lg">Large Button</button>
-          </div>
+            <div class="ui-kit-example">
+              <h3 class="ui-kit-subtitle">Размеры</h3>
+              <div class="button-grid">
+                <button class="btn btn--primary btn--sm">Small Button</button>
+                <button class="btn btn--primary">Default Button</button>
+                <button class="btn btn--primary btn--lg">Large Button</button>
+                <button class="btn btn--gradient-secondary btn--lg">Large Button Gradient 2</button>
+              </div>
+            </div>
 
-          <h3 class="ui-kit-subtitle">Специальные кнопки</h3>
-          <div class="button-grid">
-            <button class="btn btn--ghost filter-reset">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              Сбросить фильтры
-            </button>
-            
-            <button class="filter-pill">Фильтр</button>
-            <button class="filter-pill filter-pill--active">Активный фильтр</button>
+            <div class="ui-kit-example">
+              <h3 class="ui-kit-subtitle">Специальные кнопки</h3>
+              <div class="button-grid">
+                <button class="btn btn--ghost filter-reset">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  Сбросить фильтры
+                </button>
+                
+                <button class="filter-pill">Фильтр</button>
+                <button class="filter-pill filter-pill--active">Активный фильтр</button>
+              </div>
+            </div>
+            <div class="ui-kit-example ui-kit-example--plain buttons-auth">
+              <h3 class="ui-kit-subtitle">Кнопки авторизации</h3>
+              <div class="button-grid">
+                <a href="./login.html" class="btn btn--ghost header__user-btn">
+                  <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  <span class="header__user-text">Войти</span>
+                </a>
+                <a href="./profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
+                  <span class="header__user-initials">ОЧ</span>
+                  <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
           </div>
         </section>
 
+        <!-- Навигация и футер -->
         <section class="ui-kit-section">
-          <h2 class="ui-kit-title">Кнопки авторизации</h2>
-          <div class="ui-kit-grid ui-kit-grid--auto">
-            <div class="ui-kit-example">
-              <h3 class="ui-kit-subtitle">Неавторизованный пользователь</h3>
-              <a href="./login.html" class="btn btn--ghost header__user-btn">
-                <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
-                  <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <span class="header__user-text">Войти</span>
-              </a>
+          <h2 class="ui-kit-title">Верхнее меню и футер</h2>
+          <div class="ui-kit-grid ui-kit-grid--single">
+            <div class="ui-kit-example ui-kit-example--stacked">
+              <h3 class="ui-kit-subtitle">Хедер с логотипом, меню и действиями</h3>
+              <div class="header header--demo">
+                <div class="container">
+                  <div class="header__container">
+                    <a href="./index.html" class="header__logo">
+                      <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+                    </a>
+                    <nav class="header__nav">
+                      <ul class="nav__list">
+                        <li><a href="#" class="nav__link">Медиацентр</a></li>
+                        <li><a href="#" class="nav__link">Банк инноваций</a></li>
+                        <li><a href="#" class="nav__link">Конкурсы</a></li>
+                        <li><a href="#" class="nav__link">Обучение</a></li>
+                      </ul>
+                    </nav>
+                    <div class="header__actions">
+                      <a href="./login.html" class="btn btn--ghost header__user-btn">
+                        <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                          <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span class="header__user-text">Войти</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="ui-kit-example">
-              <h3 class="ui-kit-subtitle">Авторизованный пользователь</h3>
-              <a href="./profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
-                <span class="header__user-initials">ОЧ</span>
-                <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
-                  <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              </a>
+            <div class="ui-kit-example ui-kit-example--stacked">
+              <h3 class="ui-kit-subtitle">Футер с колонками ссылок</h3>
+              <footer class="footer footer--demo">
+                <div class="container">
+                  <div class="footer__content">
+                    <div class="footer__column footer__column--brand">
+                      <div class="footer__brand">
+                        <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="footer__logo">
+                      </div>
+                      <p class="footer__description">Инновационные решения для развития компании и поддержки талантов.</p>
+                    </div>
+                    <div class="footer__column">
+                      <h4 class="footer__title heading-subtitle">Платформа</h4>
+                      <ul class="footer__list">
+                        <li><a href="./requests.html" class="footer__link">Банк инноваций</a></li>
+                        <li><a href="#" class="footer__link">Конкурсы</a></li>
+                        <li><a href="#" class="footer__link">Обучение</a></li>
+                      </ul>
+                    </div>
+                    <div class="footer__column">
+                      <h4 class="footer__title heading-subtitle">Связаться</h4>
+                      <ul class="footer__list">
+                        <li><a href="mailto:info@inn.mosoblgaz.ru" class="footer__link">info@inn.mosoblgaz.ru</a></li>
+                        <li><a href="tel:+74951234567" class="footer__link">+7 (495) 123-45-67</a></li>
+                        <li><a href="#" class="footer__link">Поддержка</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </footer>
             </div>
           </div>
         </section>
@@ -645,6 +672,23 @@
                   </div>
                 </div>
               </div>
+
+              <!-- Файлы к запросу -->
+              <div class="form-group">
+                <label class="form-label">Файлы к запросу</label>
+                <span class="form-hint">Ниже вы можете вложить файлы, которые помогут лучше понять ваш запрос на инновацию</span>
+                <div class="file-upload">
+                  <input type="file" id="files" class="file-upload__input" multiple="">
+                  <label for="files" class="file-upload__label">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                    </svg>
+                    <span>Выберите файлы или перетащите их сюда</span>
+                  </label>
+                </div>
+              </div>
+
+
             </div>
           </div>
         </section>
@@ -657,7 +701,7 @@
           <div class="ui-kit-grid ui-kit-grid--auto">
             <div class="ui-kit-example">
               <h3 class="ui-kit-subtitle">Направления</h3>
-              <div class="ui-kit-inline-list" style="gap: var(--spacing-lg); flex-wrap: wrap;">
+              <div class="ui-kit-inline-list">
                 <span class="badge badge--primary">Цифровизация</span>
                 <span class="badge badge--warning">Строительство</span>
                 <span class="badge badge--success">Эксплуатация</span>
@@ -669,7 +713,7 @@
             </div>
             <div class="ui-kit-example">
               <h3 class="ui-kit-subtitle">Спец бейджи</h3>
-              <div class="ui-kit-inline-list" style="gap: var(--spacing-lg); flex-wrap: wrap;">
+              <div class="ui-kit-inline-list">
                 <span class="badge badge--deadline-danger">Сбор идей до завтра</span>
                 <span class="badge badge--deadline-muted">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -736,11 +780,10 @@
         <!-- Табы -->
         <section class="ui-kit-section">
           <h2 class="ui-kit-title">Табы и фильтры</h2>
-          <p class="ui-kit-description">Живой пример с переключаемыми вкладками (атрибуты <code>data-tabs</code> / <code>data-tab</code>) и набором pill-фильтров.</p>
+          <p class="ui-kit-description">Живой пример с переключаемыми вкладками (атрибуты <code>data-tabs</code> / <code>data-tab</code>).</p>
 
           <div class="ui-kit-grid ui-kit-grid--auto">
             <div class="ui-kit-example ui-kit-tabs-demo" data-tabs>
-              <h3 class="ui-kit-subtitle">Табы</h3>
               <div class="tabs">
                 <button class="tabs__item tabs__item--active" data-tab="lk-tabs">Личный кабинет</button>
                 <button class="tabs__item" data-tab="requests-tabs">Заявки</button>
@@ -757,16 +800,6 @@
                 <div class="tabs-panel" data-tab-panel="archive-tabs" hidden>
                   <p>Архив показывает историю и скрывает действия.</p>
                 </div>
-              </div>
-            </div>
-            <div class="ui-kit-example">
-              <h3 class="ui-kit-subtitle">Pill-фильтры</h3>
-              <div class="filter-pills">
-                <button class="filter-pill filter-pill--active">Все</button>
-                <button class="filter-pill">На рассмотрении</button>
-                <button class="filter-pill">Одобренные</button>
-                <button class="filter-pill">Отклоненные</button>
-                <button class="btn btn--reset filter-reset" type="button">Сбросить фильтр</button>
               </div>
             </div>
           </div>
@@ -863,12 +896,12 @@
         </section>
 
         <!-- Градиентный фон -->
-        <section class="ui-kit-section ui-kit-section--plain">
+        <section class="ui-kit-section">
           <h2 class="ui-kit-title">Градиентный фон</h2>
-          
+                    <p class="ui-kit-description">Фон строится из двух размытых окружностей (бирюзовой и фиолетовой), которые закреплены на body и подходят для всех внутренних экранов.</p>
+
                     <div class="ui-kit-example">
 
-            <h3 class="ui-kit-subtitle">Фон кабинета</h3>
 
             <div class="ui-kit-gradient-demo">
 
@@ -876,19 +909,17 @@
 
             </div>
 
-            <p>Фон строится из двух размытых окружностей (бирюзовой и фиолетовой), которые закреплены на body и подходят для всех внутренних экранов.</p>
 
-            <p class="ui-kit-text--sm">Добавляйте класс <code>.main--with-gradient</code> только для сохранения прозрачного фона контента — сам градиент задаёт <code>.body--gradient</code>.</p>
 
           </div>
         </section>
 
         <!-- Личный кабинет -->
-        <section class="ui-kit-section ui-kit-section--plain">
+        <section class="ui-kit-section">
           <h2 class="ui-kit-title">Личный кабинет</h2>
           <p class="ui-kit-description">Слева — меню, в контенте строгая последовательность: вкладки → крупный заголовок → поиск → фильтры → карточки списка.</p>
 
-          <div class="ui-kit-lk-demo">
+          <div class="ui-kit-example ui-kit-example--stacked">
             <div class="sidebar-layout">
               <aside class="sidebar sidebar-layout__sidebar">
                 <span class="ui-kit-flow-step" data-step="0">Меню</span>
@@ -978,16 +1009,18 @@
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
 
         <!-- Детальные страницы -->
-        <section class="ui-kit-section ui-kit-section--plain">
+        <section class="ui-kit-section">
           <h2 class="ui-kit-title">Детальные страницы</h2>
           <p class="ui-kit-description">Схема для request-detail и idea-detail: хлебные крошки → герой-блок → карточки → сайдбар.</p>
 
-         <div class="detail-layout">
+         <div class="ui-kit-example ui-kit-example--stacked ui-kit-detail-demo">
+          <div class="detail-layout">
            <div class="detail-content">
               <div class="ui-kit-flow-block">
                 <span class="ui-kit-flow-step" data-step="1">Хлебные крошки</span>
@@ -1135,7 +1168,7 @@
               </div>
            </aside>
          </div>
-
+        </div>
 
         </section>
 

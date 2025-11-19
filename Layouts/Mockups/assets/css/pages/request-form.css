@@ -27,55 +27,6 @@
   margin: 0 auto;
 }
 
-/* File Upload */
-.file-upload {
-  position: relative;
-}
-
-.file-upload__input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-.file-upload__label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--spacing-md);
-  padding: var(--spacing-2xl);
-  border: 2px dashed var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-bg-light);
-  color: var(--color-text-secondary);
-  cursor: pointer;
-  transition: all var(--transition-base);
-  min-height: 150px;
-}
-
-.file-upload__label:hover {
-  border-color: var(--color-primary);
-  background: var(--color-bg-white);
-}
-
-.file-upload__label svg {
-  width: 48px;
-  height: 48px;
-  color: var(--color-primary);
-}
-
-.file-upload__input:focus + .file-upload__label {
-  outline: 2px solid var(--color-border-focus);
-  outline-offset: 2px;
-}
-
 /* Form Actions */
 .form-actions {
   display: flex;
