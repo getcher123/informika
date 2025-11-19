@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/auth.css">
+</head>
+<body class="auth-page body--gradient">
+  <div class="layout">
+    <!-- Header -->
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+          </a>
+
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+
+          <div class="header__actions">
+            <a href="./login.html" class="btn btn--ghost header__user-btn">
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="header__user-text">ВОЙТИ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main auth-main layout__main">
+      <div class="container">
+        <div class="auth-container auth-container--wide">
+          <div class="auth-card form-container form-container--large">
+            <div class="auth-card__header">
+              <!-- Tabs -->
+              <div class="tabs auth-tabs">
+                <a href="./login.html" class="tabs__item">ВОЙТИ</a>
+                <a href="./register-form.html" class="tabs__item tabs__item--active">РЕГИСТРАЦИЯ</a>
+              </div>
+
+              <!-- Step Indicator -->
+              <p class="step-indicator" data-step-indicator>Шаг 1 из 2</p>
+            </div>
+
+            <div class="auth-card__body">
+              <!-- Description -->
+              <div class="auth-description">
+                <p>Наша платформа открывает уникальные возможности для различных категорий пользователей. <strong>Сотрудники Мособлгаз</strong> могут развивать свои профессиональные компетенции и участвовать в корпоративных инициативах. <strong>Представители учебных заведений</strong> получают шанс находить талантливых студентов и делиться своей экспертизой. <strong>Студенты</strong> имеют возможность получать доступ к уникальным образовательным программам и стажировкам. <strong>Бизнес-партнёры</strong> могут расширить свою сеть профессиональных контактов, а гости — знакомиться с возможностями платформы.</p>
+              </div>
+
+              <!-- Registration Form -->
+              <form class="auth-form" data-validate data-registration-form>
+                <div class="registration-step is-active" data-step="1">
+                  <div class="form-group">
+                    <label for="lastname" class="form-label form-label--required">Фамилия</label>
+                    <input 
+                      type="text" 
+                      id="lastname" 
+                      name="lastname" 
+                      class="form-input" 
+                      placeholder="Иванов"
+                      required
+                      aria-required="true"
+                    >
+                  </div>
+
+                  <div class="form-group">
+                    <label for="firstname" class="form-label form-label--required">Имя</label>
+                    <input 
+                      type="text" 
+                      id="firstname" 
+                      name="firstname" 
+                      class="form-input" 
+                      placeholder="Иван"
+                      required
+                      aria-required="true"
+                    >
+                  </div>
+
+                  <div class="form-group">
+                    <label for="middlename" class="form-label">Отчество (при наличии)</label>
+                    <input 
+                      type="text" 
+                      id="middlename" 
+                      name="middlename" 
+                      class="form-input" 
+                      placeholder="Иванович"
+                    >
+                  </div>
+
+                  <div class="form-group">
+                    <label for="phone" class="form-label form-label--required">Телефон</label>
+                    <input 
+                      type="tel" 
+                      id="phone" 
+                      name="phone" 
+                      class="form-input" 
+                      placeholder="+7 (___) ___-__-__"
+                      required
+                      aria-required="true"
+                      data-phone-mask="ru"
+                    >
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email" class="form-label form-label--required">E-mail</label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      name="email" 
+                      class="form-input" 
+                      placeholder="example@mail.com"
+                      required
+                      aria-required="true"
+                    >
+                  </div>
+
+                <div class="form-group">
+                  <label for="password" class="form-label form-label--required">Придумайте пароль</label>
+                  <div class="password-input">
+                      <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        class="form-input" 
+                        placeholder="Введите пароль"
+                        required
+                        aria-required="true"
+                        minlength="8"
+                      >
+                      <button type="button" class="password-toggle" data-password-toggle aria-label="Показать пароль" aria-pressed="false">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 5C7 5 2.73 8.11 1 12.5C2.73 16.89 7 20 12 20C17 20 21.27 16.89 23 12.5C21.27 8.11 17 5 12 5Z" stroke="currentColor" stroke-width="2"/>
+                          <circle cx="12" cy="12.5" r="3" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                      </button>
+                  </div>
+                  <p class="form-hint">Минимум 8 символов</p>
+                  <div class="password-strength">
+                    <div class="password-strength__bar">
+                      <div class="password-strength__fill" data-password-strength-fill></div>
+                    </div>
+                    <span class="password-strength__text" data-password-strength-label>Заполните пароль (минимум 8 символов)</span>
+                  </div>
+                </div>
+
+                  <div class="form-group">
+                    <label for="password-confirm" class="form-label form-label--required">Повторите пароль</label>
+                    <div class="password-input">
+                      <input 
+                        type="password" 
+                        id="password-confirm" 
+                        name="password-confirm" 
+                        class="form-input" 
+                        placeholder="Повторите пароль"
+                        required
+                        aria-required="true"
+                        data-match="#password"
+                        data-match-message="Пароли не совпадают"
+                      >
+                      <button type="button" class="password-toggle" data-password-toggle aria-label="Показать пароль" aria-pressed="false">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 5C7 5 2.73 8.11 1 12.5C2.73 16.89 7 20 12 20C17 20 21.27 16.89 23 12.5C21.27 8.11 17 5 12 5Z" stroke="currentColor" stroke-width="2"/>
+                          <circle cx="12" cy="12.5" r="3" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="button" class="btn btn--primary btn--lg btn--block" data-action="next-step">Продолжить</button>
+                  </div>
+                </div>
+
+                <div class="registration-step" data-step="2" hidden>
+                  <div class="form-group">
+                    <label class="form-label form-label--required">Выберите свою роль</label>
+                    <div class="form-options">
+                      <div class="form-option">
+                        <input type="radio" name="role" id="role-employee" value="employee" class="form-option__control" checked>
+                        <label for="role-employee" class="form-option__label">
+                          <span class="form-option__title">Работник АО «Мособлгаз»</span>
+                        </label>
+                      </div>
+                      <div class="form-option">
+                        <input type="radio" name="role" id="role-educator" value="educator" class="form-option__control">
+                        <label for="role-educator" class="form-option__label">
+                          <span class="form-option__title">Представитель учебного заведения</span>
+                        </label>
+                      </div>
+                      <div class="form-option">
+                        <input type="radio" name="role" id="role-business" value="business" class="form-option__control">
+                        <label for="role-business" class="form-option__label">
+                          <span class="form-option__title">Представитель бизнеса</span>
+                        </label>
+                      </div>
+                      <div class="form-option">
+                        <input type="radio" name="role" id="role-student" value="student" class="form-option__control">
+                        <label for="role-student" class="form-option__label">
+                          <span class="form-option__title">Студент</span>
+                        </label>
+                      </div>
+                      <div class="form-option">
+                        <input type="radio" name="role" id="role-guest" value="guest" class="form-option__control">
+                        <label for="role-guest" class="form-option__label">
+                          <span class="form-option__title">Гость</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="role-fields" data-role-fields="employee">
+                    <div class="form-group">
+                      <label for="branch" class="form-label form-label--required">Филиал</label>
+                      <input 
+                        type="text" 
+                        id="branch" 
+                        name="branch" 
+                        class="form-input" 
+                        placeholder="Юго-Запад"
+                        data-role-required
+                      >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="department" class="form-label form-label--required">Отдел</label>
+                      <input 
+                        type="text" 
+                        id="department" 
+                        name="department" 
+                        class="form-input" 
+                        placeholder="Отдел строительства"
+                        data-role-required
+                      >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="position" class="form-label">Должность</label>
+                      <input 
+                        type="text" 
+                        id="position" 
+                        name="position" 
+                        class="form-input" 
+                        placeholder="Инженер"
+                      >
+                    </div>
+
+                  </div>
+
+                  <div class="role-fields" data-role-fields="educator" hidden>
+                    <div class="form-group">
+                      <label for="edu-institution" class="form-label form-label--required">Название учебного заведения</label>
+                      <input 
+                        type="text" 
+                        id="edu-institution" 
+                        name="eduInstitution" 
+                        class="form-input" 
+                        placeholder="МГСУ"
+                        data-role-required
+                      >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="edu-direction" class="form-label form-label--required">Направление</label>
+                      <input 
+                        type="text" 
+                        id="edu-direction" 
+                        name="eduDirection" 
+                        class="form-input" 
+                        placeholder="Промышленное и гражданское строительство"
+                        data-role-required
+                      >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="edu-department" class="form-label">Кафедра</label>
+                      <input 
+                        type="text" 
+                        id="edu-department" 
+                        name="eduDepartment" 
+                        class="form-input" 
+                        placeholder="Строительное производство"
+                      >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="edu-position" class="form-label">Должность</label>
+                      <input 
+                        type="text" 
+                        id="edu-position" 
+                        name="eduPosition" 
+                        class="form-input" 
+                        placeholder="Доцент"
+                      >
+                    </div>
+
+                  </div>
+
+                  <div class="role-fields" data-role-fields="business" hidden>
+                    <div class="form-group">
+                      <label for="company-name" class="form-label form-label--required">Название организации</label>
+                      <input 
+                        type="text" 
+                        id="company-name" 
+                        name="companyName" 
+                        class="form-input" 
+                        placeholder="Бетон.ру"
+                        data-role-required
+                      >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="company-direction" class="form-label form-label--required">Направление</label>
+                      <input 
+                        type="text" 
+                        id="company-direction" 
+                        name="companyDirection" 
+                        class="form-input" 
+                        placeholder="Строительство"
+                        data-role-required
+                      >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="company-site" class="form-label">Сайт при наличии</label>
+                      <input 
+                        type="url" 
+                        id="company-site" 
+                        name="companySite" 
+                        class="form-input" 
+                        placeholder="https://example.com"
+                      >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="company-position" class="form-label">Должность</label>
+                      <input 
+                        type="text" 
+                        id="company-position" 
+                        name="companyPosition" 
+                        class="form-input" 
+                        placeholder="Менеджер"
+                      >
+                    </div>
+
+                  </div>
+
+                  <div class="role-fields" data-role-fields="student" hidden>
+                    <div class="form-group">
+                      <label for="student-institution" class="form-label form-label--required">Название учебного заведения</label>
+                      <input 
+                        type="text" 
+                        id="student-institution" 
+                        name="studentInstitution" 
+                        class="form-input" 
+                        placeholder="МГСУ"
+                        data-role-required
+                      >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="student-direction" class="form-label form-label--required">Направление</label>
+                      <input 
+                        type="text" 
+                        id="student-direction" 
+                        name="studentDirection" 
+                        class="form-input" 
+                        placeholder="Строительство"
+                        data-role-required
+                      >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="student-department" class="form-label">Кафедра</label>
+                      <input 
+                        type="text" 
+                        id="student-department" 
+                        name="studentDepartment" 
+                        class="form-input" 
+                        placeholder="Строительные материалы"
+                      >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="student-course" class="form-label">Курс</label>
+                      <input 
+                        type="text" 
+                        id="student-course" 
+                        name="studentCourse" 
+                        class="form-input" 
+                        placeholder="1 курс"
+                      >
+                    </div>
+                  </div>
+
+                  <div class="role-fields" data-role-fields="guest" hidden>
+                    <p class="text-muted">Для гостевого доступа не нужно указывать дополнительные данные.</p>
+                  </div>
+
+                  <div class="role-conditional" data-role-visible="employee,educator,business">
+                    <div class="form-group">
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check__input" id="mentor-checkbox" name="mentor">
+                        <label class="form-check__label" for="mentor-checkbox">Хочу стать ментором</label>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check__input" id="expert-checkbox" name="expert">
+                        <label class="form-check__label" for="expert-checkbox">Хочу стать экспертом</label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-check">
+                      <input 
+                        type="checkbox" 
+                        name="terms" 
+                        required
+                        aria-required="true"
+                      >
+                      <span class="form-check__label">
+                        Я принимаю условия <a href=\"#\" class=\"link\">соглашения о пользовании информационной системы</a> и ознакомлен с <a href=\"./privacy-policy.html\" class=\"link\">политикой в отношении обработки персональных данных</a>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="form-actions form-actions--split">
+                    <button type="button" class="btn btn--ghost btn--lg" data-action="prev-step">Назад</button>
+                    <button type="submit" class="btn btn--primary btn--lg">Зарегистрироваться</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/auth.js"></script>
+</body>
+</html>
