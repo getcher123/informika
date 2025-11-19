@@ -58,6 +58,10 @@
   line-height: var(--line-height-relaxed);
 }
 
+.landing-hero .heading-display {
+  font-size: clamp(3rem, 5vw, 3.5rem);
+}
+
 .landing-hero__stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -70,7 +74,7 @@
 }
 
 .stat-card__value {
-  font-size: var(--font-size-4xl);
+  font-size: clamp(3rem, 4vw, 4.5rem);
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
   margin-bottom: var(--spacing-sm);
@@ -217,6 +221,8 @@
   display: grid;
   gap: var(--spacing-2xl);
   align-items: center;
+  padding: var(--spacing-3xl);
+  min-height: 420px;
 }
 
 @media (min-width: 1024px) {

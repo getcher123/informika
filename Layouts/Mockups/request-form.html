@@ -3,23 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Подача запроса на инновацию | Инноватика Мособлгаз</title>
+  <title>Подача заявки на инновацию | Инноватика Мособлгаз</title>
   <link rel="stylesheet" href="./assets/css/base.css">
   <link rel="stylesheet" href="./assets/css/layout.css">
   <link rel="stylesheet" href="./assets/css/components.css">
   <link rel="stylesheet" href="./assets/css/pages/request-form.css">
 </head>
 <body>
-  <div class="layout">    <!-- Header -->
+  <div class="layout">
     <header class="header layout__header">
       <div class="container">
         <div class="header__container">
-          <!-- Logo -->
           <a href="./index.html" class="header__logo">
             <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
           </a>
-
-          <!-- Navigation -->
           <nav class="header__nav">
             <ul class="nav__list">
               <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
@@ -28,8 +25,6 @@
               <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
             </ul>
           </nav>
-
-          <!-- Actions -->
           <div class="header__actions">
             <a href="./login.html" class="btn btn--ghost header__user-btn">
               <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -43,101 +38,60 @@
       </div>
     </header>
 
-    <!-- Main Content -->
     <main class="main layout__main">
       <div class="container">
         <a href="./requests.html" class="back-link">← Назад</a>
-          <div class="form-container form-container--large">
+        <div class="form-container form-container--large">
           <div class="form-container__header">
-            <h1 class="heading-page form-container__title">Эта форма предназначена для подачи запроса на инновацию</h1>
+            <h1 class="heading-page form-container__title">Форма подачи запроса на инновацию</h1>
             <p class="text-lead form-container__subtitle">
-              Запрос на инновацию - сбор идей от участников Акселлератора для решения вашей задачи в АО "Мособлгаз"
+              Заполните поля ниже, чтобы отправить запрос команде акселератора. Мы передадим его участникам и экспертам.
             </p>
           </div>
 
           <form data-validate>
-            <!-- Направление -->
             <div class="form-group">
-              <label class="form-label form-label--required" for="direction">Выберете направление</label>
-              <select class="form-select form-select--decorated js-custom-select" id="direction" required>
+              <label class="form-label form-label--required" for="direction-select">Выберите направление</label>
+              <select class="form-select form-select--decorated js-custom-select" id="direction-select" required>
                 <option value="">Выбор направления</option>
-                <option value="it">IT-технологии</option>
                 <option value="construction">Строительство</option>
                 <option value="exploitation">Эксплуатация</option>
-                <option value="management">Управление</option>
+                <option value="security">Безопасность</option>
+                <option value="digital">Цифровизация</option>
+                <option value="client">Клиентский сервис</option>
+                <option value="other">Другое</option>
               </select>
             </div>
 
-            <!-- Название запроса -->
             <div class="form-group">
-              <label class="form-label form-label--required" for="title">Название запроса</label>
-              <input 
-                type="text" 
-                class="form-input" 
-                id="title" 
-                placeholder="Введите название запроса"
-                required
-              >
+              <label class="form-label form-label--required" for="request-title">Название запроса</label>
+              <input type="text" class="form-input" id="request-title" placeholder="Введите название запроса" required>
             </div>
 
-            <!-- Описание запроса -->
             <div class="form-group">
-              <label class="form-label form-label--required" for="description">Описание запроса</label>
+              <label class="form-label form-label--required" for="request-description">Описание запроса</label>
               <span class="form-hint">Напишите основные задачи, которые решает ваш запрос</span>
-              <textarea 
-                class="form-textarea" 
-                id="description" 
-                placeholder="Опишите запрос подробно..."
-                required
-              ></textarea>
+              <textarea class="form-textarea" id="request-description" placeholder="Опишите запрос подробно..." required></textarea>
             </div>
 
-            <!-- Основные этапы реализации -->
             <div class="form-group">
-              <label class="form-label form-label--required" for="stages">Основные этапы реализации идеи</label>
+              <label class="form-label form-label--required" for="request-stages">Основные этапы реализации идеи</label>
               <span class="form-hint">Напишите основные этапы, которые необходимы для реализации вашего запроса</span>
-              <textarea 
-                class="form-textarea" 
-                id="stages" 
-                placeholder="Опишите этапы реализации..."
-                required
-              ></textarea>
+              <textarea class="form-textarea" id="request-stages" placeholder="Опишите этапы реализации..." required></textarea>
             </div>
 
-            <!-- Ожидаемый результат -->
             <div class="form-group">
-              <label class="form-label form-label--required" for="result">Ожидаемый результат</label>
+              <label class="form-label form-label--required" for="request-result">Ожидаемый результат</label>
               <span class="form-hint">Напишите ожидаемый результат от реализации вашего запроса</span>
-              <textarea 
-                class="form-textarea" 
-                id="result" 
-                placeholder="Опишите ожидаемый результат..."
-                required
-              ></textarea>
+              <textarea class="form-textarea" id="request-result" placeholder="Опишите ожидаемый результат..." required></textarea>
             </div>
 
-            <!-- Есть ли у вас наработки -->
-            <div class="form-group">
-              <label class="form-label form-label--required">Есть ли у вас наработки по данному запросу?</label>
-              <div class="form-radio-group">
-                <label class="form-radio">
-                  <input type="radio" name="has_work" value="yes">
-                  <span>Да</span>
-                </label>
-                <label class="form-radio">
-                  <input type="radio" name="has_work" value="no" checked>
-                  <span>Нет</span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Файлы к запросу -->
             <div class="form-group">
               <label class="form-label">Файлы к запросу</label>
-              <span class="form-hint">Ниже вы можете вложить файлы, которые помогут лучше понять ваш запрос на инновацию</span>
+              <span class="form-hint">Вы можете приложить презентации, сметы и другие материалы</span>
               <div class="file-upload">
-                <input type="file" id="files" class="file-upload__input" multiple>
-                <label for="files" class="file-upload__label">
+                <input type="file" id="idea-files" class="file-upload__input" multiple>
+                <label for="idea-files" class="file-upload__label">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                   </svg>
@@ -146,7 +100,16 @@
               </div>
             </div>
 
-            <!-- Actions -->
+            <div class="form-group">
+              <div class="form-check">
+                <input type="checkbox" class="form-check__input" id="request-consent" required>
+                <label class="form-check__label" for="request-consent">
+                  Я согласен(на) на обработку моих персональных данных в соответствии с
+                  <a href="./privacy-policy.html">Политикой конфиденциальности</a>
+                </label>
+              </div>
+            </div>
+
             <div class="form-actions">
               <button type="button" class="btn btn--secondary btn--lg">Сохранить черновик</button>
               <button type="submit" class="btn btn--primary btn--lg">Опубликовать</button>

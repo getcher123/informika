@@ -163,6 +163,18 @@ function initForms() {
         }
       });
     });
+
+    // Перепроверка полей, которые должны совпадать с другими
+    form.querySelectorAll('[data-match]').forEach(matchedField => {
+      const target = form.querySelector(matchedField.dataset.match);
+      if (target) {
+        target.addEventListener('input', () => {
+          if (matchedField.value.length) {
+            validateField(matchedField);
+          }
+        });
+      }
+    });
   });
 
   // Показ/скрытие пароля
@@ -229,6 +241,16 @@ function validateField(field) {
     }
   }
 
+  // Проверка совпадения значений (например, подтверждение пароля)
+  if (field.dataset.match) {
+    const form = field.closest('form');
+    const target = form ? form.querySelector(field.dataset.match) : null;
+    if (target && value !== target.value) {
+      isValid = false;
+      errorMessage = field.dataset.matchMessage || 'Значения не совпадают';
+    }
+  }
+
   // Отображение ошибки
   if (!isValid) {
     field.classList.add('form-input--error');
@@ -242,14 +264,15 @@ function validateField(field) {
 }
 
 function showFieldError(field, message) {
-  let errorElement = field.parentElement.querySelector('.form-error');
+  const group = field.closest('.form-group') || field.parentElement;
+  let errorElement = group.querySelector('.form-error');
   
   if (!errorElement) {
     errorElement = document.createElement('span');
     errorElement.className = 'form-error';
     errorElement.setAttribute('role', 'alert');
     errorElement.setAttribute('aria-live', 'polite');
-    field.parentElement.appendChild(errorElement);
+    group.appendChild(errorElement);
   }
   
   errorElement.textContent = message;
@@ -257,7 +280,8 @@ function showFieldError(field, message) {
 }
 
 function hideFieldError(field) {
-  const errorElement = field.parentElement.querySelector('.form-error');
+  const group = field.closest('.form-group') || field.parentElement;
+  const errorElement = group.querySelector('.form-error');
   if (errorElement) {
     errorElement.textContent = '';
     errorElement.classList.add('form-error--hidden');

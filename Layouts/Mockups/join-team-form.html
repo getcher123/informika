@@ -58,18 +58,43 @@
           <form data-validate>
             <!-- Целевая роль -->
             <div class="form-group">
-              <label class="form-label form-label--required" for="role">Целевая роль</label>
-              <select class="form-select form-select--decorated js-custom-select" id="role" required>
-                <option value="">Выберите роль</option>
-                <option value="lead">Тимлид</option>
-                <option value="analyst">Аналитик</option>
-                <option value="developer">Разработчик</option>
-                <option value="qa">Тестировщик</option>
-                <option value="communications">Коммуникационный специалист</option>
-                <option value="mentor">Эксперт/Ментор</option>
-                <option value="designer">Дизайнер</option>
-                <option value="devops">DevOps/Инженер внедрения</option>
-              </select>
+              <label class="form-label form-label--required">Целевая роль</label>
+              <span class="form-hint">Можно выбрать несколько ролей, в которых готовы участвовать</span>
+              <div class="form-check-group js-require-one" data-require-message="Выберите хотя бы одну роль">
+                <label class="form-check">
+                  <input type="checkbox" class="form-check__input" name="role[]" value="lead">
+                  <span class="form-check__label">Тимлид</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" class="form-check__input" name="role[]" value="analyst">
+                  <span class="form-check__label">Аналитик</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" class="form-check__input" name="role[]" value="developer">
+                  <span class="form-check__label">Разработчик</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" class="form-check__input" name="role[]" value="qa">
+                  <span class="form-check__label">Тестировщик</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" class="form-check__input" name="role[]" value="communications">
+                  <span class="form-check__label">Коммуникационный специалист</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" class="form-check__input" name="role[]" value="mentor">
+                  <span class="form-check__label">Эксперт/Ментор</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" class="form-check__input" name="role[]" value="designer">
+                  <span class="form-check__label">Дизайнер</span>
+                </label>
+                <label class="form-check">
+                  <input type="checkbox" class="form-check__input" name="role[]" value="devops">
+                  <span class="form-check__label">DevOps/Инженер внедрения</span>
+                </label>
+                <input type="checkbox" class="js-require-one-control" required tabindex="-1" aria-hidden="true" style="position:absolute; opacity:0; pointer-events:none;">
+              </div>
             </div>
 
             <!-- Уровень компетенции -->
@@ -83,10 +108,10 @@
                 required
               >
                 <option value="">Выберите уровень</option>
-                <option value="junior">Junior</option>
-                <option value="middle">Middle</option>
-                <option value="senior">Senior</option>
-                <option value="expert">Expert</option>
+                <option value="junior">Начальный уровень (Junior)</option>
+                <option value="middle">Средний уровень (Middle)</option>
+                <option value="senior">Продвинутый уровень (Senior)</option>
+                <option value="expert">Экспертный уровень</option>
               </select>
             </div>
 
@@ -122,7 +147,8 @@
               <div class="form-check">
                 <input type="checkbox" class="form-check__input" id="rules" required>
                 <label class="form-check__label" for="rules">
-                  Согласен с правилами участия
+                  Я согласен(на) на обработку моих персональных данных в соответствии с
+                  <a href="./privacy-policy.html">Политикой конфиденциальности</a>
                 </label>
               </div>
             </div>

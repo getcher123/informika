@@ -4,22 +4,83 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!window.App) return;
-  initFileUploadLabel();
+  initFileUploads();
   initCustomSelects();
+  initRequiredCheckboxGroups();
 });
 
-function initFileUploadLabel() {
-  const fileInput = document.querySelector('.file-upload__input');
-  const fileLabel = document.querySelector('.file-upload__label span');
-  if (!fileInput || !fileLabel) return;
+function initFileUploads() {
+  const uploadBlocks = document.querySelectorAll('.file-upload');
+  if (!uploadBlocks.length) return;
 
-  fileInput.addEventListener('change', () => {
-    if (!fileInput.files || fileInput.files.length === 0) {
-      fileLabel.textContent = 'Выберите файлы или перетащите их сюда';
-      return;
-    }
-    const names = Array.from(fileInput.files).map(file => file.name);
-    fileLabel.textContent = names.join(', ');
+  uploadBlocks.forEach(upload => {
+    const fileInput = upload.querySelector('.file-upload__input');
+    const fileLabel = upload.querySelector('.file-upload__label span');
+
+    if (!fileInput || !fileLabel) return;
+
+    const defaultLabel = fileLabel.textContent.trim() || 'Выберите файлы или перетащите их сюда';
+
+    const updateLabel = () => {
+      if (!fileInput.files || fileInput.files.length === 0) {
+        fileLabel.textContent = defaultLabel;
+        return;
+      }
+
+      const names = Array.from(fileInput.files).map(file => file.name);
+      fileLabel.textContent = names.join(', ');
+    };
+
+    fileInput.addEventListener('change', updateLabel);
+
+    ['dragenter', 'dragover'].forEach(eventName => {
+      fileInput.addEventListener(eventName, (event) => {
+        event.preventDefault();
+        upload.classList.add('file-upload--dragover');
+      });
+    });
+
+    ['dragleave', 'dragend'].forEach(eventName => {
+      fileInput.addEventListener(eventName, () => {
+        upload.classList.remove('file-upload--dragover');
+      });
+    });
+
+    fileInput.addEventListener('drop', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      upload.classList.remove('file-upload--dragover');
+
+      if (event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files.length) {
+        fileInput.files = event.dataTransfer.files;
+        fileInput.dispatchEvent(new Event('change', { bubbles: true }));
+      } else {
+        requestAnimationFrame(updateLabel);
+      }
+    });
+  });
+}
+
+function initRequiredCheckboxGroups() {
+  const groups = document.querySelectorAll('.js-require-one');
+  if (!groups.length) return;
+
+  groups.forEach(group => {
+    const checkboxes = group.querySelectorAll('input[type="checkbox"]:not(.js-require-one-control)');
+    const control = group.querySelector('.js-require-one-control');
+
+    if (!checkboxes.length || !control) return;
+
+    const message = group.dataset.requireMessage || 'Выберите хотя бы один вариант';
+
+    const validate = () => {
+      const hasChecked = Array.from(checkboxes).some(box => box.checked);
+      control.checked = hasChecked;
+      control.setCustomValidity(hasChecked ? '' : message);
+    };
+
+    checkboxes.forEach(box => box.addEventListener('change', validate));
+    validate();
   });
 }
 

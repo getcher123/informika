@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Новая идея для запроса | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/request-form.css">
+</head>
+<body>
+  <div class="layout">
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+          </a>
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+          <div class="header__actions">
+            <a href="./login.html" class="btn btn--ghost header__user-btn">
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="header__user-text">ВОЙТИ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main layout__main">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Хлебные крошки">
+          <ol class="breadcrumbs__list">
+            <li class="breadcrumbs__item"><a href="./requests.html" class="breadcrumbs__link">Банк инноваций</a></li>
+            <li class="breadcrumbs__item"><a href="./request-detail.html" class="breadcrumbs__link">Замена профессий</a></li>
+            <li class="breadcrumbs__item" aria-current="page">Новая идея</li>
+          </ol>
+        </nav>
+
+        <div class="form-container form-container--large">
+          <div class="form-container__header">
+            <h1 class="heading-page form-container__title">Новая идея для запроса</h1>
+            <p class="text-lead form-container__subtitle">
+              Опишите решение, которое поможет закрыть потребности из запроса. Информация будет передана модераторам и стейкхолдерам.
+            </p>
+          </div>
+
+          <form data-validate>
+            <div class="form-group">
+              <label class="form-label form-label--required" for="idea-title">Название идеи</label>
+              <input type="text" class="form-input" id="idea-title" name="idea-title" placeholder="Введите название идеи" maxlength="100" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label form-label--required" for="idea-description">Краткое описание</label>
+              <span class="form-hint">Опишите ключевую суть вашего предложения (до 1000 символов)</span>
+              <textarea class="form-textarea" id="idea-description" name="idea-description" placeholder="Расскажите, какую задачу решает идея" maxlength="1000" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label form-label--required" for="idea-problem">Какую проблему решает?</label>
+              <span class="form-hint">Опишите текущие трудности или процессы, которые хотите улучшить</span>
+              <textarea class="form-textarea" id="idea-problem" name="idea-problem" placeholder="Например: вручную обрабатываем заявки и тратим много времени" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label form-label--required" for="idea-benefit">Какую выгоду дает данная идея?</label>
+              <span class="form-hint">Расскажите, какие результаты или метрики изменятся после внедрения</span>
+              <textarea class="form-textarea" id="idea-benefit" name="idea-benefit" placeholder="Например: снизим затраты на 15%, увеличим NPS на 5 пунктов" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label form-label--required" for="idea-requirements">Что необходимо для реализации?</label>
+              <span class="form-hint">Перечислите ресурсы, роли или технологии, которые понадобятся</span>
+              <textarea class="form-textarea" id="idea-requirements" name="idea-requirements" placeholder="Команда: аналитик, разработчик; ресурсы: API CRM, бюджет на ПО" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="idea-files">Файлы</label>
+              <span class="form-hint">PDF/DOCX/XLSX до 10 МБ</span>
+              <div class="file-upload">
+                <input type="file" id="idea-files" class="file-upload__input" multiple>
+                <label for="idea-files" class="file-upload__label">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  <span>Выберите файлы или перетащите их сюда</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="idea-link-1">Ссылки</label>
+              <span class="form-hint">Добавьте ссылки на презентации, демо или рабочие документы</span>
+              <div class="form-links__list">
+              <div class="form-links__row">
+                <input type="url" class="form-input" id="idea-link-1" name="idea-links[]" placeholder="https://example.com/презентация">
+              </div>
+            </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-check">
+                <input type="checkbox" class="form-check__input" id="personal-consent" required>
+                <label class="form-check__label" for="personal-consent">
+                  Я согласен(на) на обработку моих персональных данных в соответствии с
+                  <a href="./privacy-policy.html">Политикой конфиденциальности</a>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn--secondary btn--lg">Сохранить черновик</button>
+              <button type="submit" class="btn btn--primary btn--lg">Отправить на модерацию</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/forms.js"></script>
+</body>
+</html>

@@ -10,16 +10,10 @@
 <header class="header layout__header">
   <div class="container">
     <div class="header__container">
-      <!-- Logo -->
       <a href="./index.html" class="header__logo">
-        <img src="./assets/img/826-1724.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
-        <div class="header__logo-text">
-          ИННОВАТИКА<br>
-          <strong>МОСОБЛГАЗ</strong>
-        </div>
+        <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
       </a>
 
-      <!-- Navigation -->
       <nav class="header__nav">
         <ul class="nav__list">
           <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
@@ -29,21 +23,18 @@
         </ul>
       </nav>
 
-      <!-- Actions -->
       <div class="header__actions">
-        <!-- Для неавторизованных пользователей -->
         <a href="./login.html" class="btn btn--ghost header__user-btn">
-          <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
             <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
           <span class="header__user-text">ВОЙТИ</span>
         </a>
 
-        <!-- Для авторизованных пользователей -->
         <a href="./profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
           <span class="header__user-initials">ОЧ</span>
-          <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
             <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
           </svg>
@@ -58,8 +49,7 @@
 - `.header` - основной контейнер
 - `.header__container` - внутренний контейнер с flexbox
 - `.header__logo` - логотип (ссылка)
-- `.header__logo-img` - изображение логотипа
-- `.header__logo-text` - текст логотипа
+- `.header__logo-img` - изображение логотипа (ширина задаётся через `--logo-width-header`, высота `auto`)
 - `.header__nav` - навигация
 - `.nav__list` - список навигации
 - `.nav__link` - ссылка навигации
@@ -110,48 +100,59 @@
 
 ### 3. Buttons (Кнопки)
 
-**Типы кнопок:**
+*Смотрите раздел «Кнопки» в `ui-kit.html` — там показаны все размеры и состояния (включая «Кнопки авторизации»).*
 
-```html
-<!-- Основная кнопка -->
-<button class="btn btn--primary">Подать заявку</button>
-
-<!-- Вторичная кнопка -->
-<button class="btn btn--secondary">Оценить идеи</button>
-
-<!-- Outline кнопка -->
-<button class="btn btn--outline">Добавить в архив</button>
-
-<!-- Ghost кнопка -->
-<button class="btn btn--ghost">Отмена</button>
-
-<!-- Кнопка сброса фильтров -->
-<button class="btn btn--reset filter-reset">
-  <svg class="btn__icon">...</svg>
-  <span class="btn__text">Сбросить фильтры</span>
-</button>
-
-<!-- Кнопка фильтра (pill) -->
-<button class="filter-pill">Все</button>
-<button class="filter-pill filter-pill--active">На рассмотрении</button>
-```
-
-**Общие классы:**
-- `.btn` - базовый класс кнопки
-- `.btn--primary` - основная кнопка (градиент)
-- `.btn--secondary` - вторичная кнопка (обводка)
-- `.btn--outline` - кнопка с обводкой
-- `.btn--ghost` - прозрачная кнопка
-- `.btn--reset` - кнопка сброса
-- `.btn__icon` - иконка в кнопке
-- `.btn__text` - текст в кнопке
-- `.filter-pill` - кнопка-фильтр
-- `.filter-pill--active` - активный фильтр
-- `.filter-reset` - специфичный класс для кнопки сброса фильтров
+- `.btn--primary` — основной CTA. Всегда с фирменным градиентом (`Button Gradient` / `Button Gradient 2`), чтобы отличаться от фильтров и вспомогательных действий.
+- `.btn--secondary`, `.btn--outline`, `.btn--ghost` — вспомогательные варианты.
+- `.btn--reset`, `.filter-reset` — кнопка сброса фильтров (иконка слева, текст справа).
+- `.filter-pill` / `.filter-pill--active` — пилл-фильтры, всегда плоские.
+- `.btn--primary btn--lg`, `.btn--gradient-secondary btn--lg` — примеры больших CTA (см. «Large Button» и «Large Button Gradient 2» в UI Kit).
+- `.header__user-btn` / `.header__user-btn--logged` — кнопки авторизации (приведены в том же блоке «Кнопки» сразу под спец-вариантами).
 
 ---
 
-### 4. Градиентный фон кабинета
+### 4. Footer (унифицированный)
+
+*Шаблон и визуал описаны в `ui-kit.html` → «Верхнее меню и футер». Используем только логотип `logo-Inn.svg` + ссылочные колонки.*
+
+```html
+<footer class="footer">
+  <div class="container">
+    <div class="footer__content">
+      <div class="footer__column footer__column--brand">
+        <div class="footer__brand">
+          <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="footer__logo">
+        </div>
+        <p class="footer__description text-muted">
+          Инновационные решения для развития компании и поддержки талантов.
+        </p>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__title heading-subtitle">Платформа</h4>
+        <ul class="footer__list">
+          <li><a href="./requests.html" class="footer__link">Банк инноваций</a></li>
+          <li><a href="#" class="footer__link">Конкурсы</a></li>
+          <li><a href="#" class="footer__link">Обучение</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4 class="footer__title heading-subtitle">Связаться</h4>
+        <ul class="footer__list">
+          <li><a href="mailto:info@inn.mosoblgaz.ru" class="footer__link">info@inn.mosoblgaz.ru</a></li>
+          <li><a href="tel:+74951234567" class="footer__link">+7 (495) 123-45-67</a></li>
+          <li><a href="#" class="footer__link">Поддержка</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+```
+
+**Важно:** текстового логотипа рядом быть не должно. Размеры управляются переменной `--logo-width-footer`, высота всегда `auto`, нижний отступ минимальный (см. `components.css`).
+
+---
+
+### 5. Градиентный фон кабинета
 
 **Применение:**
 Все страницы личного кабинета должны иметь класс `body--gradient` на элементе `<body>`:
@@ -177,7 +178,7 @@
 
 ---
 
-### 5. Адаптивные блоки авторизации
+### 6. Адаптивные блоки авторизации
 
 **Структура:**
 ```html
@@ -217,7 +218,7 @@
 
 ---
 
-### 6. Отступы и вертикальный ритм
+### 7. Отступы и вертикальный ритм
 
 Чтобы страницы выглядели цельно, основные блоки используют единые классы для отступов:
 
@@ -250,6 +251,17 @@
 - Внутри карточек (`.card`) используются стандартные паддинги (`var(--spacing-xl)`), а заголовки/подзаголовки имеют сокращённые `var(--spacing-md/sm)`.
 
 Используя эти классы, любые новые страницы автоматически наследуют единую сетку вертикальных отступов без локальных значений `margin-bottom`.
+
+---
+
+### 8. Каркасы «Личный кабинет» и «Детальные страницы»
+
+В `Layouts/Mockups/ui-kit.html` присутствуют отдельные демонстрации этих каркасов:
+
+- **Личный кабинет** — `sidebar-layout` + `.sidebar` + `.content-card`. Порядок блоков фиксированный: вкладки → заголовок → поиск → фильтры → карточки. Используйте классы `.ui-kit-flow-step` как подсказку по последовательности.
+- **Детальные страницы (`request-detail`, `idea-detail`)** — `detail-layout` с основной колонкой и `.detail-sidebar`. В основной колонке идут хлебные крошки → герой-блок (`.idea-header`) → карточки контента → таблица оценок → блок комментария. В сайдбаре — статус, действия и карточки документов.
+
+Перед версткой новых экранов сверяйтесь с этими двумя примерами: они показывают актуальные отступы, последовательность и используемые компоненты.
 
 ---
 
