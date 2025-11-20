@@ -61,6 +61,44 @@
 - `.header__user-icon` - иконка пользователя
 - `.header__user-text` - текст "ВОЙТИ"
 
+#### Мобильное меню
+
+На всех страницах с публичным хедером используется единая разметка мобильного меню. Добавляем кнопку‑бургер сразу после блока `<nav>` и блок меню сразу после `</header>`.
+
+```html
+<button class="header__burger" type="button" aria-label="Открыть меню" data-mobile-menu-toggle>
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+```
+
+```html
+<div class="mobile-menu" data-mobile-menu>
+  <div class="mobile-menu__backdrop" data-mobile-menu-close></div>
+  <div class="mobile-menu__panel">
+    <button class="mobile-menu__close" type="button" aria-label="Закрыть меню" data-mobile-menu-close>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="mobile-menu__nav">
+      <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
+      <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+      <a href="#" class="mobile-menu__link">КОНКУРС</a>
+      <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a href="./login.html" class="btn btn--primary btn--block" data-mobile-menu-action>Войти</a>
+    </div>
+  </div>
+</div>
+```
+
+- Кнопка содержит `data-mobile-menu-toggle`.
+- Блок меню содержит `data-mobile-menu`, backdrop с `data-mobile-menu-close` и крестик‑кнопку с тем же атрибутом.
+- Кнопка действия имеет `data-mobile-menu-action`, чтобы скрипт мог заменить текст на «Профиль» на кабинетных страницах.
+- JS‑функция `initMobileMenu()` уже подключена в `assets/js/app.js` и автоматически вешает обработчики.
+
 ---
 
 ### 2. Sidebar (Боковая панель кабинета)
