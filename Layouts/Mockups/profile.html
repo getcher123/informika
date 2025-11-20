@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./assets/css/components.css">
   <link rel="stylesheet" href="./assets/css/pages/profile.css">
 </head>
-<body class="profile-page body--gradient">
+<body data-auth-state="profile" class="profile-page body--gradient">
   <div class="layout">    <!-- Header -->
     <header class="header layout__header">
       <div class="container">
@@ -28,6 +28,12 @@
               <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
             </ul>
           </nav>
+          <button class="header__burger" type="button" aria-label="Открыть меню" data-mobile-menu-toggle>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
 
           <!-- Actions -->
           <div class="header__actions">
@@ -42,6 +48,26 @@
         </div>
       </div>
     </header>
+
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu__backdrop" data-mobile-menu-close></div>
+      <div class="mobile-menu__panel">
+        <button class="mobile-menu__close" type="button" aria-label="Закрыть меню" data-mobile-menu-close>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="mobile-menu__nav">
+          <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
+          <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+          <a href="#" class="mobile-menu__link">КОНКУРС</a>
+          <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
+        </nav>
+        <div class="mobile-menu__actions">
+          <a href="./login.html" class="btn btn--primary btn--block" data-mobile-menu-action>Войти</a>
+        </div>
+      </div>
+    </div>
+
 
     <!-- Main Content -->
     <main class="main main--with-gradient layout__main">

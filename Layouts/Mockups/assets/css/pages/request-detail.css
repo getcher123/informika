@@ -25,6 +25,18 @@
     flex-direction: column;
   }
 
+  .idea-submission__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .idea-submission__date {
+    position: static;
+    transform: none;
+    text-align: left;
+  }
+
   .idea-submission {
     padding: var(--spacing-lg);
   }

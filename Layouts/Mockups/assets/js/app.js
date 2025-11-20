@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initDropdowns();
+  initMobileMenu();
   initForms();
   initTabs();
   initFilters();
@@ -277,6 +278,46 @@ function showFieldError(field, message) {
   
   errorElement.textContent = message;
   errorElement.classList.remove('form-error--hidden');
+}
+
+function initMobileMenu() {
+  const menu = document.querySelector('[data-mobile-menu]');
+  const openButtons = document.querySelectorAll('[data-mobile-menu-toggle]');
+  if (!menu || !openButtons.length) return;
+  const closeButtons = menu.querySelectorAll('[data-mobile-menu-close]');
+  const primaryAction = menu.querySelector('[data-mobile-menu-action]');
+
+  if (primaryAction) {
+    const isProfilePage = document.body?.dataset.authState === 'profile';
+    primaryAction.textContent = isProfilePage ? 'Профиль' : 'Войти';
+    primaryAction.setAttribute('href', isProfilePage ? './profile.html' : './login.html');
+  }
+
+  const openMenu = () => {
+    menu.classList.add('is-open');
+    document.body.classList.add('mobile-menu-open');
+  };
+
+  const closeMenu = () => {
+    menu.classList.remove('is-open');
+    document.body.classList.remove('mobile-menu-open');
+  };
+
+  openButtons.forEach(button => button.addEventListener('click', (event) => {
+    event.preventDefault();
+    openMenu();
+  }));
+
+  closeButtons.forEach(button => button.addEventListener('click', (event) => {
+    event.preventDefault();
+    closeMenu();
+  }));
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu.classList.contains('is-open')) {
+      closeMenu();
+    }
+  });
 }
 
 function hideFieldError(field) {
