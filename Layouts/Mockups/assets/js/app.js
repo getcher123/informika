@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initSearch();
   initPasswordStrength();
   initPhoneMasks();
+  initSortableTables();
+  initDeadlineHighlights();
 });
 
 /**
@@ -557,6 +559,53 @@ function formatDate(date) {
   return new Date(date).toLocaleDateString('ru-RU', options);
 }
 
+// Сортировка таблиц
+function initSortableTables() {
+  const tables = document.querySelectorAll('.table--sortable');
+
+  tables.forEach((table) => {
+    const headers = table.querySelectorAll('th');
+    const tbody = table.querySelector('tbody');
+    if (!tbody) return;
+
+    headers.forEach((th, index) => {
+      const sortable = th.dataset.sortable !== 'false';
+      if (!sortable) return;
+      th.classList.add('sortable');
+      th.addEventListener('click', () => {
+        const currentDir = th.dataset.sortDir === 'asc' ? 'desc' : 'asc';
+        headers.forEach((h) => h.removeAttribute('data-sort-dir'));
+        th.dataset.sortDir = currentDir;
+        const type = th.dataset.sortType || 'string';
+        const rows = Array.from(tbody.rows);
+
+        rows.sort((a, b) => {
+          const aVal = getSortValue(a.cells[index], type);
+          const bVal = getSortValue(b.cells[index], type);
+          if (aVal < bVal) return currentDir === 'asc' ? -1 : 1;
+          if (aVal > bVal) return currentDir === 'asc' ? 1 : -1;
+          return 0;
+        });
+
+        rows.forEach((row) => tbody.appendChild(row));
+      });
+    });
+  });
+}
+
+function getSortValue(cell, type) {
+  const sortEl = cell.querySelector('[data-sort-value]');
+  const raw = sortEl ? sortEl.dataset.sortValue : cell.textContent.trim();
+  switch (type) {
+    case 'number':
+      return parseFloat(raw.replace(/[^\d.-]/g, '')) || 0;
+    case 'date':
+      return Date.parse(raw) || 0;
+    default:
+      return raw.toLowerCase();
+  }
+}
+
 // Экспорт функций для использования в других модулях
 window.App = {
   openModal,
@@ -567,5 +616,31 @@ window.App = {
   initForms,
   initFavorites,
   initSearch,
-  initAuth
+  initAuth,
+  initSortableTables,
+  initDeadlineHighlights
 };
+
+// Подсветка дедлайнов (сегодня/вчера)
+function initDeadlineHighlights() {
+  const badges = document.querySelectorAll('.badge--date[data-deadline]');
+  if (!badges.length) return;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const msInDay = 24 * 60 * 60 * 1000;
+
+  badges.forEach((badge) => {
+    const iso = badge.dataset.deadline;
+    if (!iso) return;
+    const date = new Date(iso);
+    if (Number.isNaN(date.getTime())) return;
+    const diff = (date.setHours(0, 0, 0, 0) - today.getTime()) / msInDay;
+    badge.classList.remove('badge--deadline-today', 'badge--deadline-recent');
+    if (diff === 0) {
+      badge.classList.add('badge--deadline-today');
+    } else if (diff === -1) {
+      badge.classList.add('badge--deadline-recent');
+    }
+  });
+}

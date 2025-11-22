@@ -767,6 +767,24 @@
   flex-shrink: 0;
 }
 
+.badge--deadline-today {
+  color: var(--color-error);
+  border-color: var(--color-error);
+  font-weight: var(--font-weight-semibold);
+}
+
+.badge--deadline-recent {
+  color: #FF7A18;
+  border-color: #FF7A18;
+  font-weight: var(--font-weight-semibold);
+}
+
+.badge--date {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+}
+
 /* Status Indicator */
 .status-indicator {
   display: inline-flex;
@@ -1213,6 +1231,12 @@
   border-bottom: 2px solid var(--color-border);
 }
 
+.table--compact th {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+}
+
 .table td {
   padding: var(--spacing-md) var(--spacing-lg);
   border-bottom: 1px solid var(--color-border-light);
@@ -1220,6 +1244,42 @@
 
 .table tr:last-child td {
   border-bottom: none;
+}
+
+.table--sortable th {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  transition: color var(--transition-base), background var(--transition-base);
+  padding-right: calc(var(--spacing-lg) * 2);
+}
+
+.table--sortable th:hover {
+  background: rgba(0, 168, 204, 0.08);
+  color: var(--color-primary);
+}
+
+.table--sortable th.sortable[data-sort-dir] {
+  background: var(--color-bg-white);
+  color: var(--color-primary);
+}
+
+.table--sortable th.sortable::after {
+  content: '';
+  position: absolute;
+  right: var(--spacing-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  pointer-events: none;
+}
+
+.table--sortable th.sortable[data-sort-dir="asc"]::after {
+  border-bottom-color: currentColor;
+}
+
+.table--sortable th.sortable[data-sort-dir="desc"]::after {
+  border-top-color: currentColor;
 }
 
 /* Empty State */

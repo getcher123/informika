@@ -90,13 +90,16 @@
                   <path d="M7 8H17M7 12H13M7 16H11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
                 <span class="sidebar__text">Мои идеи</span>
+                <span class="sidebar__badge sidebar__badge--warning">3</span>
               </a>
               <a href="./participant-team.html" class="sidebar__link">
                 <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 20V19C5 15.6863 7.68629 13 11 13H13C16.3137 13 19 15.6863 19 19V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="7" r="3.5" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="7" cy="15" r="3.5" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="17" cy="15" r="3.5" stroke="currentColor" stroke-width="2"/>
                 </svg>
                 <span class="sidebar__text">Заявки в команду</span>
+                <span class="sidebar__badge sidebar__badge--warning">2</span>
               </a>
               <a href="./participant-notifications.html" class="sidebar__link">
                 <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -122,16 +125,16 @@
             </p>
 
             <div class="table-wrapper">
-              <table class="table table--compact table--ideas">
+              <table class="table table--compact table--ideas table--sortable">
                 <thead>
                   <tr>
-                    <th>Идея</th>
-                    <th>Статус</th>
-                    <th>Направление</th>
-                    <th>Обновлено</th>
-                    <th>Дедлайн</th>
-                    <th>События</th>
-                    <th>Действия</th>
+                    <th data-sort-type="string">Идея</th>
+                    <th data-sort-type="string">Статус</th>
+                    <th data-sort-type="string">Направление</th>
+                    <th data-sort-type="date">Обновлено</th>
+                    <th data-sort-type="date">Дедлайн</th>
+                    <th data-sort-type="number">События</th>
+                    <th data-sortable="false">Действия</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -148,9 +151,9 @@
                       </span>
                     </td>
                     <td><span class="badge badge--warning">Строительство</span></td>
-                    <td><span class="badge badge--deadline-muted badge--date">12.05.2025</span></td>
+                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-05-12">12.05.2025</span></td>
                     <td>
-                      <span class="badge badge--deadline badge--date">22.06.2025</span>
+                      <span class="badge badge--deadline badge--date" data-sort-value="2025-06-22" data-deadline="2025-06-22">22.06.2025</span>
                     </td>
                     <td><span class="badge badge--gray">+3</span></td>
                     <td>
@@ -173,9 +176,9 @@
                       </span>
                     </td>
                     <td><span class="badge badge--success">Эксплуатация</span></td>
-                    <td><span class="badge badge--deadline-muted badge--date">09.05.2025</span></td>
+                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-05-09">09.05.2025</span></td>
                     <td>
-                      <span class="badge badge--deadline-muted badge--date">30.06.2025</span>
+                      <span class="badge badge--deadline-muted badge--date" data-sort-value="2025-06-30" data-deadline="2025-06-30">30.06.2025</span>
                     </td>
                     <td><span class="badge badge--gray">+1</span></td>
                     <td>
@@ -198,9 +201,9 @@
                       </span>
                     </td>
                     <td><span class="badge badge--primary">Цифровизация</span></td>
-                    <td><span class="badge badge--deadline-muted badge--date">05.05.2025</span></td>
+                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-05-05">05.05.2025</span></td>
                     <td>
-                      <span class="badge badge--deadline-muted badge--date">18.06.2025</span>
+                      <span class="badge badge--deadline-muted badge--date" data-sort-value="2025-06-18" data-deadline="2025-06-18">18.06.2025</span>
                     </td>
                     <td><span class="badge badge--gray">+2</span></td>
                     <td>
@@ -224,9 +227,9 @@
                       </span>
                     </td>
                     <td><span class="badge badge--error">Безопасность</span></td>
-                    <td><span class="badge badge--deadline-muted badge--date">27.04.2025</span></td>
+                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-04-27">27.04.2025</span></td>
                     <td>
-                      <span class="badge badge--deadline badge--date">12.07.2025</span>
+                      <span class="badge badge--deadline badge--date" data-sort-value="2025-07-12" data-deadline="2025-07-12">12.07.2025</span>
                     </td>
                     <td><span class="badge badge--gray">+0</span></td>
                     <td>
@@ -249,9 +252,9 @@
                       </span>
                     </td>
                     <td><span class="badge badge--teal">Клиентский сервис</span></td>
-                    <td><span class="badge badge--deadline-muted badge--date">22.04.2025</span></td>
+                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-04-22">22.04.2025</span></td>
                     <td>
-                      <span class="badge badge--deadline-muted badge--date">—</span>
+                      <span class="badge badge--deadline-muted badge--date" data-sort-value="" data-deadline="">—</span>
                     </td>
                     <td><span class="badge badge--gray">—</span></td>
                     <td>
@@ -267,6 +270,36 @@
         </div>
       </div>
     </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__column footer__column--brand">
+            <div class="footer__brand">
+              <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="footer__logo">
+            </div>
+            <p class="footer__description text-muted">Инновационные решения для развития компании и поддержки талантов.</p>
+          </div>
+
+          <div class="footer__column">
+            <h4 class="footer__title heading-subtitle">Платформа</h4>
+            <ul class="footer__list">
+              <li><a href="./requests.html" class="footer__link">Банк инноваций</a></li>
+              <li><a href="#" class="footer__link">Конкурсы</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer__column">
+            <h4 class="footer__title heading-subtitle">Связаться</h4>
+            <ul class="footer__list">
+              <li><a href="#" class="footer__link">Контакты</a></li>
+              <li><a href="#" class="footer__link">Поддержка</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <script src="./assets/js/vendor.js"></script>
