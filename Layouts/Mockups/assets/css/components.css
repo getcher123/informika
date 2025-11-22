@@ -782,6 +782,7 @@
   height: 8px;
   border-radius: 50%;
   flex-shrink: 0;
+  line-height: 0;
 }
 
 .status-indicator--published .status-indicator__dot {
@@ -1497,6 +1498,40 @@
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
+}
+
+.comment-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.comment-textarea {
+  min-height: 160px;
+}
+
+.comments-feed {
+  margin-bottom: var(--spacing-xl);
+  border-top: 1px solid var(--color-border-light);
+  padding-top: var(--spacing-xl);
+}
+
+.comments-feed__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.comments-feed__item {
+  background: var(--color-bg-light);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--color-border-light);
+}
+
+.comments-feed__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--spacing-sm);
 }
 
 .text-meta {

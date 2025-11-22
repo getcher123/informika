@@ -46,3 +46,43 @@
     width: 100%;
   }
 }
+
+/* Inline input with action button */
+.form-input-group {
+  display: flex;
+  align-items: stretch;
+  gap: var(--spacing-sm);
+}
+
+.form-input-group .form-input {
+  flex: 1;
+}
+
+.form-input-group .btn {
+  white-space: nowrap;
+}
+
+/* Editable document list in idea edit form */
+.document-list--editable .document-item {
+  padding: var(--spacing-xs) 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.document-list--editable .document-item:hover {
+  background: transparent;
+  color: inherit;
+}
+
+.document-list--editable .icon-btn {
+  color: var(--color-error);
+}
+
+.document-list--editable .icon-btn svg {
+  color: var(--color-error);
+}
+
+.document-list--editable .icon-btn:hover {
+  background: rgba(255, 77, 79, 0.1);
+  color: var(--color-error);
+}

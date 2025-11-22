@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Новая идея для запроса | Инноватика Мособлгаз</title>
+  <title>Редактирование идеи | Инноватика Мособлгаз</title>
   <link rel="stylesheet" href="./assets/css/base.css">
   <link rel="stylesheet" href="./assets/css/layout.css">
   <link rel="stylesheet" href="./assets/css/components.css">
@@ -32,12 +32,12 @@
           </button>
 
           <div class="header__actions">
-            <a href="./login.html" class="btn btn--ghost header__user-btn">
+            <a href="./profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
+              <span class="header__user-initials">ИА</span>
               <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
                 <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               </svg>
-              <span class="header__user-text">ВОЙТИ</span>
             </a>
           </div>
         </div>
@@ -58,11 +58,10 @@
           <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
         </nav>
         <div class="mobile-menu__actions">
-          <a href="./login.html" class="btn btn--primary btn--block" data-mobile-menu-action>Войти</a>
+          <a href="./profile.html" class="btn btn--primary btn--block" data-mobile-menu-action>Профиль</a>
         </div>
       </div>
     </div>
-
 
     <main class="main layout__main">
       <div class="container">
@@ -70,46 +69,47 @@
           <ol class="breadcrumbs__list">
             <li class="breadcrumbs__item"><a href="./requests.html" class="breadcrumbs__link">Банк инноваций</a></li>
             <li class="breadcrumbs__item"><a href="./request-detail.html" class="breadcrumbs__link">Замена профессий</a></li>
-            <li class="breadcrumbs__item" aria-current="page">Новая идея</li>
+            <li class="breadcrumbs__item"><a href="./idea-detail.html" class="breadcrumbs__link">Платформа мониторинга сетей</a></li>
+            <li class="breadcrumbs__item" aria-current="page">Редактирование идеи</li>
           </ol>
         </nav>
 
         <div class="form-container form-container--large">
           <div class="form-container__header">
-            <h1 class="heading-page form-container__title">Новая идея для запроса</h1>
+            <h1 class="heading-page form-container__title">Редактирование идеи</h1>
             <p class="text-lead form-container__subtitle">
-              Опишите решение, которое поможет закрыть потребности из запроса. Информация будет передана модераторам и стейкхолдерам.
+              Обновите описание, критерии и материалы перед повторной отправкой на модерацию.
             </p>
           </div>
 
           <form data-validate>
             <div class="form-group">
               <label class="form-label form-label--required" for="idea-title">Название идеи</label>
-              <input type="text" class="form-input" id="idea-title" name="idea-title" placeholder="Введите название идеи" maxlength="100" required>
+              <input type="text" class="form-input" id="idea-title" name="idea-title" value="Платформа мониторинга сетей газораспределения" maxlength="100" required>
             </div>
 
             <div class="form-group">
               <label class="form-label form-label--required" for="idea-description">Краткое описание</label>
               <span class="form-hint">Опишите ключевую суть вашего предложения (до 1000 символов)</span>
-              <textarea class="form-textarea" id="idea-description" name="idea-description" placeholder="Расскажите, какую задачу решает идея" maxlength="1000" required></textarea>
+              <textarea class="form-textarea" id="idea-description" name="idea-description" maxlength="1000" required>Автоматический контроль состояния сети и прогноз аварийности для оперативных решений и снижения простоев.</textarea>
             </div>
 
             <div class="form-group">
               <label class="form-label form-label--required" for="idea-problem">Какую проблему решает?</label>
               <span class="form-hint">Опишите текущие трудности или процессы, которые хотите улучшить</span>
-              <textarea class="form-textarea" id="idea-problem" name="idea-problem" placeholder="Например: вручную обрабатываем заявки и тратим много времени" required></textarea>
+              <textarea class="form-textarea" id="idea-problem" name="idea-problem" required>Ручной сбор данных по инцидентам и задержки в принятии решений увеличивают риски аварий.</textarea>
             </div>
 
             <div class="form-group">
               <label class="form-label form-label--required" for="idea-benefit">Какую выгоду дает данная идея?</label>
               <span class="form-hint">Расскажите, какие результаты или метрики изменятся после внедрения</span>
-              <textarea class="form-textarea" id="idea-benefit" name="idea-benefit" placeholder="Например: снизим затраты на 15%, увеличим NPS на 5 пунктов" required></textarea>
+              <textarea class="form-textarea" id="idea-benefit" name="idea-benefit" required>Сократим время реакции на аварии на 20%, повысим точность прогнозов, снизим затраты на ремонты.</textarea>
             </div>
 
             <div class="form-group">
               <label class="form-label form-label--required" for="idea-requirements">Что необходимо для реализации?</label>
               <span class="form-hint">Перечислите ресурсы, роли или технологии, которые понадобятся</span>
-              <textarea class="form-textarea" id="idea-requirements" name="idea-requirements" placeholder="Команда: аналитик, разработчик; ресурсы: API CRM, бюджет на ПО" required></textarea>
+              <textarea class="form-textarea" id="idea-requirements" name="idea-requirements" required>Доступ к данным аварий, интеграция с Bitrix24, роли: аналитик, разработчик, DevOps.</textarea>
             </div>
 
             <div class="form-group">
@@ -119,35 +119,52 @@
                 <input type="file" id="idea-files" class="file-upload__input" multiple>
                 <label for="idea-files" class="file-upload__label">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M4 17V17C4 15.3431 5.34315 14 7 14H10M14 14H17C18.6569 14 20 15.3431 20 17V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 3V14M12 14L9 11M12 14L15 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                   </svg>
-                  <span>Выберите файлы или перетащите их сюда</span>
+                  <span class="file-upload__text">Выберите файлы или перетащите их сюда</span>
                 </label>
+              </div>
+              <div class="document-list document-list--editable" aria-label="Загруженные файлы">
+                <div class="document-item">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M14 2V8H20" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                  <span>Техническое задание.docx</span>
+                  <button type="button" class="icon-btn" aria-label="Удалить файл">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="document-item">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M14 2V8H20" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                  <span>Презентация.pdf</span>
+                  <button type="button" class="icon-btn" aria-label="Удалить файл">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
 
-            <div class="form-group">
-              <label class="form-label" for="idea-links">Ссылки</label>
-              <span class="form-hint">Добавьте ссылки на презентации, демо или рабочие документы</span>
-              <div class="form-input-group">
-                <input type="url" class="form-input" id="idea-links" name="idea-links[]" placeholder="https://example.com/презентация">
-                <button class="btn btn--secondary" type="button">Добавить ссылку</button>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="form-check">
-                <input type="checkbox" class="form-check__input" id="personal-consent" required>
-                <label class="form-check__label" for="personal-consent">
-                  Я согласен(на) на обработку моих персональных данных в соответствии с
-                  <a href="./privacy-policy.html">Политикой конфиденциальности</a>
-                </label>
-              </div>
-            </div>
+                <div class="form-group">
+                  <label class="form-label" for="idea-links">Ссылки</label>
+                  <span class="form-hint">Добавьте ссылки на презентации, демо или рабочие документы</span>
+                  <div class="form-input-group">
+                    <input type="url" class="form-input" id="idea-links" name="idea-links[]" placeholder="https://example.com/презентация">
+                    <button class="btn btn--secondary" type="button">Добавить ссылку</button>
+                  </div>
+                </div>
 
             <div class="form-actions">
-              <button type="button" class="btn btn--secondary">Сохранить черновик</button>
-              <button type="submit" class="btn btn--primary">Отправить на модерацию</button>
+              <button type="submit" class="btn btn--primary">Сохранить изменения</button>
+              <a href="./idea-detail.html" class="btn btn--ghost">Отмена</a>
             </div>
           </form>
         </div>
@@ -157,6 +174,16 @@
 
   <script src="./assets/js/vendor.js"></script>
   <script src="./assets/js/app.js"></script>
-  <script src="./assets/js/forms.js"></script>
+  <script>
+    document.addEventListener('click', (event) => {
+      const removeBtn = event.target.closest('.document-list--editable .icon-btn');
+      if (!removeBtn) return;
+
+      const item = removeBtn.closest('.document-item');
+      if (item) {
+        item.remove();
+      }
+    });
+  </script>
 </body>
 </html>

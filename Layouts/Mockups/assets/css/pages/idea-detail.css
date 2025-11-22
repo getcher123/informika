@@ -85,41 +85,6 @@
   display: block;
 }
 
-/* Comment Section */
-.comment-section {
-  margin-bottom: var(--spacing-xl);
-}
-
-.comment-textarea {
-  min-height: 160px;
-}
-
-.comments-feed {
-  margin-bottom: var(--spacing-xl);
-  border-top: 1px solid var(--color-border-light);
-  padding-top: var(--spacing-xl);
-}
-
-.comments-feed__list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-md);
-}
-
-.comments-feed__item {
-  background: var(--color-bg-light);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
-  border: 1px solid var(--color-border-light);
-}
-
-.comments-feed__meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: var(--spacing-sm);
-}
-
 /* Submit Section */
 .submit-section {
   display: flex;
