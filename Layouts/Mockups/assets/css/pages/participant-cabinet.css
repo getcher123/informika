@@ -8,7 +8,7 @@
   justify-content: space-between;
   gap: var(--spacing-lg);
   flex-wrap: wrap;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
 }
 
 .cabinet-toolbar--top {
@@ -291,6 +291,14 @@
   color: var(--color-text-primary);
 }
 
+.application-detail__date--center {
+  justify-self: center;
+}
+
+.application-detail__date--right {
+  justify-self: end;
+}
+
 .application-detail__idea {
   margin: 0 0 var(--spacing-md);
 }
@@ -388,6 +396,10 @@
 .cabinet-note {
   margin: 0 0 var(--spacing-md);
   color: var(--color-text-muted);
+}
+
+.profile-header {
+  margin-top: var(--spacing-md);
 }
 
 .content-card > .table-wrapper,
