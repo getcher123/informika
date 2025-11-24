@@ -743,6 +743,15 @@
   border: 1.5px solid #00A8CC;
 }
 
+/* Role badge (unified) */
+.badge--role {
+  background: rgba(0, 168, 204, 0.08);
+  color: var(--color-primary);
+  border: none;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
 .badge--deadline {
   background: rgba(255, 122, 24, 0.12);
   color: #FF7A18;
@@ -765,6 +774,19 @@
 
 .badge--deadline-muted svg {
   flex-shrink: 0;
+  margin-right: var(--spacing-2xs);
+}
+
+.badge--deadline svg,
+.badge--deadline-danger svg {
+  flex-shrink: 0;
+  margin-right: var(--spacing-2xs);
+}
+
+.badge--deadline-muted svg,
+.badge--deadline svg,
+.badge--deadline-danger svg {
+  margin-right: var(--spacing-2xs);
 }
 
 .badge--deadline-today {
@@ -782,7 +804,12 @@
 .badge--date {
   display: inline-flex;
   align-items: center;
-  gap: var(--spacing-2xs);
+  gap: var(--spacing-xs);
+}
+
+.badge--date svg {
+  flex-shrink: 0;
+  margin-right: var(--spacing-2xs);
 }
 
 /* Status Indicator */
@@ -1059,6 +1086,32 @@
   font-size: var(--font-size-xl);
 }
 
+/* Notification avatar colors */
+.avatar.avatar--notif-idea {
+  background: var(--color-primary);
+  color: var(--color-text-white);
+}
+
+.avatar.avatar--notif-team {
+  background: var(--color-success);
+  color: var(--color-text-white);
+}
+
+.avatar.avatar--notif-confirm {
+  background: #7C3AED;
+  color: var(--color-text-white);
+}
+
+.avatar.avatar--notif-deadline {
+  background: var(--color-error);
+  color: var(--color-text-white);
+}
+
+.avatar.avatar--notif-system {
+  background: #5A7184;
+  color: var(--color-text-white);
+}
+
 /* Tabs */
 .tabs {
   display: flex;
@@ -1120,6 +1173,8 @@
 }
 
 .filter-pill {
+  display: inline-flex;
+  align-items: center;
   padding: var(--spacing-sm) var(--spacing-lg);
   border-radius: var(--radius-full);
   font-size: var(--font-size-sm);
@@ -1337,6 +1392,7 @@
   align-items: center;
   gap: var(--spacing-xs);
   line-height: 1;
+  vertical-align: middle;
 }
 
 .filter-reset:hover {
@@ -1345,13 +1401,17 @@
 }
 
 .filter-reset--inline {
-  padding: var(--spacing-md) var(--spacing-xl);
+  padding: var(--spacing-sm) var(--spacing-lg);
 }
 
 /* Layout spacing helpers */
 .filters,
 .filters-section {
-  margin-bottom: var(--spacing-xl);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  row-gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
 }
 
 .search {

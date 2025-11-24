@@ -116,7 +116,10 @@
                 <p class="eyebrow text-muted">Личный кабинет участника</p>
                 <h1 class="heading-page">Профиль</h1>
               </div>
+
             </div>
+
+            <p class="cabinet-note">Проверьте и обновите свои данные, чтобы команда могла связаться с вами.</p>
 
             <!-- Profile Header -->
             <div class="profile-header">
@@ -230,7 +233,7 @@
                 </div>
               </div>
 
-              <div class="form-row" style="border-top: 1px solid var(--color-border-light); padding-top: var(--spacing-lg); margin-top: var(--spacing-lg);">
+              <div class="form-row form-row--divided">
                 <div class="form-group">
                   <label class="form-label">Настройки уведомлений</label>
                   <div class="form-check-group">
@@ -242,7 +245,7 @@
                 </div>
               </div>
 
-              <div class="form-row" style="border-top: 1px solid var(--color-border-light); padding-top: var(--spacing-lg); margin-top: var(--spacing-lg);">
+              <div class="form-row form-row--divided">
                 <div class="form-group">
                   <label class="form-label" for="new-password">Новый пароль</label>
                   <input
@@ -264,8 +267,9 @@
                 </div>
               </div>
 
-              <div class="form-actions">
-                <button type="submit" class="btn btn--secondary" data-save-profile>Сохранить</button>
+              <div class="form-actions form-actions--compact">
+                <a class="btn btn--ghost" href="./login.html">Выйти</a>
+                <button type="submit" class="btn btn--primary" data-save-profile>Сохранить</button>
               </div>
             </form>
           </div>

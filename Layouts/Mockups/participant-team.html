@@ -115,36 +115,35 @@
               <div>
                 <p class="eyebrow text-muted">Личный кабинет участника</p>
                 <h1 class="heading-page">Заявки в команду</h1>
-                <p class="text-muted">Статусы заявок отображаются для ознакомления; решения по команде принимаются в Bitrix24.</p>
               </div>
             </div>
 
-            <div class="filter-pills">
+            <p class="cabinet-note">Статусы заявок отображаются для ознакомления; решения по команде принимаются в Bitrix24.</p>
+
+            <div class="filters filters-section">
               <button class="filter-pill filter-pill--active">Все</button>
               <button class="filter-pill">Входящие</button>
               <button class="filter-pill">Отправленные</button>
               <button class="filter-pill">Моя команда</button>
               <button class="filter-pill">Архив</button>
-              <button class="btn btn--ghost btn--sm">Отменить фильтры</button>
+              <button class="btn btn--reset filter-reset filter-reset--inline" type="button">
+                <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="btn__text">Сбросить фильтры</span>
+              </button>
             </div>
-
             <div class="applications-list">
               <div class="card application-card">
-                <div class="application-card__header">
-                  <div class="application-card__badges">
-                    <span class="badge badge--primary">Аналитик</span>
+                <div class="application-card__status-row">
+                  <div class="application-card__status">
                     <span class="status-indicator status-indicator--pending">
                       <span class="status-indicator__dot"></span>
                       <span>На рассмотрении</span>
                     </span>
                   </div>
-                </div>
-                <h3 class="application-card__title">AI-диспетчер для обработки аварийных заявок</h3>
-                <p class="application-card__idea">Идея: AI-диспетчер для обработки аварийных заявок</p>
-                <p class="application-card__message">«Есть опыт в BI и построении калькуляторов TCO. Готова помочь с моделями прогноза нагрузки»</p>
-                <div class="application-card__meta">
-                  <span>15.05.2025</span>
-                  <span class="badge badge--deadline-muted">
+                  <span class="text-caption text-muted">Опубликована 15.05.2025</span>
+                  <span class="badge badge--date badge--deadline-muted" data-deadline="2025-05-18">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
                       <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -152,36 +151,37 @@
                     Ответ до 18.05.2025
                   </span>
                 </div>
+                <div class="application-card__title-row">
+                  <h3 class="application-card__title">AI-диспетчер для обработки аварийных заявок</h3>
+                  <span class="badge badge--success">Новое</span>
+                  <span class="badge badge--role">Аналитик</span>
+                  <span class="badge badge--role">Коммуникационный специалист</span>
+                </div>
+                <p class="application-card__message">«Есть опыт в BI и построении калькуляторов TCO. Готова помочь с моделями прогноза нагрузки»</p>
                 <div class="application-card__footer">
                   <div class="author-info">
                     <div class="author-info__avatar">
                       <div class="avatar avatar--md">АВ</div>
                     </div>
                     <div class="author-info__content">
-                      <p class="author-info__label">Модератор</p>
-                      <p class="author-info__name">Анна Воронова</p>
+                      <p class="text-caption text-muted">Отправитель</p>
+                      <p class="author-info__name">Анна Воронова, модератор</p>
                     </div>
                   </div>
-                  <a class="btn btn--primary btn--sm" href="./idea-detail.html">Подробнее</a>
+                  <a class="btn btn--primary btn--sm" href="./participant-team-detail.html">Подробнее</a>
                 </div>
               </div>
 
               <div class="card application-card">
-                <div class="application-card__header">
-                  <div class="application-card__badges">
-                    <span class="badge badge--primary">Разработчик</span>
+                <div class="application-card__status-row">
+                  <div class="application-card__status">
                     <span class="status-indicator status-indicator--approved">
                       <span class="status-indicator__dot"></span>
                       <span>Принята</span>
                     </span>
                   </div>
-                </div>
-                <h3 class="application-card__title">Заявка: «Цифровой наставник для новых сотрудников»</h3>
-                <p class="application-card__idea">Заявка на идею: «Цифровой наставник для новых сотрудников»</p>
-                <p class="application-card__message">«Подключу процесс к Bitrix24, знаю их REST, выполню интеграцию с корпоративными сервисами»</p>
-                <div class="application-card__meta">
-                  <span>12.05.2025</span>
-                  <span class="badge badge--deadline-muted">
+                  <span class="text-caption text-muted">Опубликована 12.05.2025</span>
+                  <span class="badge badge--date badge--deadline-muted" data-deadline="2025-05-28">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
                       <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -189,37 +189,36 @@
                     Ответ до 28.05.2025
                   </span>
                 </div>
+                <div class="application-card__title-row">
+                  <h3 class="application-card__title">Цифровой наставник для новых сотрудников</h3>
+                  <span class="badge badge--role">Разработчик</span>
+                  <span class="badge badge--role">Тимлид</span>
+                </div>
+                <p class="application-card__message">«Подключу процесс к Bitrix24, знаю их REST, выполню интеграцию с корпоративными сервисами»</p>
                 <div class="application-card__footer">
                   <div class="author-info">
                     <div class="author-info__avatar">
                       <div class="avatar avatar--md">МК</div>
                     </div>
                     <div class="author-info__content">
-                      <p class="author-info__label">Стейкхолдер</p>
-                      <p class="author-info__name">Максим Кудряшов</p>
+                      <p class="text-caption text-muted">Отправитель</p>
+                      <p class="author-info__name">Максим Кудряшов, стейкхолдер</p>
                     </div>
                   </div>
-                  <a class="btn btn--primary btn--sm" href="./idea-detail.html">Подробнее</a>
+                  <a class="btn btn--primary btn--sm" href="./participant-team-detail.html">Подробнее</a>
                 </div>
               </div>
 
               <div class="card application-card">
-                <div class="application-card__header">
-                  <div class="application-card__badges">
-                    <span class="badge badge--primary">Эксперт/Ментор</span>
+                <div class="application-card__status-row">
+                  <div class="application-card__status">
                     <span class="status-indicator status-indicator--rejected">
                       <span class="status-indicator__dot"></span>
                       <span>Отклонена</span>
                     </span>
-                    <span class="badge badge--gray">+0</span>
                   </div>
-                </div>
-                <h3 class="application-card__title">Идея: «Платформа мониторинга сетей газораспределения»</h3>
-                <p class="application-card__idea">Идея: «Платформа мониторинга сетей газораспределения»</p>
-                <p class="application-card__message">«Могу провести аудит рисков и выработать чек-лист для пилотирования»</p>
-                <div class="application-card__meta">
-                  <span>10.05.2025</span>
-                  <span class="badge badge--deadline-muted">
+                  <span class="text-caption text-muted">Опубликована 10.05.2025</span>
+                  <span class="badge badge--date badge--deadline-muted" data-deadline="2025-05-25">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
                       <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -227,17 +226,22 @@
                     Ответ до 25.05
                   </span>
                 </div>
+                <div class="application-card__title-row">
+                  <h3 class="application-card__title">Платформа мониторинга сетей газораспределения</h3>
+                  <span class="badge badge--role">Эксперт/Ментор</span>
+                </div>
+                <p class="application-card__message">«Могу провести аудит рисков и выработать чек-лист для пилотирования»</p>
                 <div class="application-card__footer">
                   <div class="author-info">
                     <div class="author-info__avatar">
                       <div class="avatar avatar--md">ЕП</div>
                     </div>
                     <div class="author-info__content">
-                      <p class="author-info__label">Стейкхолдер</p>
-                      <p class="author-info__name">Елена Полякова</p>
+                      <p class="text-caption text-muted">Отправитель</p>
+                      <p class="author-info__name">Елена Полякова, стейкхолдер</p>
                     </div>
                   </div>
-                  <a class="btn btn--primary btn--sm" href="./idea-detail.html">Подробнее</a>
+                  <a class="btn btn--primary btn--sm" href="./participant-team-detail.html">Подробнее</a>
                 </div>
               </div>
             </div>

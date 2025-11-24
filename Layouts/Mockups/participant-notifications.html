@@ -127,17 +127,29 @@
               </div>
             </div>
 
-            <div class="filter-pills">
+            <div class="notification-types note">
+              <p class="notification-types__text cabinet-note">
+                Типы уведомлений: <strong>Идеи</strong> — модерация/решения/архив; <strong>Команда</strong> — заявки и роли; <strong>Bitrix</strong> — задачи/документы; <strong>Системные</strong> — дедлайны запросов и технические события.
+              </p>
+            </div>
+
+            <div class="filters filters-section">
               <button class="filter-pill filter-pill--active">Все</button>
               <button class="filter-pill">Идеи</button>
               <button class="filter-pill">Команда</button>
               <button class="filter-pill">Bitrix</button>
               <button class="filter-pill">Системные</button>
+              <button class="btn btn--reset filter-reset filter-reset--inline" type="button">
+                <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="btn__text">Сбросить фильтры</span>
+              </button>
             </div>
 
             <div class="notification-list">
               <div class="notification-card">
-                <div class="avatar avatar--md">i</div>
+                <div class="avatar avatar--md avatar--notif-idea">i</div>
                 <div>
                   <div class="notification-card__title">
                     Модератор вернул идею «Платформа мониторинга сетей»
@@ -161,7 +173,7 @@
               </div>
 
               <div class="notification-card">
-                <div class="avatar avatar--md">C</div>
+                <div class="avatar avatar--md avatar--notif-team">C</div>
                 <div>
                   <div class="notification-card__title">
                     Новая заявка в команду по идее «AI-диспетчер для аварийных заявок»
@@ -169,16 +181,15 @@
                   <p class="notification-card__text">Алексей Смирнов хочет присоединиться в роли «Разработчик». Проверьте профиль и примите решение.</p>
                   <div class="notification-card__meta">
                     <span>Вчера, 18:10</span>
-                    <span class="badge badge--gray">+1</span>
                   </div>
                 </div>
                 <div class="notification-card__actions">
-                  <a class="btn btn--primary btn--sm" href="./participant-team.html">Открыть заявку</a>
+                  <a class="btn btn--primary btn--sm" href="./participant-team.html">Перейти</a>
                 </div>
               </div>
 
               <div class="notification-card">
-                <div class="avatar avatar--md">S</div>
+                <div class="avatar avatar--md avatar--notif-confirm">S</div>
                 <div>
                   <div class="notification-card__title">
                     Подтвердите e-mail для уведомлений
@@ -196,7 +207,42 @@
                   </div>
                 </div>
                 <div class="notification-card__actions">
-                  <button class="btn btn--primary btn--sm" type="button">Отправить ещё раз</button>
+                  <a class="btn btn--primary btn--sm" href="./participant-team-detail.html">Перейти</a>
+                </div>
+              </div>
+
+              <div class="notification-card">
+                <div class="avatar avatar--md avatar--notif-deadline">B</div>
+                <div>
+                  <div class="notification-card__title">
+                    Просрочена задача Bitrix24 по идее «Цифровой наставник»
+                  </div>
+                  <p class="notification-card__text">Перейдите в Bitrix24 и обновите статус. Дедлайн был 12.05.2025.</p>
+                  <div class="notification-card__meta">
+                    <span>09.05.2025</span>
+                    <span class="badge badge--deadline-danger">
+                      Просрочено
+                    </span>
+                  </div>
+                </div>
+                <div class="notification-card__actions">
+                  <a class="btn btn--primary btn--sm" href="#">Перейти</a>
+                </div>
+              </div>
+
+              <div class="notification-card">
+                <div class="avatar avatar--md avatar--notif-system">K</div>
+                <div>
+                  <div class="notification-card__title">
+                    Новая политика конфиденциальности
+                  </div>
+                  <p class="notification-card__text">Обновили условия обработки данных. Ознакомьтесь и подтвердите согласие.</p>
+                  <div class="notification-card__meta">
+                    <span>08.05.2025</span>
+                  </div>
+                </div>
+                <div class="notification-card__actions">
+                  <a class="btn btn--primary btn--sm" href="./privacy-policy.html">Перейти</a>
                 </div>
               </div>
             </div>

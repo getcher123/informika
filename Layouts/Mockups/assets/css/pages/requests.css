@@ -83,7 +83,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1240px) {
   .ideas-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -119,7 +119,12 @@
 .idea-card__deadline {
   display: inline-flex;
   align-items: center;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-2xs);
+}
+
+.idea-card__deadline svg {
+  margin-right: var(--spacing-2xs);
+  flex-shrink: 0;
 }
 
 .idea-card__direction {
