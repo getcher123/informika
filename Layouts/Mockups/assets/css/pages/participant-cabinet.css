@@ -63,6 +63,11 @@
   padding: var(--spacing-xs) var(--spacing-sm);
 }
 
+.table--compact thead th {
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+}
+
 .table--ideas th:nth-child(2),
 .table--ideas td:nth-child(2) {
   width: 110px;
