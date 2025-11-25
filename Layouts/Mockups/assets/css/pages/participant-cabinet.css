@@ -367,6 +367,10 @@
   margin-top: var(--spacing-lg);
 }
 
+.tools-actions .btn {
+  min-width: 200px;
+}
+
 .application-actions-top {
   display: flex;
   flex-direction: column;
@@ -439,6 +443,22 @@
   gap: var(--spacing-sm);
 }
 
+/* Stakeholder portfolio (card grid inside cabinet) */
+.page--stakeholder-portfolio .ideas-grid {
+  grid-template-columns: 1fr;
+}
+
+.page--stakeholder-portfolio .filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  row-gap: var(--spacing-xs);
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: var(--spacing-md);
+}
+
 .notification-card__text {
   color: var(--color-text-secondary);
   margin: var(--spacing-xs) 0;
@@ -451,6 +471,54 @@
   flex-wrap: wrap;
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
+}
+
+/* Tools / stats */
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-lg) 0;
+}
+
+.stat-card {
+  background: var(--color-bg-white);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.stat-card__value {
+  font-size: clamp(3rem, 4vw, 4rem);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-2xs);
+}
+
+.stat-card__text {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+.stat-card--primary .stat-card__value { color: var(--color-primary); }
+.stat-card--accent .stat-card__value { color: var(--color-accent); }
+.stat-card--warning .stat-card__value { color: var(--color-error); }
+
+.stat-card:hover {
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.tools-section {
+  margin-bottom: var(--spacing-lg);
 }
 
 .notification-card__actions {

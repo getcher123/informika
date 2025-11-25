@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Профиль стейкхолдера | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/participant-cabinet.css">
+</head>
+<body data-auth-state="profile" class="body--gradient">
+  <div class="layout">
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+          </a>
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+          <button class="header__burger" type="button" aria-label="Открыть меню" data-mobile-menu-toggle>
+            <span></span><span></span><span></span>
+          </button>
+          <div class="header__actions">
+            <a href="./stakeholder-profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
+              <span class="header__user-initials">СТ</span>
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu__backdrop" data-mobile-menu-close></div>
+      <div class="mobile-menu__panel">
+        <button class="mobile-menu__close" type="button" aria-label="Закрыть меню" data-mobile-menu-close>
+          <span></span><span></span>
+        </button>
+        <nav class="mobile-menu__nav">
+          <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
+          <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+          <a href="#" class="mobile-menu__link">КОНКУРС</a>
+          <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
+        </nav>
+        <div class="mobile-menu__actions">
+          <a href="./stakeholder-profile.html" class="btn btn--primary btn--block" data-mobile-menu-action>Профиль</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="main main--with-gradient layout__main">
+      <div class="container">
+        <div class="sidebar-layout">
+          <aside class="sidebar sidebar-layout__sidebar">
+            <nav class="sidebar__nav">
+              <a href="./stakeholder-requests.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M7 8H17M7 12H15M7 16H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Мои запросы</span>
+              </a>
+              <a href="./stakeholder-portfolio.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 7H20M4 12H20M4 17H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Портфель идей</span>
+              </a>
+              <a href="./stakeholder-notifications.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Уведомления</span>
+              </a>
+              <a href="./stakeholder-tools.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 8.5C13.933 8.5 15.5 6.933 15.5 5C15.5 3.067 13.933 1.5 12 1.5C10.067 1.5 8.5 3.067 8.5 5C8.5 6.933 10.067 8.5 12 8.5Z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M12 13.5C8.96243 13.5 6.5 15.9624 6.5 19C6.5 19.8284 7.17157 20.5 8 20.5H16C16.8284 20.5 17.5 19.8284 17.5 19C17.5 15.9624 15.0376 13.5 12 13.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Административная панель</span>
+              </a>
+              <a href="./stakeholder-profile.html" class="sidebar__link sidebar__link--active">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                  <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Профиль</span>
+              </a>
+            </nav>
+          </aside>
+
+          <div class="content-card sidebar-layout__content">
+            <div class="cabinet-toolbar">
+              <div>
+                <p class="eyebrow text-muted">Кабинет стейкхолдера</p>
+                <h1 class="heading-page">Профиль</h1>
+              </div>
+            </div>
+
+            <div class="profile-header">
+              <div class="profile-avatar-section">
+                <div class="profile-avatar">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="64" height="64" rx="32" fill="#E8EDF2"/>
+                    <path d="M32 28C35.3137 28 38 25.3137 38 22C38 18.6863 35.3137 16 32 16C28.6863 16 26 18.6863 26 22C26 25.3137 28.6863 28 32 28Z" fill="#5A7184"/>
+                    <path d="M20 48C20 40.268 26.268 34 34 34H30C37.732 34 44 40.268 44 48H20Z" fill="#5A7184"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="profile-info">
+                <h2 class="profile-name heading-section">Смирнова<br>Татьяна</h2>
+                <p class="profile-company text-strong">АО «Мособлгаз»</p>
+                <p class="profile-position text-meta">Стейкхолдер запросов</p>
+              </div>
+            </div>
+
+            <form class="profile-form" data-validate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="birthdate">Дата рождения</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    id="birthdate"
+                    value="31 декабря"
+                    placeholder="31 декабря"
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="phone">Телефон</label>
+                  <input
+                    type="tel"
+                    class="form-input"
+                    id="phone"
+                    value="+7 (999) 123-45-67"
+                    placeholder="+7 (999) 123-45-67"
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="email">E-mail</label>
+                  <input
+                    type="email"
+                    class="form-input"
+                    id="email"
+                    value="tatiana.smirnova@example.ru"
+                    placeholder="name@example.ru"
+                  >
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="city">Город</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    id="city"
+                    value="Москва"
+                    placeholder="Город"
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="company">Организация</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    id="company"
+                    value="АО «Мособлгаз»"
+                    placeholder="АО «Мособлгаз»"
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="position">Должность</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    id="position"
+                    value="Руководитель направления"
+                    placeholder="Должность"
+                  >
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="interests">Интересы и роли</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    id="interests"
+                    value="Стейкхолдер"
+                    placeholder="Стейкхолдер"
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contacts">Контакты</label>
+                  <input
+                    type="text"
+                    class="form-input"
+                    id="contacts"
+                    value="@tatiana"
+                    placeholder="Соцсети, мессенджеры"
+                  >
+                </div>
+              </div>
+
+              <div class="form-row form-row--divided">
+                <div class="form-group">
+                  <label class="form-label">Настройки уведомлений</label>
+                  <div class="form-check-group">
+                    <label class="form-check">
+                      <input type="checkbox" class="form-check__input" checked>
+                      <span class="form-check__label">E-mail</span>
+                    </label>
+                    <label class="form-check">
+                      <input type="checkbox" class="form-check__input" checked>
+                      <span class="form-check__label">SMS</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row form-row--divided">
+                <div class="form-group">
+                  <label class="form-label" for="new-password">Новый пароль</label>
+                  <input
+                    type="password"
+                    class="form-input"
+                    id="new-password"
+                    placeholder="Введите новый пароль"
+                  >
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="confirm-password">Повторите пароль</label>
+                  <input
+                    type="password"
+                    class="form-input"
+                    id="confirm-password"
+                    placeholder="Повторите новый пароль"
+                  >
+                  <span class="form-error form-error--hidden" data-password-error>Пароли не совпадают</span>
+                </div>
+              </div>
+
+              <div class="form-actions form-actions--compact">
+                <a class="btn btn--ghost" href="./login.html">Выйти</a>
+                <button type="submit" class="btn btn--primary" data-save-profile>Сохранить</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__column footer__column--brand">
+            <div class="footer__brand">
+              <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="footer__logo">
+            </div>
+            <p class="footer__description text-muted">Инновационные решения для развития компании и поддержки талантов.</p>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__title heading-subtitle">Платформа</h4>
+            <ul class="footer__list">
+              <li><a href="./requests.html" class="footer__link">Банк инноваций</a></li>
+              <li><a href="#" class="footer__link">Конкурсы</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__title heading-subtitle">Связаться</h4>
+            <ul class="footer__list">
+              <li><a href="#" class="footer__link">Контакты</a></li>
+              <li><a href="#" class="footer__link">Поддержка</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>
