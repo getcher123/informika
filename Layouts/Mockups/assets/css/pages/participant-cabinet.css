@@ -473,6 +473,10 @@
   font-size: var(--font-size-sm);
 }
 
+.table--centered-headers th {
+  text-align: center;
+}
+
 /* Tools / stats */
 .stat-cards {
   display: grid;
@@ -519,6 +523,45 @@
 
 .tools-section {
   margin-bottom: var(--spacing-lg);
+}
+
+/* Stakeholder requests table tweaks */
+.table--stakeholder-requests th:nth-child(1),
+.table--stakeholder-requests td:nth-child(1) {
+  width: 30%;
+}
+
+.table--stakeholder-requests th:nth-child(2),
+.table--stakeholder-requests td:nth-child(2) {
+  width: 16%;
+}
+
+.table--stakeholder-requests th:nth-child(6),
+.table--stakeholder-requests td:nth-child(6) {
+  width: 8%;
+}
+
+.table--stakeholder-requests th:nth-child(3),
+.table--stakeholder-requests td:nth-child(3),
+.table--stakeholder-requests th:nth-child(4),
+.table--stakeholder-requests td:nth-child(4),
+.table--stakeholder-requests th:nth-child(5),
+.table--stakeholder-requests td:nth-child(5),
+.table--stakeholder-requests th:nth-child(6),
+.table--stakeholder-requests td:nth-child(6) {
+  text-align: center;
+}
+
+.task-title {
+  font-weight: var(--font-weight-semibold);
+  margin: 0 0 var(--spacing-2xs);
+  color: var(--color-text-primary);
+}
+
+.task-meta {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
 }
 
 .notification-card__actions {

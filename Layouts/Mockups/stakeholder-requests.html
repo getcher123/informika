@@ -64,6 +64,13 @@
         <div class="sidebar-layout">
           <aside class="sidebar sidebar-layout__sidebar">
             <nav class="sidebar__nav">
+              <a href="./stakeholder-profile.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                  <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Профиль</span>
+              </a>
               <a href="./stakeholder-requests.html" class="sidebar__link sidebar__link--active">
                 <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
@@ -73,7 +80,8 @@
               </a>
               <a href="./stakeholder-portfolio.html" class="sidebar__link">
                 <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 7H20M4 12H20M4 17H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <span class="sidebar__text">Портфель идей</span>
               </a>
@@ -85,17 +93,9 @@
               </a>
               <a href="./stakeholder-tools.html" class="sidebar__link">
                 <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 8.5C13.933 8.5 15.5 6.933 15.5 5C15.5 3.067 13.933 1.5 12 1.5C10.067 1.5 8.5 3.067 8.5 5C8.5 6.933 10.067 8.5 12 8.5Z" stroke="currentColor" stroke-width="2"/>
-                  <path d="M12 13.5C8.96243 13.5 6.5 15.9624 6.5 19C6.5 19.8284 7.17157 20.5 8 20.5H16C16.8284 20.5 17.5 19.8284 17.5 19C17.5 15.9624 15.0376 13.5 12 13.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <span class="sidebar__text">Административная панель</span>
-              </a>
-              <a href="./stakeholder-profile.html" class="sidebar__link">
-                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
-                  <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <span class="sidebar__text">Профиль</span>
               </a>
             </nav>
           </aside>
@@ -114,7 +114,7 @@
            
 
             <div class="table-wrapper">
-              <table class="table table--compact table--sortable">
+              <table class="table table--compact table--sortable table--centered-headers table--stakeholder-requests">
                 <thead>
                   <tr>
                     <th data-sort-type="string">Запрос</th>
@@ -122,7 +122,7 @@
                     <th data-sort-type="string">Направление</th>
                     <th data-sort-type="date">Обновлено</th>
                     <th data-sort-type="date">Дедлайн</th>
-                    <th data-sort-type="number">+N</th>
+                    <th data-sort-type="number">Идей</th>
                     <th data-sortable="false">Действия</th>
                   </tr>
                 </thead>
@@ -137,13 +137,13 @@
                     <td>
                       <div class="table-actions">
                         <a class="btn btn--primary btn--sm" href="./request-detail.html">Просмотр</a>
-                        <a class="btn btn--secondary btn--sm" href="./request-form.html">Редактировать</a>
+                        <a class="btn btn--secondary btn--sm" href="./stakeholder-request-edit.html">Редактировать</a>
                       </div>
                     </td>
                   </tr>
                   <tr>
                     <td>Модернизация систем газораспределения</td>
-                    <td><span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span><span>На сборе идей</span></span></td>
+                    <td><span class="status-indicator status-indicator--published"><span class="status-indicator__dot"></span><span>На сборе идей</span></span></td>
                     <td><span class="badge badge--warning">Строительство</span></td>
                     <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-05-05">05.05.2025</span></td>
                     <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-06-18">18.06.2025</span></td>
@@ -151,19 +151,47 @@
                     <td>
                       <div class="table-actions">
                         <a class="btn btn--primary btn--sm" href="./request-detail.html">Просмотр</a>
+                        <a class="btn btn--secondary btn--sm" href="./stakeholder-request-edit.html">Редактировать</a>                        
                       </div>
                     </td>
                   </tr>
                   <tr>
                     <td>AR-инструктаж для сервисных бригад</td>
-                    <td><span class="status-indicator status-indicator--approved"><span class="status-indicator__dot"></span><span>Закрыт</span></span></td>
+                    <td><span class="status-indicator status-indicator--closed"><span class="status-indicator__dot"></span><span>Закрыт</span></span></td>
                     <td><span class="badge badge--teal">Клиентский сервис</span></td>
                     <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-04-22">22.04.2025</span></td>
                     <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-05-10">10.05.2025</span></td>
-                    <td><span class="badge badge--gray">+0</span></td>
+                    <td><span class="badge badge--gray">—</span></td>
                     <td>
                       <div class="table-actions">
                         <a class="btn btn--primary btn--sm" href="./request-detail.html">Просмотр</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Мониторинг утечек: аналитика по филиалам</td>
+                    <td><span class="status-indicator status-indicator--draft"><span class="status-indicator__dot"></span><span>В архиве</span></span></td>
+                    <td><span class="badge badge--gray">Другое</span></td>
+                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-03-18">18.03.2025</span></td>
+                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-04-01">01.04.2025</span></td>
+                    <td><span class="badge badge--gray">+2</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a class="btn btn--primary btn--sm" href="./request-detail.html">Просмотр</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Цифровой паспорт оборудования</td>
+                    <td><span class="status-indicator status-indicator--draft"><span class="status-indicator__dot"></span><span>Черновик</span></span></td>
+                    <td><span class="badge badge--primary">Цифровизация</span></td>
+                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-05-01">01.05.2025</span></td>
+                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-05-15">15.05.2025</span></td>
+                    <td><span class="badge badge--gray">+1</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a class="btn btn--primary btn--sm" href="./request-detail.html">Просмотр</a>
+                        <a class="btn btn--secondary btn--sm" href="./stakeholder-request-edit.html">Редактировать</a>
                       </div>
                     </td>
                   </tr>

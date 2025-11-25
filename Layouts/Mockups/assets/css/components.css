@@ -838,6 +838,11 @@
   background: var(--color-success);
 }
 
+.status-indicator--closed .status-indicator__dot,
+.status-indicator--rejected .status-indicator__dot {
+  background: var(--color-error);
+}
+
 .status-indicator--pending .status-indicator__dot {
   background: var(--color-warning);
 }

@@ -75,54 +75,65 @@
             </p>
           </div>
 
-          <form data-validate>
-            <div class="form-group">
-              <label class="form-label form-label--required" for="direction-select">Выберите направление</label>
-              <select class="form-select form-select--decorated js-custom-select" id="direction-select" required>
-                <option value="">Выбор направления</option>
-                <option value="construction">Строительство</option>
-                <option value="exploitation">Эксплуатация</option>
-                <option value="security">Безопасность</option>
-                <option value="digital">Цифровизация</option>
-                <option value="client">Клиентский сервис</option>
-                <option value="other">Другое</option>
-              </select>
+          <form class="form form--request" data-validate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label form-label--required" for="direction-select">Выберите направление</label>
+                <select class="form-select form-select--decorated js-custom-select" id="direction-select" required>
+                  <option value="">Выбор направления</option>
+                  <option value="construction">Строительство</option>
+                  <option value="exploitation">Эксплуатация</option>
+                  <option value="security">Безопасность</option>
+                  <option value="digital">Цифровизация</option>
+                  <option value="client">Клиентский сервис</option>
+                  <option value="other">Другое</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="request-title">Название запроса</label>
+                <input type="text" class="form-input" id="request-title" placeholder="Введите название запроса" required>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label class="form-label form-label--required" for="request-title">Название запроса</label>
-              <input type="text" class="form-input" id="request-title" placeholder="Введите название запроса" required>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label form-label--required" for="request-description">Описание запроса</label>
+                <span class="form-hint">Напишите основные задачи, которые решает ваш запрос</span>
+                <textarea class="form-textarea" id="request-description" rows="3" placeholder="Опишите запрос подробно..." required></textarea>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label class="form-label form-label--required" for="request-description">Описание запроса</label>
-              <span class="form-hint">Напишите основные задачи, которые решает ваш запрос</span>
-              <textarea class="form-textarea" id="request-description" placeholder="Опишите запрос подробно..." required></textarea>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label form-label--required" for="request-stages">Основные этапы реализации</label>
+                <span class="form-hint">Опишите ключевые этапы реализации запроса</span>
+                <textarea class="form-textarea" id="request-stages" rows="3" placeholder="Опишите этапы реализации..." required></textarea>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label class="form-label form-label--required" for="request-stages">Основные этапы реализации идеи</label>
-              <span class="form-hint">Напишите основные этапы, которые необходимы для реализации вашего запроса</span>
-              <textarea class="form-textarea" id="request-stages" placeholder="Опишите этапы реализации..." required></textarea>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label form-label--required" for="request-result">Ожидаемый результат</label>
+                <span class="form-hint">Какие эффекты ожидаете получить</span>
+                <textarea class="form-textarea" id="request-result" rows="3" placeholder="Опишите ожидаемый результат..." required></textarea>
+              </div>
             </div>
 
-            <div class="form-group">
-              <label class="form-label form-label--required" for="request-result">Ожидаемый результат</label>
-              <span class="form-hint">Напишите ожидаемый результат от реализации вашего запроса</span>
-              <textarea class="form-textarea" id="request-result" placeholder="Опишите ожидаемый результат..." required></textarea>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">Файлы к запросу</label>
-              <span class="form-hint">Вы можете приложить презентации, сметы и другие материалы</span>
-              <div class="file-upload">
-                <input type="file" id="idea-files" class="file-upload__input" multiple>
-                <label for="idea-files" class="file-upload__label">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                  <span>Выберите файлы или перетащите их сюда</span>
-                </label>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label form-label--required" for="request-deadline">Сбор идей до</label>
+                <input class="form-input" type="date" id="request-deadline" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="idea-files">Файлы к запросу</label>
+                <span class="form-hint">Приложите презентации, сметы и другие материалы</span>
+                <div class="file-upload">
+                  <input type="file" id="idea-files" class="file-upload__input" multiple>
+                  <label for="idea-files" class="file-upload__label">
+                    <span class="file-upload__title">Выберите файлы или перетащите их сюда</span>
+                    <span class="file-upload__types">PDF, DOCX, XLSX до 20 Мб</span>
+                  </label>
+                </div>
               </div>
             </div>
 
@@ -136,9 +147,10 @@
               </div>
             </div>
 
-            <div class="form-actions">
+            <div class="form-actions form-actions--compact">
               <button type="button" class="btn btn--secondary">Сохранить черновик</button>
               <button type="submit" class="btn btn--primary">Опубликовать</button>
+              <a class="btn btn--ghost" href="./requests.html">Отмена</a>
             </div>
           </form>
         </div>

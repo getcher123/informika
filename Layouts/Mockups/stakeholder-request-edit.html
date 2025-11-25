@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Уведомления стейкхолдера | Инноватика Мособлгаз</title>
+  <title>Редактирование запроса | Инноватика Мособлгаз</title>
   <link rel="stylesheet" href="./assets/css/base.css">
   <link rel="stylesheet" href="./assets/css/layout.css">
   <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/request-form.css">
   <link rel="stylesheet" href="./assets/css/pages/participant-cabinet.css">
 </head>
 <body data-auth-state="profile" class="body--gradient">
@@ -85,7 +86,7 @@
                 </svg>
                 <span class="sidebar__text">Портфель идей</span>
               </a>
-              <a href="./stakeholder-notifications.html" class="sidebar__link sidebar__link--active">
+              <a href="./stakeholder-notifications.html" class="sidebar__link">
                 <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
@@ -101,126 +102,93 @@
           </aside>
 
           <div class="content-card sidebar-layout__content">
-
+            <a class="back-link" href="./stakeholder-requests.html">← Назад к запросам</a>
             <div class="cabinet-toolbar">
               <div>
-                <p class="eyebrow text-muted">Кабинет стейкхолдера</p>
-                <h1 class="heading-page">Уведомления</h1>
-              </div>
-              <div class="cabinet-toolbar__actions">
-                <div class="search cabinet-search">
-                  <svg class="search__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
-                    <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                  <input type="text" class="form-input search__input" placeholder="Поиск по уведомлениям">
-                </div>
+                <p class="eyebrow text-muted">Редактирование запроса</p>
+                <h1 class="heading-page">Запрос: Умный контроль сетей</h1>
               </div>
             </div>
 
-            <div class="notification-types note">
-              <p class="notification-types__text cabinet-note">
-                Оповещения по запросам и идеям: решения модераторов, дедлайны, приглашения в команды и системные сообщения.
-              </p>
-            </div>
-
-            <div class="filters filters-section">
-              <button class="filter-pill filter-pill--active">Все</button>
-              <button class="filter-pill">Запросы</button>
-              <button class="filter-pill">Идеи</button>
-              <button class="filter-pill">Команда</button>
-              <button class="filter-pill">Системные</button>
-              <button class="filter-pill">Дедлайны</button>
-              <button class="btn btn--reset filter-reset filter-reset--inline" type="button">
-                <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <span class="btn__text">Сбросить фильтры</span>
-              </button>
-            </div>
-
-            <div class="notification-list">
-              <div class="notification-card">
-                <div class="avatar avatar--md avatar--notif-idea">i</div>
-                <div>
-                  <div class="notification-card__title">
-                    Модератор вернул идею «Платформа мониторинга сетей»
-                    <span class="badge badge--success">Новое</span>
-                  </div>
-                  <p class="notification-card__text">Проверьте критерии и приложите техническое обоснование. После доработки отправьте повторно.</p>
-                  <div class="notification-card__meta">
-                    <span>Сегодня, 09:20</span>
-                  </div>
+            <form class="form form--request" data-validate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label form-label--required" for="request-direction">Выберите направление</label>
+                  <select class="form-select form-select--decorated js-custom-select" id="request-direction" required>
+                    <option value="">Выбор направления</option>
+                    <option>Строительство</option>
+                    <option>Эксплуатация</option>
+                    <option>Безопасность</option>
+                    <option selected>Цифровизация</option>
+                    <option>Клиентский сервис</option>
+                    <option>Другое</option>
+                  </select>
                 </div>
-                <div class="notification-card__actions">
-                  <a class="btn btn--primary btn--sm" href="./request-detail.html">Перейти</a>
+                <div class="form-group">
+                  <label class="form-label form-label--required" for="request-title">Название запроса</label>
+                  <input class="form-input" type="text" id="request-title" placeholder="Введите название запроса" value="Умный контроль сетей и оборудования" required>
                 </div>
               </div>
 
-              <div class="notification-card">
-                <div class="avatar avatar--md avatar--notif-team">C</div>
-                <div>
-                  <div class="notification-card__title">
-                    Новая заявка в команду по идее «AR-инструктаж»
-                  </div>
-                  <p class="notification-card__text">Модератор приглашает вас как стейкхолдера. Проверьте профиль и примите решение.</p>
-                  <div class="notification-card__meta">
-                    <span>Сегодня</span>
-                  </div>
-                </div>
-                <div class="notification-card__actions">
-                  <a class="btn btn--primary btn--sm" href="./participant-team.html">Перейти</a>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label form-label--required" for="request-description">Описание запроса</label>
+                  <span class="form-hint">Напишите основные задачи, которые решает ваш запрос</span>
+                  <textarea class="form-textarea" id="request-description" rows="3" placeholder="Опишите запрос подробно..." required>Высокие затраты на обслуживание и отсутствие предиктивной аналитики.</textarea>
                 </div>
               </div>
 
-              <div class="notification-card">
-                <div class="avatar avatar--md avatar--notif-confirm">S</div>
-                <div>
-                  <div class="notification-card__title">
-                    Подтвердите e-mail для уведомлений
-                  </div>
-                  <p class="notification-card__text">Мы отправили письмо на tatiana.smirnova@example.ru. Нажмите ссылку, чтобы получать уведомления.</p>
-                  <div class="notification-card__meta">
-                    <span>10.05.2025</span>
-                  </div>
-                </div>
-                <div class="notification-card__actions">
-                  <a class="btn btn--primary btn--sm" href="./participant-team-detail.html">Перейти</a>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label form-label--required" for="request-stages">Основные этапы реализации</label>
+                  <span class="form-hint">Опишите ключевые этапы реализации запроса</span>
+                  <textarea class="form-textarea" id="request-stages" rows="3" placeholder="Опишите этапы реализации..." required>Пилот на 2 филиалах → настройка датчиков → интеграция в Битрикс → масштабирование.</textarea>
                 </div>
               </div>
 
-              <div class="notification-card">
-                <div class="avatar avatar--md avatar--notif-deadline">B</div>
-                <div>
-                  <div class="notification-card__title">
-                    Просрочена задача Bitrix24 по идее «Цифровой наставник»
-                  </div>
-                  <p class="notification-card__text">Перейдите в Bitrix24 и обновите статус. Дедлайн был 12.05.2025.</p>
-                  <div class="notification-card__meta">
-                    <span>09.05.2025</span>
-                  </div>
-                </div>
-                <div class="notification-card__actions">
-                  <a class="btn btn--primary btn--sm" href="#">Перейти</a>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label form-label--required" for="request-expectation">Ожидаемый результат</label>
+                  <span class="form-hint">Какие эффекты ожидаете получить</span>
+                  <textarea class="form-textarea" id="request-expectation" rows="3" placeholder="Опишите ожидаемый результат..." required>Сократить аварийность и расходы на обслуживание за счёт предиктивного мониторинга.</textarea>
                 </div>
               </div>
 
-              <div class="notification-card">
-                <div class="avatar avatar--md avatar--notif-system">K</div>
-                <div>
-                  <div class="notification-card__title">
-                    Новая политика конфиденциальности
-                  </div>
-                  <p class="notification-card__text">Изменены условия обработки персональных данных. Ознакомьтесь и подтвердите согласие.</p>
-                  <div class="notification-card__meta">
-                    <span>08.05.2025</span>
-                  </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label form-label--required" for="request-deadline">Сбор идей до</label>
+                  <input class="form-input" type="date" id="request-deadline" value="2025-06-22" required>
                 </div>
-                <div class="notification-card__actions">
-                  <a class="btn btn--primary btn--sm" href="./privacy-policy.html">Перейти</a>
+                <div class="form-group">
+                  <label class="form-label" for="request-docs">Файлы к запросу</label>
+                  <span class="form-hint">Приложите презентации, сметы и другие материалы</span>
+                  <div class="file-upload">
+                    <input class="file-upload__input" type="file" id="request-docs" multiple>
+                    <label class="file-upload__label" for="request-docs">
+                      <span class="file-upload__title">Выберите файлы или перетащите их сюда</span>
+                      <span class="file-upload__types">PDF, DOCX, XLSX до 20 Мб</span>
+                    </label>
+                  </div>
+                  <ul class="file-upload__list">
+                    <li class="file-upload__item">
+                      <span>ТЗ-первичная.docx</span>
+                      <button type="button" class="icon-btn file-upload__remove" aria-label="Удалить файл">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                      </button>
+                    </li>
+                  </ul>
                 </div>
               </div>
-            </div>
+
+              <div class="form-actions form-actions--compact">
+                <button type="button" class="btn btn--secondary">Удалить</button>
+                <button type="submit" class="btn btn--primary">Сохранить</button>
+                <a class="btn btn--ghost" href="./stakeholder-requests.html">Отмена</a>
+              </div>
+            </form>
           </div>
         </div>
       </div>
@@ -256,5 +224,6 @@
 
   <script src="./assets/js/vendor.js"></script>
   <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/forms.js"></script>
 </body>
 </html>
