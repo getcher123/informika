@@ -31,6 +31,13 @@
 **Выводы**
 - Ресурсов достаточно для размещения сервиса, но среда shared; управление сайтами и SSL через ISPmanager.
 - Для работы нужны доступы ISPmanager/SSH/MySQL и пути к логам; при необходимости ставим Composer/новый Node.js в домашний каталог.
+- SSH подключение: `ssh u3305923@server262.hosting.reg.ru` (31.31.196.9), fingerprint ED25519 `SHA256:hdJuUWGdfjhycWB87L/NfapcPT3Malhmc0vrC31CMq8`. При первом коннекте добавляется в known_hosts, требуется пароль пользователя.
+- Доступные CLI версии (рег.ру): PHP `php52 … php85` (включая `php83` и ioncube-варианты), Python `python2.7`, `python3.4`, `python3.5`, `python3.7–3.10`. Примеры: `php70 -v`, `python2.7`.
+- Домашние директории: `~/bin-tmp`, `~/email`, `~/logs`, `~/mail.log`, `~/php-bin*`, `~/tmp`, `~/www` (сайтовые каталоги `crm-innovatika-mosoblgaz.ru`, `crm.innovatika-mosoblgaz.ru`, `innovatika-mosoblgaz.ru`).
+- Резервная копия сайта `crm.innovatika-mosoblgaz.ru` сохранена в `/backups/crm.innovatika-mosoblgaz.ru`.
+- Резервная копия сайта `innovatika-mosoblgaz.ru` сохранена в `/backups/innovatika-mosoblgaz.ru`.
+- Инцидент: после удаления папки `crm-innovatika-mosoblgaz.ru` (в ней был DocumentRoot/обложка) сайт `innovatika-mosoblgaz.ru` начал отдавать `mod_fcgid: error reading data from FastCGI server / End of script output before headers`, так как веб-сервер больше не находил ядро/точку входа; требуется восстановление корня или корректный DocumentRoot.
+- Инцидент: массовый запуск потоков `~/.vscode-server` (Remote-SSH) превысил лимит 36 процессов на тарифе Host, из-за чего появлялась 500 ошибка при открытии сайта. Решение: завершить процессы VS Code (`pkill -f ".vscode-server"`), при необходимости удалить кеш `rm -rf ~/.vscode-server`, впредь корректно закрывать Remote-SSH/не держать много одновременных сессий.
 
 ## Хостинг №2
 

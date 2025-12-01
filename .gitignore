@@ -54,3 +54,8 @@ var/phpstan/
 
 # Assets to ignore
 /img/
+
+# Backup files
+*.bak
+www/
+/www-backup-20251201.tar.gz
