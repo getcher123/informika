@@ -128,6 +128,14 @@
                   <label class="form-label form-label--required" for="request-title">Название запроса</label>
                   <input class="form-input" type="text" id="request-title" placeholder="Введите название запроса" value="Умный контроль сетей и оборудования" required>
                 </div>
+                <div class="form-group">
+                  <label class="form-label form-label--required" for="request-status">Статус запроса</label>
+                  <select class="form-select form-select--decorated js-custom-select" id="request-status" required>
+                    <option value="draft" selected>Черновик</option>
+                    <option value="collecting">На сборе идей</option>
+                    <option value="closed">Закрыт</option>
+                  </select>
+                </div>
               </div>
 
               <div class="form-row">
