@@ -37,15 +37,15 @@
 
 
           <!-- Actions -->
-          <div class="header__actions">
-            <a href="./login.html" class="btn btn--ghost header__user-btn">
-              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
-                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              <span class="header__user-text">ВОЙТИ</span>
-            </a>
-          </div>
+	          <div class="header__actions">
+	            <a href="./login.html" class="btn btn--ghost header__user-btn">
+	              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+	                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+	              </svg>
+	              <span class="header__user-text">ВОЙТИ</span>
+	            </a>
+	          </div>
         </div>
       </div>
     </header>
@@ -76,13 +76,33 @@
         <!-- Hero Section -->
         <section class="hero">
           <div class="hero__content">
-            <h1 class="heading-page hero__title">Банк идей для инновационных запросов</h1>
-            <p class="text-lead hero__description">
-              Это динамичная площадка для коллаборации, где стейкхолдеры публикуют актуальные бизнес-задачи, 
-              а участники акселератора предлагают инновационные решения и развивают собственные идеи при 
-              экспертной поддержке.
-            </p>
-          </div>
+	            <h1 class="heading-page hero__title">Банк идей для инновационных запросов</h1>
+	            <p class="text-lead hero__description">
+	              Это динамичная площадка для коллаборации, где стейкхолдеры публикуют актуальные бизнес-задачи,
+	              а участники акселератора предлагают инновационные решения и развивают собственные идеи при
+	              экспертной поддержке.
+	            </p>
+
+	            <div class="weekly-stats" aria-label="Статистика за последние 7 дней">
+	              <article class="card weekly-stat weekly-stat--primary">
+	                <p class="weekly-stat__value">6</p>
+	                <p class="weekly-stat__text">Новых запросов</p>
+	              </article>
+		              <article class="card weekly-stat weekly-stat--secondary">
+		                <p class="weekly-stat__value">21</p>
+		                <p class="weekly-stat__text">Подано идей</p>
+		              </article>
+	              <article class="card weekly-stat weekly-stat--success">
+	                <p class="weekly-stat__value">7</p>
+	                <p class="weekly-stat__text">Идей одобрено</p>
+	              </article>
+	              <article class="card weekly-stat weekly-stat--warning">
+	                <p class="weekly-stat__value">2</p>
+	                <p class="weekly-stat__text">Идей отклонено</p>
+	              </article>
+	            </div>
+	            <p class="weekly-stats__note text-muted">За последние 7 дней</p>
+	          </div>
 
           <div class="hero__cta">
             <div class="cta-card">

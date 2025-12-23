@@ -101,22 +101,39 @@
           </aside>
 
           <div class="content-card sidebar-layout__content">
-            <div class="cabinet-toolbar">
-              <div>
-                <p class="eyebrow text-muted">Кабинет стейкхолдера</p>
-                <h1 class="heading-page">Мои запросы</h1>
-              </div>
-              <div class="cabinet-toolbar__actions">
-                <a class="btn btn--primary" href="#" aria-label="Создать новый запрос">Создать новый запрос</a>
-              </div>
-            </div>
+	            <div class="cabinet-toolbar">
+	              <div>
+	                <p class="eyebrow text-muted">Кабинет стейкхолдера</p>
+	                <h1 class="heading-page">Мои запросы</h1>
+	              </div>
+	              <div class="cabinet-toolbar__actions">
+	                <a class="btn btn--primary" href="#" aria-label="Создать новый запрос">Создать новый запрос</a>
+	              </div>
+	            </div>
 
-           
+		            <div class="stat-cards" aria-label="Активность по моим запросам">
+		              <article class="stat-card stat-card--primary">
+		                <p class="stat-card__value">14</p>
+		                <p class="stat-card__text">Новых идей по моим запросам</p>
+		              </article>
+		              <article class="stat-card">
+		                <p class="stat-card__value">9</p>
+		                <p class="stat-card__text">Активных авторов (за 7 дней)</p>
+		              </article>
+		              <article class="stat-card stat-card--warning">
+		                <p class="stat-card__value">5</p>
+		                <p class="stat-card__text">Идей на решение (сейчас)</p>
+		              </article>
+		              <article class="stat-card stat-card--accent">
+		                <p class="stat-card__value">7</p>
+		                <p class="stat-card__text">Решений принято (за 7 дней)</p>
+		              </article>
+		            </div>
 
-            <div class="table-wrapper">
-              <table class="table table--compact table--sortable table--centered-headers table--stakeholder-requests">
-                <thead>
-                  <tr>
+	            <div class="table-wrapper">
+	              <table class="table table--compact table--sortable table--centered-headers table--stakeholder-requests">
+	                <thead>
+	                  <tr>
                     <th data-sort-type="string">Запрос</th>
                     <th data-sort-type="string">Статус</th>
                     <th data-sort-type="string">Направление</th>

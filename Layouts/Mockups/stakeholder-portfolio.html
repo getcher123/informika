@@ -118,22 +118,37 @@
               </div>
             </div>
 
-            <p class="cabinet-note">
-              Здесь собраны идеи, где вы выступаете стейкхолдером: отслеживайте статусы, сроки и активность.
-            </p>
+	            <p class="cabinet-note">
+	              Здесь собраны идеи, где вы выступаете стейкхолдером: отслеживайте статусы, сроки и активность.
+	            </p>
 
-            <div class="filters filters-section">
-              <button class="filter-pill filter-pill--active">Все</button>
-              <button class="filter-pill">Одобрена</button>
-              <button class="filter-pill">На доработке</button>
-              <button class="filter-pill">В архиве</button>
-              <button class="btn btn--reset filter-reset filter-reset--inline" type="button">
-                <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <span class="btn__text">Сбросить фильтры</span>
-              </button>
-            </div>
+		            <div class="stat-cards" aria-label="Сводка по портфелю">
+		              <article class="stat-card stat-card--primary">
+		                <p class="stat-card__value">8</p>
+		                <p class="stat-card__text">Идей в реализации (Одобрена)</p>
+		              </article>
+		              <article class="stat-card stat-card--warning">
+		                <p class="stat-card__value">3</p>
+		                <p class="stat-card__text">Идей с рисками (есть просроченные задачи)</p>
+		              </article>
+		              <article class="stat-card stat-card--accent">
+		                <p class="stat-card__value">9</p>
+		                <p class="stat-card__text">Задач на 7 дней (по одобренным идеям)</p>
+		              </article>
+		            </div>
+
+		            <div class="filters filters-section">
+		              <button class="filter-pill filter-pill--active" type="button">Все</button>
+		              <button class="filter-pill" type="button">Одобрена</button>
+		              <button class="filter-pill" type="button">На доработке</button>
+		              <button class="filter-pill" type="button">В архиве</button>
+		              <button class="btn btn--reset filter-reset filter-reset--inline" type="button" data-clear-filters>
+		                <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+		                  <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+		                </svg>
+		                <span class="btn__text">Сбросить фильтры</span>
+		              </button>
+		            </div>
 
             <section class="ideas-grid">
               <article class="idea-submission">
