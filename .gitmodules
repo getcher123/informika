@@ -1,0 +1,3 @@
+[submodule "docs/bitrix-docs-new"]
+	path = docs/bitrix-docs-new
+	url = https://github.com/getcher123/bitrix-docs-new.git
