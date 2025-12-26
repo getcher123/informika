@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Детали заявки в команду | Инноватика Мособлгаз</title>
+	  <title>Детали заявки/приглашения в команду | Инноватика Мособлгаз</title>
   <link rel="stylesheet" href="./assets/css/base.css">
   <link rel="stylesheet" href="./assets/css/layout.css">
   <link rel="stylesheet" href="./assets/css/components.css">
@@ -112,92 +112,106 @@
           <!-- Content -->
           <div class="content-card sidebar-layout__content">
             <a class="back-link" href="./participant-team.html">← Назад к заявкам</a>
-            <div class="cabinet-toolbar cabinet-toolbar--top">
-              <div>
-                <p class="eyebrow text-muted">Детали заявки в команду</p>
-                <h1 class="heading-page">
-                  AI-диспетчер для обработки аварийных заявок
-                  <span class="badge badge--role">Аналитик</span>
-                  <span class="badge badge--role">Коммуникационный специалист</span>
-                </h1>
-              </div>
-              <div class="application-actions-top">
-                <button class="btn btn--primary btn--md application-action-btn" type="button">Принять</button>
-                <button class="btn btn--secondary btn--md application-action-btn" type="button">Отклонить</button>
-              </div>
-            </div>
+	            <div class="cabinet-toolbar cabinet-toolbar--top">
+	              <div>
+	                <p class="eyebrow text-muted">Детали заявки/приглашения</p>
+	                <h1 class="heading-page">
+	                  Цифровой наставник для новых сотрудников
+	                  <span class="badge badge--gray">Приглашение</span>
+	                  <span class="badge badge--role">Разработчик</span>
+	                </h1>
+	              </div>
+	              <div class="application-actions-top">
+	                <button class="btn btn--primary btn--md application-action-btn" type="button" disabled>Открыть рабочее пространство</button>
+	                <button class="btn btn--secondary btn--md application-action-btn" type="button" disabled>Перейти к задачам</button>
+	                <button class="btn btn--secondary btn--md application-action-btn" type="button" disabled>Перейти к документам</button>
+	              </div>
+	            </div>
 
-            <section class="application-detail">
-              <div class="application-detail__top">
-                <span class="status-indicator status-indicator--pending">
-                  <span class="status-indicator__dot"></span>
-                  <span>На рассмотрении</span>
-                </span>
-                <span class="application-detail__date application-detail__date--center" data-deadline="2025-05-15">Опубликована 15.05.2025</span>
-                <span class="badge badge--date badge--deadline-muted application-detail__date application-detail__date--right" data-deadline="2025-05-18">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
-                    <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  </svg>
-                  Ответ до 18.05.2025
-                </span>
-              </div>
-              <div class="idea-card-mini">
-                <p class="text-caption text-muted">Заявка на идею</p>
-                <h3 class="heading-subtitle idea-card-mini__title">
-                  <a href="./idea-detail.html" class="idea-card-mini__link">Платформа мониторинга аварийных заявок</a>
-                </h3>
-              </div>
+	            <section class="application-detail">
+		              <div class="application-detail__top">
+		                <div class="application-detail__status">
+		                  <span class="status-indicator status-indicator--pending">
+		                    <span class="status-indicator__dot"></span>
+		                    <span>Ожидает E-mail подтверждения</span>
+		                  </span>
+		                </div>
+		                <span class="application-detail__date application-detail__date--center" data-deadline="2025-05-12">Создано 12.05.2025</span>
+		                <span class="application-detail__date application-detail__date--right" data-deadline="2025-05-14">Обновлено 14.05.2025</span>
+		              </div>
+	              <div class="idea-card-mini">
+	                <p class="text-caption text-muted">Идея</p>
+	                <h3 class="heading-subtitle idea-card-mini__title">
+	                  <a href="./idea-detail.html" class="idea-card-mini__link">Цифровой наставник для новых сотрудников</a>
+	                </h3>
+	              </div>
 
-              <div class="application-detail__block">
-                <h3 class="heading-subtitle">Описание</h3>
-                <p class="text-body">Нужна помощь в аналитике инцидентов и построении модели прогноза нагрузки.</p>
-                <p class="text-body">Ожидается опыт работы с BI-стеком (Power BI/Qlik) и понимание REST Bitrix24.</p>
-                <p class="text-body">Важно взаимодействие с бизнес-заказчиками и умение формализовать требования.</p>
-              </div>
+	              <div class="application-detail__block">
+	                <h3 class="heading-subtitle">Комментарий инициатора</h3>
+	                <p class="text-body">«Приглашаю вас в команду в роли разработчика. Чтобы получить доступ к рабочему пространству Bitrix24, подтвердите приглашение из e-mail»</p>
+	              </div>
 
-              <div class="application-detail__grid">
-                <div class="application-detail__block">
-                  <h3 class="heading-subtitle">Заявитель</h3>
-                  <div class="application-detail__applicant">
-                    <div class="avatar avatar--md">АВ</div>
-                    <div>
-                      <p class="text-strong">Анна Воронова</p>
-                      <p class="text-meta">Модератор</p>
-                    </div>
-                  </div>
-                </div>
+	              <div class="application-detail__grid">
+	                <div class="application-detail__block">
+	                  <h3 class="heading-subtitle">Инициатор</h3>
+	                  <div class="application-detail__applicant">
+	                    <div class="avatar avatar--md">МК</div>
+	                    <div>
+	                      <p class="text-strong">Максим Кудряшов</p>
+	                      <p class="text-meta">Стейкхолдер</p>
+	                    </div>
+	                  </div>
+	                </div>
 
-                <div class="application-detail__block">
-                  <h3 class="heading-subtitle">Отправитель</h3>
-                  <div class="application-detail__applicant">
-                    <div class="avatar avatar--md">ИД</div>
-                    <div>
-                      <p class="text-strong">Иван Дьяков</p>
-                      <p class="text-meta">Автор идеи</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <section class="comments-feed">
-                <h2 class="heading-section">Лента сообщений</h2>
-                <div class="comments-feed__list">
-                  <article class="comments-feed__item">
-                    <div class="comments-feed__meta">
-                      <p class="text-strong">Иван Дьяков · Автор идеи</p>
-                      <span class="text-meta">15.05.2025, 10:00</span>
-                    </div>
-                    <p>Спасибо за заявку! Уточните, какой стек BI вы используете и есть ли опыт интеграции с Bitrix24.</p>
-                  </article>
-                  <article class="comments-feed__item">
-                    <div class="comments-feed__meta">
-                      <p class="text-strong">Анна Воронова</p>
-                      <span class="text-meta">15.05.2025, 11:10</span>
-                    </div>
-                    <p>Работаю с Power BI и Qlik, делала выгрузки через REST Bitrix24, могу подключить и настроить отчёты.</p>
-                  </article>
-                </div>
-              </section>
+	                <div class="application-detail__block">
+	                  <h3 class="heading-subtitle">Получатель</h3>
+	                  <div class="application-detail__applicant">
+	                    <div class="avatar avatar--md">ИА</div>
+	                    <div>
+	                      <p class="text-strong">Вы</p>
+	                      <p class="text-meta">Участник</p>
+	                    </div>
+	                  </div>
+	                </div>
+	              </div>
+
+	              <div class="application-detail__block">
+	                <h3 class="heading-subtitle">История</h3>
+		                <ul class="feature-list">
+		                  <li class="feature-list__item">12.05.2025 14:00 — создано приглашение в Bitrix24 (инициатор: Максим К.).</li>
+		                  <li class="feature-list__item">12.05.2025 14:01 — отправлено e-mail приглашение из Bitrix24.</li>
+		                  <li class="feature-list__item">14.05.2025 10:15 — статус: Ожидает E-mail подтверждения.</li>
+		                </ul>
+		              </div>
+
+	              <div class="application-detail__block">
+	                <h3 class="heading-subtitle">Инструкции</h3>
+	                <p class="text-body">Подтверждение участия выполняется через ссылку в e-mail. Портал не может подтвердить приглашение вместо Bitrix24.</p>
+	                <ul class="feature-list">
+	                  <li class="feature-list__item">Проверьте входящие и папку «Спам» (тема: «Приглашение в команду идеи …»).</li>
+	                  <li class="feature-list__item">Если письма нет — проверьте, что e-mail в профиле актуален, и попросите инициатора переотправить приглашение в Bitrix24.</li>
+	                  <li class="feature-list__item">После подтверждения кнопки перехода в Bitrix24 станут активными.</li>
+	                </ul>
+	              </div>
+	              <section class="comments-feed">
+	                <h2 class="heading-section">Комментарии (опционально)</h2>
+	                <div class="comments-feed__list">
+	                  <article class="comments-feed__item">
+	                    <div class="comments-feed__meta">
+	                      <p class="text-strong">Максим Кудряшов · Стейкхолдер</p>
+	                      <span class="text-meta">12.05.2025, 14:00</span>
+	                    </div>
+	                    <p>Отправил приглашение в Bitrix24. Если письмо не пришло — напишите, переотправлю.</p>
+	                  </article>
+	                  <article class="comments-feed__item">
+	                    <div class="comments-feed__meta">
+	                      <p class="text-strong">Вы</p>
+	                      <span class="text-meta">12.05.2025, 14:20</span>
+	                    </div>
+	                    <p>Спасибо! Проверю почту, если не найду — напишу вам.</p>
+	                  </article>
+	                </div>
+	              </section>
 
               <div class="comment-section">
                 <h2 class="heading-section">Ваш комментарий</h2>

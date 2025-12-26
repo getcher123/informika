@@ -108,145 +108,216 @@
           </aside>
 
           <!-- Content -->
-          <div class="content-card sidebar-layout__content">
-            <div class="cabinet-toolbar">
-              <div>
-                <p class="eyebrow text-muted">Личный кабинет участника</p>
-                <h1 class="heading-page">Заявки в команду</h1>
-              </div>
-            </div>
+	          <div class="content-card sidebar-layout__content">
+	            <div class="cabinet-toolbar">
+	              <div>
+	                <p class="eyebrow text-muted">Личный кабинет участника</p>
+	                <h1 class="heading-page">Заявки в команду</h1>
+	              </div>
+	              <div class="cabinet-toolbar__actions">
+	                <div class="search cabinet-search">
+	                  <svg class="search__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	                    <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+	                    <path d="M21 21L16.65 16.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+	                  </svg>
+	                  <input type="text" class="form-input search__input" placeholder="Поиск по идее, роли, инициатору или статусу">
+	                </div>
+	                <div class="form-group">
+	                  <label class="form-label">Статус</label>
+		                  <select class="form-select form-select--decorated js-custom-select" aria-label="Фильтр по статусу заявки">
+		                    <option>Все</option>
+		                    <option>На рассмотрении</option>
+		                    <option>Ожидает E-mail подтверждения</option>
+		                    <option>В команде</option>
+		                    <option>Отклонена</option>
+		                    <option>Архив</option>
+		                  </select>
+		                </div>
+	              </div>
+	            </div>
 
-            <p class="cabinet-note">Статусы заявок отображаются для ознакомления; решения по команде принимаются в Bitrix24.</p>
+	            <p class="cabinet-note">Статусы заявок и приглашений отображаются из Bitrix24. Чтобы получить доступ к рабочему пространству Bitrix24, нужно подтвердить приглашение из e-mail.</p>
 
-            <div class="filters filters-section">
-              <button class="filter-pill filter-pill--active">Все</button>
-              <button class="filter-pill">Входящие</button>
-              <button class="filter-pill">Отправленные</button>
-              <button class="filter-pill">Моя команда</button>
-              <button class="filter-pill">Архив</button>
-              <button class="btn btn--reset filter-reset filter-reset--inline" type="button">
-                <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+	            <!-- State: e-mail not verified -->
+	            <div class="card" hidden>
+	              <div class="card__header">
+	                <div>
+	                  <p class="card__title">Подтвердите e-mail</p>
+	                  <p class="card__subtitle">Иначе вы не сможете получить доступ к Bitrix24 по приглашению.</p>
+	                </div>
+	                <span class="badge badge--warning">Важно</span>
+	              </div>
+	              <a class="btn btn--primary btn--sm" href="./participant-profile.html">Перейти в профиль</a>
+	            </div>
+
+	            <div class="filters filters-section">
+	              <button class="filter-pill filter-pill--active">Все</button>
+	              <button class="filter-pill">Отправленные</button>
+	              <button class="filter-pill">Приглашения</button>
+	              <button class="filter-pill">Моя команда</button>
+	              <button class="filter-pill">Архив</button>
+	              <button class="btn btn--reset filter-reset filter-reset--inline" type="button">
+	                <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	                  <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
                 <span class="btn__text">Сбросить фильтры</span>
               </button>
-            </div>
-            <div class="applications-list">
-              <div class="card application-card">
-                <div class="application-card__status-row">
-                  <div class="application-card__status">
-                    <span class="status-indicator status-indicator--pending">
-                      <span class="status-indicator__dot"></span>
-                      <span>На рассмотрении</span>
-                    </span>
-                  </div>
-                  <span class="badge badge--date badge--deadline-muted" data-deadline="2025-05-15">Опубликована 15.05.2025</span>
-                  <span class="badge badge--date badge--deadline-muted" data-deadline="2025-05-18">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
-                      <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    Ответ до 18.05.2025
-                  </span>
-                </div>
-                <div class="application-card__title-row">
-                  <h3 class="application-card__title">AI-диспетчер для обработки аварийных заявок</h3>
-                  <span class="badge badge--success">Новое</span>
-                  <span class="badge badge--role">Аналитик</span>
-                  <span class="badge badge--role">Коммуникационный специалист</span>
-                </div>
-                <p class="application-card__message">«Есть опыт в BI и построении калькуляторов TCO. Готова помочь с моделями прогноза нагрузки»</p>
-                <div class="application-card__footer">
-                  <div class="author-info">
-                    <div class="author-info__avatar">
-                      <div class="avatar avatar--md">АВ</div>
-                    </div>
-                    <div class="author-info__content">
-                      <p class="text-caption text-muted">Отправитель</p>
-                      <p class="author-info__name">Анна Воронова, модератор</p>
-                    </div>
-                  </div>
-                  <a class="btn btn--primary btn--sm" href="./participant-team-detail.html">Подробнее</a>
-                </div>
-              </div>
+	            </div>
 
-              <div class="card application-card">
-                <div class="application-card__status-row">
-                  <div class="application-card__status">
-                    <span class="status-indicator status-indicator--approved">
-                      <span class="status-indicator__dot"></span>
-                      <span>Принята</span>
-                    </span>
-                  </div>
-                  <span class="badge badge--date badge--deadline-muted" data-deadline="2025-05-12">Опубликована 12.05.2025</span>
-                  <span class="badge badge--date badge--deadline-muted" data-deadline="2025-05-28">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
-                      <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    Ответ до 28.05.2025
-                  </span>
-                </div>
-                <div class="application-card__title-row">
-                  <h3 class="application-card__title">Цифровой наставник для новых сотрудников</h3>
-                  <span class="badge badge--role">Разработчик</span>
-                  <span class="badge badge--role">Тимлид</span>
-                </div>
-                <p class="application-card__message">«Подключу процесс к Bitrix24, знаю их REST, выполню интеграцию с корпоративными сервисами»</p>
-                <div class="application-card__footer">
-                  <div class="author-info">
-                    <div class="author-info__avatar">
-                      <div class="avatar avatar--md">МК</div>
-                    </div>
-                    <div class="author-info__content">
-                      <p class="text-caption text-muted">Отправитель</p>
-                      <p class="author-info__name">Максим Кудряшов, стейкхолдер</p>
-                    </div>
-                  </div>
-                  <a class="btn btn--primary btn--sm" href="./participant-team-detail.html">Подробнее</a>
-                </div>
-              </div>
+	            <!-- State: empty invitations -->
+	            <div class="empty-state" hidden>
+	              <svg class="empty-state__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	                <path d="M21 8V16C21 17.1046 20.1046 18 19 18H5C3.89543 18 3 17.1046 3 16V8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+	                <path d="M21 8L12 13L3 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+	                <path d="M3 8V6C3 4.89543 3.89543 4 5 4H19C20.1046 4 21 4.89543 21 6V8" stroke="currentColor" stroke-width="2"/>
+	              </svg>
+	              <h2 class="empty-state__title">Пока нет приглашений в команды</h2>
+	              <p class="empty-state__text">Когда модератор или стейкхолдер отправит приглашение, оно появится здесь.</p>
+	            </div>
 
-              <div class="card application-card">
-                <div class="application-card__status-row">
-                  <div class="application-card__status">
-                    <span class="status-indicator status-indicator--rejected">
-                      <span class="status-indicator__dot"></span>
-                      <span>Отклонена</span>
-                    </span>
-                  </div>
-                  <span class="badge badge--date badge--deadline-muted" data-deadline="2025-05-10">Опубликована 10.05.2025</span>
-                  <span class="badge badge--date badge--deadline-muted" data-deadline="2025-05-25">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
-                      <path d="M12 7V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    Ответ до 25.05
-                  </span>
-                </div>
-                <div class="application-card__title-row">
-                  <h3 class="application-card__title">Платформа мониторинга сетей газораспределения</h3>
-                  <span class="badge badge--role">Эксперт/Ментор</span>
-                </div>
-                <p class="application-card__message">«Могу провести аудит рисков и выработать чек-лист для пилотирования»</p>
-                <div class="application-card__footer">
-                  <div class="author-info">
-                    <div class="author-info__avatar">
-                      <div class="avatar avatar--md">ЕП</div>
-                    </div>
-                    <div class="author-info__content">
-                      <p class="text-caption text-muted">Отправитель</p>
-                      <p class="author-info__name">Елена Полякова, стейкхолдер</p>
-                    </div>
-                  </div>
-                  <a class="btn btn--primary btn--sm" href="./participant-team-detail.html">Подробнее</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+	            <!-- State: empty sent -->
+	            <div class="empty-state" hidden>
+	              <svg class="empty-state__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	                <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+	                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+	              </svg>
+	              <h2 class="empty-state__title">Вы ещё не подавали заявки в команды</h2>
+	              <p class="empty-state__text">Откройте одобренную идею и нажмите «Вступить в команду».</p>
+	            </div>
+
+	            <!-- State: empty my team -->
+	            <div class="empty-state" hidden>
+	              <svg class="empty-state__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	                <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="2"/>
+	                <circle cx="16" cy="8" r="3" stroke="currentColor" stroke-width="2"/>
+	                <path d="M2 20C2 16.6863 4.68629 14 8 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+	                <path d="M22 20C22 16.6863 19.3137 14 16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+	              </svg>
+	              <h2 class="empty-state__title">Вы пока не состоите в командах одобренных идей</h2>
+	              <p class="empty-state__text">После подтверждения приглашения появятся ссылки на рабочее пространство Bitrix24.</p>
+	            </div>
+
+	            <div class="applications-list">
+	              <div class="card application-card">
+	                <div class="application-card__status-row">
+	                  <div class="application-card__status">
+	                    <span class="status-indicator status-indicator--pending">
+	                      <span class="status-indicator__dot"></span>
+	                      <span>На рассмотрении</span>
+	                    </span>
+	                  </div>
+	                  <span class="badge badge--date badge--deadline-muted" data-deadline="2025-05-15">Создана 15.05.2025</span>
+	                  <span class="badge badge--date badge--deadline-muted" data-deadline="2025-05-15">Обновлена 15.05.2025</span>
+	                </div>
+	                <div class="application-card__title-row">
+	                  <h3 class="application-card__title"><a href="./idea-detail.html">AI-диспетчер для обработки аварийных заявок</a></h3>
+	                  <span class="badge badge--gray">Заявка</span>
+	                  <span class="badge badge--success">Новое</span>
+	                  <span class="badge badge--role">Аналитик</span>
+	                  <span class="badge badge--role">Коммуникационный специалист</span>
+	                </div>
+	                <p class="application-card__message">«Есть опыт в BI и построении калькуляторов TCO. Готова помочь с моделями прогноза нагрузки»</p>
+	                <div class="application-card__footer">
+	                  <div class="author-info">
+	                    <div class="author-info__avatar">
+	                      <div class="avatar avatar--md">ИА</div>
+	                    </div>
+	                    <div class="author-info__content">
+	                      <p class="text-caption text-muted">Инициатор</p>
+	                      <p class="author-info__name">Вы</p>
+	                    </div>
+	                  </div>
+	                  <div class="application-card__actions">
+	                    <a class="btn btn--primary btn--sm" href="./participant-team-detail.html">Подробнее</a>
+	                    <button class="btn btn--ghost btn--sm" type="button">Отозвать заявку</button>
+	                  </div>
+	                </div>
+	              </div>
+
+		              <div class="card application-card">
+		                <div class="application-card__status-row">
+		                  <div class="application-card__status">
+		                    <span class="status-indicator status-indicator--pending">
+		                      <span class="status-indicator__dot"></span>
+		                      <span>Ожидает E-mail подтверждения</span>
+		                    </span>
+		                  </div>
+		                  <span class="badge badge--date badge--deadline-muted" data-deadline="2025-05-12">Создана 12.05.2025</span>
+		                  <span class="badge badge--date badge--deadline-muted" data-deadline="2025-05-14">Обновлена 14.05.2025</span>
+		                </div>
+	                <div class="application-card__title-row">
+	                  <h3 class="application-card__title"><a href="./idea-detail.html">Цифровой наставник для новых сотрудников</a></h3>
+	                  <span class="badge badge--gray">Приглашение</span>
+	                  <span class="badge badge--role">Разработчик</span>
+	                </div>
+	                <p class="application-card__message">«Приглашаю вас в команду. Чтобы получить доступ к рабочему пространству Bitrix24, подтвердите приглашение из e-mail»</p>
+	                <div class="application-card__footer">
+	                  <div class="author-info">
+	                    <div class="author-info__avatar">
+	                      <div class="avatar avatar--md">МК</div>
+	                    </div>
+	                    <div class="author-info__content">
+	                      <p class="text-caption text-muted">Инициатор</p>
+	                      <p class="author-info__name">Максим Кудряшов, стейкхолдер</p>
+	                    </div>
+	                  </div>
+	                  <div class="application-card__actions">
+	                    <a class="btn btn--primary btn--sm" href="./participant-team-detail.html">Подробнее</a>
+	                    <button class="btn btn--secondary btn--sm" type="button" disabled>Открыть рабочее пространство</button>
+	                  </div>
+	                </div>
+	              </div>
+
+		              <div class="card application-card">
+		                <div class="application-card__status-row">
+		                  <div class="application-card__status">
+		                    <span class="status-indicator status-indicator--approved">
+		                      <span class="status-indicator__dot"></span>
+		                      <span>В команде</span>
+		                    </span>
+		                  </div>
+		                  <span class="badge badge--date badge--deadline-muted" data-deadline="2025-05-10">Создана 10.05.2025</span>
+		                  <span class="badge badge--date badge--deadline-muted" data-deadline="2025-05-16">Обновлена 16.05.2025</span>
+		                </div>
+	                <div class="application-card__title-row">
+	                  <h3 class="application-card__title"><a href="./idea-detail.html">Платформа мониторинга сетей газораспределения</a></h3>
+	                  <span class="badge badge--gray">Заявка</span>
+	                  <span class="badge badge--role">Эксперт/Ментор</span>
+	                </div>
+	                <p class="application-card__message">«Приглашение подтверждено — доступ к рабочему пространству Bitrix24 открыт»</p>
+	                <div class="application-card__footer">
+	                  <div class="author-info">
+	                    <div class="author-info__avatar">
+	                      <div class="avatar avatar--md">ЕП</div>
+	                    </div>
+	                    <div class="author-info__content">
+	                      <p class="text-caption text-muted">Инициатор</p>
+	                      <p class="author-info__name">Елена Полякова, стейкхолдер</p>
+	                    </div>
+	                  </div>
+	                  <div class="application-card__actions">
+	                    <a class="btn btn--primary btn--sm" href="#" target="_blank" rel="noopener">Открыть рабочее пространство</a>
+	                    <a class="btn btn--secondary btn--sm" href="./participant-team-detail.html">Подробнее</a>
+	                  </div>
+	                </div>
+	              </div>
+	            </div>
+
+	            <!-- State: Bitrix24 error -->
+	            <div class="empty-state" hidden>
+	              <svg class="empty-state__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+	                <path d="M12 9V13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+	                <path d="M12 16H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+	                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+	              </svg>
+	              <h2 class="empty-state__title">Не удалось загрузить данные из Bitrix24</h2>
+	              <p class="empty-state__text">Попробуйте позже или повторите запрос.</p>
+	              <button class="btn btn--primary" type="button">Повторить</button>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </main>
 
     <!-- Footer -->
     <footer class="footer">

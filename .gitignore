@@ -59,3 +59,4 @@ var/phpstan/
 *.bak
 www/
 /www-backup-20251201.tar.gz
+/docs/bitrix-docs-new
