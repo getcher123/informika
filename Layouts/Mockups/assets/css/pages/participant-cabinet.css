@@ -516,6 +516,10 @@
   margin-bottom: var(--spacing-2xs);
 }
 
+.stat-card__value--compact {
+  font-size: clamp(2.25rem, 3vw, 3rem);
+}
+
 .stat-card__text {
   color: var(--color-text-secondary);
   font-size: var(--font-size-sm);
