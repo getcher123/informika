@@ -65,8 +65,22 @@
 }
 
 .weekly-stats__note {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
   margin-top: var(--spacing-sm);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.weekly-stats__note::before,
+.weekly-stats__note::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
 }
 
 .hero__cta .cta-card__text {
