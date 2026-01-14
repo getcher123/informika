@@ -917,6 +917,10 @@
   box-shadow: var(--shadow-md);
 }
 
+.idea-submission--approved {
+  border: 3px solid var(--color-success);
+}
+
 .idea-submission__header {
   position: relative;
   display: flex;

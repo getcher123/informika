@@ -135,6 +135,104 @@
                 </div>
               </div>
             </section>
+
+            <section class="idea-stats">
+              <div class="idea-stats__header">
+                <h2 class="heading-section">Задачи и риски</h2>
+                <p class="text-muted">Данные по задачам из Bitrix24: активность, риски и ближайшие дедлайны.</p>
+              </div>
+              <div class="stat-cards stat-cards--idea" aria-label="Прогресс работ">
+                <article class="stat-card stat-card--primary">
+                  <p class="stat-card__value">12</p>
+                  <p class="stat-card__text">Открытых задач</p>
+                </article>
+                <article class="stat-card stat-card--warning">
+                  <p class="stat-card__value">2</p>
+                  <p class="stat-card__text">Просроченных задач</p>
+                </article>
+                <article class="stat-card stat-card--deadline">
+                  <p class="stat-card__value">3</p>
+                  <p class="stat-card__text">Дедлайнов на 7 дней</p>
+                </article>
+                <article class="stat-card stat-card--success">
+                  <p class="stat-card__value">8</p>
+                  <p class="stat-card__text">Закрыто задач</p>
+                </article>
+              </div>
+
+              <div class="tasks-section">
+                <div class="table-wrapper">
+                  <table class="table table--compact table--sortable table--centered-headers">
+                    <thead>
+                      <tr>
+                        <th data-sort-type="string">Задача</th>
+                    <th data-sort-type="date">Дедлайн</th>
+                    <th data-sort-type="string">Статус</th>
+                    <th data-sortable="false">Действия</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                          <div class="task-title">Подготовить рабочую область и роли в Bitrix24</div>
+                          <div class="task-meta">Исполнитель: Координатор. Ответственный: Стейкхолдер.</div>
+                        </td>
+                        <td><span class="badge badge--deadline-danger">12.06.2025</span></td>
+                        <td>
+                          <span class="status-indicator status-indicator--draft">
+                            <span class="status-indicator__dot"></span>
+                            <span>Новая</span>
+                          </span>
+                        </td>
+                        <td class="task-actions"><a class="btn btn--primary btn--sm" href="#">Открыть</a></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="task-title">Утвердить план внедрения с куратором</div>
+                          <div class="task-meta">Исполнитель: Стейкхолдер. Ответственный: Куратор.</div>
+                        </td>
+                        <td><span class="badge badge--deadline-muted badge--date">15.06.2025</span></td>
+                        <td>
+                          <span class="status-indicator status-indicator--published">
+                            <span class="status-indicator__dot"></span>
+                            <span>В работе</span>
+                          </span>
+                        </td>
+                        <td class="task-actions"><a class="btn btn--primary btn--sm" href="#">Открыть</a></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="task-title">Согласовать требования к обучению</div>
+                          <div class="task-meta">Исполнитель: Эксперт. Ответственный: Стейкхолдер.</div>
+                        </td>
+                        <td><span class="badge badge--deadline badge--date">18.06.2025</span></td>
+                        <td>
+                          <span class="status-indicator status-indicator--pending">
+                            <span class="status-indicator__dot"></span>
+                            <span>На проверке</span>
+                          </span>
+                        </td>
+                        <td class="task-actions"><a class="btn btn--primary btn--sm" href="#">Открыть</a></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="task-title">Исправить замечания после проверки</div>
+                          <div class="task-meta">Исполнитель: Автор. Ответственный: Координатор.</div>
+                        </td>
+                        <td><span class="badge badge--deadline-muted badge--date">22.06.2025</span></td>
+                        <td>
+                          <span class="status-indicator status-indicator--rejected">
+                            <span class="status-indicator__dot"></span>
+                            <span>Возврат</span>
+                          </span>
+                        </td>
+                        <td class="task-actions"><a class="btn btn--primary btn--sm" href="#">Открыть</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </section>
             <!-- Description Card -->
             <section class="description-section">
               <div class="card description-card">
