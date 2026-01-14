@@ -54,6 +54,7 @@ var/phpstan/
 
 # Assets to ignore
 /img/
+/Layouts/Mockups/renders/
 
 # Backup files
 *.bak

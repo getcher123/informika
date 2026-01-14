@@ -1585,6 +1585,10 @@
   grid-template-columns: 1fr;
 }
 
+.detail-content {
+  min-width: 0;
+}
+
 @media (min-width: 1024px) {
   .detail-layout {
     grid-template-columns: 1fr 350px;

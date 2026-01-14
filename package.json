@@ -33,6 +33,7 @@
     "eslint-plugin-import": "^2.32.0",
     "jsonlint": "^1.6.3",
     "markdownlint-cli": "^0.45.0",
+    "playwright-core": "^1.57.0",
     "prettier": "^3.6.2",
     "stylelint": "^14.16.1",
     "stylelint-config-prettier": "^9.0.5",

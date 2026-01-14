@@ -32,7 +32,7 @@
           <span class="header__user-text">ВОЙТИ</span>
         </a>
 
-        <a href="./profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
+        <a href="./participant-profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
           <span class="header__user-initials">ОЧ</span>
           <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
@@ -108,14 +108,14 @@
 ```html
 <aside class="sidebar sidebar-layout__sidebar">
   <nav class="sidebar__nav">
-    <a href="./profile.html" class="sidebar__link">
+    <a href="./participant-profile.html" class="sidebar__link">
       <svg class="sidebar__icon" width="24" height="24">...</svg>
       <span class="sidebar__text">Профиль</span>
     </a>
     
-    <a href="./my-requests.html" class="sidebar__link">
+    <a href="./participant-ideas.html" class="sidebar__link">
       <svg class="sidebar__icon" width="24" height="24">...</svg>
-      <span class="sidebar__text">Заявки</span>
+      <span class="sidebar__text">Мои идеи</span>
       <span class="sidebar__badge">2</span>
     </a>
     
@@ -202,9 +202,8 @@
 ```
 
 **Страницы с градиентом:**
-- `profile.html`
-- `my-requests.html`
-- `my-applications.html`
+- Все внутренние экраны (ЛК участника/стейкхолдера) и страницы авторизации используют `body--gradient`.
+- Для контента поверх градиента используйте `main--with-gradient`.
 
 **CSS:**
 ```css
@@ -303,23 +302,29 @@
 
 ---
 
-## Страницы и их классы
+### 9. Компоненты статистики
 
-### Публичные страницы
-- `requests.html` - `.header__user-btn` с текстом "ВОЙТИ"
-- `request-form.html` - `.header__user-btn` с текстом "ВОЙТИ"
-- `request-detail.html` - `.header__user-btn` с текстом "ВОЙТИ"
-- `idea-detail.html` - `.header__user-btn` с текстом "ВОЙТИ"
+- **Сетка статистики**: `.stat-cards` + `.stat-card` (карточки‑счётчики).
+  - Значение: `.stat-card__value`, подпись: `.stat-card__text`.
+  - Цветовые модификаторы: `.stat-card--primary / --accent / --warning / --success / --deadline`.
+  - Компактное значение: `.stat-card__value--compact`.
+- **Еженедельный блок**: `.weekly-stats` + `.weekly-stat`.
+  - Значение: `.weekly-stat__value`, подпись: `.weekly-stat__text`.
+  - Цвета: `.weekly-stat--primary / --secondary / --success / --warning`.
+  - Подпись периода: `.weekly-stats__note` (с линиями слева/справа).
+- Все стили уже в `components.css`; дополнительные переопределения — только в page‑CSS при необходимости.
 
-### Страницы авторизации
-- `login.html` - `.auth-main`, `.auth-container`, `.auth-card`
-- `register-step1.html` - `.auth-main`, `.auth-container`, `.auth-card`
-- `register-step2.html` - `.auth-main`, `.auth-container`, `.auth-card`
+---
 
-### Страницы кабинета
-- `profile.html` - `body--gradient`, `.sidebar`, `.header__user-btn--logged`
-- `my-requests.html` - `body--gradient`, `.sidebar`, `.header__user-btn--logged`
-- `my-applications.html` - `body--gradient`, `.sidebar`, `.header__user-btn--logged`
+## Справочник страниц
+
+- Актуальный список макетов и назначений страниц смотрите в `Layouts/Mockups/README.md`.
+- Типы страниц и их каркасы:
+  - **Публичные**: обычный `layout`, без сайдбара.
+  - **Авторизация**: `auth-main` → `auth-container` → `auth-card`.
+  - **Личный кабинет**: `body--gradient` + `main--with-gradient`, каркас `sidebar-layout`.
+  - **Детальные**: `detail-layout` + `detail-sidebar`.
+- Нейминг кабинетов: `participant-*` (участник) и `stakeholder-*` (стейкхолдер).
 
 ---
 
@@ -345,9 +350,8 @@
 - [ ] Фильтры используют `.filter-pill` и `.filter-pill--active`
 
 ### Gradient Background
-- [ ] `profile.html` имеет `body--gradient`
-- [ ] `my-requests.html` имеет `body--gradient`
-- [ ] `my-applications.html` имеет `body--gradient`
+- [ ] Все внутренние экраны ЛК используют `body--gradient`.
+- [ ] Для внутренних экранов задан `main--with-gradient`.
 
 ### Auth Pages
 - [ ] Все страницы авторизации используют `.auth-main`
@@ -364,9 +368,10 @@
 ### Заголовки
 
 - Hero/промо (лендинги): `H1.heading-display`.
-- Основной заголовок страниц (кабинет, детали): `H1/H2.heading-page`.
-- Заголовок секций/карточек: `H2/H3.heading-section`.
-- Подзаголовки и названия блоков внутри карточек: `H3.heading-subtitle`.
+- Основной заголовок страниц (кабинет, детали): `H1.heading-page`.
+- Заголовок секций: `H2.heading-section`.
+- Подразделы внутри секций: `H3.heading-subsection`.
+- Заголовки карточек/малых блоков: `H4.heading-subtitle` или `H3.heading-subtitle` по иерархии.
 
 ### Абзацы и подписи
 
@@ -387,6 +392,8 @@
 - Для сортируемых колонок ставим `data-sort-type` (`string` / `number` / `date`). Для дат и чисел внутри ячеек задаём `data-sort-value` (ISO-дата или число) на элементе с текстом.
 - Несортируемые колонки (действия и т.п.) помечаем `data-sortable="false"` на `th`, чтобы клик/стрелка не появлялись.
 - Оборачиваем таблицу в `.table-wrapper`, чтобы на узких экранах появился горизонтальный скролл без расползания контейнера.
+- Если нужно центрировать заголовки, используем `table--centered-headers`.
+- Для двухстрочных ячеек применяем `.task-title` (строка 1) и `.task-meta` (строка 2).
 - Логика — в `assets/js/app.js` (`initSortableTables`, вызывается на DOMContentLoaded), стили — в `assets/css/components.css` (`.table--sortable`).
 - Визуальный пример и разметка — раздел «Таблицы» в `ui-kit.html`.
 
