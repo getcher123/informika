@@ -76,6 +76,11 @@
   margin: var(--spacing-2xl) 0;
 }
 
+.landing-hero__stats .stat-card {
+  align-items: flex-start;
+  text-align: left;
+}
+
 .stat-card {
   padding: var(--spacing-xl);
 }

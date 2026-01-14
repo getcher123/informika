@@ -123,67 +123,8 @@
   margin: 0;
 }
 
-.stat-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: var(--spacing-lg);
-}
-
-.stat-card {
-  background: var(--color-bg-white);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  padding: var(--spacing-xl);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: all var(--transition-base);
-}
-
-.stat-card__value {
+.stat-cards--idea .stat-card__value {
   font-size: clamp(2.5rem, 3.5vw, 3.25rem);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
-  margin-bottom: var(--spacing-2xs);
-}
-
-.stat-card__text {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-  line-height: var(--line-height-relaxed);
-}
-
-.stat-card--primary .stat-card__value { color: var(--color-primary); }
-.stat-card--accent .stat-card__value { color: var(--color-accent); }
-.stat-card--warning .stat-card__value { color: var(--color-error); }
-.stat-card--success .stat-card__value { color: var(--color-success); }
-.stat-card--deadline .stat-card__value { color: var(--color-warning); }
-
-.stat-card:hover {
-  border-color: var(--color-border);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-
-/* Tables */
-.table-wrapper {
-  width: 100%;
-  display: block;
-  background: var(--color-bg-white);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
-  border: 1px solid var(--color-border-light);
-  overflow-x: auto;
-  overflow-y: hidden;
-  max-width: 100%;
-  -webkit-overflow-scrolling: touch;
-}
-
-.table-wrapper .table {
-  min-width: 920px;
-  margin: 0;
 }
 
 /* Responsive */

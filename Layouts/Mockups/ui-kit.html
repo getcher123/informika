@@ -792,6 +792,143 @@
           </div>
         </section>
 
+        <!-- Статистика -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Статистика</h2>
+          <p class="ui-kit-description">UI-компоненты для отображения метрик: сетка карточек и подпись периода.</p>
+
+          <div class="ui-kit-grid">
+            <div class="ui-kit-example">
+              <h3 class="ui-kit-subtitle">Еженедельный срез</h3>
+              <div class="weekly-stats" aria-label="Еженедельная статистика">
+                <article class="card weekly-stat weekly-stat--primary">
+                  <p class="weekly-stat__value">24</p>
+                  <p class="weekly-stat__text">Показатель 1</p>
+                </article>
+                <article class="card weekly-stat weekly-stat--secondary">
+                  <p class="weekly-stat__value">12</p>
+                  <p class="weekly-stat__text">Показатель 2</p>
+                </article>
+                <article class="card weekly-stat weekly-stat--success">
+                  <p class="weekly-stat__value">5</p>
+                  <p class="weekly-stat__text">Показатель 3</p>
+                </article>
+                <article class="card weekly-stat weekly-stat--warning">
+                  <p class="weekly-stat__value">3</p>
+                  <p class="weekly-stat__text">Показатель 4</p>
+                </article>
+              </div>
+              <p class="weekly-stats__note text-caption text-muted">За последние 7 дней</p>
+            </div>
+
+            <div class="ui-kit-example">
+              <h3 class="ui-kit-subtitle">Карточки статистики</h3>
+              <div class="stat-cards" aria-label="Сводка по метрикам">
+                <article class="stat-card stat-card--primary">
+                  <p class="stat-card__value">68</p>
+                  <p class="stat-card__text">Показатель A</p>
+                </article>
+                <article class="stat-card stat-card--warning">
+                  <p class="stat-card__value">14</p>
+                  <p class="stat-card__text">Показатель B</p>
+                </article>
+                <article class="stat-card stat-card--deadline">
+                  <p class="stat-card__value">7</p>
+                  <p class="stat-card__text">Показатель C</p>
+                </article>
+                <article class="stat-card stat-card--success">
+                  <p class="stat-card__value">21</p>
+                  <p class="stat-card__text">Показатель D</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Таблицы -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Таблицы</h2>
+          <p class="ui-kit-description">Единый табличный компонент: компактный режим, сортировка, состояния и действия.</p>
+
+          <div class="ui-kit-example">
+            <div class="table-wrapper">
+              <table class="table table--compact table--sortable table--centered-headers">
+                <thead>
+                  <tr>
+                    <th data-sort-type="string">Элемент</th>
+                    <th data-sort-type="string">Статус</th>
+                    <th data-sort-type="string">Метка</th>
+                    <th data-sort-type="date">Срок</th>
+                    <th data-sortable="false">Действия</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="task-title">Название элемента A</div>
+                      <div class="task-meta">Вторичная строка текста для пояснения.</div>
+                    </td>
+                    <td>
+                      <span class="status-indicator status-indicator--draft">
+                        <span class="status-indicator__dot"></span>
+                        <span>Новая</span>
+                      </span>
+                    </td>
+                    <td><span class="badge badge--primary">Категория</span></td>
+                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-06-14">14.06.2025</span></td>
+                    <td class="task-actions"><a class="btn btn--primary btn--sm" href="#">Открыть</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="task-title">Название элемента B</div>
+                      <div class="task-meta">Короткий текст‑описание.</div>
+                    </td>
+                    <td>
+                      <span class="status-indicator status-indicator--published">
+                        <span class="status-indicator__dot"></span>
+                        <span>В работе</span>
+                      </span>
+                    </td>
+                    <td><span class="badge badge--warning">Тип</span></td>
+                    <td><span class="badge badge--deadline badge--date" data-sort-value="2025-06-18">18.06.2025</span></td>
+                    <td class="task-actions"><a class="btn btn--primary btn--sm" href="#">Открыть</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="task-title">Название элемента C</div>
+                      <div class="task-meta">Дополнительные детали строки.</div>
+                    </td>
+                    <td>
+                      <span class="status-indicator status-indicator--pending">
+                        <span class="status-indicator__dot"></span>
+                        <span>На проверке</span>
+                      </span>
+                    </td>
+                    <td><span class="badge badge--teal">Группа</span></td>
+                    <td><span class="badge badge--deadline-danger badge--date" data-sort-value="2025-06-12">12.06.2025</span></td>
+                    <td class="task-actions"><a class="btn btn--primary btn--sm" href="#">Открыть</a></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="task-title">Название элемента D</div>
+                      <div class="task-meta">Пример строки с возвратом.</div>
+                    </td>
+                    <td>
+                      <span class="status-indicator status-indicator--rejected">
+                        <span class="status-indicator__dot"></span>
+                        <span>Возврат</span>
+                      </span>
+                    </td>
+                    <td><span class="badge badge--gray">Другое</span></td>
+                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="">—</span></td>
+                    <td class="task-actions"><a class="btn btn--primary btn--sm" href="#">Открыть</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
         <!-- Табы -->
         <section class="ui-kit-section">
           <h2 class="ui-kit-title">Табы и фильтры</h2>
@@ -1031,50 +1168,6 @@
             </div>
           </div>
 
-          <h2 class="ui-kit-subtitle">Таблицы</h2>
-          <p class="ui-kit-description">Используйте <code>table table--compact table--sortable</code> для реестров. Указывайте тип сортировки через <code>data-sort-type</code> (string/number/date), при клике заголовок подсвечивается, стрелка показывает направление. Для корректной сортировки дат/чисел задавайте <code>data-sort-value</code>. Несортируемые колонки (например, действия) помечайте <code>data-sortable="false"</code>.</p>
-          <div class="ui-kit-example">
-            <div class="table-wrapper">
-              <table class="table table--compact table--sortable">
-                <thead>
-                  <tr>
-                    <th data-sort-type="string">Идея</th>
-                    <th data-sort-type="string">Статус</th>
-                    <th data-sort-type="string">Направление</th>
-                    <th data-sort-type="date">Обновлено</th>
-                    <th data-sort-type="date">Дедлайн</th>
-                    <th data-sort-type="number">События</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Платформа мониторинга</td>
-                    <td><span class="status-indicator status-indicator--pending"><span class="status-indicator__dot"></span><span>На модерации</span></span></td>
-                    <td><span class="badge badge--warning">Строительство</span></td>
-                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-05-12">12.05.2025</span></td>
-                    <td><span class="badge badge--deadline badge--date" data-sort-value="2025-06-22">22.06.2025</span></td>
-                    <td><span class="badge badge--gray" data-sort-value="3">+3</span></td>
-                  </tr>
-                  <tr>
-                    <td>Цифровой наставник</td>
-                    <td><span class="status-indicator status-indicator--published"><span class="status-indicator__dot"></span><span>На рассмотрении</span></span></td>
-                    <td><span class="badge badge--primary">Цифровизация</span></td>
-                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-05-05">05.05.2025</span></td>
-                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-06-18">18.06.2025</span></td>
-                    <td><span class="badge badge--gray" data-sort-value="2">+2</span></td>
-                  </tr>
-                  <tr>
-                    <td>AR-инструктаж</td>
-                    <td><span class="status-indicator status-indicator--draft"><span class="status-indicator__dot"></span><span>Черновик</span></span></td>
-                    <td><span class="badge badge--teal">Клиентский сервис</span></td>
-                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="2025-04-22">22.04.2025</span></td>
-                    <td><span class="badge badge--deadline-muted badge--date" data-sort-value="">—</span></td>
-                    <td><span class="badge badge--gray" data-sort-value="0">+0</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
         </section>
 
         <!-- Детальные страницы -->
