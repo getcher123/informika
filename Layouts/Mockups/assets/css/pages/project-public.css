@@ -1,0 +1,38 @@
+/* ===================================
+   PROJECT-PUBLIC.CSS - Публичная страница проекта
+   =================================== */
+
+.project-header {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+  align-items: flex-start;
+}
+
+.project-header__icon {
+  flex-shrink: 0;
+}
+
+.project-header__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.project-header__title {
+  margin: 0 0 var(--spacing-sm);
+}
+
+.project-header__info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+@media (max-width: 767px) {
+  .project-header {
+    flex-direction: column;
+  }
+}

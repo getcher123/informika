@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Календарь событий | Инноватика Мособлгаз</title>
+  <meta name="description" content="Публичный календарь событий программы">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/requests.css">
+  <link rel="stylesheet" href="./assets/css/pages/events.css">
+</head>
+<body>
+  <div class="layout">
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+          </a>
+
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+
+          <button class="header__burger" type="button" aria-label="Открыть меню" data-mobile-menu-toggle>
+            <span></span><span></span><span></span>
+          </button>
+
+          <div class="header__actions">
+            <a href="./login.html" class="btn btn--ghost header__user-btn">
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="header__user-text">ВОЙТИ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu__backdrop" data-mobile-menu-close></div>
+      <div class="mobile-menu__panel">
+        <button class="mobile-menu__close" type="button" aria-label="Закрыть меню" data-mobile-menu-close>
+          <span></span><span></span>
+        </button>
+        <nav class="mobile-menu__nav">
+          <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
+          <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+          <a href="#" class="mobile-menu__link">КОНКУРС</a>
+          <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
+        </nav>
+        <div class="mobile-menu__actions">
+          <a href="./login.html" class="btn btn--primary btn--block" data-mobile-menu-action>Войти</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="main layout__main">
+      <div class="container">
+        <section class="events-hero">
+          <h1 class="heading-page">Календарь событий</h1>
+          <p class="text-lead">Публичные события программы: вебинары, питч‑сессии, демо‑дни и встречи проектных команд.</p>
+        </section>
+
+        <div class="events-view" data-tabs>
+          <div class="search">
+            <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+              <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <input type="text" class="form-input search__input" placeholder="Поиск по названию события">
+          </div>
+
+          <div class="tabs">
+            <button class="tabs__item tabs__item--active" type="button" data-tab="events-calendar">Календарь</button>
+            <button class="tabs__item" type="button" data-tab="events-upcoming">Будущие мероприятия</button>
+            <button class="tabs__item" type="button" data-tab="events-past">Прошедшие мероприятия</button>
+          </div>
+
+          <section class="filters-section" aria-label="Фильтры событий">
+            <div class="filters">
+              <div class="filters__row">
+                <div class="form-group">
+                  <label class="form-label">Формат</label>
+                  <div class="filter-pills">
+                    <button class="filter-pill filter-pill--active" type="button">Все</button>
+                    <button class="filter-pill" type="button">Онлайн</button>
+                    <button class="filter-pill" type="button">Офлайн</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Направление</label>
+                  <select class="form-select form-select--decorated js-custom-select">
+                    <option>Все</option>
+                    <option>Строительство</option>
+                    <option>Эксплуатация</option>
+                    <option>Безопасность</option>
+                    <option>Цифровизация</option>
+                    <option>Клиентский сервис</option>
+                    <option>Другое</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="tabs-panels">
+            <div class="tabs-panel is-active" data-tab-panel="events-calendar">
+              <div class="card calendar-card">
+                <div class="calendar-header">
+                  <div>
+                    <h2 class="heading-section">Июль 2025</h2>
+                    <p class="text-muted">Показаны будущие события. Отменённые помечены отдельно.</p>
+                  </div>
+                  <div class="calendar-actions">
+                    <button class="btn btn--secondary btn--sm" type="button">← Июнь</button>
+                    <button class="btn btn--secondary btn--sm" type="button">Август →</button>
+                  </div>
+                </div>
+
+                <div class="calendar-scroll">
+                  <div class="calendar-grid calendar-grid--labels">
+                    <div class="calendar-label">Пн</div>
+                    <div class="calendar-label">Вт</div>
+                    <div class="calendar-label">Ср</div>
+                    <div class="calendar-label">Чт</div>
+                    <div class="calendar-label">Пт</div>
+                    <div class="calendar-label">Сб</div>
+                    <div class="calendar-label">Вс</div>
+                  </div>
+
+                  <div class="calendar-grid">
+                    <div class="calendar-day calendar-day--muted">
+                      <span class="calendar-day__date">30</span>
+                    </div>
+                    <div class="calendar-day calendar-day--muted">
+                      <span class="calendar-day__date">1</span>
+                    </div>
+                    <div class="calendar-day">
+                      <span class="calendar-day__date">2</span>
+                    </div>
+                    <div class="calendar-day calendar-day--today">
+                      <span class="calendar-day__date">3</span>
+                      <div class="calendar-event calendar-event--webinar" data-tooltip="Вебинар по HR‑аналитике">
+                        <span class="calendar-event__time">10:00–11:30</span>
+                        <a class="calendar-event__title" href="./event-detail.html">Вебинар по HR‑аналитике</a>
+                        <span class="badge badge--format">Онлайн</span>
+                      </div>
+                    </div>
+                    <div class="calendar-day">
+                      <span class="calendar-day__date">4</span>
+                    </div>
+                    <div class="calendar-day">
+                      <span class="calendar-day__date">5</span>
+                    </div>
+                    <div class="calendar-day">
+                      <span class="calendar-day__date">6</span>
+                      <div class="calendar-event calendar-event--demo calendar-event--danger" data-tooltip="Демо‑день пилотов">
+                        <span class="calendar-event__time">14:00–16:00</span>
+                        <a class="calendar-event__title" href="./event-detail.html">Демо‑день пилотов</a>
+                        <span class="badge badge--cancelled">Отменено</span>
+                      </div>
+                    </div>
+
+                    <div class="calendar-day">
+                      <span class="calendar-day__date">7</span>
+                    </div>
+                    <div class="calendar-day">
+                      <span class="calendar-day__date">8</span>
+                    </div>
+                    <div class="calendar-day">
+                      <span class="calendar-day__date">9</span>
+                      <div class="calendar-event calendar-event--pitch" data-tooltip="Питч‑сессия проектов">
+                        <span class="calendar-event__time">12:00–13:00</span>
+                        <a class="calendar-event__title" href="./event-detail.html">Питч‑сессия проектов</a>
+                        <span class="badge badge--format">Офлайн</span>
+                      </div>
+                    </div>
+                    <div class="calendar-day">
+                      <span class="calendar-day__date">10</span>
+                    </div>
+                    <div class="calendar-day">
+                      <span class="calendar-day__date">11</span>
+                    </div>
+                    <div class="calendar-day">
+                      <span class="calendar-day__date">12</span>
+                    </div>
+                    <div class="calendar-day">
+                      <span class="calendar-day__date">13</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tabs-panel" data-tab-panel="events-upcoming" hidden>
+              <div class="events-list">
+                <article class="card event-card">
+                  <div class="event-card__meta">
+                    <span class="badge badge--date badge--deadline-muted">03.07 · 10:00–11:30</span>
+                    <span class="badge badge--format">Онлайн</span>
+                    <span class="badge badge--primary">Цифровизация</span>
+                  </div>
+                  <h3 class="heading-section event-card__title">Вебинар по HR‑аналитике</h3>
+                  <div class="event-card__details">
+                    <p class="text-muted">Ссылка: webinar.hr-analytics.ru/room</p>
+                    <p class="text-muted">Спикеры: Анна Федорова, Николай Жуков</p>
+                  </div>
+                  <div class="event-card__actions">
+                    <a class="btn btn--primary btn--sm" href="./event-detail.html">Зарегистрироваться</a>
+                    <button class="btn btn--secondary btn--sm" type="button">Добавить в календарь (.ics)</button>
+                  </div>
+                </article>
+
+                <article class="card event-card">
+                  <div class="event-card__meta">
+                    <span class="badge badge--date badge--deadline-muted">09.07 · 12:00–13:00</span>
+                    <span class="badge badge--format">Офлайн</span>
+                    <span class="badge badge--warning">Эксплуатация</span>
+                  </div>
+                  <h3 class="heading-section event-card__title">Питч‑сессия проектов</h3>
+                  <div class="event-card__details">
+                    <p class="text-muted">Адрес: Москва, ул. Энергетиков, 14</p>
+                    <p class="text-muted">Спикеры: Команды проектов 2025</p>
+                  </div>
+                  <div class="event-card__actions">
+                    <a class="btn btn--primary btn--sm" href="./event-detail.html">Зарегистрироваться</a>
+                    <button class="btn btn--secondary btn--sm" type="button">Добавить в календарь (.ics)</button>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="tabs-panel" data-tab-panel="events-past" hidden>
+              <div class="events-list">
+                <article class="card event-card">
+                  <div class="event-card__meta">
+                    <span class="badge badge--date badge--deadline-muted">15.06 · 16:00–17:30</span>
+                    <span class="badge badge--format">Онлайн</span>
+                    <span class="badge badge--gray">Завершено</span>
+                  </div>
+                  <h3 class="heading-section event-card__title">Демо‑день пилотов</h3>
+                  <div class="event-card__details">
+                    <p class="text-muted">Материалы доступны после завершения события.</p>
+                  </div>
+                  <div class="event-card__actions">
+                    <button class="btn btn--secondary btn--sm" type="button">Материалы</button>
+                  </div>
+                </article>
+
+                <article class="card event-card">
+                  <div class="event-card__meta">
+                    <span class="badge badge--date badge--deadline-muted">06.06 · 14:00–16:00</span>
+                    <span class="badge badge--cancelled">Отменено</span>
+                  </div>
+                  <h3 class="heading-section event-card__title">Встреча команд по пилотам</h3>
+                  <div class="event-card__details">
+                    <p class="text-muted">Причина отмены: перенос на следующий квартал.</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

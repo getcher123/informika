@@ -22,6 +22,9 @@ const render = async () => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto(fileUrl, { waitUntil: "networkidle" });
     await page.waitForTimeout(300);
+    await page.addStyleTag({
+      content: "body::before, body::after { display: none !important; }",
+    });
     await page.screenshot({
       path: path.join(outDir, `${baseName}-${width}.png`),
       fullPage: true,

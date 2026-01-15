@@ -1,0 +1,39 @@
+/* ===================================
+   EVENT-DETAIL.CSS - Детальная страница события
+   =================================== */
+
+.event-header {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+  align-items: flex-start;
+}
+
+.event-header__icon {
+  flex-shrink: 0;
+}
+
+.event-header__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.event-header__title {
+  margin: 0 0 var(--spacing-sm);
+}
+
+.event-program {
+  margin: 0;
+}
+
+.event-program li {
+  margin-bottom: var(--spacing-sm);
+}
+
+@media (max-width: 767px) {
+  .event-header {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>События | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/participant-cabinet.css">
+  <link rel="stylesheet" href="./assets/css/pages/participant-events.css">
+</head>
+<body data-auth-state="profile" class="body--gradient">
+  <div class="layout">
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+          </a>
+
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+          <button class="header__burger" type="button" aria-label="Открыть меню" data-mobile-menu-toggle>
+            <span></span><span></span><span></span>
+          </button>
+
+          <div class="header__actions">
+            <a href="./participant-profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
+              <span class="header__user-initials">ИА</span>
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu__backdrop" data-mobile-menu-close></div>
+      <div class="mobile-menu__panel">
+        <button class="mobile-menu__close" type="button" aria-label="Закрыть меню" data-mobile-menu-close>
+          <span></span><span></span>
+        </button>
+        <nav class="mobile-menu__nav">
+          <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
+          <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+          <a href="#" class="mobile-menu__link">КОНКУРС</a>
+          <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
+        </nav>
+        <div class="mobile-menu__actions">
+          <a href="./participant-profile.html" class="btn btn--primary btn--block" data-mobile-menu-action>Профиль</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="main main--with-gradient layout__main">
+      <div class="container">
+        <div class="sidebar-layout">
+          <aside class="sidebar sidebar-layout__sidebar">
+            <nav class="sidebar__nav">
+              <a href="./participant-profile.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                  <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Профиль</span>
+              </a>
+              <a href="./participant-ideas.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M7 8H17M7 12H13M7 16H11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Мои идеи</span>
+              </a>
+              <a href="./participant-team.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="7" r="3.5" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="7" cy="15" r="3.5" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="17" cy="15" r="3.5" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span class="sidebar__text">Заявки в команду</span>
+              </a>
+              <a href="./participant-events.html" class="sidebar__link sidebar__link--active">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M8 2V6M16 2V6M3 10H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">События</span>
+              </a>
+              <a href="./participant-notifications.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Уведомления</span>
+              </a>
+            </nav>
+          </aside>
+
+          <div class="content-card sidebar-layout__content">
+            <div class="cabinet-toolbar">
+              <div>
+                <p class="eyebrow text-muted">Личный кабинет</p>
+                <h1 class="heading-page">События</h1>
+              </div>
+            </div>
+
+            <p class="events-note">Здесь собраны ваши регистрации и доступ к материалам прошедших событий.</p>
+
+            <section class="filters-section" aria-label="Фильтры событий">
+              <div class="search">
+                <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                  <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <input type="text" class="form-input search__input" placeholder="Поиск по названию">
+              </div>
+
+              <div class="filters">
+                <div class="filters__row">
+                  <div class="form-group">
+                    <label class="form-label">Статус регистрации</label>
+                    <select class="form-select form-select--decorated js-custom-select">
+                      <option>Все</option>
+                      <option>Активна</option>
+                      <option>Отменена пользователем</option>
+                      <option>Отменена организатором</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Период</label>
+                    <select class="form-select form-select--decorated js-custom-select">
+                      <option>Ближайшие 30 дней</option>
+                      <option>Последние 30 дней</option>
+                      <option>Все</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div class="table-wrapper">
+              <table class="table table--compact table--sortable table--centered-headers">
+                <thead>
+                  <tr>
+                    <th data-sort-type="string">Событие</th>
+                    <th data-sort-type="date">Дата</th>
+                    <th data-sort-type="string">Формат</th>
+                    <th data-sort-type="string">Статус регистрации</th>
+                    <th data-sortable="false">Действия</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="task-title">Вебинар по HR‑аналитике</div>
+                      <div class="task-meta">Ссылка на трансляцию будет доступна в день события.</div>
+                    </td>
+                    <td><span class="badge badge--deadline-muted badge--date">03.07.2025</span></td>
+                    <td><span class="badge badge--format">Онлайн</span></td>
+                    <td><span class="badge badge--success">Активна</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a class="btn btn--primary btn--sm" href="./event-detail.html">Подробнее</a>
+                        <button class="btn btn--secondary btn--sm" type="button">.ics</button>
+                        <button class="btn btn--ghost btn--sm" type="button">Отменить</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="task-title">Питч‑сессия проектов</div>
+                      <div class="task-meta">Москва, ул. Энергетиков, 14.</div>
+                    </td>
+                    <td><span class="badge badge--deadline-muted badge--date">09.07.2025</span></td>
+                    <td><span class="badge badge--format">Офлайн</span></td>
+                    <td><span class="badge badge--success">Активна</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a class="btn btn--primary btn--sm" href="./event-detail.html">Подробнее</a>
+                        <button class="btn btn--secondary btn--sm" type="button">.ics</button>
+                        <button class="btn btn--ghost btn--sm" type="button">Отменить</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="task-title">Демо‑день пилотов</div>
+                      <div class="task-meta">Материалы доступны после рассылки.</div>
+                    </td>
+                    <td><span class="badge badge--deadline-muted badge--date">15.06.2025</span></td>
+                    <td><span class="badge badge--format">Онлайн</span></td>
+                    <td><span class="badge badge--gray">Отменена пользователем</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a class="btn btn--secondary btn--sm" href="#">Материалы</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="task-title">Встреча команд по пилотам</div>
+                      <div class="task-meta">Организатор отменил событие.</div>
+                    </td>
+                    <td><span class="badge badge--deadline-muted badge--date">06.06.2025</span></td>
+                    <td><span class="badge badge--format">Офлайн</span></td>
+                    <td><span class="badge badge--error">Отменена организатором</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a class="btn btn--secondary btn--sm" href="./event-detail.html">Подробнее</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

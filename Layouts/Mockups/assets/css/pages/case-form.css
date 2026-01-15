@@ -1,0 +1,37 @@
+/* ===================================
+   CASE-FORM.CSS - Форма создания кейса
+   =================================== */
+
+.case-form .section + .section {
+  margin-top: var(--spacing-2xl);
+}
+
+.case-form .section .heading-section {
+  margin-bottom: var(--spacing-md);
+}
+
+.case-form .card + .card {
+  margin-top: var(--spacing-lg);
+}
+
+.case-form .card .heading-subtitle {
+  margin-bottom: var(--spacing-md);
+}
+
+.case-form .card + .btn {
+  margin-top: var(--spacing-md);
+}
+
+.case-form .form-actions {
+  justify-content: flex-start;
+}
+
+@media (max-width: 767px) {
+  .case-form .form-actions {
+    flex-direction: column;
+  }
+
+  .case-form .form-actions .btn {
+    width: 100%;
+  }
+}

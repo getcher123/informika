@@ -743,6 +743,18 @@
   border: 1.5px solid #00A8CC;
 }
 
+.badge--cancelled {
+  background: var(--color-bg-white);
+  color: var(--color-error);
+  border: 1px solid rgba(255, 77, 79, 0.35);
+}
+
+.badge--format {
+  background: var(--color-bg-light);
+  color: var(--color-text-secondary);
+  border: none;
+}
+
 /* Role badge (unified) */
 .badge--role {
   background: rgba(0, 168, 204, 0.08);
