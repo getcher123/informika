@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Календарь событий (динамический рендер) | Инноватика Мособлгаз</title>
+  <meta name="description" content="Календарь событий с динамическим рендером из списка данных">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/requests.css">
+  <link rel="stylesheet" href="./assets/css/pages/events.css">
+  <link rel="stylesheet" href="./assets/css/pages/events-dynamic.css">
+</head>
+<body>
+  <div class="layout">
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+          </a>
+
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="./events.html" class="nav__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+
+          <button class="header__burger" type="button" aria-label="Открыть меню" data-mobile-menu-toggle>
+            <span></span><span></span><span></span>
+          </button>
+
+          <div class="header__actions">
+            <a href="./login.html" class="btn btn--ghost header__user-btn">
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="header__user-text">ВОЙТИ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu__backdrop" data-mobile-menu-close></div>
+      <div class="mobile-menu__panel">
+        <button class="mobile-menu__close" type="button" aria-label="Закрыть меню" data-mobile-menu-close>
+          <span></span><span></span>
+        </button>
+        <nav class="mobile-menu__nav">
+          <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
+          <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+          <a href="./events.html" class="mobile-menu__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a>
+          <a href="#" class="mobile-menu__link">КОНКУРС</a>
+          <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
+        </nav>
+        <div class="mobile-menu__actions">
+          <a href="./login.html" class="btn btn--primary btn--block" data-mobile-menu-action>Войти</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="main layout__main">
+      <div class="container">
+        <section class="events-hero">
+          <div class="events-hero__content">
+            <h1 class="heading-page">Календарь событий</h1>
+            <p class="text-lead">Публичные события программы: вебинары, питч‑сессии, демо‑дни и встречи проектных команд.</p>
+          </div>
+          <div class="events-hero__actions">
+            <a class="btn btn--primary btn--lg" href="./event-form.html">Создать мероприятие</a>
+          </div>
+        </section>
+
+        <div class="events-view" data-tabs data-events-view data-current-date="2025-07-03">
+          <section class="events-search" aria-label="Поиск событий">
+            <div class="search">
+              <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <input type="text" class="form-input search__input" placeholder="Поиск по названию события" data-search-input>
+            </div>
+          </section>
+
+          <p class="events-debug" data-events-debug hidden>Рендер календаря и ленты не выполнился. Проверьте консоль браузера.</p>
+          <noscript>
+            <p class="events-debug">Для динамического рендера календаря нужно включить JavaScript.</p>
+          </noscript>
+
+          <div class="tabs">
+            <button class="tabs__item tabs__item--active" type="button" data-tab="events-calendar">Календарь</button>
+            <button class="tabs__item" type="button" data-tab="events-upcoming">Будущие мероприятия</button>
+            <button class="tabs__item" type="button" data-tab="events-past">Прошедшие мероприятия</button>
+          </div>
+
+          <section class="filters-section" aria-label="Фильтры событий">
+            <div class="filters">
+              <div class="filters__row events-filters-row">
+                <div class="form-group form-group--event-type">
+                  <label class="form-label">Формат</label>
+                  <div class="filter-pills">
+                    <button class="filter-pill filter-pill--active" type="button" data-filter-format="all">Все</button>
+                    <button class="filter-pill" type="button" data-filter-format="online">Онлайн</button>
+                    <button class="filter-pill" type="button" data-filter-format="offline">Офлайн</button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Тип мероприятия</label>
+                  <select class="form-select form-select--decorated js-custom-select" data-filter-type>
+                    <option value="all">Все</option>
+                    <option value="webinar">Вебинар</option>
+                    <option value="pitch">Питч‑сессия</option>
+                    <option value="demo">Демо‑день</option>
+                    <option value="meeting">Встреча проектных команд</option>
+                    <option value="other">Другое</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <ul class="events-data" aria-hidden="true">
+            <li data-id="event-1" data-title="Вебинар по HR‑аналитике" data-date="2025-07-03" data-start="10:00" data-end="11:30" data-type="webinar" data-format="online" data-status="published" data-url="./event-detail.html" data-link="webinar.hr-analytics.ru/room" data-speakers="Анна Федорова, Николай Жуков"></li>
+            <li data-id="event-7" data-title="Мастер‑сессия по данным" data-date="2025-07-03" data-start="13:00" data-end="14:00" data-type="other" data-format="online" data-status="published" data-url="./event-detail.html" data-link="data-session.hr.ru/room" data-speakers="Команда аналитики"></li>
+            <li data-id="event-2" data-title="Демо‑день пилотов" data-date="2025-07-06" data-start="14:00" data-end="16:00" data-type="demo" data-format="offline" data-status="cancelled" data-url="./event-detail.html" data-cancel-reason="Перенос на следующий квартал"></li>
+            <li data-id="event-3" data-title="Питч‑сессия проектов" data-date="2025-07-09" data-start="12:00" data-end="13:00" data-type="pitch" data-format="offline" data-status="published" data-url="./event-detail.html" data-location="Москва, ул. Энергетиков, 14" data-speakers="Команды проектов 2025"></li>
+            <li data-id="event-4" data-title="Демо‑день HR‑инициатив" data-date="2025-07-12" data-start="15:00" data-type="demo" data-format="online" data-status="published" data-url="./event-detail.html" data-link="demo.hr-initiative.ru" data-note="Материалы будут доступны после рассылки."></li>
+            <li data-id="event-8" data-title="Встреча проектных команд" data-date="2025-07-18" data-start="11:00" data-end="12:30" data-type="meeting" data-format="offline" data-status="published" data-url="./event-detail.html" data-location="Москва, ул. Энергетиков, 14" data-speakers="Руководители проектов"></li>
+            <li data-id="event-9" data-title="HR‑митап по лучшим практикам" data-date="2025-07-22" data-start="17:00" data-end="18:30" data-type="webinar" data-format="online" data-status="published" data-url="./event-detail.html" data-link="meetup.hr-best.ru/room" data-speakers="Экспертный совет"></li>
+            <li data-id="event-10" data-title="Питч‑сессия пилотных идей" data-date="2025-07-29" data-start="10:30" data-end="12:00" data-type="pitch" data-format="offline" data-status="published" data-url="./event-detail.html" data-location="Москва, ул. Энергетиков, 14"></li>
+            <li data-id="event-11" data-title="Демо‑день цифровизации" data-date="2025-07-31" data-start="14:00" data-end="16:00" data-type="demo" data-format="offline" data-status="published" data-url="./event-detail.html" data-location="Москва, ул. Энергетиков, 14" data-note="Вход по спискам регистрации."></li>
+            <li data-id="event-5" data-title="Встреча команд по пилотам" data-date="2025-06-06" data-start="14:00" data-end="16:00" data-type="meeting" data-format="offline" data-status="cancelled" data-url="./event-detail.html" data-cancel-reason="Перенос на следующую программу"></li>
+            <li data-id="event-6" data-title="Сессия обмена опытом" data-date="2025-06-15" data-start="16:00" data-end="17:30" data-type="other" data-format="online" data-status="published" data-url="./event-detail.html" data-link="experience.hr.ru/room" data-note="Материалы доступны после завершения события."></li>
+          </ul>
+
+          <div class="tabs-panels">
+            <div class="tabs-panel is-active" data-tab-panel="events-calendar">
+              <div class="card calendar-card">
+                <div class="calendar-header">
+                  <div>
+                    <h2 class="heading-section" data-calendar-title>Июль 2025</h2>
+                  </div>
+                  <div class="calendar-actions">
+                    <button class="btn btn--secondary btn--sm" type="button" data-calendar-prev>← Июнь</button>
+                    <button class="btn btn--secondary btn--sm" type="button" data-calendar-next>Август →</button>
+                  </div>
+                </div>
+
+                <div class="calendar-scroll">
+                  <div class="calendar-grid calendar-grid--labels">
+                    <div class="calendar-label">Пн</div>
+                    <div class="calendar-label">Вт</div>
+                    <div class="calendar-label">Ср</div>
+                    <div class="calendar-label">Чт</div>
+                    <div class="calendar-label">Пт</div>
+                    <div class="calendar-label">Сб</div>
+                    <div class="calendar-label">Вс</div>
+                  </div>
+
+                  <div class="calendar-grid js-calendar-grid" data-calendar-month="2025-07"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tabs-panel" data-tab-panel="events-upcoming" hidden>
+              <div class="events-list js-events-list" data-events-list="upcoming"></div>
+            </div>
+
+            <div class="tabs-panel" data-tab-panel="events-past" hidden>
+              <div class="events-list js-events-list" data-events-list="past"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/events-dynamic.js"></script>
+</body>
+</html>
