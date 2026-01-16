@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./assets/css/base.css">
   <link rel="stylesheet" href="./assets/css/layout.css">
   <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/events.css">
   <style>
     .ui-kit-section {
       margin-bottom: var(--spacing-3xl);
@@ -740,6 +741,15 @@
               </div>
             </div>
             <div class="ui-kit-example">
+              <h3 class="ui-kit-subtitle">Бейджи мероприятий</h3>
+              <div class="ui-kit-inline-list">
+                <span class="badge badge--format">Онлайн</span>
+                <span class="badge badge--format">Офлайн</span>
+                <span class="badge badge--cancelled">Отменено</span>
+                <span class="badge badge--primary">Вебинар</span>
+              </div>
+            </div>
+            <div class="ui-kit-example">
               <h3 class="ui-kit-subtitle">Статусы</h3>
               <div class="button-grid">
                 <span class="status-indicator status-indicator--published"><span class="status-indicator__dot"></span>Опубликовано</span>
@@ -925,6 +935,98 @@
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Календарь -->
+        <section class="ui-kit-section">
+          <h2 class="ui-kit-title">Календарь событий</h2>
+          <p class="ui-kit-description">Карточка календаря с цветами типов мероприятий и бейджами формата.</p>
+
+          <div class="ui-kit-example">
+            <div class="card calendar-card">
+              <div class="calendar-header">
+                <div>
+                  <h2 class="heading-section">Июль 2025</h2>
+                  <p class="text-muted">Пример наполнения календаря событиями.</p>
+                </div>
+                <div class="calendar-actions">
+                  <button class="btn btn--secondary btn--sm" type="button">← Июнь</button>
+                  <button class="btn btn--secondary btn--sm" type="button">Август →</button>
+                </div>
+              </div>
+
+              <div class="calendar-scroll">
+                <div class="calendar-grid calendar-grid--labels">
+                  <div class="calendar-label">Пн</div>
+                  <div class="calendar-label">Вт</div>
+                  <div class="calendar-label">Ср</div>
+                  <div class="calendar-label">Чт</div>
+                  <div class="calendar-label">Пт</div>
+                  <div class="calendar-label">Сб</div>
+                  <div class="calendar-label">Вс</div>
+                </div>
+                <div class="calendar-grid calendar-grid--days">
+                  <div class="calendar-day calendar-day--muted">
+                    <span class="calendar-day__date">30</span>
+                  </div>
+                  <div class="calendar-day">
+                    <span class="calendar-day__date">1</span>
+                  </div>
+                  <div class="calendar-day">
+                    <span class="calendar-day__date">2</span>
+                  </div>
+                  <div class="calendar-day calendar-day--today">
+                    <span class="calendar-day__date">3</span>
+                    <div class="calendar-event calendar-event--webinar" data-tooltip="Вебинар по HR‑аналитике">
+                      <span class="calendar-event__time">10:00–11:30</span>
+                      <span class="badge badge--format">Онлайн</span>
+                      <a class="calendar-event__title" href="#">Вебинар по HR‑аналитике</a>
+                    </div>
+                  </div>
+                  <div class="calendar-day">
+                    <span class="calendar-day__date">4</span>
+                  </div>
+                  <div class="calendar-day">
+                    <span class="calendar-day__date">5</span>
+                  </div>
+                  <div class="calendar-day">
+                    <span class="calendar-day__date">6</span>
+                    <div class="calendar-event calendar-event--demo calendar-event--danger" data-tooltip="Демо‑день пилотов">
+                      <span class="calendar-event__time">14:00–16:00</span>
+                      <span class="badge badge--cancelled">Отменено</span>
+                      <a class="calendar-event__title" href="#">Демо‑день пилотов</a>
+                    </div>
+                  </div>
+                  <div class="calendar-day">
+                    <span class="calendar-day__date">7</span>
+                  </div>
+                  <div class="calendar-day">
+                    <span class="calendar-day__date">8</span>
+                  </div>
+                  <div class="calendar-day">
+                    <span class="calendar-day__date">9</span>
+                    <div class="calendar-event calendar-event--pitch" data-tooltip="Питч‑сессия проектов">
+                      <span class="calendar-event__time">12:00–13:00</span>
+                      <span class="badge badge--format">Офлайн</span>
+                      <a class="calendar-event__title" href="#">Питч‑сессия проектов</a>
+                    </div>
+                  </div>
+                  <div class="calendar-day">
+                    <span class="calendar-day__date">10</span>
+                  </div>
+                  <div class="calendar-day">
+                    <span class="calendar-day__date">11</span>
+                  </div>
+                  <div class="calendar-day">
+                    <span class="calendar-day__date">12</span>
+                  </div>
+                  <div class="calendar-day">
+                    <span class="calendar-day__date">13</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

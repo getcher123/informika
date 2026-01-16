@@ -66,7 +66,7 @@
 }
 
 .calendar-day--today {
-  border-color: var(--color-success);
+  border: 3px solid var(--color-success);
   box-shadow: 0 0 0 1px rgba(0, 212, 170, 0.2);
 }
 
@@ -123,7 +123,9 @@
   color: inherit;
   text-decoration: none;
   display: block;
-  white-space: nowrap;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
@@ -177,13 +179,63 @@
   text-overflow: ellipsis;
 }
 
+.events-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+}
+
+.events-hero__content {
+  max-width: 720px;
+}
+
+.events-hero__actions {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .filters .filter-pills {
   margin-bottom: 0;
+}
+
+.events-search {
+  margin-bottom: var(--spacing-lg);
+}
+
+.events-view .filters-section {
+  display: block;
+}
+
+.events-view .filters {
+  width: 100%;
+}
+
+.events-filters-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 260px);
+  align-items: end;
+  gap: var(--spacing-lg);
+}
+
+.events-filters-row .form-group {
+  margin-bottom: 0;
+}
+
+.events-filters-row .filter-pills {
+  flex-wrap: wrap;
 }
 
 .events-list {
   display: grid;
   gap: var(--spacing-lg);
+}
+
+.event-card {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .event-card__meta {
@@ -193,8 +245,31 @@
   margin-bottom: var(--spacing-sm);
 }
 
+.event-card__status {
+  font-size: var(--font-size-xs);
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
 .event-card__title {
   margin: 0 0 var(--spacing-sm);
+}
+
+.event-card__title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.event-card__title-link:hover {
+  text-decoration: underline;
+}
+
+.event-card__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-lg);
 }
 
 .event-card__details {
@@ -213,7 +288,26 @@
   gap: var(--spacing-sm);
 }
 
+
 @media (max-width: 767px) {
+  .events-hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .events-hero__content {
+    max-width: 100%;
+  }
+
+  .events-filters-row {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+
+  .events-filters-row .filter-pills {
+    flex-wrap: wrap;
+  }
+
   .calendar-scroll {
     overflow-x: auto;
     padding-bottom: var(--spacing-xs);
@@ -225,5 +319,14 @@
 
   .calendar-day {
     min-height: 100px;
+  }
+
+  .event-card__body {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .event-card__actions {
+    justify-content: flex-start;
   }
 }

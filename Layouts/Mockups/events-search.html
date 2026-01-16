@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Результаты поиска | Календарь событий</title>
+  <meta name="description" content="Результаты поиска по событиям программы">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/requests.css">
+  <link rel="stylesheet" href="./assets/css/pages/events.css">
+</head>
+<body>
+  <div class="layout">
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+          </a>
+
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="./events.html" class="nav__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+
+          <button class="header__burger" type="button" aria-label="Открыть меню" data-mobile-menu-toggle>
+            <span></span><span></span><span></span>
+          </button>
+
+          <div class="header__actions">
+            <a href="./login.html" class="btn btn--ghost header__user-btn">
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="header__user-text">ВОЙТИ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu__backdrop" data-mobile-menu-close></div>
+      <div class="mobile-menu__panel">
+        <button class="mobile-menu__close" type="button" aria-label="Закрыть меню" data-mobile-menu-close>
+          <span></span><span></span>
+        </button>
+        <nav class="mobile-menu__nav">
+          <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
+          <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+          <a href="./events.html" class="mobile-menu__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a>
+          <a href="#" class="mobile-menu__link">КОНКУРС</a>
+          <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
+        </nav>
+        <div class="mobile-menu__actions">
+          <a href="./login.html" class="btn btn--primary btn--block" data-mobile-menu-action>Войти</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="main layout__main">
+      <div class="container">
+        <section class="events-hero">
+          <div class="events-hero__content">
+            <h1 class="heading-page">Календарь событий</h1>
+            <p class="text-lead">Публичные события программы: вебинары, питч‑сессии, демо‑дни и встречи проектных команд.</p>
+          </div>
+          <div class="events-hero__actions">
+            <a class="btn btn--primary btn--lg" href="./event-form.html">Создать мероприятие</a>
+          </div>
+        </section>
+
+        <section class="events-search" aria-label="Поиск событий">
+          <div class="search">
+            <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+              <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <input type="text" class="form-input search__input" value="HR" placeholder="Поиск по названию события">
+          </div>
+        </section>
+
+        <p class="text-muted">По запросу «HR» найдено 3 события.</p>
+
+        <div class="events-list">
+          <article class="card event-card">
+            <div class="event-card__meta">
+              <span class="badge badge--date badge--deadline-muted">03.07 · 10:00–11:30</span>
+              <span class="badge badge--format">Онлайн</span>
+              <span class="badge badge--primary">Вебинар</span>
+            </div>
+            <h3 class="heading-section event-card__title">
+              <a class="event-card__title-link" href="./event-detail.html">Вебинар по HR‑аналитике</a>
+            </h3>
+            <div class="event-card__body">
+              <div class="event-card__details">
+                <p class="text-muted">Ссылка: webinar.hr-analytics.ru/room</p>
+                <p class="text-muted">Спикеры: Анна Федорова, Николай Жуков</p>
+              </div>
+              <div class="event-card__actions">
+                <a class="btn btn--primary btn--sm" href="./event-detail.html">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card event-card">
+            <div class="event-card__meta">
+              <span class="badge badge--date badge--deadline-muted">05.07 · 12:00–14:00</span>
+              <span class="badge badge--format">Офлайн</span>
+              <span class="badge badge--purple">Питч‑сессия</span>
+            </div>
+            <h3 class="heading-section event-card__title">
+              <a class="event-card__title-link" href="./event-detail.html">HR‑питч проектов</a>
+            </h3>
+            <div class="event-card__body">
+              <div class="event-card__details">
+                <p class="text-muted">Адрес: Москва, ул. Энергетиков, 14</p>
+                <p class="text-muted">Спикеры: Команды проектов 2025</p>
+              </div>
+              <div class="event-card__actions">
+                <a class="btn btn--primary btn--sm" href="./event-detail.html">Подробнее</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card event-card">
+            <div class="event-card__meta">
+              <span class="badge badge--date badge--deadline-muted">12.07 · 15:00–16:30</span>
+              <span class="badge badge--format">Онлайн</span>
+              <span class="badge badge--warning">Демо‑день</span>
+            </div>
+            <h3 class="heading-section event-card__title">
+              <a class="event-card__title-link" href="./event-detail.html">Демо‑день HR‑инициатив</a>
+            </h3>
+            <div class="event-card__body">
+              <div class="event-card__details">
+                <p class="text-muted">Материалы будут доступны после рассылки.</p>
+              </div>
+              <div class="event-card__actions">
+                <a class="btn btn--primary btn--sm" href="./event-detail.html">Подробнее</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

@@ -88,6 +88,20 @@
   background: var(--color-bg-light);
 }
 
+.btn--outline-danger {
+  background: transparent;
+  color: var(--color-error);
+  border: 2px solid var(--color-error);
+}
+
+.btn--outline-danger:hover {
+  background: rgba(255, 77, 79, 0.08);
+}
+
+.js-remove-speaker[hidden] {
+  display: none !important;
+}
+
 .btn--ghost {
   background: transparent;
   color: var(--color-text-primary);
@@ -172,6 +186,17 @@
 
 .btn__text {
   line-height: 1.2;
+}
+
+/* Text links */
+.text-link {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
 }
 
 /* Forms */
@@ -744,9 +769,9 @@
 }
 
 .badge--cancelled {
-  background: var(--color-bg-white);
+  background: var(--color-bg-light);
   color: var(--color-error);
-  border: 1px solid rgba(255, 77, 79, 0.35);
+  border: none;
 }
 
 .badge--format {
@@ -1414,6 +1439,10 @@
 }
 
 .table--centered-headers th {
+  text-align: center;
+}
+
+.table-cell--center {
   text-align: center;
 }
 

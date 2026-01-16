@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFileUploads();
   initCustomSelects();
   initRequiredCheckboxGroups();
+  initSpeakerFields();
 });
 
 function initFileUploads() {
@@ -81,6 +82,95 @@ function initRequiredCheckboxGroups() {
 
     checkboxes.forEach(box => box.addEventListener('change', validate));
     validate();
+  });
+}
+
+function initSpeakerFields() {
+  const lists = document.querySelectorAll('.js-speaker-list');
+  if (!lists.length) return;
+
+  lists.forEach(list => {
+    const group = list.closest('.form-group');
+    if (!group) return;
+
+    const addButton = group.querySelector('.js-add-speaker');
+    const removeButton = group.querySelector('.js-remove-speaker');
+    const template = group.querySelector('.js-speaker-template');
+    if (!addButton || !template) return;
+
+    let index = list.querySelectorAll('.js-speaker-row').length || 0;
+
+    const updateRemoveState = () => {
+      if (!removeButton) return;
+      removeButton.hidden = list.querySelectorAll('.js-speaker-row').length < 2;
+    };
+
+    const bindInputHandlers = (row) => {
+      const inputs = row.querySelectorAll('input');
+      inputs.forEach(input => {
+        input.addEventListener('input', () => {
+          input.classList.remove('form-input--error');
+        });
+      });
+    };
+
+    list.querySelectorAll('.js-speaker-row').forEach(bindInputHandlers);
+    updateRemoveState();
+
+    addButton.addEventListener('click', () => {
+      const rows = list.querySelectorAll('.js-speaker-row');
+      const lastRow = rows[rows.length - 1];
+      if (lastRow) {
+        const inputs = Array.from(lastRow.querySelectorAll('input'));
+        const emptyInputs = inputs.filter(input => !input.value.trim());
+        if (emptyInputs.length) {
+          emptyInputs.forEach(input => input.classList.add('form-input--error'));
+          emptyInputs[0].focus();
+          return;
+        }
+      }
+
+      index += 1;
+      const fragment = template.content.cloneNode(true);
+      const row = fragment.querySelector('.js-speaker-row');
+      if (!row) return;
+
+      const nameInput = row.querySelector('[data-input="name"]');
+      const roleInput = row.querySelector('[data-input="role"]');
+      const nameLabel = row.querySelector('[data-label="name"]');
+      const roleLabel = row.querySelector('[data-label="role"]');
+
+      const nameId = `speaker-name-${index}`;
+      const roleId = `speaker-role-${index}`;
+
+      if (nameInput) {
+        nameInput.id = nameId;
+        nameInput.name = 'speaker-name[]';
+      }
+      if (roleInput) {
+        roleInput.id = roleId;
+        roleInput.name = 'speaker-role[]';
+      }
+      if (nameLabel) {
+        nameLabel.setAttribute('for', nameId);
+      }
+      if (roleLabel) {
+        roleLabel.setAttribute('for', roleId);
+      }
+
+      bindInputHandlers(row);
+      list.appendChild(row);
+      updateRemoveState();
+    });
+
+    if (removeButton) {
+      removeButton.addEventListener('click', () => {
+        const rows = list.querySelectorAll('.js-speaker-row');
+        if (rows.length < 2) return;
+        rows[rows.length - 1].remove();
+        updateRemoveState();
+      });
+    }
   });
 }
 

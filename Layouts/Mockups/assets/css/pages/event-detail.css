@@ -32,6 +32,10 @@
   margin-bottom: var(--spacing-sm);
 }
 
+.sidebar-card__actions--spaced {
+  margin-top: var(--spacing-lg);
+}
+
 @media (max-width: 767px) {
   .event-header {
     flex-direction: column;

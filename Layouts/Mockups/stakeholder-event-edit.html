@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Редактирование события | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/request-form.css">
+  <link rel="stylesheet" href="./assets/css/pages/participant-cabinet.css">
+</head>
+<body data-auth-state="profile" class="body--gradient">
+  <div class="layout">
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+          </a>
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="./events.html" class="nav__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+          <button class="header__burger" type="button" aria-label="Открыть меню" data-mobile-menu-toggle>
+            <span></span><span></span><span></span>
+          </button>
+          <div class="header__actions">
+            <a href="./stakeholder-profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
+              <span class="header__user-initials">СТ</span>
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu__backdrop" data-mobile-menu-close></div>
+      <div class="mobile-menu__panel">
+        <button class="mobile-menu__close" type="button" aria-label="Закрыть меню" data-mobile-menu-close>
+          <span></span><span></span>
+        </button>
+        <nav class="mobile-menu__nav">
+          <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
+          <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+          <a href="./events.html" class="mobile-menu__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a>
+          <a href="#" class="mobile-menu__link">КОНКУРС</a>
+          <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
+        </nav>
+        <div class="mobile-menu__actions">
+          <a href="./stakeholder-profile.html" class="btn btn--primary btn--block" data-mobile-menu-action>Профиль</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="main main--with-gradient layout__main">
+      <div class="container">
+        <div class="sidebar-layout">
+          <aside class="sidebar sidebar-layout__sidebar">
+            <nav class="sidebar__nav">
+              <a href="./stakeholder-profile.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                  <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Профиль</span>
+              </a>
+              <a href="./stakeholder-requests.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M7 8H17M7 12H15M7 16H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Мои запросы</span>
+              </a>
+              <a href="./stakeholder-portfolio.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Портфель идей</span>
+              </a>
+              <a href="./stakeholder-notifications.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Уведомления</span>
+              </a>
+              <a href="./stakeholder-tools.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Административная панель</span>
+              </a>
+            </nav>
+          </aside>
+
+          <div class="content-card sidebar-layout__content">
+            <a class="back-link" href="./events.html">← Назад к календарю</a>
+            <div class="cabinet-toolbar">
+              <div>
+                <p class="eyebrow text-muted">Редактирование события</p>
+                <h1 class="heading-page">Вебинар по HR‑аналитике</h1>
+              </div>
+            </div>
+
+            <form class="form form--request" data-validate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Статус события</label>
+                <span class="status-indicator status-indicator--published">
+                  <span class="status-indicator__dot"></span>
+                  <span>Опубликовано</span>
+                </span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label form-label--required" for="edit-event-type">Тип мероприятия</label>
+                <select class="form-select form-select--decorated js-custom-select" id="edit-event-type" required>
+                  <option>Вебинар</option>
+                  <option>Питч‑сессия</option>
+                  <option>Демо‑день</option>
+                  <option>Встреча проектных команд</option>
+                  <option>Другое</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="edit-event-format">Формат</label>
+                <select class="form-select form-select--decorated js-custom-select" id="edit-event-format" required>
+                  <option selected>Онлайн</option>
+                  <option>Офлайн</option>
+                </select>
+              </div>
+            </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label form-label--required" for="edit-event-title">Название события</label>
+                  <input class="form-input" type="text" id="edit-event-title" value="Вебинар по HR‑аналитике" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label form-label--required" for="edit-event-description">Описание</label>
+                  <span class="form-hint">Кратко опишите формат и ценность события</span>
+                  <textarea class="form-textarea" id="edit-event-description" rows="3" required>Практический разбор методов прогнозирования потребности в компетенциях и анализа данных по персоналу.</textarea>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="edit-event-program">Программа</label>
+                  <span class="form-hint">Пункты повестки или ключевые темы</span>
+                  <textarea class="form-textarea" id="edit-event-program" rows="3">Введение в HR‑аналитику. Методы прогнозирования. Разбор кейсов.</textarea>
+                </div>
+              </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label form-label--required" for="edit-event-date">Дата</label>
+                <input class="form-input" type="date" id="edit-event-date" value="2025-07-03" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="edit-event-time">Время начала</label>
+                <input class="form-input" type="time" id="edit-event-time" value="10:00" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="edit-event-time-end">Время окончания</label>
+                <input class="form-input" type="time" id="edit-event-time-end" value="11:30">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="edit-event-registration">Регистрация до</label>
+                <input class="form-input" type="datetime-local" id="edit-event-registration" value="2025-07-02T20:00">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="edit-event-place">Место проведения</label>
+                <input class="form-input" type="text" id="edit-event-place" placeholder="Адрес или площадка" value="Онлайн">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="edit-event-link">Ссылка на трансляцию</label>
+                <input class="form-input" type="url" id="edit-event-link" value="https://webinar.hr-analytics.ru/room">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="speaker-name-1">Спикеры</label>
+                <span class="form-hint">Добавьте каждого спикера отдельной строкой</span>
+                <div class="speaker-list js-speaker-list">
+                  <div class="form-row js-speaker-row">
+                    <div class="form-group">
+                      <label class="form-label form-label--required" for="speaker-name-1">ФИО</label>
+                      <input class="form-input" type="text" id="speaker-name-1" name="speaker-name[]" value="Анна Федорова" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="speaker-role-1">Роль</label>
+                      <input class="form-input" type="text" id="speaker-role-1" name="speaker-role[]" value="Координатор программы">
+                    </div>
+                  </div>
+                </div>
+                <template class="js-speaker-template">
+                  <div class="form-row js-speaker-row">
+                    <div class="form-group">
+                      <label class="form-label form-label--required" data-label="name">ФИО</label>
+                      <input class="form-input" type="text" data-input="name" placeholder="Имя спикера" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" data-label="role">Роль</label>
+                      <input class="form-input" type="text" data-input="role" placeholder="Роль спикера">
+                    </div>
+                  </div>
+                </template>
+                <div class="form-input-group">
+                  <button class="btn btn--secondary btn--sm js-add-speaker" type="button">+ Добавить спикера</button>
+                  <button class="btn btn--outline-danger btn--sm js-remove-speaker" type="button" hidden>Удалить спикера</button>
+                </div>
+              </div>
+            </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="edit-event-materials">Материалы события</label>
+                  <span class="form-hint">PDF, PPTX, ссылки на облако</span>
+                  <div class="file-upload">
+                    <input class="file-upload__input" type="file" id="edit-event-materials" multiple>
+                    <label class="file-upload__label" for="edit-event-materials">
+                      <span class="file-upload__title">Выберите файлы или перетащите их сюда</span>
+                      <span class="file-upload__types">PDF, PPTX до 20 Мб</span>
+                    </label>
+                  </div>
+                  <ul class="file-upload__list">
+                    <li class="file-upload__item">
+                      <span>Презентация.pdf</span>
+                      <button type="button" class="icon-btn file-upload__remove" aria-label="Удалить файл">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            <div class="form-actions form-actions--compact event-actions" data-status="published">
+              <div class="event-actions__group event-actions__group--draft">
+                <button type="submit" class="btn btn--primary">Опубликовать</button>
+                <button type="submit" class="btn btn--secondary">Сохранить</button>
+                <button type="button" class="btn btn--outline-danger">Удалить</button>
+              </div>
+              <div class="event-actions__group event-actions__group--published">
+                <button type="button" class="btn btn--outline-danger">Отменить событие</button>
+                <button type="button" class="btn btn--secondary">Архивировать</button>
+              </div>
+              <div class="event-actions__group event-actions__group--cancelled">
+                <button type="button" class="btn btn--secondary">Архивировать</button>
+              </div>
+              <a class="btn btn--ghost" href="./events.html">Отмена</a>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__column footer__column--brand">
+            <div class="footer__brand">
+              <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="footer__logo">
+            </div>
+            <p class="footer__description text-muted">Инновационные решения для развития компании и поддержки талантов.</p>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__title heading-subtitle">Платформа</h4>
+            <ul class="footer__list">
+              <li><a href="./requests.html" class="footer__link">Банк инноваций</a></li>
+              <li><a href="./events.html" class="footer__link">Календарь мероприятий</a></li>
+              <li><a href="#" class="footer__link">Конкурсы</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__title heading-subtitle">Связаться</h4>
+            <ul class="footer__list">
+              <li><a href="mailto:info@inn.mosoblgaz.ru" class="footer__link">info@inn.mosoblgaz.ru</a></li>
+              <li><a href="tel:+74951234567" class="footer__link">+7 (495) 123-45-67</a></li>
+              <li><a href="#" class="footer__link">Поддержка</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/forms.js"></script>
+</body>
+</html>
