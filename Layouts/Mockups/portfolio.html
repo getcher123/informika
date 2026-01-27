@@ -73,57 +73,59 @@
               Здесь собраны результаты программы: <strong>одобренные идеи</strong> и <strong>опубликованные кейсы</strong>.
               Портфель доступен в режиме «только просмотр».
             </p>
+          </div>
+        </section>
 
-            <div data-tabs>
-              <div class="tabs portfolio-tabs">
-                <button class="tabs__item tabs__item--active" type="button" data-tab="portfolio-ideas">Одобренные идеи</button>
-                <button class="tabs__item" type="button" data-tab="portfolio-cases">Кейсы</button>
+        <div data-tabs>
+          <div class="tabs portfolio-tabs">
+            <button class="tabs__item tabs__item--active" type="button" data-tab="portfolio-ideas">Одобренные идеи</button>
+            <button class="tabs__item" type="button" data-tab="portfolio-cases">Кейсы</button>
+          </div>
+
+          <section class="filters-section" aria-label="Фильтры портфеля проектов">
+            <div class="search">
+              <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <input type="text" class="form-input search__input" placeholder="Поиск по названию">
+            </div>
+
+            <div class="filters">
+              <div class="filters__row">
+                <div class="form-group">
+                  <label class="form-label">Направление</label>
+                  <select class="form-select form-select--decorated js-custom-select">
+                    <option>Все</option>
+                    <option>Строительство</option>
+                    <option>Эксплуатация</option>
+                    <option>Безопасность</option>
+                    <option>Цифровизация</option>
+                    <option>Клиентский сервис</option>
+                    <option>Другое</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Сортировка</label>
+                  <select class="form-select form-select--decorated js-custom-select">
+                    <option>По дате обновления</option>
+                    <option>По дате одобрения / публикации</option>
+                    <option>По направлению</option>
+                  </select>
+                </div>
               </div>
 
-              <section class="filters-section" aria-label="Фильтры портфеля проектов">
-                <div class="search">
-                  <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
-                    <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-	                  </svg>
-	                  <input type="text" class="form-input search__input" placeholder="Поиск по названию">
-	                </div>
+              <button class="btn btn--reset filter-reset filter-reset--inline" type="button" data-clear-filters>
+                <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="btn__text">Сбросить фильтры</span>
+              </button>
+            </div>
+          </section>
 
-	                <div class="filters">
-	                  <div class="filters__row">
-	                    <div class="form-group">
-	                      <label class="form-label">Направление</label>
-	                      <select class="form-select form-select--decorated js-custom-select">
-	                        <option>Все</option>
-	                        <option>Строительство</option>
-	                        <option>Эксплуатация</option>
-	                        <option>Безопасность</option>
-	                        <option>Цифровизация</option>
-	                        <option>Клиентский сервис</option>
-	                        <option>Другое</option>
-	                      </select>
-	                    </div>
-	                    <div class="form-group">
-	                      <label class="form-label">Сортировка</label>
-	                      <select class="form-select form-select--decorated js-custom-select">
-	                        <option>По дате обновления</option>
-	                        <option>По дате одобрения / публикации</option>
-	                        <option>По направлению</option>
-	                      </select>
-	                    </div>
-	                  </div>
-
-                  <button class="btn btn--reset filter-reset filter-reset--inline" type="button" data-clear-filters>
-                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                    <span class="btn__text">Сбросить фильтры</span>
-                  </button>
-                </div>
-              </section>
-
-              <div class="tabs-panels">
-                <div class="tabs-panel is-active" data-tab-panel="portfolio-ideas">
+          <div class="tabs-panels">
+            <div class="tabs-panel is-active" data-tab-panel="portfolio-ideas">
                   <p class="portfolio-hint">
                     Вкладка показывает только идеи со статусом <strong>«Одобрена»</strong>.
                   </p>
@@ -297,7 +299,6 @@
               </div>
             </div>
           </div>
-        </section>
       </div>
     </main>
   </div>

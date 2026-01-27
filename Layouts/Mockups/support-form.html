@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обращение в техническую поддержку | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/request-form.css">
+</head>
+<body>
+  <div class="layout">
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+          </a>
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+          <button class="header__burger" type="button" aria-label="Открыть меню" data-mobile-menu-toggle>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          <div class="header__actions">
+            <a href="./login.html" class="btn btn--ghost header__user-btn">
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="header__user-text">ВОЙТИ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu__backdrop" data-mobile-menu-close></div>
+      <div class="mobile-menu__panel">
+        <button class="mobile-menu__close" type="button" aria-label="Закрыть меню" data-mobile-menu-close>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="mobile-menu__nav">
+          <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
+          <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+          <a href="#" class="mobile-menu__link">КОНКУРС</a>
+          <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
+        </nav>
+        <div class="mobile-menu__actions">
+          <a href="./login.html" class="btn btn--primary btn--block" data-mobile-menu-action>Войти</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="main layout__main">
+      <div class="container">
+        <a href="./index.html" class="back-link">← Назад</a>
+        <div class="form-container form-container--large">
+          <div class="form-container__header">
+            <h1 class="heading-page form-container__title">Обращение в техническую поддержку</h1>
+            <p class="text-lead form-container__subtitle">
+              Опишите проблему или вопрос — команда поддержки свяжется с вами и поможет решить ситуацию.
+            </p>
+          </div>
+
+          <form class="form" data-validate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label form-label--required" for="support-topic">Тема обращения</label>
+                <select class="form-select form-select--decorated js-custom-select" id="support-topic" required>
+                  <option value="">Выберите тему</option>
+                  <option value="access">Проблемы со входом</option>
+                  <option value="profile">Профиль и данные</option>
+                  <option value="ideas">Идеи и запросы</option>
+                  <option value="events">Мероприятия</option>
+                  <option value="other">Другое</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="support-title">Краткое описание</label>
+                <input type="text" class="form-input" id="support-title" placeholder="Например: не приходит письмо подтверждения" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label form-label--required" for="support-description">Подробности обращения</label>
+                <span class="form-hint">Опишите шаги, когда возникла проблема и что ожидаете получить</span>
+                <textarea class="form-textarea" id="support-description" rows="4" placeholder="Опишите проблему подробно..." required></textarea>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label form-label--required" for="support-name">Ваше имя</label>
+                <input type="text" class="form-input" id="support-name" placeholder="Иван Петров" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="support-email">E-mail</label>
+                <input type="email" class="form-input" id="support-email" placeholder="example@mail.com" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="support-phone">Телефон</label>
+                <input type="tel" class="form-input" id="support-phone" placeholder="+7 (___) ___-__-__">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="support-files">Файлы или скриншоты</label>
+                <span class="form-hint">Скриншоты, логи или документы до 20 Мб</span>
+                <div class="file-upload">
+                  <input type="file" id="support-files" class="file-upload__input" multiple>
+                  <label for="support-files" class="file-upload__label">
+                    <span class="file-upload__title">Выберите файлы или перетащите их сюда</span>
+                    <span class="file-upload__types">PNG, JPG, PDF до 20 Мб</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="form-check">
+                <input type="checkbox" class="form-check__input" id="support-consent" required>
+                <label class="form-check__label" for="support-consent">
+                  Я согласен(на) на обработку моих персональных данных в соответствии с
+                  <a href="./privacy-policy.html">Политикой конфиденциальности</a>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-actions form-actions--compact">
+              <button type="submit" class="btn btn--primary">Отправить обращение</button>
+              <a class="btn btn--ghost" href="./index.html">Отмена</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/forms.js"></script>
+</body>
+</html>
