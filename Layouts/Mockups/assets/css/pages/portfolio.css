@@ -6,6 +6,16 @@
   margin-top: var(--spacing-xl);
 }
 
+.page--portfolio .hero {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .page--portfolio .hero {
+    grid-template-columns: 1fr;
+  }
+}
+
 .page--portfolio .portfolio-tabs + .filters-section {
   margin-top: var(--spacing-lg);
 }
@@ -14,25 +24,82 @@
   margin-top: var(--spacing-xl);
 }
 
-.page--portfolio .filters__row {
-  grid-template-columns: 1fr;
+.page--portfolio .idea-card__header {
+  grid-template-columns: auto 1fr auto;
 }
 
-.page--portfolio .filters__row .form-group {
+.page--portfolio .idea-card__header .badge--gray {
+  justify-self: flex-end;
+  width: fit-content;
+}
+
+.page--portfolio .portfolio-filters-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--spacing-xl);
+  align-items: end;
+}
+
+.page--portfolio .portfolio-filters-row .form-select,
+.page--portfolio .portfolio-filters-row .form-input {
   width: 100%;
 }
 
-.page--portfolio .filters__row .form-group:last-child {
-  justify-self: stretch;
+.page--portfolio .portfolio-filters-row__left {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-lg);
+  align-items: end;
 }
 
-.page--portfolio .filters__row .form-select {
+.page--portfolio .portfolio-filters-row__right {
+  display: grid;
+  align-items: end;
+}
+
+.page--portfolio .portfolio-filters-row__right .search {
+  margin-top: 0;
+}
+
+.page--portfolio .portfolio-filters-row .form-label {
+  min-height: 20px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.page--portfolio .portfolio-filters-row .form-group {
+  margin: 0;
+}
+
+.cases-filters-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-xl);
+  align-items: end;
+}
+
+.cases-filters-row .form-group {
+  margin: 0;
+}
+
+.cases-filters-row .form-select,
+.cases-filters-row .form-input {
   width: 100%;
 }
 
-@media (min-width: 768px) {
-  .page--portfolio .filters__row {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 1023px) {
+  .cases-filters-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1023px) {
+  .page--portfolio .portfolio-filters-row {
+    grid-template-columns: 1fr;
+  }
+
+  .page--portfolio .portfolio-filters-row__left {
+    grid-template-columns: 1fr;
   }
 }
 

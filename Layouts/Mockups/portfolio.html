@@ -70,74 +70,66 @@
           <div class="hero__content">
             <h1 class="heading-page hero__title">Портфель проектов</h1>
             <p class="text-lead hero__description">
-              Здесь собраны результаты программы: <strong>одобренные идеи</strong> и <strong>опубликованные кейсы</strong>.
-              Портфель доступен в режиме «только просмотр».
+              Здесь собраны результаты программы: <strong>проекты</strong> (это идеи, которые прошли отбор и были одобрены стейкхолдером) и <strong>кейсы</strong> (публичные публикации по завершённым проектам).
+              У каждого проекта есть <strong>команда</strong> и материалы — портфель помогает быстро посмотреть, какие инициативы уже в работе и какие результаты можно показать.
             </p>
           </div>
         </section>
 
         <div data-tabs>
           <div class="tabs portfolio-tabs">
-            <button class="tabs__item tabs__item--active" type="button" data-tab="portfolio-ideas">Одобренные идеи</button>
+            <button class="tabs__item tabs__item--active" type="button" data-tab="portfolio-ideas">Проекты</button>
             <button class="tabs__item" type="button" data-tab="portfolio-cases">Кейсы</button>
           </div>
 
           <section class="filters-section" aria-label="Фильтры портфеля проектов">
-            <div class="search">
-              <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
-                <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              <input type="text" class="form-input search__input" placeholder="Поиск по названию">
-            </div>
-
             <div class="filters">
-              <div class="filters__row">
-                <div class="form-group">
-                  <label class="form-label">Направление</label>
-                  <select class="form-select form-select--decorated js-custom-select">
-                    <option>Все</option>
-                    <option>Строительство</option>
-                    <option>Эксплуатация</option>
-                    <option>Безопасность</option>
-                    <option>Цифровизация</option>
-                    <option>Клиентский сервис</option>
-                    <option>Другое</option>
-                  </select>
+              <div class="filters__row portfolio-filters-row">
+                <div class="portfolio-filters-row__left">
+                  <div class="form-group">
+                    <label class="form-label">Направление</label>
+                    <select class="form-select form-select--decorated js-custom-select">
+                      <option>Все</option>
+                      <option>Строительство</option>
+                      <option>Эксплуатация</option>
+                      <option>Безопасность</option>
+                      <option>Цифровизация</option>
+                      <option>Клиентский сервис</option>
+                      <option>Другое</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Сортировка</label>
+                    <select class="form-select form-select--decorated js-custom-select">
+                      <option>По дате обновления</option>
+                      <option>По дате одобрения / публикации</option>
+                      <option>По направлению</option>
+                    </select>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label class="form-label">Сортировка</label>
-                  <select class="form-select form-select--decorated js-custom-select">
-                    <option>По дате обновления</option>
-                    <option>По дате одобрения / публикации</option>
-                    <option>По направлению</option>
-                  </select>
+                <div class="portfolio-filters-row__right">
+                  <div class="form-group">
+                    <label class="form-label">Поиск</label>
+                    <div class="search">
+                      <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                        <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      </svg>
+                      <input type="text" class="form-input search__input" placeholder="Поиск по названию">
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <button class="btn btn--reset filter-reset filter-reset--inline" type="button" data-clear-filters>
-                <svg class="btn__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <span class="btn__text">Сбросить фильтры</span>
-              </button>
             </div>
           </section>
 
           <div class="tabs-panels">
             <div class="tabs-panel is-active" data-tab-panel="portfolio-ideas">
-                  <p class="portfolio-hint">
-                    Вкладка показывает только идеи со статусом <strong>«Одобрена»</strong>.
-                  </p>
-
                   <section class="ideas-grid" aria-label="Каталог одобренных идей">
                     <article class="idea-card">
                       <div class="idea-card__header">
                         <span class="badge badge--primary idea-card__direction">Цифровизация</span>
-                        <span class="badge badge--date badge--deadline-muted idea-card__deadline" data-deadline="2025-06-10">
-                          Одобрена 10.06
-                        </span>
-                        <span class="badge badge--gray">Идея</span>
+                        <span class="badge badge--gray">Проект</span>
                       </div>
 
                       <h3 class="idea-card__title">
@@ -149,10 +141,7 @@
                       </p>
 
                       <div class="idea-card__footer">
-                        <div class="status-indicator status-indicator--approved">
-                          <span class="status-indicator__dot"></span>
-                          <span>Одобрена</span>
-                        </div>
+                        <span class="badge badge--date badge--deadline-muted idea-card__deadline" data-deadline="2025-06-10">Одобрена 10.06</span>
                         <a href="./project-public.html" class="btn btn--primary">Открыть</a>
                       </div>
                     </article>
@@ -160,10 +149,7 @@
                     <article class="idea-card">
                       <div class="idea-card__header">
                         <span class="badge badge--warning idea-card__direction">Строительство</span>
-                        <span class="badge badge--date badge--deadline-muted idea-card__deadline" data-deadline="2025-05-22">
-                          Одобрена 22.05
-                        </span>
-                        <span class="badge badge--gray">Идея</span>
+                        <span class="badge badge--gray">Проект</span>
                       </div>
 
                       <h3 class="idea-card__title">
@@ -175,10 +161,7 @@
                       </p>
 
                       <div class="idea-card__footer">
-                        <div class="status-indicator status-indicator--approved">
-                          <span class="status-indicator__dot"></span>
-                          <span>Одобрена</span>
-                        </div>
+                        <span class="badge badge--date badge--deadline-muted idea-card__deadline" data-deadline="2025-05-22">Одобрена 22.05</span>
                         <a href="./project-public.html" class="btn btn--primary">Открыть</a>
                       </div>
                     </article>
@@ -186,10 +169,7 @@
                     <article class="idea-card">
                       <div class="idea-card__header">
                         <span class="badge badge--success idea-card__direction">Эксплуатация</span>
-                        <span class="badge badge--date badge--deadline-muted idea-card__deadline" data-deadline="2025-04-28">
-                          Одобрена 28.04
-                        </span>
-                        <span class="badge badge--gray">Идея</span>
+                        <span class="badge badge--gray">Проект</span>
                       </div>
 
                       <h3 class="idea-card__title">
@@ -201,10 +181,7 @@
                       </p>
 
                       <div class="idea-card__footer">
-                        <div class="status-indicator status-indicator--approved">
-                          <span class="status-indicator__dot"></span>
-                          <span>Одобрена</span>
-                        </div>
+                        <span class="badge badge--date badge--deadline-muted idea-card__deadline" data-deadline="2025-04-28">Одобрена 28.04</span>
                         <a href="./project-public.html" class="btn btn--primary">Открыть</a>
                       </div>
                     </article>
@@ -212,17 +189,10 @@
                 </div>
 
                 <div class="tabs-panel" data-tab-panel="portfolio-cases" hidden>
-                  <p class="portfolio-hint">
-                    Вкладка показывает только кейсы со статусом публикации <strong>«Опубликовано»</strong>.
-                  </p>
-
                   <section class="ideas-grid" aria-label="Каталог опубликованных кейсов">
                     <article class="idea-card">
                       <div class="idea-card__header">
                         <span class="badge badge--teal idea-card__direction">Операционная эффективность</span>
-                        <span class="badge badge--date badge--deadline-muted idea-card__deadline" data-deadline="2025-06-12">
-                          Опубликовано 12.06
-                        </span>
                         <span class="badge badge--gray">Кейс</span>
                       </div>
 
@@ -235,10 +205,7 @@
                       </p>
 
                       <div class="idea-card__footer">
-                        <div class="status-indicator status-indicator--published">
-                          <span class="status-indicator__dot"></span>
-                          <span>Опубликовано</span>
-                        </div>
+                        <span class="badge badge--date badge--deadline-muted idea-card__deadline" data-deadline="2025-06-12">Опубликовано 12.06</span>
                         <a href="./case-public.html" class="btn btn--primary">Открыть</a>
                       </div>
                     </article>
@@ -246,9 +213,6 @@
                     <article class="idea-card">
                       <div class="idea-card__header">
                         <span class="badge badge--primary idea-card__direction">Цифровизация</span>
-                        <span class="badge badge--date badge--deadline-muted idea-card__deadline" data-deadline="2025-05-30">
-                          Опубликовано 30.05
-                        </span>
                         <span class="badge badge--gray">Кейс</span>
                       </div>
 
@@ -261,10 +225,7 @@
                       </p>
 
                       <div class="idea-card__footer">
-                        <div class="status-indicator status-indicator--published">
-                          <span class="status-indicator__dot"></span>
-                          <span>Опубликовано</span>
-                        </div>
+                        <span class="badge badge--date badge--deadline-muted idea-card__deadline" data-deadline="2025-05-30">Опубликовано 30.05</span>
                         <a href="./case-public.html" class="btn btn--primary">Открыть</a>
                       </div>
                     </article>
@@ -272,9 +233,6 @@
                     <article class="idea-card">
                       <div class="idea-card__header">
                         <span class="badge badge--warning idea-card__direction">Безопасность</span>
-                        <span class="badge badge--date badge--deadline-muted idea-card__deadline" data-deadline="2025-04-15">
-                          Опубликовано 15.04
-                        </span>
                         <span class="badge badge--gray">Кейс</span>
                       </div>
 
@@ -287,10 +245,7 @@
                       </p>
 
                       <div class="idea-card__footer">
-                        <div class="status-indicator status-indicator--published">
-                          <span class="status-indicator__dot"></span>
-                          <span>Опубликовано</span>
-                        </div>
+                        <span class="badge badge--date badge--deadline-muted idea-card__deadline" data-deadline="2025-04-15">Опубликовано 15.04</span>
                         <a href="./case-public.html" class="btn btn--primary">Открыть</a>
                       </div>
                     </article>

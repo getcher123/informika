@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портфель проектов | Инноватика Мособлгаз</title>
+  <meta name="description" content="Публичная лента кейсов программы инноваций">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/requests.css">
+  <link rel="stylesheet" href="./assets/css/pages/portfolio.css">
+</head>
+<body class="page--portfolio">
+  <div class="layout">
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+          </a>
+
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+
+          <button class="header__burger" type="button" aria-label="Открыть меню" data-mobile-menu-toggle>
+            <span></span><span></span><span></span>
+          </button>
+
+          <div class="header__actions">
+            <a href="./login.html" class="btn btn--ghost header__user-btn">
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <span class="header__user-text">ВОЙТИ</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu__backdrop" data-mobile-menu-close></div>
+      <div class="mobile-menu__panel">
+        <button class="mobile-menu__close" type="button" aria-label="Закрыть меню" data-mobile-menu-close>
+          <span></span><span></span>
+        </button>
+        <nav class="mobile-menu__nav">
+          <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
+          <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+          <a href="#" class="mobile-menu__link">КОНКУРС</a>
+          <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
+        </nav>
+        <div class="mobile-menu__actions">
+          <a href="./login.html" class="btn btn--primary btn--block" data-mobile-menu-action>Войти</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="main layout__main">
+      <div class="container">
+        <section class="hero">
+          <div class="hero__content">
+            <h1 class="heading-page hero__title">Портфель проектов</h1>
+            <p class="text-lead hero__description">
+              <strong>Кейс</strong> — это публичная публикация о результатах проекта: что сделали, какой эффект получили, какие материалы готовы для распространения и какая команда участвовала.
+              Не каждый проект обязательно становится кейсом — публикуются только те результаты, которые можно показывать публично.
+            </p>
+          </div>
+        </section>
+
+        <section class="filters-section" aria-label="Фильтры кейсов">
+          <div class="filters">
+            <div class="filters__row cases-filters-row">
+              <div class="form-group">
+                <label class="form-label">Направление</label>
+                <select class="form-select form-select--decorated js-custom-select">
+                  <option>Все</option>
+                  <option>Строительство</option>
+                  <option>Эксплуатация</option>
+                  <option>Безопасность</option>
+                  <option>Цифровизация</option>
+                  <option>Клиентский сервис</option>
+                  <option>Другое</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Сортировка</label>
+                <select class="form-select form-select--decorated js-custom-select">
+                  <option>По дате публикации</option>
+                  <option>По направлению</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Поиск</label>
+                <div class="search">
+                  <svg class="search__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2"/>
+                    <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                  <input type="text" class="form-input search__input" placeholder="Поиск по названию">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ideas-grid" aria-label="Лента кейсов">
+          <article class="idea-card">
+            <div class="idea-card__header">
+              <span class="badge badge--teal idea-card__direction">Операционная эффективность</span>
+            </div>
+
+            <h3 class="idea-card__title">
+              <a href="./case-public.html">Сокращение времени обработки выездов</a>
+            </h3>
+
+            <p class="idea-card__description">
+              Автоматизация распределения заявок и контроль SLA. Эффект: −18% времени обработки, −12% повторных выездов.
+            </p>
+
+            <div class="idea-card__footer">
+              <span class="badge badge--date badge--deadline-muted idea-card__deadline" data-deadline="2025-06-12">Опубликовано 12.06</span>
+              <a href="./case-public.html" class="btn btn--primary">Открыть</a>
+            </div>
+          </article>
+
+          <article class="idea-card">
+            <div class="idea-card__header">
+              <span class="badge badge--primary idea-card__direction">Цифровизация</span>
+            </div>
+
+            <h3 class="idea-card__title">
+              <a href="./case-public.html">Единый реестр рисков по объектам</a>
+            </h3>
+
+            <p class="idea-card__description">
+              Дашборд рисков с приоритизацией и подтверждёнными метриками «до/после» для руководства и служб.
+            </p>
+
+            <div class="idea-card__footer">
+              <span class="badge badge--date badge--deadline-muted idea-card__deadline" data-deadline="2025-05-30">Опубликовано 30.05</span>
+              <a href="./case-public.html" class="btn btn--primary">Открыть</a>
+            </div>
+          </article>
+
+          <article class="idea-card">
+            <div class="idea-card__header">
+              <span class="badge badge--warning idea-card__direction">Безопасность</span>
+            </div>
+
+            <h3 class="idea-card__title">
+              <a href="./case-public.html">Профилактика инцидентов на объектах</a>
+            </h3>
+
+            <p class="idea-card__description">
+              Чек-листы и контроль выполнения мер. Эффект: −25% критических инцидентов на пилотных площадках.
+            </p>
+
+            <div class="idea-card__footer">
+              <span class="badge badge--date badge--deadline-muted idea-card__deadline" data-deadline="2025-04-15">Опубликовано 15.04</span>
+              <a href="./case-public.html" class="btn btn--primary">Открыть</a>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/forms.js"></script>
+  <script src="./assets/js/requests.js"></script>
+</body>
+</html>
