@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Редактирование кейса | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/request-form.css">
+  <link rel="stylesheet" href="./assets/css/pages/participant-cabinet.css">
+  <link rel="stylesheet" href="./assets/css/pages/case-form.css">
+  <link rel="stylesheet" href="./assets/css/pages/stakeholder-case-edit.css">
+</head>
+<body data-auth-state="profile" class="body--gradient">
+  <div class="layout">
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+          </a>
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="./events.html" class="nav__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+          <button class="header__burger" type="button" aria-label="Открыть меню" data-mobile-menu-toggle>
+            <span></span><span></span><span></span>
+          </button>
+          <div class="header__actions">
+            <a href="./stakeholder-profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
+              <span class="header__user-initials">СТ</span>
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu__backdrop" data-mobile-menu-close></div>
+      <div class="mobile-menu__panel">
+        <button class="mobile-menu__close" type="button" aria-label="Закрыть меню" data-mobile-menu-close>
+          <span></span><span></span>
+        </button>
+        <nav class="mobile-menu__nav">
+          <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
+          <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+          <a href="./events.html" class="mobile-menu__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a>
+          <a href="#" class="mobile-menu__link">КОНКУРС</a>
+          <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
+        </nav>
+        <div class="mobile-menu__actions">
+          <a href="./stakeholder-profile.html" class="btn btn--primary btn--block" data-mobile-menu-action>Профиль</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="main main--with-gradient layout__main">
+      <div class="container">
+        <div class="sidebar-layout">
+          <aside class="sidebar sidebar-layout__sidebar">
+            <nav class="sidebar__nav">
+              <a href="./stakeholder-profile.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                  <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Профиль</span>
+              </a>
+              <a href="./stakeholder-requests.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M7 8H17M7 12H15M7 16H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Мои запросы</span>
+              </a>
+              <a href="./stakeholder-portfolio.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Портфель идей</span>
+              </a>
+              <a href="./stakeholder-cases.html" class="sidebar__link sidebar__link--active">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Мои кейсы</span>
+              </a>
+              <a href="./stakeholder-notifications.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Уведомления</span>
+              </a>
+              <a href="./stakeholder-tools.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Административная панель</span>
+              </a>
+            </nav>
+          </aside>
+
+          <div class="content-card sidebar-layout__content">
+            <a class="back-link" href="./stakeholder-cases.html">← Назад к моим кейсам</a>
+            <div class="cabinet-toolbar">
+              <div>
+                <p class="eyebrow text-muted">Редактирование кейса</p>
+                <h1 class="heading-page">Сокращение времени обработки выездов</h1>
+                <p class="text-muted">Кейс — публичная публикация о результатах проекта. Обновления вступают в силу после сохранения.</p>
+              </div>
+            </div>
+
+            <form class="form case-form" data-validate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Статус публикации</label>
+                  <span class="status-indicator status-indicator--published">
+                    <span class="status-indicator__dot"></span>
+                    <span>Опубликовано</span>
+                  </span>
+                </div>
+              </div>
+
+              <section class="section">
+                <h2 class="heading-section">Основное</h2>
+                <div class="grid grid--2">
+                  <div class="form-group">
+                    <label class="form-label form-label--required" for="case-title">Название кейса</label>
+                    <input class="form-input" type="text" id="case-title" value="Сокращение времени обработки выездов" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="case-direction">Направление</label>
+                    <input class="form-input" type="text" id="case-direction" value="Операционная эффективность" disabled>
+                    <span class="form-hint">Заполняется автоматически</span>
+                  </div>
+	                </div>
+	                <div class="form-group">
+	                  <label class="form-label form-label--required" for="case-summary">Короткое описание кейса</label>
+	                  <textarea class="form-textarea" id="case-summary" rows="3" placeholder="1–3 предложения: краткое описание кейса" required>Проект помог ускорить распределение заявок и снизить повторные выезды в филиалах.</textarea>
+	                </div>
+	                <div class="form-group">
+	                  <label class="form-label form-label--required" for="case-description">Описание</label>
+	                  <textarea class="form-textarea" id="case-description" rows="3" required>До запуска проекта распределение выездов выполнялось вручную, что приводило к задержкам и лишним перемещениям команды.</textarea>
+	                </div>
+	                <div class="grid grid--2">
+	                  <div class="form-group">
+	                    <label class="form-label" for="case-finish-date">Дата завершения</label>
+	                    <input class="form-input" type="date" id="case-finish-date" value="2025-06-12">
+                    <span class="form-hint">Предзаполнено датой архивации</span>
+                  </div>
+                </div>
+              </section>
+
+	              <section class="section">
+	                <h2 class="heading-section">Проблема и цель</h2>
+	                <div class="form-group">
+	                  <label class="form-label form-label--required" for="case-problem">Проблема / контекст</label>
+	                  <textarea class="form-textarea" id="case-problem" rows="3" required>Существующая система планирования не учитывала загрузку бригад и географию вызовов.</textarea>
+	                </div>
+	                <div class="form-group">
+	                  <label class="form-label form-label--required" for="case-goal">Цель</label>
+	                  <textarea class="form-textarea" id="case-goal" rows="3" required>Сократить среднее время обработки заявки и повысить прозрачность контроля.</textarea>
+	                </div>
+              </section>
+
+              <section class="section">
+                <h2 class="heading-section">Решение</h2>
+                <div class="form-group">
+                  <label class="form-label form-label--required" for="case-solution">Что сделали</label>
+                  <textarea class="form-textarea" id="case-solution" rows="3" required>Внедрили единый диспетчерский контур и правила маршрутизации заявок с автоподбором исполнителей.</textarea>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="case-location">Где внедрено</label>
+                  <input class="form-input" type="text" id="case-location" placeholder="Подразделение / процесс" value="Филиалы, выездные бригады">
+                </div>
+              </section>
+
+	              <section class="section">
+	                <h2 class="heading-section">Результаты</h2>
+	                <div class="form-group">
+	                  <label class="form-label form-label--required" for="case-result">Итог</label>
+	                  <textarea class="form-textarea" id="case-result" rows="3" required>Ускорили распределение заявок и снизили повторные выезды на пилотных площадках.</textarea>
+	                </div>
+
+	                <div class="form-group">
+	                  <label class="form-label form-label--required" for="case-results-summary">Кратко о результате</label>
+	                  <textarea class="form-textarea" id="case-results-summary" rows="2" required>Время обработки заявок снизилось, а контроль SLA стал прозрачным для руководства.</textarea>
+	                </div>
+
+		                <div class="form-group">
+		                  <label class="form-label">Показатели результата</label>
+		                  <span class="form-hint">Каждый показатель — это значение и короткое описание (как в карточке кейса).</span>
+		                  <div class="metrics-list js-metric-list">
+		                    <div class="form-row js-metric-row">
+		                      <div class="form-group">
+		                        <label class="form-label form-label--required" for="metric-value-1">Значение</label>
+		                        <input class="form-input" type="text" id="metric-value-1" name="metric-value[]" value="-18%" required>
+		                      </div>
+		                      <div class="form-group">
+		                        <label class="form-label form-label--required" for="metric-label-1">Описание показателя</label>
+		                        <input class="form-input" type="text" id="metric-label-1" name="metric-label[]" value="Сокращение времени обработки" required>
+		                      </div>
+		                    </div>
+		                    <div class="form-row js-metric-row">
+		                      <div class="form-group">
+		                        <label class="form-label form-label--required" for="metric-value-2">Значение</label>
+		                        <input class="form-input" type="text" id="metric-value-2" name="metric-value[]" value="-12%" required>
+		                      </div>
+		                      <div class="form-group">
+		                        <label class="form-label form-label--required" for="metric-label-2">Описание показателя</label>
+		                        <input class="form-input" type="text" id="metric-label-2" name="metric-label[]" value="Снижение повторных выездов" required>
+		                      </div>
+		                    </div>
+		                    <div class="form-row js-metric-row">
+		                      <div class="form-group">
+		                        <label class="form-label form-label--required" for="metric-value-3">Значение</label>
+		                        <input class="form-input" type="text" id="metric-value-3" name="metric-value[]" value="+24%" required>
+		                      </div>
+		                      <div class="form-group">
+		                        <label class="form-label form-label--required" for="metric-label-3">Описание показателя</label>
+		                        <input class="form-input" type="text" id="metric-label-3" name="metric-label[]" value="Рост прозрачности SLA" required>
+		                      </div>
+		                    </div>
+		                  </div>
+		                  <template class="js-metric-template">
+		                    <div class="form-row js-metric-row">
+		                      <div class="form-group">
+		                        <label class="form-label form-label--required" data-label="value">Значение</label>
+		                        <input class="form-input" type="text" data-input="value" placeholder="Напр.: -18%" required>
+		                      </div>
+		                      <div class="form-group">
+		                        <label class="form-label form-label--required" data-label="label">Описание показателя</label>
+		                        <input class="form-input" type="text" data-input="label" placeholder="Напр.: Сокращение времени обработки" required>
+		                      </div>
+		                    </div>
+		                  </template>
+		                  <div class="form-input-group">
+		                    <button class="btn btn--secondary btn--sm js-add-metric" type="button">+ Добавить показатель</button>
+		                    <button class="btn btn--outline-danger btn--sm js-remove-metric" type="button" hidden>Удалить показатель</button>
+		                  </div>
+		                  <p class="form-hint">Для публикации нужен минимум один показатель или отметка «Нет измеримых данных».</p>
+	                </div>
+
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check__input" id="case-no-metrics">
+                    <label class="form-check__label" for="case-no-metrics">Нет измеримых данных</label>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="case-next">Следующие шаги</label>
+                  <textarea class="form-textarea" id="case-next" rows="2">Масштабирование на остальные филиалы и настройка аналитики по SLA.</textarea>
+                </div>
+	              </section>
+
+	              <section class="section">
+	                <h2 class="heading-section">Материалы</h2>
+	                <div class="form-group">
+	                  <label class="form-label" for="edit-case-materials">Материалы кейса</label>
+	                  <span class="form-hint">PDF, PPTX до 20 Мб</span>
+	                  <div class="file-upload">
+	                    <input class="file-upload__input" type="file" id="edit-case-materials" multiple>
+	                    <label class="file-upload__label" for="edit-case-materials">
+	                      <span class="file-upload__title">Выберите файлы или перетащите их сюда</span>
+	                      <span class="file-upload__types">PDF, PPTX до 20 Мб</span>
+	                    </label>
+	                  </div>
+	                  <ul class="file-upload__list">
+	                    <li class="file-upload__item">
+	                      <span>Презентация результатов.pdf</span>
+	                      <button type="button" class="icon-btn file-upload__remove" aria-label="Удалить файл">
+	                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+	                          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+	                          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+	                        </svg>
+	                      </button>
+	                    </li>
+	                    <li class="file-upload__item">
+	                      <span>Видео демонстрации.mp4</span>
+	                      <button type="button" class="icon-btn file-upload__remove" aria-label="Удалить файл">
+	                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+	                          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+	                          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+	                        </svg>
+	                      </button>
+	                    </li>
+	                  </ul>
+	                </div>
+	              </section>
+
+              <section class="section team-section">
+                <div class="cta-card team-card">
+                  <h2 class="heading-section">Команда</h2>
+                  <p class="team-card__desc">Состав команды подтягивается из Bitrix24 и доступен только для просмотра.</p>
+                  <div class="team-grid">
+                    <div class="team-member">
+                      <p class="text-caption">Стейкхолдер</p>
+                      <p class="text-strong">И.Г.</p>
+                      <p class="text-meta">Операционный блок</p>
+                    </div>
+                    <div class="team-member">
+                      <p class="text-caption">Координатор</p>
+                      <p class="text-strong">В.К.</p>
+                      <p class="text-meta">Центр инноваций</p>
+                    </div>
+                    <div class="team-member">
+                      <p class="text-caption">Эксперт</p>
+                      <p class="text-strong">Е.М.</p>
+                      <p class="text-meta">SLA аналитика</p>
+                    </div>
+                    <div class="team-member">
+                      <p class="text-caption">Автор</p>
+                      <p class="text-strong">А.П.</p>
+                      <p class="text-meta">Инициатор идеи</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="section">
+                <h2 class="heading-section">Проверка перед публикацией</h2>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check__input" id="case-check-1" required checked>
+                    <label class="form-check__label" for="case-check-1">Материалы и текст не содержат персональных/закрытых данных</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check__input" id="case-check-2" required checked>
+                    <label class="form-check__label" for="case-check-2">Публичные ссылки открываются без доступа к Bitrix24</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check__input" id="case-check-3" required checked>
+                    <label class="form-check__label" for="case-check-3">Кейс согласован к публикации</label>
+                  </div>
+                </div>
+              </section>
+
+              <section class="section">
+                <h2 class="heading-section">Снятие с публикации</h2>
+                <div class="form-group">
+                  <label class="form-label" for="case-unpublish">Причина снятия</label>
+                  <textarea class="form-textarea" id="case-unpublish" rows="2" placeholder="Обязательное поле при снятии с публикации"></textarea>
+                </div>
+              </section>
+
+              <div class="form-actions form-actions--compact case-actions" data-status="published">
+                <div class="case-actions__group case-actions__group--draft">
+                  <button type="submit" class="btn btn--primary">Опубликовать</button>
+                  <button type="submit" class="btn btn--secondary">Сохранить</button>
+                  <button type="button" class="btn btn--outline-danger">Удалить</button>
+                </div>
+                <div class="case-actions__group case-actions__group--published">
+                  <button type="submit" class="btn btn--secondary">Сохранить</button>
+                  <button type="button" class="btn btn--ghost">Снять с публикации</button>
+                </div>
+                <div class="case-actions__group case-actions__group--unpublished">
+                  <button type="button" class="btn btn--secondary">Вернуть в черновик</button>
+                  <button type="button" class="btn btn--primary">Опубликовать</button>
+                </div>
+                <a class="btn btn--ghost" href="./stakeholder-cases.html">Отмена</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/forms.js"></script>
+</body>
+</html>

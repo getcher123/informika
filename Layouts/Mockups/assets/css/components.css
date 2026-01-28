@@ -508,6 +508,35 @@
   outline-offset: 2px;
 }
 
+.file-upload__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  margin-top: var(--spacing-md);
+  padding: 0;
+}
+
+.file-upload__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-white);
+}
+
+.file-upload__item span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-upload__remove {
+  flex: 0 0 auto;
+}
+
 .form-input::placeholder,
 .form-textarea::placeholder {
   color: var(--color-text-muted);

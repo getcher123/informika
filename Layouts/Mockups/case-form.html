@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Создать кейс | Инноватика Мособлгаз</title>
+  <title>Публикация кейса | Инноватика Мособлгаз</title>
   <link rel="stylesheet" href="./assets/css/base.css">
   <link rel="stylesheet" href="./assets/css/layout.css">
   <link rel="stylesheet" href="./assets/css/components.css">
   <link rel="stylesheet" href="./assets/css/pages/request-form.css">
-  <link rel="stylesheet" href="./assets/css/pages/participant-cabinet.css">
   <link rel="stylesheet" href="./assets/css/pages/case-form.css">
 </head>
-<body data-auth-state="profile" class="body--gradient">
+<body>
   <div class="layout">
     <header class="header layout__header">
       <div class="container">
@@ -23,6 +22,7 @@
             <ul class="nav__list">
               <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
               <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="./events.html" class="nav__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a></li>
               <li><a href="#" class="nav__link">КОНКУРС</a></li>
               <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
             </ul>
@@ -30,13 +30,14 @@
           <button class="header__burger" type="button" aria-label="Открыть меню" data-mobile-menu-toggle>
             <span></span><span></span><span></span>
           </button>
+
           <div class="header__actions">
-            <a href="./stakeholder-profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
-              <span class="header__user-initials">СТ</span>
-              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href="./login.html" class="btn btn--ghost header__user-btn">
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
                 <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               </svg>
+              <span class="header__user-text">ВОЙТИ</span>
             </a>
           </div>
         </div>
@@ -52,314 +53,184 @@
         <nav class="mobile-menu__nav">
           <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
           <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+          <a href="./events.html" class="mobile-menu__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a>
           <a href="#" class="mobile-menu__link">КОНКУРС</a>
           <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
         </nav>
         <div class="mobile-menu__actions">
-          <a href="./stakeholder-profile.html" class="btn btn--primary btn--block" data-mobile-menu-action>Профиль</a>
+          <a href="./login.html" class="btn btn--primary btn--block" data-mobile-menu-action>Войти</a>
         </div>
       </div>
     </div>
 
-    <main class="main main--with-gradient layout__main">
+    <main class="main layout__main">
       <div class="container">
-        <div class="sidebar-layout">
-          <aside class="sidebar sidebar-layout__sidebar">
-            <nav class="sidebar__nav">
-              <a href="./stakeholder-profile.html" class="sidebar__link">
-                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
-                  <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <span class="sidebar__text">Профиль</span>
-              </a>
-              <a href="./stakeholder-requests.html" class="sidebar__link">
-                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
-                  <path d="M7 8H17M7 12H15M7 16H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <span class="sidebar__text">Мои запросы</span>
-              </a>
-              <a href="./stakeholder-portfolio.html" class="sidebar__link sidebar__link--active">
-                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="sidebar__text">Портфель идей</span>
-              </a>
-              <a href="./stakeholder-notifications.html" class="sidebar__link">
-                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="sidebar__text">Уведомления</span>
-              </a>
-              <a href="./stakeholder-tools.html" class="sidebar__link">
-                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="sidebar__text">Административная панель</span>
-              </a>
-            </nav>
-          </aside>
-
-          <div class="content-card sidebar-layout__content">
-            <a class="back-link" href="./stakeholder-portfolio.html">← Назад к портфелю</a>
-            <div class="cabinet-toolbar">
-              <div>
-                <p class="eyebrow text-muted">Кейс проекта</p>
-                <h1 class="heading-page">Создать кейс</h1>
-                <p class="text-muted">Кейс создаётся после архивации проекта и публикуется отдельным действием.</p>
-              </div>
-            </div>
-
-            <form class="form case-form" data-validate>
-              <section class="section">
-                <h2 class="heading-section">Основное</h2>
-                <div class="grid grid--2">
-                  <div class="form-group">
-                    <label class="form-label form-label--required" for="case-title">Название кейса</label>
-                    <input class="form-input" type="text" id="case-title" value="HR-Foresight" required>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label" for="case-direction">Направление</label>
-                    <input class="form-input" type="text" id="case-direction" value="Цифровизация" disabled>
-                    <span class="form-hint">Заполняется автоматически</span>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="form-label form-label--required" for="case-summary">Короткое описание результата</label>
-                  <textarea class="form-textarea" id="case-summary" rows="3" placeholder="1–3 предложения о результате" required></textarea>
-                </div>
-                <div class="grid grid--2">
-                  <div class="form-group">
-                    <label class="form-label" for="case-finish-date">Дата завершения</label>
-                    <input class="form-input" type="date" id="case-finish-date" value="2025-05-30">
-                    <span class="form-hint">Предзаполнено датой архивации</span>
-                  </div>
-                </div>
-              </section>
-
-              <section class="section">
-                <h2 class="heading-section">Проблема и цель</h2>
-                <div class="form-group">
-                  <label class="form-label form-label--required" for="case-problem">Проблема / контекст</label>
-                  <textarea class="form-textarea" id="case-problem" rows="3" required></textarea>
-                </div>
-                <div class="form-group">
-                  <label class="form-label form-label--required" for="case-goal">Цель</label>
-                  <textarea class="form-textarea" id="case-goal" rows="3" required></textarea>
-                </div>
-              </section>
-
-              <section class="section">
-                <h2 class="heading-section">Решение</h2>
-                <div class="form-group">
-                  <label class="form-label form-label--required" for="case-solution">Что сделали</label>
-                  <textarea class="form-textarea" id="case-solution" rows="3" required></textarea>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="case-location">Где внедрено</label>
-                  <input class="form-input" type="text" id="case-location" placeholder="Подразделение / процесс">
-                </div>
-              </section>
-
-              <section class="section">
-                <h2 class="heading-section">Результаты</h2>
-                <div class="form-group">
-                  <label class="form-label form-label--required" for="case-result">Итог</label>
-                  <textarea class="form-textarea" id="case-result" rows="3" required></textarea>
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label">Показатели результата</label>
-                  <div class="table-wrapper">
-                    <table class="table table--compact table--centered-headers">
-                      <thead>
-                        <tr>
-                          <th>Показатель</th>
-                          <th>Значение</th>
-                          <th>Единица</th>
-                          <th>Сравнение</th>
-                          <th>Период</th>
-                          <th>Подтверждение</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Время обработки заявки</td>
-                          <td>–18%</td>
-                          <td>%</td>
-                          <td>до / после</td>
-                          <td>3 месяца</td>
-                          <td><a href="#">Отчёт</a></td>
-                        </tr>
-                        <tr>
-                          <td>Повторные выезды</td>
-                          <td>–12%</td>
-                          <td>%</td>
-                          <td>до / после</td>
-                          <td>3 месяца</td>
-                          <td><a href="#">Сводка</a></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <button class="btn btn--secondary btn--sm" type="button">Добавить показатель</button>
-                  <p class="form-hint">Для публикации нужен минимум один показатель или отметка «Нет измеримых данных».</p>
-                </div>
-
-                <div class="form-group">
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check__input" id="case-no-metrics">
-                    <label class="form-check__label" for="case-no-metrics">Нет измеримых данных</label>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="case-next">Следующие шаги</label>
-                  <textarea class="form-textarea" id="case-next" rows="2"></textarea>
-                </div>
-              </section>
-
-              <section class="section">
-                <h2 class="heading-section">Материалы</h2>
-                <p class="form-hint">Для публикации минимум один материал с видимостью «Публично».</p>
-
-                <div class="card">
-                  <h3 class="heading-subtitle">Материал 1</h3>
-                  <div class="grid grid--2">
-                    <div class="form-group">
-                      <label class="form-label">Тип</label>
-                      <select class="form-select form-select--decorated js-custom-select">
-                        <option>Презентация</option>
-                        <option>Видео</option>
-                        <option>Демо</option>
-                        <option>Публикация</option>
-                        <option>Документ</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Видимость</label>
-                      <select class="form-select form-select--decorated js-custom-select">
-                        <option>Публично</option>
-                        <option>Только авторизованным</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="grid grid--2">
-                    <div class="form-group">
-                      <label class="form-label form-label--required">Название</label>
-                      <input class="form-input" type="text" required>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label form-label--required">Ссылка</label>
-                      <input class="form-input" type="url" placeholder="https://" required>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card">
-                  <h3 class="heading-subtitle">Материал 2</h3>
-                  <div class="grid grid--2">
-                    <div class="form-group">
-                      <label class="form-label">Тип</label>
-                      <select class="form-select form-select--decorated js-custom-select">
-                        <option>Видео</option>
-                        <option>Презентация</option>
-                        <option>Демо</option>
-                        <option>Публикация</option>
-                        <option>Документ</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label">Видимость</label>
-                      <select class="form-select form-select--decorated js-custom-select">
-                        <option>Только авторизованным</option>
-                        <option>Публично</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="grid grid--2">
-                    <div class="form-group">
-                      <label class="form-label form-label--required">Название</label>
-                      <input class="form-input" type="text" required>
-                    </div>
-                    <div class="form-group">
-                      <label class="form-label form-label--required">Ссылка</label>
-                      <input class="form-input" type="url" placeholder="https://" required>
-                    </div>
-                  </div>
-                </div>
-
-                <button class="btn btn--secondary btn--sm" type="button">Добавить материал</button>
-              </section>
-
-              <section class="section team-section">
-                <div class="cta-card team-card">
-                  <h2 class="heading-section">Команда</h2>
-                  <p class="team-card__desc">Состав команды подтягивается из Bitrix24 и доступен только для просмотра.</p>
-                  <div class="team-grid">
-                    <div class="team-member">
-                      <p class="text-caption">Стейкхолдер</p>
-                      <p class="text-strong">Чижикова Ирина</p>
-                      <p class="text-meta">Директор цифровой трансформации HR блока</p>
-                    </div>
-                    <div class="team-member">
-                      <p class="text-caption">Координатор</p>
-                      <p class="text-strong">Федорова Анна</p>
-                      <p class="text-meta">Проектный офис</p>
-                    </div>
-                    <div class="team-member">
-                      <p class="text-caption">Эксперт</p>
-                      <p class="text-strong">Жуков Николай</p>
-                      <p class="text-meta">HR‑аналитика</p>
-                    </div>
-                    <div class="team-member">
-                      <p class="text-caption">Автор</p>
-                      <p class="text-strong">Шестаков Михаил</p>
-                      <p class="text-meta">Инициатор идеи</p>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section class="section">
-                <h2 class="heading-section">Проверка перед публикацией</h2>
-                <div class="form-group">
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check__input" id="case-check-1" required>
-                    <label class="form-check__label" for="case-check-1">Материалы и текст не содержат персональных/закрытых данных</label>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check__input" id="case-check-2" required>
-                    <label class="form-check__label" for="case-check-2">Публичные ссылки открываются без доступа к Bitrix24</label>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check__input" id="case-check-3" required>
-                    <label class="form-check__label" for="case-check-3">Кейс согласован к публикации</label>
-                  </div>
-                </div>
-              </section>
-
-              <section class="section">
-                <h2 class="heading-section">Снятие с публикации</h2>
-                <div class="form-group">
-                  <label class="form-label" for="case-unpublish">Причина снятия</label>
-                  <textarea class="form-textarea" id="case-unpublish" rows="2" placeholder="Обязательное поле при снятии с публикации"></textarea>
-                </div>
-              </section>
-
-              <div class="form-actions form-actions--compact">
-                <button class="btn btn--secondary" type="button">Сохранить черновик</button>
-                <button class="btn btn--primary" type="button">Опубликовать</button>
-                <button class="btn btn--ghost" type="button">Снять с публикации</button>
-              </div>
-            </form>
+        <a href="./cases.html" class="back-link">← Назад</a>
+        <div class="form-container form-container--large">
+          <div class="form-container__header">
+            <h1 class="heading-page form-container__title">Публикация кейса</h1>
+            <p class="text-lead form-container__subtitle">
+              Заполните кейс по завершённому проекту: что сделали, какой эффект получили и какие материалы можно показать публично.
+            </p>
           </div>
+
+          <form class="form form--request case-form" data-validate>
+            <section class="section">
+              <h2 class="heading-section">Основное</h2>
+              <div class="grid grid--2">
+                <div class="form-group">
+                  <label class="form-label form-label--required" for="case-title">Название кейса</label>
+                  <input class="form-input" type="text" id="case-title" placeholder="Название кейса" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="case-direction">Направление</label>
+                  <input class="form-input" type="text" id="case-direction" value="Цифровизация" disabled>
+                  <span class="form-hint">Заполняется автоматически</span>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="case-summary">Короткое описание кейса</label>
+                <textarea class="form-textarea" id="case-summary" rows="3" placeholder="1–3 предложения: краткое описание кейса" required></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="case-description">Описание</label>
+                <textarea class="form-textarea" id="case-description" rows="3" placeholder="1–2 абзаца: контекст проекта и суть результата" required></textarea>
+              </div>
+              <div class="grid grid--2">
+                <div class="form-group">
+                  <label class="form-label" for="case-finish-date">Дата завершения</label>
+                  <input class="form-input" type="date" id="case-finish-date" value="2025-06-12">
+                  <span class="form-hint">Предзаполнено датой архивации</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="section">
+              <h2 class="heading-section">Проблема и цель</h2>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="case-problem">Проблема / контекст</label>
+                <textarea class="form-textarea" id="case-problem" rows="3" required></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="case-goal">Цель</label>
+                <textarea class="form-textarea" id="case-goal" rows="3" required></textarea>
+              </div>
+            </section>
+
+            <section class="section">
+              <h2 class="heading-section">Решение</h2>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="case-solution">Что сделали</label>
+                <textarea class="form-textarea" id="case-solution" rows="3" required></textarea>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="case-location">Где внедрено</label>
+                <input class="form-input" type="text" id="case-location" placeholder="Подразделение / процесс">
+              </div>
+            </section>
+
+            <section class="section">
+              <h2 class="heading-section">Результаты</h2>
+              <div class="form-group">
+                <label class="form-label form-label--required" for="case-result">Итог</label>
+                <textarea class="form-textarea" id="case-result" rows="3" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label form-label--required" for="case-results-summary">Кратко о результате</label>
+                <textarea class="form-textarea" id="case-results-summary" rows="2" placeholder="1–2 предложения о ключевом эффекте" required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Показатели результата</label>
+                <span class="form-hint">Каждый показатель — это значение и короткое описание (как в карточке кейса).</span>
+                <div class="metrics-list js-metric-list">
+                  <div class="form-row js-metric-row">
+                    <div class="form-group">
+                      <label class="form-label form-label--required" for="metric-value-1">Значение</label>
+                      <input class="form-input" type="text" id="metric-value-1" name="metric-value[]" placeholder="-18%" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label form-label--required" for="metric-label-1">Описание показателя</label>
+                      <input class="form-input" type="text" id="metric-label-1" name="metric-label[]" placeholder="Сокращение времени обработки" required>
+                    </div>
+                  </div>
+                </div>
+                <template class="js-metric-template">
+                  <div class="form-row js-metric-row">
+                    <div class="form-group">
+                      <label class="form-label form-label--required" data-label="value">Значение</label>
+                      <input class="form-input" type="text" data-input="value" placeholder="Напр.: -18%" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label form-label--required" data-label="label">Описание показателя</label>
+                      <input class="form-input" type="text" data-input="label" placeholder="Напр.: Сокращение времени обработки" required>
+                    </div>
+                  </div>
+                </template>
+                <div class="form-input-group">
+                  <button class="btn btn--secondary btn--sm js-add-metric" type="button">+ Добавить показатель</button>
+                  <button class="btn btn--outline-danger btn--sm js-remove-metric" type="button" hidden>Удалить показатель</button>
+                </div>
+                <p class="form-hint">Для публикации нужен минимум один показатель или отметка «Нет измеримых данных».</p>
+              </div>
+
+              <div class="form-group">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check__input" id="case-no-metrics">
+                  <label class="form-check__label" for="case-no-metrics">Нет измеримых данных</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="case-next">Следующие шаги</label>
+                <textarea class="form-textarea" id="case-next" rows="2"></textarea>
+              </div>
+            </section>
+
+            <section class="section">
+              <h2 class="heading-section">Материалы</h2>
+              <div class="form-group">
+                <label class="form-label" for="case-materials">Материалы кейса</label>
+                <span class="form-hint">PDF, PPTX до 20 Мб</span>
+                <div class="file-upload">
+                  <input class="file-upload__input" type="file" id="case-materials" multiple>
+                  <label class="file-upload__label" for="case-materials">
+                    <span class="file-upload__title">Выберите файлы или перетащите их сюда</span>
+                    <span class="file-upload__types">PDF, PPTX до 20 Мб</span>
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <section class="section">
+              <h2 class="heading-section">Проверка перед публикацией</h2>
+              <div class="form-group">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check__input" id="case-check-1" required>
+                  <label class="form-check__label" for="case-check-1">Материалы и текст не содержат персональных/закрытых данных</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check__input" id="case-check-2" required>
+                  <label class="form-check__label" for="case-check-2">Публичные ссылки открываются без доступа к Bitrix24</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check__input" id="case-check-3" required>
+                  <label class="form-check__label" for="case-check-3">Кейс согласован к публикации</label>
+                </div>
+              </div>
+            </section>
+
+            <div class="form-actions form-actions--compact">
+              <button type="button" class="btn btn--secondary">Сохранить черновик</button>
+              <button type="submit" class="btn btn--primary">Опубликовать</button>
+              <a class="btn btn--ghost" href="./cases.html">Отмена</a>
+            </div>
+          </form>
         </div>
       </div>
     </main>
@@ -367,5 +238,6 @@
 
   <script src="./assets/js/vendor.js"></script>
   <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/forms.js"></script>
 </body>
 </html>

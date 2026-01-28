@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initCustomSelects();
   initRequiredCheckboxGroups();
   initSpeakerFields();
+  initMetricFields();
+  initNoMetricsToggle();
 });
 
 function initFileUploads() {
@@ -171,6 +173,126 @@ function initSpeakerFields() {
         updateRemoveState();
       });
     }
+  });
+}
+
+function initMetricFields() {
+  const lists = document.querySelectorAll('.js-metric-list');
+  if (!lists.length) return;
+
+  lists.forEach(list => {
+    const group = list.closest('.form-group');
+    if (!group) return;
+
+    const addButton = group.querySelector('.js-add-metric');
+    const removeButton = group.querySelector('.js-remove-metric');
+    const template = group.querySelector('.js-metric-template');
+    if (!addButton || !template) return;
+
+    let index = list.querySelectorAll('.js-metric-row').length || 0;
+
+    const updateRemoveState = () => {
+      if (!removeButton) return;
+      removeButton.hidden = list.querySelectorAll('.js-metric-row').length < 2;
+    };
+
+    const bindInputHandlers = (row) => {
+      const inputs = row.querySelectorAll('input');
+      inputs.forEach(input => {
+        input.addEventListener('input', () => {
+          input.classList.remove('form-input--error');
+        });
+      });
+    };
+
+    list.querySelectorAll('.js-metric-row').forEach(bindInputHandlers);
+    updateRemoveState();
+
+    addButton.addEventListener('click', () => {
+      const rows = list.querySelectorAll('.js-metric-row');
+      const lastRow = rows[rows.length - 1];
+
+      if (lastRow) {
+        const inputs = Array.from(lastRow.querySelectorAll('input'));
+        const emptyInputs = inputs.filter(input => !input.value.trim());
+        if (emptyInputs.length) {
+          emptyInputs.forEach(input => input.classList.add('form-input--error'));
+          emptyInputs[0].focus();
+          return;
+        }
+      }
+
+      index += 1;
+      const fragment = template.content.cloneNode(true);
+      const row = fragment.querySelector('.js-metric-row');
+      if (!row) return;
+
+      const valueInput = row.querySelector('[data-input="value"]');
+      const labelInput = row.querySelector('[data-input="label"]');
+      const valueLabel = row.querySelector('[data-label="value"]');
+      const labelLabel = row.querySelector('[data-label="label"]');
+
+      const valueId = `metric-value-${index}`;
+      const labelId = `metric-label-${index}`;
+
+      if (valueInput) {
+        valueInput.id = valueId;
+        valueInput.name = 'metric-value[]';
+      }
+      if (labelInput) {
+        labelInput.id = labelId;
+        labelInput.name = 'metric-label[]';
+      }
+      if (valueLabel) {
+        valueLabel.setAttribute('for', valueId);
+      }
+      if (labelLabel) {
+        labelLabel.setAttribute('for', labelId);
+      }
+
+      bindInputHandlers(row);
+      list.appendChild(row);
+      updateRemoveState();
+    });
+
+    if (removeButton) {
+      removeButton.addEventListener('click', () => {
+        const rows = list.querySelectorAll('.js-metric-row');
+        if (rows.length < 2) return;
+        rows[rows.length - 1].remove();
+        updateRemoveState();
+      });
+    }
+  });
+}
+
+function initNoMetricsToggle() {
+  const forms = document.querySelectorAll('form');
+  if (!forms.length) return;
+
+  forms.forEach(form => {
+    const checkbox = form.querySelector('#case-no-metrics');
+    const list = form.querySelector('.js-metric-list');
+    if (!checkbox || !list) return;
+
+    const group = list.closest('.form-group');
+    const addButton = group ? group.querySelector('.js-add-metric') : null;
+    const removeButton = group ? group.querySelector('.js-remove-metric') : null;
+
+    const toggle = () => {
+      const disabled = checkbox.checked;
+
+      if (addButton) addButton.disabled = disabled;
+      if (removeButton) removeButton.disabled = disabled;
+
+      list.querySelectorAll('input').forEach(input => {
+        input.disabled = disabled;
+        if (disabled) input.classList.remove('form-input--error');
+      });
+    };
+
+    checkbox.addEventListener('change', toggle);
+    toggle();
   });
 }
 

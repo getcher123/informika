@@ -1,0 +1,17 @@
+/* ===================================
+   STAKEHOLDER-CASES.CSS - Мои кейсы (стейкхолдер)
+   =================================== */
+
+.page--stakeholder-cases .ideas-grid {
+  grid-template-columns: 1fr;
+}
+
+.page--stakeholder-cases .cabinet-toolbar__actions {
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.page--stakeholder-cases .cabinet-search {
+  max-width: 420px;
+}
+

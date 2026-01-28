@@ -1,0 +1,21 @@
+/* ===================================
+   STAKEHOLDER-CASE-EDIT.CSS - Редактирование кейса (стейкхолдер)
+   =================================== */
+
+.case-actions {
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.case-actions__group {
+  display: none;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.case-actions[data-status="draft"] .case-actions__group--draft,
+.case-actions[data-status="published"] .case-actions__group--published,
+.case-actions[data-status="unpublished"] .case-actions__group--unpublished {
+  display: flex;
+}
+

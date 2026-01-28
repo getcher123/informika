@@ -22,10 +22,6 @@
   margin-top: var(--spacing-md);
 }
 
-.case-form .form-actions {
-  justify-content: flex-start;
-}
-
 @media (max-width: 767px) {
   .case-form .form-actions {
     flex-direction: column;
