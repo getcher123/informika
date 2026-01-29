@@ -8,8 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initCustomSelects();
   initRequiredCheckboxGroups();
   initSpeakerFields();
+  initTeamFields();
   initMetricFields();
-  initNoMetricsToggle();
+  initStatusSelects();
 });
 
 function initFileUploads() {
@@ -176,6 +177,105 @@ function initSpeakerFields() {
   });
 }
 
+function initTeamFields() {
+  const lists = document.querySelectorAll('.js-team-list');
+  if (!lists.length) return;
+
+  lists.forEach(list => {
+    const group = list.closest('.form-group');
+    if (!group) return;
+
+    const addButton = group.querySelector('.js-add-team-member');
+    const removeButton = group.querySelector('.js-remove-team-member');
+    const template = group.querySelector('.js-team-template');
+    if (!addButton || !template) return;
+
+    let index = list.querySelectorAll('.js-team-row').length || 0;
+
+    const updateRemoveState = () => {
+      if (!removeButton) return;
+      removeButton.hidden = list.querySelectorAll('.js-team-row').length < 2;
+    };
+
+    const bindInputHandlers = (row) => {
+      const inputs = row.querySelectorAll('input');
+      inputs.forEach(input => {
+        input.addEventListener('input', () => {
+          input.classList.remove('form-input--error');
+        });
+      });
+    };
+
+    list.querySelectorAll('.js-team-row').forEach(bindInputHandlers);
+    updateRemoveState();
+
+    addButton.addEventListener('click', () => {
+      const rows = list.querySelectorAll('.js-team-row');
+      const lastRow = rows[rows.length - 1];
+      if (lastRow) {
+        const inputs = Array.from(lastRow.querySelectorAll('input'));
+        const emptyInputs = inputs.filter(input => !input.value.trim());
+        if (emptyInputs.length) {
+          emptyInputs.forEach(input => input.classList.add('form-input--error'));
+          emptyInputs[0].focus();
+          return;
+        }
+      }
+
+      index += 1;
+      const fragment = template.content.cloneNode(true);
+      const row = fragment.querySelector('.js-team-row');
+      if (!row) return;
+
+      const nameInput = row.querySelector('[data-input="name"]');
+      const roleInput = row.querySelector('[data-input="role"]');
+      const orgInput = row.querySelector('[data-input="org"]');
+      const nameLabel = row.querySelector('[data-label="name"]');
+      const roleLabel = row.querySelector('[data-label="role"]');
+      const orgLabel = row.querySelector('[data-label="org"]');
+
+      const nameId = `team-name-${index}`;
+      const roleId = `team-role-${index}`;
+      const orgId = `team-org-${index}`;
+
+      if (nameInput) {
+        nameInput.id = nameId;
+        nameInput.name = 'team-name[]';
+      }
+      if (roleInput) {
+        roleInput.id = roleId;
+        roleInput.name = 'team-role[]';
+      }
+      if (orgInput) {
+        orgInput.id = orgId;
+        orgInput.name = 'team-org[]';
+      }
+      if (nameLabel) {
+        nameLabel.setAttribute('for', nameId);
+      }
+      if (roleLabel) {
+        roleLabel.setAttribute('for', roleId);
+      }
+      if (orgLabel) {
+        orgLabel.setAttribute('for', orgId);
+      }
+
+      bindInputHandlers(row);
+      list.appendChild(row);
+      updateRemoveState();
+    });
+
+    if (removeButton) {
+      removeButton.addEventListener('click', () => {
+        const rows = list.querySelectorAll('.js-team-row');
+        if (rows.length < 2) return;
+        rows[rows.length - 1].remove();
+        updateRemoveState();
+      });
+    }
+  });
+}
+
 function initMetricFields() {
   const lists = document.querySelectorAll('.js-metric-list');
   if (!lists.length) return;
@@ -193,7 +293,7 @@ function initMetricFields() {
 
     const updateRemoveState = () => {
       if (!removeButton) return;
-      removeButton.hidden = list.querySelectorAll('.js-metric-row').length < 2;
+      removeButton.hidden = list.querySelectorAll('.js-metric-row').length < 1;
     };
 
     const bindInputHandlers = (row) => {
@@ -258,7 +358,7 @@ function initMetricFields() {
     if (removeButton) {
       removeButton.addEventListener('click', () => {
         const rows = list.querySelectorAll('.js-metric-row');
-        if (rows.length < 2) return;
+        if (rows.length < 1) return;
         rows[rows.length - 1].remove();
         updateRemoveState();
       });
@@ -266,33 +366,22 @@ function initMetricFields() {
   });
 }
 
-function initNoMetricsToggle() {
-  const forms = document.querySelectorAll('form');
-  if (!forms.length) return;
+function initStatusSelects() {
+  const selects = document.querySelectorAll('[data-status-select]');
+  if (!selects.length) return;
 
-  forms.forEach(form => {
-    const checkbox = form.querySelector('#case-no-metrics');
-    const list = form.querySelector('.js-metric-list');
-    if (!checkbox || !list) return;
+  selects.forEach(select => {
+    const targetSelector = select.dataset.statusTarget;
+    const scope = select.closest('form') || document;
+    const target = targetSelector ? (scope.querySelector(targetSelector) || document.querySelector(targetSelector)) : null;
+    if (!target) return;
 
-    const group = list.closest('.form-group');
-    const addButton = group ? group.querySelector('.js-add-metric') : null;
-    const removeButton = group ? group.querySelector('.js-remove-metric') : null;
-
-    const toggle = () => {
-      const disabled = checkbox.checked;
-
-      if (addButton) addButton.disabled = disabled;
-      if (removeButton) removeButton.disabled = disabled;
-
-      list.querySelectorAll('input').forEach(input => {
-        input.disabled = disabled;
-        if (disabled) input.classList.remove('form-input--error');
-      });
+    const apply = () => {
+      target.dataset.status = select.value;
     };
 
-    checkbox.addEventListener('change', toggle);
-    toggle();
+    select.addEventListener('change', apply);
+    apply();
   });
 }
 

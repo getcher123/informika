@@ -25,6 +25,7 @@
         <ul class="nav__list">
           <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
           <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+          <li><a href="./events.html" class="nav__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a></li>
           <li><a href="#" class="nav__link">КОНКУРС</a></li>
           <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
         </ul>
@@ -91,6 +92,7 @@
     <nav class="mobile-menu__nav">
       <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
       <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+      <a href="./events.html" class="mobile-menu__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a>
       <a href="#" class="mobile-menu__link">КОНКУРС</a>
       <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
     </nav>
@@ -176,16 +178,15 @@
         <h4 class="footer__title heading-subtitle">Платформа</h4>
         <ul class="footer__list">
           <li><a href="./requests.html" class="footer__link">Банк инноваций</a></li>
+          <li><a href="./events.html" class="footer__link">Календарь мероприятий</a></li>
           <li><a href="#" class="footer__link">Конкурсы</a></li>
-          <li><a href="#" class="footer__link">Обучение</a></li>
         </ul>
       </div>
       <div class="footer__column">
         <h4 class="footer__title heading-subtitle">Связаться</h4>
         <ul class="footer__list">
-          <li><a href="mailto:info@inn.mosoblgaz.ru" class="footer__link">info@inn.mosoblgaz.ru</a></li>
-          <li><a href="tel:+74951234567" class="footer__link">+7 (495) 123-45-67</a></li>
-          <li><a href="#" class="footer__link">Поддержка</a></li>
+          <li><a href="./contacts.html" class="footer__link">Контакты</a></li>
+          <li><a href="./support-form.html" class="footer__link">Поддержка</a></li>
         </ul>
       </div>
     </div>

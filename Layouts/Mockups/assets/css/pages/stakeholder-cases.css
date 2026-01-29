@@ -15,3 +15,45 @@
   max-width: 420px;
 }
 
+.page--stakeholder-cases .filters {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  row-gap: var(--spacing-xs);
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: var(--spacing-md);
+}
+
+.page--stakeholder-cases .idea-submission__footer {
+  flex-wrap: nowrap;
+}
+
+.page--stakeholder-cases .table-actions {
+  width: auto;
+  flex-direction: row;
+  margin-left: auto;
+  align-items: center;
+}
+
+.page--stakeholder-cases .table-actions .btn {
+  width: auto;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-size: var(--font-size-base);
+}
+
+@media (max-width: 900px) {
+  .page--stakeholder-cases .idea-submission__footer {
+    flex-wrap: wrap;
+  }
+
+  .page--stakeholder-cases .table-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .page--stakeholder-cases .table-actions .btn {
+    width: 100%;
+  }
+}

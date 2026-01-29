@@ -24,6 +24,7 @@
             <ul class="nav__list">
               <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
               <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="./cases.html" class="nav__link">КЕЙСЫ</a></li>
               <li><a href="./events.html" class="nav__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a></li>
               <li><a href="#" class="nav__link">КОНКУРС</a></li>
               <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
@@ -54,6 +55,7 @@
         <nav class="mobile-menu__nav">
           <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
           <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+          <a href="./cases.html" class="mobile-menu__link">КЕЙСЫ</a>
           <a href="./events.html" class="mobile-menu__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a>
           <a href="#" class="mobile-menu__link">КОНКУРС</a>
           <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
@@ -82,6 +84,13 @@
                   <path d="M7 8H17M7 12H15M7 16H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 </svg>
                 <span class="sidebar__text">Мои запросы</span>
+              </a>
+              <a href="./stakeholder-events.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M8 2V6M16 2V6M3 10H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Мои события</span>
               </a>
               <a href="./stakeholder-portfolio.html" class="sidebar__link">
                 <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -125,145 +134,144 @@
             <form class="form case-form" data-validate>
               <div class="form-row">
                 <div class="form-group">
-                  <label class="form-label">Статус публикации</label>
-                  <span class="status-indicator status-indicator--published">
-                    <span class="status-indicator__dot"></span>
-                    <span>Опубликовано</span>
-                  </span>
-                </div>
-              </div>
+	                  <label class="form-label" for="case-publication-status">Статус публикации</label>
+	                  <select class="form-select form-select--decorated js-custom-select" id="case-publication-status" data-status-select data-status-target=".case-actions" required>
+	                    <option value="draft">Черновик</option>
+	                    <option value="published" selected>Опубликовано</option>
+	                  </select>
+	                </div>
+	              </div>
 
               <section class="section">
                 <h2 class="heading-section">Основное</h2>
-                <div class="grid grid--2">
-                  <div class="form-group">
-                    <label class="form-label form-label--required" for="case-title">Название кейса</label>
-                    <input class="form-input" type="text" id="case-title" value="Сокращение времени обработки выездов" required>
-                  </div>
-                  <div class="form-group">
-                    <label class="form-label" for="case-direction">Направление</label>
-                    <input class="form-input" type="text" id="case-direction" value="Операционная эффективность" disabled>
-                    <span class="form-hint">Заполняется автоматически</span>
-                  </div>
-	                </div>
-	                <div class="form-group">
-	                  <label class="form-label form-label--required" for="case-summary">Короткое описание кейса</label>
-	                  <textarea class="form-textarea" id="case-summary" rows="3" placeholder="1–3 предложения: краткое описание кейса" required>Проект помог ускорить распределение заявок и снизить повторные выезды в филиалах.</textarea>
-	                </div>
-	                <div class="form-group">
-	                  <label class="form-label form-label--required" for="case-description">Описание</label>
-	                  <textarea class="form-textarea" id="case-description" rows="3" required>До запуска проекта распределение выездов выполнялось вручную, что приводило к задержкам и лишним перемещениям команды.</textarea>
-	                </div>
 	                <div class="grid grid--2">
+	                <div class="form-group">
+	                  <label class="form-label form-label--required" for="case-title">Название кейса</label>
+	                  <input class="form-input" type="text" id="case-title" value="Сокращение времени обработки выездов" placeholder="Название кейса" required>
+	                </div>
 	                  <div class="form-group">
-	                    <label class="form-label" for="case-finish-date">Дата завершения</label>
-	                    <input class="form-input" type="date" id="case-finish-date" value="2025-06-12">
-                    <span class="form-hint">Предзаполнено датой архивации</span>
-                  </div>
-                </div>
+	                    <label class="form-label form-label--required" for="case-direction">Направление</label>
+	                    <select class="form-select form-select--decorated js-custom-select" id="case-direction" required>
+	                      <option value="">Выбор направления</option>
+	                      <option value="construction">Строительство</option>
+	                      <option value="exploitation" selected>Эксплуатация</option>
+	                      <option value="security">Безопасность</option>
+	                      <option value="digital">Цифровизация</option>
+	                      <option value="client">Клиентский сервис</option>
+	                      <option value="other">Другое</option>
+	                    </select>
+	                  </div>
+		                </div>
+		                <div class="form-group">
+		                  <label class="form-label" for="case-idea-link">Ссылка на идею</label>
+		                  <input class="form-input" type="url" id="case-idea-link" value="https://innovatika-mosoblgaz.ru/ideas/123" placeholder="Ссылка на идею, результаты которой публикуются (необязательно)">
+		                </div>
+		                <div class="form-group">
+		                  <label class="form-label form-label--required" for="case-summary">Короткое описание кейса</label>
+		                  <textarea class="form-textarea" id="case-summary" rows="3" placeholder="1–3 предложения — краткая выжимка для карточки и шапки" required>Проект помог ускорить распределение заявок и снизить повторные выезды в филиалах.</textarea>
+		                </div>
+		                <div class="form-group">
+		                  <label class="form-label form-label--required" for="case-description">Описание</label>
+		                  <textarea class="form-textarea" id="case-description" rows="3" placeholder="1–2 абзаца — контекст проекта и суть результата" required>До запуска проекта распределение выездов выполнялось вручную, что приводило к задержкам и лишним перемещениям команды.</textarea>
+		                </div>
+	                <div class="form-group">
+	                  <label class="form-label" for="case-finish-date">Дата завершения</label>
+	                  <input class="form-input" type="date" id="case-finish-date" value="2025-06-12">
+	                </div>
               </section>
 
-	              <section class="section">
-	                <h2 class="heading-section">Проблема и цель</h2>
-	                <div class="form-group">
-	                  <label class="form-label form-label--required" for="case-problem">Проблема / контекст</label>
-	                  <textarea class="form-textarea" id="case-problem" rows="3" required>Существующая система планирования не учитывала загрузку бригад и географию вызовов.</textarea>
-	                </div>
-	                <div class="form-group">
-	                  <label class="form-label form-label--required" for="case-goal">Цель</label>
-	                  <textarea class="form-textarea" id="case-goal" rows="3" required>Сократить среднее время обработки заявки и повысить прозрачность контроля.</textarea>
-	                </div>
-              </section>
+		              <section class="section">
+		                <h2 class="heading-section">Проблема и цель</h2>
+		                <div class="form-group">
+		                  <label class="form-label form-label--required" for="case-problem">Проблема / контекст</label>
+		                  <textarea class="form-textarea" id="case-problem" rows="3" placeholder="2–4 предложения — исходная проблема/контекст" required>Существующая система планирования не учитывала загрузку бригад и географию вызовов.</textarea>
+		                </div>
+		                <div class="form-group">
+		                  <label class="form-label form-label--required" for="case-goal">Цель</label>
+		                  <textarea class="form-textarea" id="case-goal" rows="3" placeholder="1–2 предложения — целевой эффект" required>Сократить среднее время обработки заявки и повысить прозрачность контроля.</textarea>
+		                </div>
+		              </section>
 
-              <section class="section">
-                <h2 class="heading-section">Решение</h2>
-                <div class="form-group">
-                  <label class="form-label form-label--required" for="case-solution">Что сделали</label>
-                  <textarea class="form-textarea" id="case-solution" rows="3" required>Внедрили единый диспетчерский контур и правила маршрутизации заявок с автоподбором исполнителей.</textarea>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="case-location">Где внедрено</label>
-                  <input class="form-input" type="text" id="case-location" placeholder="Подразделение / процесс" value="Филиалы, выездные бригады">
-                </div>
-              </section>
+		              <section class="section">
+		                <h2 class="heading-section">Решение</h2>
+		                <div class="form-group">
+		                  <label class="form-label form-label--required" for="case-solution">Что сделали</label>
+		                  <textarea class="form-textarea" id="case-solution" rows="3" placeholder="2–5 пунктов или 2–4 предложения — ключевые действия" required>Внедрили единый диспетчерский контур и правила маршрутизации заявок с автоподбором исполнителей.</textarea>
+		                </div>
+		                <div class="form-group">
+		                  <label class="form-label" for="case-location">Где внедрено</label>
+		                  <input class="form-input" type="text" id="case-location" placeholder="2–80 символов — подразделение/процесс" value="Филиалы, выездные бригады">
+		                </div>
+		              </section>
 
-	              <section class="section">
-	                <h2 class="heading-section">Результаты</h2>
-	                <div class="form-group">
-	                  <label class="form-label form-label--required" for="case-result">Итог</label>
-	                  <textarea class="form-textarea" id="case-result" rows="3" required>Ускорили распределение заявок и снизили повторные выезды на пилотных площадках.</textarea>
-	                </div>
-
-	                <div class="form-group">
-	                  <label class="form-label form-label--required" for="case-results-summary">Кратко о результате</label>
-	                  <textarea class="form-textarea" id="case-results-summary" rows="2" required>Время обработки заявок снизилось, а контроль SLA стал прозрачным для руководства.</textarea>
-	                </div>
+		              <section class="section">
+		                <h2 class="heading-section">Результаты</h2>
+		                <div class="form-group">
+		                  <label class="form-label form-label--required" for="case-result">Итог</label>
+		                  <textarea class="form-textarea" id="case-result" rows="3" placeholder="2–4 предложения — развернутый итог проекта" required>Ускорили распределение заявок и снизили повторные выезды на пилотных площадках.</textarea>
+		                </div>
 
 		                <div class="form-group">
-		                  <label class="form-label">Показатели результата</label>
-		                  <span class="form-hint">Каждый показатель — это значение и короткое описание (как в карточке кейса).</span>
-		                  <div class="metrics-list js-metric-list">
-		                    <div class="form-row js-metric-row">
-		                      <div class="form-group">
-		                        <label class="form-label form-label--required" for="metric-value-1">Значение</label>
-		                        <input class="form-input" type="text" id="metric-value-1" name="metric-value[]" value="-18%" required>
-		                      </div>
-		                      <div class="form-group">
-		                        <label class="form-label form-label--required" for="metric-label-1">Описание показателя</label>
-		                        <input class="form-input" type="text" id="metric-label-1" name="metric-label[]" value="Сокращение времени обработки" required>
-		                      </div>
-		                    </div>
-		                    <div class="form-row js-metric-row">
-		                      <div class="form-group">
-		                        <label class="form-label form-label--required" for="metric-value-2">Значение</label>
-		                        <input class="form-input" type="text" id="metric-value-2" name="metric-value[]" value="-12%" required>
-		                      </div>
-		                      <div class="form-group">
-		                        <label class="form-label form-label--required" for="metric-label-2">Описание показателя</label>
-		                        <input class="form-input" type="text" id="metric-label-2" name="metric-label[]" value="Снижение повторных выездов" required>
-		                      </div>
-		                    </div>
-		                    <div class="form-row js-metric-row">
-		                      <div class="form-group">
-		                        <label class="form-label form-label--required" for="metric-value-3">Значение</label>
-		                        <input class="form-input" type="text" id="metric-value-3" name="metric-value[]" value="+24%" required>
-		                      </div>
-		                      <div class="form-group">
-		                        <label class="form-label form-label--required" for="metric-label-3">Описание показателя</label>
-		                        <input class="form-input" type="text" id="metric-label-3" name="metric-label[]" value="Рост прозрачности SLA" required>
-		                      </div>
-		                    </div>
-		                  </div>
-		                  <template class="js-metric-template">
-		                    <div class="form-row js-metric-row">
-		                      <div class="form-group">
-		                        <label class="form-label form-label--required" data-label="value">Значение</label>
-		                        <input class="form-input" type="text" data-input="value" placeholder="Напр.: -18%" required>
-		                      </div>
-		                      <div class="form-group">
-		                        <label class="form-label form-label--required" data-label="label">Описание показателя</label>
-		                        <input class="form-input" type="text" data-input="label" placeholder="Напр.: Сокращение времени обработки" required>
-		                      </div>
-		                    </div>
-		                  </template>
-		                  <div class="form-input-group">
-		                    <button class="btn btn--secondary btn--sm js-add-metric" type="button">+ Добавить показатель</button>
-		                    <button class="btn btn--outline-danger btn--sm js-remove-metric" type="button" hidden>Удалить показатель</button>
-		                  </div>
-		                  <p class="form-hint">Для публикации нужен минимум один показатель или отметка «Нет измеримых данных».</p>
-	                </div>
+		                  <label class="form-label form-label--required" for="case-results-summary">Кратко о результате</label>
+		                  <textarea class="form-textarea" id="case-results-summary" rows="2" placeholder="1–2 предложения — короткая выжимка для карточки" required>Время обработки заявок снизилось, а контроль SLA стал прозрачным для руководства.</textarea>
+		                </div>
 
-                <div class="form-group">
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check__input" id="case-no-metrics">
-                    <label class="form-check__label" for="case-no-metrics">Нет измеримых данных</label>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="case-next">Следующие шаги</label>
-                  <textarea class="form-textarea" id="case-next" rows="2">Масштабирование на остальные филиалы и настройка аналитики по SLA.</textarea>
-                </div>
+		                <div class="form-group">
+			                  <label class="form-label">Показатели результата</label>
+			                  <div class="metrics-list js-metric-list">
+			                    <div class="form-row js-metric-row">
+			                      <div class="form-group">
+			                        <label class="form-label form-label--required" for="metric-value-1">Значение</label>
+			                        <input class="form-input" type="text" id="metric-value-1" name="metric-value[]" value="-18%" placeholder="Напр.: -18%" required>
+			                      </div>
+			                      <div class="form-group">
+			                        <label class="form-label form-label--required" for="metric-label-1">Описание показателя</label>
+			                        <input class="form-input" type="text" id="metric-label-1" name="metric-label[]" value="Сокращение времени обработки" placeholder="Напр.: Сокращение времени обработки" required>
+			                      </div>
+			                    </div>
+			                    <div class="form-row js-metric-row">
+			                      <div class="form-group">
+			                        <label class="form-label form-label--required" for="metric-value-2">Значение</label>
+			                        <input class="form-input" type="text" id="metric-value-2" name="metric-value[]" value="-12%" placeholder="Напр.: -12%" required>
+			                      </div>
+			                      <div class="form-group">
+			                        <label class="form-label form-label--required" for="metric-label-2">Описание показателя</label>
+			                        <input class="form-input" type="text" id="metric-label-2" name="metric-label[]" value="Снижение повторных выездов" placeholder="Напр.: Снижение повторных выездов" required>
+			                      </div>
+			                    </div>
+			                    <div class="form-row js-metric-row">
+			                      <div class="form-group">
+			                        <label class="form-label form-label--required" for="metric-value-3">Значение</label>
+			                        <input class="form-input" type="text" id="metric-value-3" name="metric-value[]" value="+24%" placeholder="Напр.: +24%" required>
+			                      </div>
+			                      <div class="form-group">
+			                        <label class="form-label form-label--required" for="metric-label-3">Описание показателя</label>
+			                        <input class="form-input" type="text" id="metric-label-3" name="metric-label[]" value="Рост прозрачности SLA" placeholder="Напр.: Рост прозрачности SLA" required>
+			                      </div>
+			                    </div>
+			                  </div>
+			                  <template class="js-metric-template">
+			                    <div class="form-row js-metric-row">
+			                      <div class="form-group">
+			                        <label class="form-label form-label--required" data-label="value">Значение</label>
+			                        <input class="form-input" type="text" data-input="value" placeholder="Напр.: -18%" required>
+			                      </div>
+			                      <div class="form-group">
+			                        <label class="form-label form-label--required" data-label="label">Описание показателя</label>
+			                        <input class="form-input" type="text" data-input="label" placeholder="Напр.: Сокращение времени обработки" required>
+			                      </div>
+			                    </div>
+			                  </template>
+			                  <div class="form-input-group">
+			                    <button class="btn btn--secondary btn--sm js-add-metric" type="button">+ Добавить показатель</button>
+			                    <button class="btn btn--outline-danger btn--sm js-remove-metric" type="button" hidden>Удалить показатель</button>
+			                  </div>
+		                </div>
+	
+		                <div class="form-group">
+		                  <label class="form-label" for="case-next">Следующие шаги</label>
+		                  <textarea class="form-textarea" id="case-next" rows="2" placeholder="1–2 предложения — что планируется дальше">Масштабирование на остальные филиалы и настройка аналитики по SLA.</textarea>
+		                </div>
 	              </section>
 
 	              <section class="section">
@@ -301,34 +309,90 @@
 	                </div>
 	              </section>
 
-              <section class="section team-section">
-                <div class="cta-card team-card">
-                  <h2 class="heading-section">Команда</h2>
-                  <p class="team-card__desc">Состав команды подтягивается из Bitrix24 и доступен только для просмотра.</p>
-                  <div class="team-grid">
-                    <div class="team-member">
-                      <p class="text-caption">Стейкхолдер</p>
-                      <p class="text-strong">И.Г.</p>
-                      <p class="text-meta">Операционный блок</p>
-                    </div>
-                    <div class="team-member">
-                      <p class="text-caption">Координатор</p>
-                      <p class="text-strong">В.К.</p>
-                      <p class="text-meta">Центр инноваций</p>
-                    </div>
-                    <div class="team-member">
-                      <p class="text-caption">Эксперт</p>
-                      <p class="text-strong">Е.М.</p>
-                      <p class="text-meta">SLA аналитика</p>
-                    </div>
-                    <div class="team-member">
-                      <p class="text-caption">Автор</p>
-                      <p class="text-strong">А.П.</p>
-                      <p class="text-meta">Инициатор идеи</p>
-                    </div>
-                  </div>
-                </div>
-              </section>
+	              <section class="section">
+	                <h2 class="heading-section">Команда</h2>
+	                <div class="form-group">
+		                  <label class="form-label" for="team-name-1">Участники кейса</label>
+		                  <div class="team-list js-team-list">
+		                    <div class="form-row form-row--three-cols js-team-row">
+		                      <div class="form-group">
+		                        <label class="form-label form-label--required" for="team-name-1">ФИО</label>
+		                        <input class="form-input" type="text" id="team-name-1" name="team-name[]" value="И.Г." placeholder="ФИО участника" required>
+		                      </div>
+		                      <div class="form-group">
+		                        <label class="form-label" for="team-role-1">Роль</label>
+		                        <input class="form-input" type="text" id="team-role-1" name="team-role[]" value="Стейкхолдер" placeholder="Роль в проекте">
+		                      </div>
+		                      <div class="form-group">
+		                        <label class="form-label" for="team-org-1">Должность / место работы</label>
+		                        <input class="form-input" type="text" id="team-org-1" name="team-org[]" value="Операционный блок" placeholder="Должность и/или подразделение">
+		                      </div>
+		                    </div>
+		                    <div class="form-row form-row--three-cols js-team-row">
+		                      <div class="form-group">
+		                        <label class="form-label form-label--required" for="team-name-2">ФИО</label>
+		                        <input class="form-input" type="text" id="team-name-2" name="team-name[]" value="В.К." placeholder="ФИО участника" required>
+		                      </div>
+		                      <div class="form-group">
+		                        <label class="form-label" for="team-role-2">Роль</label>
+		                        <input class="form-input" type="text" id="team-role-2" name="team-role[]" value="Координатор" placeholder="Роль в проекте">
+		                      </div>
+		                      <div class="form-group">
+		                        <label class="form-label" for="team-org-2">Должность / место работы</label>
+		                        <input class="form-input" type="text" id="team-org-2" name="team-org[]" value="Центр инноваций" placeholder="Должность и/или подразделение">
+		                      </div>
+		                    </div>
+		                    <div class="form-row form-row--three-cols js-team-row">
+		                      <div class="form-group">
+		                        <label class="form-label form-label--required" for="team-name-3">ФИО</label>
+		                        <input class="form-input" type="text" id="team-name-3" name="team-name[]" value="Е.М." placeholder="ФИО участника" required>
+		                      </div>
+		                      <div class="form-group">
+		                        <label class="form-label" for="team-role-3">Роль</label>
+		                        <input class="form-input" type="text" id="team-role-3" name="team-role[]" value="Эксперт" placeholder="Роль в проекте">
+		                      </div>
+		                      <div class="form-group">
+		                        <label class="form-label" for="team-org-3">Должность / место работы</label>
+		                        <input class="form-input" type="text" id="team-org-3" name="team-org[]" value="SLA аналитика" placeholder="Должность и/или подразделение">
+		                      </div>
+		                    </div>
+		                    <div class="form-row form-row--three-cols js-team-row">
+		                      <div class="form-group">
+		                        <label class="form-label form-label--required" for="team-name-4">ФИО</label>
+		                        <input class="form-input" type="text" id="team-name-4" name="team-name[]" value="А.П." placeholder="ФИО участника" required>
+		                      </div>
+		                      <div class="form-group">
+		                        <label class="form-label" for="team-role-4">Роль</label>
+		                        <input class="form-input" type="text" id="team-role-4" name="team-role[]" value="Автор" placeholder="Роль в проекте">
+		                      </div>
+		                      <div class="form-group">
+		                        <label class="form-label" for="team-org-4">Должность / место работы</label>
+		                        <input class="form-input" type="text" id="team-org-4" name="team-org[]" value="Инициатор идеи" placeholder="Должность и/или подразделение">
+		                      </div>
+		                    </div>
+		                  </div>
+		                  <template class="js-team-template">
+		                    <div class="form-row form-row--three-cols js-team-row">
+		                      <div class="form-group">
+		                        <label class="form-label form-label--required" data-label="name">ФИО</label>
+		                        <input class="form-input" type="text" data-input="name" placeholder="ФИО участника" required>
+		                      </div>
+		                      <div class="form-group">
+		                        <label class="form-label" data-label="role">Роль</label>
+		                        <input class="form-input" type="text" data-input="role" placeholder="Роль в проекте">
+		                      </div>
+		                      <div class="form-group">
+		                        <label class="form-label" data-label="org">Должность / место работы</label>
+		                        <input class="form-input" type="text" data-input="org" placeholder="Должность и/или подразделение">
+		                      </div>
+		                    </div>
+		                  </template>
+	                  <div class="form-input-group">
+	                    <button class="btn btn--secondary btn--sm js-add-team-member" type="button">+ Добавить участника</button>
+	                    <button class="btn btn--outline-danger btn--sm js-remove-team-member" type="button" hidden>Удалить участника</button>
+	                  </div>
+	                </div>
+	              </section>
 
               <section class="section">
                 <h2 class="heading-section">Проверка перед публикацией</h2>
@@ -350,19 +414,11 @@
                     <label class="form-check__label" for="case-check-3">Кейс согласован к публикации</label>
                   </div>
                 </div>
-              </section>
+	              </section>
 
-              <section class="section">
-                <h2 class="heading-section">Снятие с публикации</h2>
-                <div class="form-group">
-                  <label class="form-label" for="case-unpublish">Причина снятия</label>
-                  <textarea class="form-textarea" id="case-unpublish" rows="2" placeholder="Обязательное поле при снятии с публикации"></textarea>
-                </div>
-              </section>
-
-              <div class="form-actions form-actions--compact case-actions" data-status="published">
-                <div class="case-actions__group case-actions__group--draft">
-                  <button type="submit" class="btn btn--primary">Опубликовать</button>
+	              <div class="form-actions form-actions--compact case-actions" data-status="published">
+	                <div class="case-actions__group case-actions__group--draft">
+	                  <button type="submit" class="btn btn--primary">Опубликовать</button>
                   <button type="submit" class="btn btn--secondary">Сохранить</button>
                   <button type="button" class="btn btn--outline-danger">Удалить</button>
                 </div>
@@ -381,6 +437,34 @@
         </div>
       </div>
     </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__column footer__column--brand">
+            <div class="footer__brand">
+              <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="footer__logo">
+            </div>
+            <p class="footer__description text-muted">Инновационные решения для развития компании и поддержки талантов.</p>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__title heading-subtitle">Платформа</h4>
+            <ul class="footer__list">
+              <li><a href="./requests.html" class="footer__link">Банк инноваций</a></li>
+              <li><a href="./events.html" class="footer__link">Календарь мероприятий</a></li>
+              <li><a href="#" class="footer__link">Конкурсы</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__title heading-subtitle">Связаться</h4>
+            <ul class="footer__list">
+              <li><a href="./contacts.html" class="footer__link">Контакты</a></li>
+              <li><a href="./support-form.html" class="footer__link">Поддержка</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <script src="./assets/js/vendor.js"></script>

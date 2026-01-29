@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="./assets/css/pages/participant-cabinet.css">
   <link rel="stylesheet" href="./assets/css/pages/participant-events.css">
 </head>
-<body data-auth-state="profile" class="body--gradient">
+<body data-auth-state="profile" class="body--gradient page--participant-events">
   <div class="layout">
     <header class="header layout__header">
       <div class="container">
@@ -23,6 +23,7 @@
             <ul class="nav__list">
               <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
               <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="./cases.html" class="nav__link">КЕЙСЫ</a></li>
               <li><a href="./events.html" class="nav__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a></li>
               <li><a href="#" class="nav__link">КОНКУРС</a></li>
               <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
@@ -54,6 +55,7 @@
         <nav class="mobile-menu__nav">
           <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
           <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+          <a href="./cases.html" class="mobile-menu__link">КЕЙСЫ</a>
           <a href="./events.html" class="mobile-menu__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a>
           <a href="#" class="mobile-menu__link">КОНКУРС</a>
           <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
@@ -118,12 +120,12 @@
             <p class="events-note">Здесь собраны ваши регистрации и доступ к материалам прошедших событий.</p>
 
             <div class="table-wrapper">
-              <table class="table table--compact table--sortable">
+              <table class="table table--compact table--sortable table--centered-headers">
                 <thead>
                   <tr>
                     <th data-sort-type="string">Событие</th>
-                    <th data-sort-type="date" class="table-cell--center">Дата</th>
-                    <th data-sort-type="string" class="table-cell--center">Формат</th>
+                    <th data-sort-type="date">Дата</th>
+                    <th data-sort-type="string">Формат</th>
                     <th data-sortable="false">Действия</th>
                   </tr>
                 </thead>
@@ -138,7 +140,7 @@
                     <td>
                       <div class="table-actions">
                         <a class="btn btn--primary btn--sm" href="./event-detail.html">Подробнее</a>
-                        <button class="btn btn--secondary btn--sm" type="button">Отменить</button>
+                        <button class="btn btn--secondary btn--sm" type="button">Отменить регистрацию</button>
                       </div>
                     </td>
                   </tr>
@@ -152,7 +154,7 @@
                     <td>
                       <div class="table-actions">
                         <a class="btn btn--primary btn--sm" href="./event-detail.html">Подробнее</a>
-                        <button class="btn btn--secondary btn--sm" type="button">Отменить</button>
+                        <button class="btn btn--secondary btn--sm" type="button">Отменить регистрацию</button>
                       </div>
                     </td>
                   </tr>
@@ -166,7 +168,7 @@
                     <td>
                       <div class="table-actions">
                         <a class="btn btn--primary btn--sm" href="./event-detail.html">Подробнее</a>
-                        <button class="btn btn--secondary btn--sm" type="button">Отменить</button>
+                        <button class="btn btn--secondary btn--sm" type="button">Отменить регистрацию</button>
                       </div>
                     </td>
                   </tr>
@@ -180,7 +182,7 @@
                     <td>
                       <div class="table-actions">
                         <a class="btn btn--primary btn--sm" href="./event-detail.html">Подробнее</a>
-                        <button class="btn btn--secondary btn--sm" type="button">Отменить</button>
+                        <button class="btn btn--secondary btn--sm" type="button">Отменить регистрацию</button>
                       </div>
                     </td>
                   </tr>
