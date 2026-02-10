@@ -56,7 +56,7 @@
 4) Перевести идею в `Архив` через регламентированный процесс Bitrix24.
 
 ## 10. Ссылки
-- Интерфейсы кабинета: [docs/interface-elements.md](interface-elements.md)
-- Бизнес-процессы: [docs/business-processes.md](business-processes.md)
-- Административная доска: [docs/admin-board-table.md](admin-board-table.md)
-- Автоматизации и уведомления: [docs/automation-table.md](automation-table.md), [docs/notification-table.md](notification-table.md)
+- Интерфейсы кабинета: [interface-elements.md](../ui/interface-elements.md)
+- Бизнес-процессы: [business-processes.md](business-processes.md)
+- Административная доска: [admin-board-table.md](../analytics/admin-board-table.md)
+- Автоматизации и уведомления: [automation-table.md](automation-table.md), [notification-table.md](notification-table.md)

@@ -2,7 +2,7 @@
 
 Цель: понять, как реализованы текущие решения (Bitrix24‑контур и кастомная витрина/ЛК), чтобы безопасно начинать новые интеграции. Используем только SSH к хостингу и локальную техническую документацию (Bitrix vault: `docs/bitrix-docs-new/docs/AGENT.md`). Пометка *(SSH)* значит, что шаг могу выполнить сам по SSH.
 
-- [x] Предподготовка: прочитать `docs/tech-spec-F1.md`, `docs/tech-spec-F2.md`, при необходимости `informika-extended-tz.md`; открыть гайд `docs/bitrix-docs-new/docs/AGENT.md` (локально).
+- [x] Предподготовка: прочитать `docs/specs/phases/tech-spec-F1.md`, `docs/specs/phases/tech-spec-F2.md`; открыть гайд `docs/bitrix-docs-new/docs/AGENT.md` (локально).
 - [x] Проверить доступ по ключу и рабочий путь `/var/www/u3305923/data/www` *(SSH, ключ `~/.ssh/informika_hosting_ed25519`)*.
 - [x] Убедиться в доступе к MySQL в режиме read-only: `mysql` (автологин настроен локально в `~/.my.cnf` или `mysql_config_editor`) для базы `u3305923_default` *(SSH + MySQL)*.
 - [x] Снять базовую информацию об окружении (версии PHP/Bitrix) без изменений настроек: `php -v`, `php -m`, `grep -n "update" bitrix/.settings.php` *(SSH, READ ONLY)*.

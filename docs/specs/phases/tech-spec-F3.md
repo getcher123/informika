@@ -590,4 +590,4 @@
 
 ## 10. Версии и источники
 
-- Основано на: [tech-spec-F1.md](tech-spec-F1.md), [tech-spec-F2.md](tech-spec-F2.md), [informika-extended-tz.md](informika-extended-tz.md), [README.md](README.md).
+- Основано на: [Краткое ТЗ (обзор)](../overview.md), [ТЗ Фазы 1](tech-spec-F1.md), [ТЗ Фазы 2](tech-spec-F2.md), [Описание интерфейсов](../../ui/interface-elements.md).

@@ -1,6 +1,6 @@
-﻿# Бизнес-процессы платформы «Informika»
+# Бизнес-процессы платформы «Informika»
 
-Документ охватывает ключевые процессы, описанные в расширенном ТЗ и фазовых спецификациях. Для каждого процесса указаны участники, опорные статусы и артефакты. Подробные требования к данным, интерфейсам и автоматизациям смотрите в файлах [informika-extended-tz.md](informika-extended-tz.md), [tech-spec-F1.md](tech-spec-F1.md), [tech-spec-F2.md](tech-spec-F2.md), [tech-spec-F3.md](tech-spec-F3.md), [interface-elements.md](interface-elements.md), [team-requests-mechanism.md](team-requests-mechanism.md), [automation-table.md](automation-table.md) и [notification-table.md](notification-table.md).
+Документ описывает ключевые процессы платформы. Для каждого процесса указаны участники, опорные статусы и артефакты. Подробные требования к данным, интерфейсам и автоматизациям см. в ТЗ фаз: [tech-spec-F1.md](../specs/phases/tech-spec-F1.md), [tech-spec-F2.md](../specs/phases/tech-spec-F2.md), [tech-spec-F3.md](../specs/phases/tech-spec-F3.md), а также в документах: [interface-elements.md](../ui/interface-elements.md), [team-requests-mechanism.md](team-requests-mechanism.md), [automation-table.md](automation-table.md) и [notification-table.md](notification-table.md).
 
 ## 1. Публикация запроса стейкхолдером
 - **Инициатор:** стейкхолдер.
@@ -79,7 +79,7 @@
 - **Участники:** стейкхолдер, координатор, система уведомлений.
 - **Шаги:**
   1. Стейкхолдер инициирует `Архивировать` и указывает сопроводительное сообщение (почему проект завершён, что получилось, ссылка на материалы/отчёты).
-  2. В Bitrix24 идея переводится в статус `Архив` (см. [statuses-table.md](statuses-table.md)), рабочая область закрывается согласно регламенту доступа.
+  2. В Bitrix24 идея переводится в статус `Архив` (см. [statuses-table.md](../ui/statuses-table.md)), рабочая область закрывается согласно регламенту доступа.
   3. Команда получает уведомления, незавершённые задачи доводятся до финального статуса/закрываются по правилам программы.
   4. Актуализируются итоговые материалы: отчёт, презентация, финальные документы на Диске.
 - **Артефакты:** карточка идеи в статусе `Архив`, сопроводительное сообщение стейкхолдера, финальный пакет материалов, ссылки на Bitrix24.
@@ -122,10 +122,10 @@
 
 ## 12. Поддерживающие процессы
 - **Уведомления:** согласно [notification-table.md](notification-table.md) (статусы, заявки, задачи, документы).
-- **Отчётность:** см. [report-table.md](report-table.md) (перечень отчётов по ролям).
+- **Отчётность:** см. [report-table.md](../analytics/report-table.md) (перечень отчётов по ролям).
 - **Чек-листы:** см. [role-checklists.md](role-checklists.md) (контроль выполнения ролями).
 - **Матрица доступа:** см. [access-matrix.md](access-matrix.md) (распределение прав).
-- **Статусы:** см. [statuses-table.md](statuses-table.md) (жизненный цикл сущностей).
+- **Статусы:** см. [statuses-table.md](../ui/statuses-table.md) (жизненный цикл сущностей).
 - **Поддержка и служебные страницы (публично):**
   - обращение в поддержку (`support-form.html`) — отправка письма на `info@ukkmosoblgaz.ru` с данными обращения;
   - восстановление пароля (`password-restore.html` → письмо → `password-reset.html`);

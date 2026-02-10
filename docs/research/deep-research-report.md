@@ -3,9 +3,9 @@
 Формат: после каждого пункта чеклиста фиксируется короткий отчёт (что сделано, что найдено, ключевые пути/ссылки).
 
 ## 1. Предподготовка
-- Сделано: прочитаны `docs/tech-spec-F1.md`, `docs/tech-spec-F2.md`, `docs/informika-extended-tz.md`, `docs/bitrix-docs-new/docs/AGENT.md`.
-- Найдено: требования Ф1/Ф2 и расширенное ТЗ; правила поиска Bitrix API/REST в локальном vault.
-- Ссылки: `docs/tech-spec-F1.md`, `docs/tech-spec-F2.md`, `docs/informika-extended-tz.md`, `docs/bitrix-docs-new/docs/AGENT.md`.
+- Сделано: прочитаны `docs/specs/phases/tech-spec-F1.md`, `docs/specs/phases/tech-spec-F2.md`, `docs/bitrix-docs-new/docs/AGENT.md`.
+- Найдено: требования Ф1/Ф2; правила поиска Bitrix API/REST в локальном vault.
+- Ссылки: `docs/specs/phases/tech-spec-F1.md`, `docs/specs/phases/tech-spec-F2.md`, `docs/bitrix-docs-new/docs/AGENT.md`.
 
 ## 2. Доступ по SSH и рабочий путь
 - Сделано: проверен вход по ключу и доступ к `/var/www/u3305923/data/www`.
@@ -115,7 +115,7 @@
 - Статика (UI):
   - Ассеты уже есть в CRM‑шаблоне `local/templates/in_studio_landing/assets/*` и на них ссылается витрина.
   - План: подтвердить, что витрина использует этот шаблон (путь `/local/...` через симлинк), иначе — подключить шаблон или скопировать ассеты в витрину/шаблон витрины.
-  - При расхождениях с мокапами — сверить с `Layouts/Mockups/*` и `docs/www-custom-pages-map.md`, обновить только ассеты, без правок ядра.
+  - При расхождениях с мокапами — сверить с `Layouts/Mockups/*` и `docs/infra/www-custom-pages-map.md`, обновить только ассеты, без правок ядра.
 - Схема данных (интеграции):
   - Смарт‑процессы: `1036` (Запросы), `1044` (Идеи), `1048` (Заявки в команду). Для интеграций использовать эти ENTITY_TYPE_ID.
   - Статусы брать из `b_crm_status` (ENTITY_ID `DYNAMIC_1036_STAGE_*`, `DYNAMIC_1044_STAGE_*`, `DYNAMIC_1048_STAGE_*`).

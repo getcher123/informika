@@ -6,7 +6,7 @@
 
 Ключевое требование: **участник получает доступ к рабочему пространству Bitrix24 только после подтверждения приглашения из e‑mail**, отправленного от имени **модератора** или **стейкхолдера**.
 
-Связанные документы: [statuses-table.md](statuses-table.md), [automation-table.md](automation-table.md), [interface-elements.md](interface-elements.md), [tech-spec-F2.md](tech-spec-F2.md).
+Связанные документы: [statuses-table.md](../ui/statuses-table.md), [automation-table.md](automation-table.md), [interface-elements.md](../ui/interface-elements.md), [tech-spec-F2.md](../specs/phases/tech-spec-F2.md).
 
 ---
 
@@ -30,7 +30,7 @@
 - **тип**: `application` (заявка от участника) или `invitation` (приглашение от модератора/стейкхолдера);
 - **целевая сущность**: `idea_id` (идея в статусе `Одобрена`, рабочая область Bitrix24 уже создана);
 - **целевая роль** в команде (Тимлид/Аналитик/Разработчик/…);
-- **стадия воронки (CRM)** — рабочее состояние в Bitrix24; в портале агрегируется в «статус заявки» по [statuses-table.md](statuses-table.md): `На рассмотрении` → (`Ожидает E-mail подтверждения` → `В команде` | `Отклонена`) → `Архив`.
+- **стадия воронки (CRM)** — рабочее состояние в Bitrix24; в портале агрегируется в «статус заявки» по [statuses-table.md](../ui/statuses-table.md): `На рассмотрении` → (`Ожидает E-mail подтверждения` → `В команде` | `Отклонена`) → `Архив`.
 - **источник данных и статусов:** Bitrix24; портал отображает запись и её состояние read‑only через API.
 
 ### 2.2 BitrixInvite («Приглашение Bitrix24»)

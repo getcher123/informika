@@ -1,8 +1,8 @@
 <#
 Location: scripts/PM/create-issues-for-lead.ps1
 Creates onboarding/release tasks for lead EVA99999999:
-- Step 1–7 from root README.md
-- Architecture review (docs/architecture.md)
+- Onboarding notes: docs/setup/ (see docs/README.md)
+- Architecture review (docs/infra/architecture.md)
 - Adds each issue to Projects v2 #11 under user getcher123
 
 Prereqs:

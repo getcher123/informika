@@ -1,7 +1,7 @@
 {
   "name": "informika",
   "version": "1.0.0",
-  "description": "- ТЗ: [docs/README.md](docs/README.md) — краткое техническое задание.\r - План‑график: [docs/plan-grafik.md](docs/plan-grafik.md) — даты сдачи фаз.\r - Архитектура: [docs/architecture.md](docs/architecture.md) — модель данных, воронки, роботы/триггеры, UX, этапы.\r - Gitflow: [docs/gitflow.md](docs/gitflow.md) — ветвление, PR‑правила, Conventional Commits, релизы/хотфиксы.\r - Удалённая разработка: [docs/remote-dev-workflow.md](docs/remote-dev-workflow.md) — форки, PR, CI/CD, чек‑листы и ритуалы.",
+  "description": "Документация: docs/README.md; мокапы: Layouts/Mockups/index.html",
   "main": "test.js",
   "directories": {
     "doc": "docs"
