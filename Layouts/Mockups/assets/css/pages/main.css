@@ -1,0 +1,183 @@
+/* ===================================
+   MAIN.CSS - Новая главная страница
+   =================================== */
+
+.main-hero__header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.main-hero__title {
+  margin-bottom: var(--spacing-md);
+}
+
+.main-hero__subtitle {
+  margin: 0;
+  max-width: 920px;
+}
+
+/* Carousel */
+.main-carousel {
+  overflow: hidden;
+}
+
+.main-carousel__viewport {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.main-carousel__track {
+  display: flex;
+  will-change: transform;
+  transition: transform var(--transition-base);
+}
+
+.main-carousel__slide {
+  flex: 0 0 100%;
+  padding: var(--spacing-xl);
+}
+
+.main-carousel__slide-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-xl);
+  align-items: stretch;
+}
+
+.main-carousel__media {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  min-height: 220px;
+  background: var(--color-bg-light);
+}
+
+.main-carousel__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.main-carousel__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.main-carousel__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.main-carousel__title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  margin: var(--spacing-xs) 0 0;
+}
+
+.main-carousel__text {
+  margin: 0;
+}
+
+.main-carousel__date {
+  margin: 0;
+}
+
+.main-carousel__controls {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--spacing-md);
+  align-items: center;
+  margin-top: var(--spacing-lg);
+}
+
+.main-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-xs);
+}
+
+.main-carousel__dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: rgba(0, 61, 92, 0.15);
+  transition: all var(--transition-base);
+}
+
+.main-carousel__dot:hover {
+  background: rgba(0, 61, 92, 0.28);
+}
+
+.main-carousel__dot.is-active {
+  width: 28px;
+  background: var(--color-primary);
+}
+
+/* About */
+.main-about__text {
+  margin: 0;
+}
+
+.main-about__text .text-link {
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Projects grid: reuse idea-submission in a grid without extra bottom margins */
+.main-projects-grid .idea-submission {
+  margin-bottom: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-projects-grid .idea-submission__description {
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .main-carousel__slide-inner {
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .main-carousel__media {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-carousel__slide {
+    padding: var(--spacing-lg);
+  }
+
+  .main-carousel__title {
+    font-size: var(--font-size-xl);
+  }
+
+  /* Match request-detail mobile behavior for idea-submission cards */
+  .main-projects-grid .idea-submission__header {
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  .main-projects-grid .idea-submission {
+    padding: var(--spacing-lg);
+  }
+
+  .main-projects-grid .idea-submission__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-projects-grid .idea-submission__footer .btn {
+    width: 100%;
+  }
+}
+

@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs/promises");
+const fsSync = require("fs");
 const { pathToFileURL } = require("url");
 let chromium;
 try {
@@ -18,6 +19,17 @@ const outArg = process.argv[3] || `Layouts/Mockups/renders/${baseName}`;
 const pagePath = path.resolve(process.cwd(), pageArg);
 const outDir = path.resolve(process.cwd(), outArg);
 const fileUrl = pathToFileURL(pagePath).href;
+
+// WSL/CI environments may miss shared libs required by Playwright's bundled
+// chromium_headless_shell. If we have a local lib bundle, prepend it.
+const localLibDir = path.resolve(
+  process.cwd(),
+  ".tmp/playwright-libs/usr/lib/x86_64-linux-gnu",
+);
+if (fsSync.existsSync(localLibDir)) {
+  const existing = process.env.LD_LIBRARY_PATH || "";
+  process.env.LD_LIBRARY_PATH = existing ? `${localLibDir}:${existing}` : localLibDir;
+}
 
 const render = async () => {
   await fs.mkdir(outDir, { recursive: true });

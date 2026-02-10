@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регламент (стейкхолдер) | Инноватика Мособлгаз</title>
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/pages/participant-cabinet.css">
+</head>
+<body data-auth-state="profile" class="body--gradient">
+  <div class="layout">
+    <header class="header layout__header">
+      <div class="container">
+        <div class="header__container">
+          <a href="./index.html" class="header__logo">
+            <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="header__logo-img">
+          </a>
+          <nav class="header__nav">
+            <ul class="nav__list">
+              <li><a href="#" class="nav__link">МЕДИАЦЕНТР</a></li>
+              <li><a href="./requests.html" class="nav__link">БАНК ИННОВАЦИЙ</a></li>
+              <li><a href="./cases.html" class="nav__link">КЕЙСЫ</a></li>
+              <li><a href="./events.html" class="nav__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a></li>
+              <li><a href="#" class="nav__link">КОНКУРС</a></li>
+              <li><a href="#" class="nav__link">ОБУЧЕНИЕ</a></li>
+            </ul>
+          </nav>
+          <button class="header__burger" type="button" aria-label="Открыть меню" data-mobile-menu-toggle>
+            <span></span><span></span><span></span>
+          </button>
+          <div class="header__actions">
+            <a href="./stakeholder-profile.html" class="btn btn--ghost header__user-btn header__user-btn--logged">
+              <span class="header__user-initials">СТ</span>
+              <svg class="header__user-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu__backdrop" data-mobile-menu-close></div>
+      <div class="mobile-menu__panel">
+        <button class="mobile-menu__close" type="button" aria-label="Закрыть меню" data-mobile-menu-close>
+          <span></span><span></span>
+        </button>
+        <nav class="mobile-menu__nav">
+          <a href="#" class="mobile-menu__link">МЕДИАЦЕНТР</a>
+          <a href="./requests.html" class="mobile-menu__link">БАНК ИННОВАЦИЙ</a>
+          <a href="./cases.html" class="mobile-menu__link">КЕЙСЫ</a>
+          <a href="./events.html" class="mobile-menu__link">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</a>
+          <a href="#" class="mobile-menu__link">КОНКУРС</a>
+          <a href="#" class="mobile-menu__link">ОБУЧЕНИЕ</a>
+        </nav>
+        <div class="mobile-menu__actions">
+          <a href="./stakeholder-profile.html" class="btn btn--primary btn--block" data-mobile-menu-action>Профиль</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="main main--with-gradient layout__main">
+      <div class="container">
+        <div class="sidebar-layout">
+          <aside class="sidebar sidebar-layout__sidebar">
+            <nav class="sidebar__nav">
+              <a href="./stakeholder-profile.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                  <path d="M4 20C4 16.6863 6.68629 14 10 14H14C17.3137 14 20 16.6863 20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Профиль</span>
+              </a>
+              <a href="./stakeholder-requests.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M7 8H17M7 12H15M7 16H12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Мои запросы</span>
+              </a>
+              <a href="./stakeholder-events.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M8 2V6M16 2V6M3 10H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sidebar__text">Мои события</span>
+              </a>
+              <a href="./stakeholder-portfolio.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Портфель идей</span>
+              </a>
+              <a href="./stakeholder-cases.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Мои кейсы</span>
+              </a>
+              <a href="./stakeholder-notifications.html" class="sidebar__link">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Уведомления</span>
+              </a>
+              <a href="./stakeholder-tools.html" class="sidebar__link sidebar__link--active">
+                <svg class="sidebar__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="sidebar__text">Административная панель</span>
+              </a>
+            </nav>
+          </aside>
+
+          <div class="content-card sidebar-layout__content">
+            <a class="back-link" href="./stakeholder-tools.html">← Назад в административную панель</a>
+            <div class="cabinet-toolbar">
+              <div>
+                <p class="eyebrow text-muted">Кабинет стейкхолдера</p>
+                <h1 class="heading-page">Регламент</h1>
+                <p class="text-muted">Короткая инструкция по работе с витриной Informika и связанными процессами в Bitrix24.</p>
+              </div>
+              <div class="cabinet-toolbar__actions">
+                <a class="btn btn--primary" href="#" target="_blank" rel="noopener">Открыть в Bitrix24</a>
+              </div>
+            </div>
+
+            <div class="note" style="margin-bottom: var(--spacing-xl);">
+              <p class="cabinet-note" style="margin: 0;">
+                Важно: витрина Informika показывает статусы, состав команды, материалы и сводку по задачам. Управление (статусы, назначения, комментарии, канбан) выполняется в Bitrix24.
+              </p>
+            </div>
+
+            <section class="section">
+              <h2 class="heading-section">Содержание</h2>
+              <div class="card">
+                <ul class="feature-list" style="margin: 0;">
+                  <li><a class="text-link" href="#entry-points">1. Точки входа</a></li>
+                  <li><a class="text-link" href="#requests">2. Работа с запросами</a></li>
+                  <li><a class="text-link" href="#portfolio">3. Портфель идей</a></li>
+                  <li><a class="text-link" href="#team">4. Команда и Bitrix24</a></li>
+                  <li><a class="text-link" href="#cases">5. Кейсы (публикации результатов)</a></li>
+                  <li><a class="text-link" href="#events">6. События (календарь мероприятий)</a></li>
+                  <li><a class="text-link" href="#notifications">7. Уведомления</a></li>
+                  <li><a class="text-link" href="#archive-checklist">8. Чек‑лист перед архивацией</a></li>
+                </ul>
+              </div>
+            </section>
+
+            <section class="section" id="entry-points">
+              <h2 class="heading-section">1. Точки входа</h2>
+              <ul class="feature-list">
+                <li><a class="text-link" href="./stakeholder-requests.html">Мои запросы</a> — публикация запросов и решения по идеям.</li>
+                <li><a class="text-link" href="./stakeholder-portfolio.html">Портфель идей</a> — контроль одобренных идей (проекты), задач и рисков.</li>
+                <li><a class="text-link" href="./stakeholder-cases.html">Мои кейсы</a> — черновики и публикации результатов (кейсы).</li>
+                <li><a class="text-link" href="./stakeholder-events.html">Мои события</a> — мероприятия, созданные вами.</li>
+                <li><a class="text-link" href="./stakeholder-notifications.html">Уведомления</a> — быстрые переходы к ключевым изменениям.</li>
+                <li><a class="text-link" href="./stakeholder-tools.html">Административная панель</a> — сводка по задачам Bitrix24 + быстрые действия.</li>
+              </ul>
+              <p class="text-muted">
+                Публичные разделы (режим «только просмотр»): <a class="text-link" href="./cases.html">Кейсы</a> и <a class="text-link" href="./events.html">Календарь мероприятий</a>.
+              </p>
+            </section>
+
+            <section class="section" id="requests">
+              <h2 class="heading-section">2. Работа с запросами</h2>
+              <ol class="feature-list feature-list--ordered">
+                <li>Откройте <a class="text-link" href="./stakeholder-requests.html">Мои запросы</a> и выберите активный запрос.</li>
+                <li>Внутри запроса просмотрите идеи и откройте детальную страницу идеи.</li>
+                <li>Примите решение: <span class="text-strong">Одобрить</span> / <span class="text-strong">Отправить на доработку</span> / <span class="text-strong">Отклонить</span> (для доработки/отклонения причина указывается во всплывающем окне).</li>
+                <li>Если идея одобрена — она становится проектом и отображается в <a class="text-link" href="./stakeholder-portfolio.html">Портфеле идей</a>; дальнейшая работа ведётся в Bitrix24.</li>
+              </ol>
+            </section>
+
+            <section class="section" id="portfolio">
+              <h2 class="heading-section">3. Портфель идей</h2>
+              <ol class="feature-list feature-list--ordered">
+                <li>Откройте <a class="text-link" href="./stakeholder-portfolio.html">Портфель идей</a> и используйте поиск/фильтры статуса.</li>
+                <li>Откройте детальную страницу идеи и проверьте блок <span class="text-strong">Задачи и риски</span> (сводка по задачам Bitrix24).</li>
+                <li>Для работы с задачами/документами используйте кнопки перехода в Bitrix24 на странице идеи.</li>
+              </ol>
+            </section>
+
+            <section class="section" id="team">
+              <h2 class="heading-section">4. Команда и Bitrix24</h2>
+              <ul class="feature-list">
+                <li>На странице идеи команда отображается как витрина: роли, участники и статус заявок.</li>
+                <li>Обработка заявок, назначения и доступы выполняются в Bitrix24. В портале возможен статус заявки <span class="text-strong">Ожидает E-mail подтверждения</span> до принятия приглашения участником.</li>
+                <li>Административные задачи по процессу доступны в <a class="text-link" href="./stakeholder-tools.html">Административной панели</a> (только просмотр) и в Bitrix24 (управление).</li>
+              </ul>
+            </section>
+
+            <section class="section" id="cases">
+              <h2 class="heading-section">5. Кейсы (публикации результатов)</h2>
+              <ol class="feature-list feature-list--ordered">
+                <li>Кейс — это публичная публикация о результатах проекта: что сделали, какой эффект получили, материалы и команда.</li>
+                <li>Создайте или отредактируйте кейс в <a class="text-link" href="./stakeholder-cases.html">Моих кейсах</a> (черновик → опубликовано; снятие с публикации — с причиной в модальном окне).</li>
+                <li>Опционально укажите <span class="text-strong">ссылку на идею</span>, результаты которой публикуются (поле можно оставить пустым).</li>
+                <li>После публикации кейс появляется в публичной витрине <a class="text-link" href="./cases.html">Кейсы</a> и открывается по ссылке <a class="text-link" href="./case-public.html">публичной карточки</a>.</li>
+              </ol>
+            </section>
+
+            <section class="section" id="events">
+              <h2 class="heading-section">6. События (календарь мероприятий)</h2>
+              <ol class="feature-list feature-list--ordered">
+                <li>Создавайте мероприятия через форму <a class="text-link" href="./event-form.html">Создание события</a> и управляйте ими в <a class="text-link" href="./stakeholder-events.html">Моих событиях</a>.</li>
+                <li>Публичный календарь и ленты доступны на странице <a class="text-link" href="./events.html">Календарь мероприятий</a> (гости видят только опубликованные события).</li>
+                <li>Детальная страница события <a class="text-link" href="./event-detail.html">event-detail</a> содержит ссылку/адрес, материалы и блок регистрации (регистрация доступна только авторизованным пользователям).</li>
+              </ol>
+            </section>
+
+            <section class="section" id="notifications">
+              <h2 class="heading-section">7. Уведомления</h2>
+              <ul class="feature-list">
+                <li>Откройте <a class="text-link" href="./stakeholder-notifications.html">Уведомления</a>, чтобы быстро переходить к идеям/запросам и контролировать дедлайны.</li>
+                <li>Используйте фильтры типов (например: запросы, идеи, команда, дедлайны) и поиск по уведомлениям.</li>
+              </ul>
+            </section>
+
+            <section class="section" id="archive-checklist">
+              <h2 class="heading-section">8. Чек‑лист перед архивацией</h2>
+              <ol class="feature-list feature-list--ordered">
+                <li>Проверить выполнение задач в Bitrix24 (нет критичных просрочек).</li>
+                <li>Подтвердить комплект документов и итоговые материалы проекта в Bitrix24.</li>
+                <li>Зафиксировать итог и договориться о формате публичного результата (публиковать кейс или нет).</li>
+                <li>Перевести идею в `Архив` через регламентированный процесс в Bitrix24.</li>
+              </ol>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__column footer__column--brand">
+            <div class="footer__brand">
+              <img src="./assets/img/logo-Inn.svg" alt="Инноватика Мособлгаз" class="footer__logo">
+            </div>
+            <p class="footer__description text-muted">Инновационные решения для развития компании и поддержки талантов.</p>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__title heading-subtitle">Платформа</h4>
+            <ul class="footer__list">
+              <li><a href="./requests.html" class="footer__link">Банк инноваций</a></li>
+              <li><a href="./events.html" class="footer__link">Календарь мероприятий</a></li>
+              <li><a href="#" class="footer__link">Конкурсы</a></li>
+            </ul>
+          </div>
+          <div class="footer__column">
+            <h4 class="footer__title heading-subtitle">Связаться</h4>
+            <ul class="footer__list">
+              <li><a href="./contacts.html" class="footer__link">Контакты</a></li>
+              <li><a href="./support-form.html" class="footer__link">Поддержка</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./assets/js/vendor.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>
