@@ -66,6 +66,24 @@
   transform: translateY(0);
 }
 
+.btn--hero-white {
+  background: rgba(255, 255, 255, 0.98);
+  color: var(--color-primary);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 10px 24px rgba(0, 61, 92, 0.2);
+}
+
+.btn--hero-white:hover {
+  background: rgba(255, 255, 255, 1);
+  color: var(--color-primary-dark);
+  box-shadow: 0 14px 30px rgba(0, 61, 92, 0.24);
+  transform: translateY(-1px);
+}
+
+.btn--hero-white:active {
+  transform: translateY(0);
+}
+
 .btn--secondary {
   background: var(--color-bg-white);
   color: var(--color-primary);

@@ -1,23 +1,27 @@
 /* ===================================
-   MAIN.CSS - Новая главная страница
+   MAIN.CSS - Главная страница
    =================================== */
 
-.main-hero__header {
-  margin-bottom: var(--spacing-xl);
+.main-page .section + .section {
+  margin-top: 0;
 }
 
-.main-hero__title {
-  margin-bottom: var(--spacing-md);
+.main-page .heading-section {
+  text-align: center;
 }
 
-.main-hero__subtitle {
-  margin: 0;
-  max-width: 920px;
+.main-hero {
+  padding: clamp(16px, 2.4vw, 28px) 0 clamp(20px, 3vw, 34px);
+  background: var(--color-bg-white);
 }
 
 /* Carousel */
 .main-carousel {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 0;
   overflow: hidden;
+  position: relative;
 }
 
 .main-carousel__viewport {
@@ -27,106 +31,169 @@
 
 .main-carousel__track {
   display: flex;
-  will-change: transform;
   transition: transform var(--transition-base);
 }
 
 .main-carousel__slide {
   flex: 0 0 100%;
-  padding: var(--spacing-xl);
+  padding: clamp(34px, 4vw, 56px) clamp(34px, 5vw, 72px) clamp(54px, 6.5vw, 92px);
+  background: linear-gradient(90deg, #11cbb2 0%, #10a8d0 56%, #8f7be0 100%);
+}
+
+.main-carousel__slide:nth-child(2) {
+  background: linear-gradient(90deg, #0bbbc7 0%, #1f92d4 54%, #7a6ae2 100%);
+}
+
+.main-carousel__slide:nth-child(3) {
+  background: linear-gradient(90deg, #19cfa0 0%, #2c9bcf 52%, #6a74e0 100%);
 }
 
 .main-carousel__slide-inner {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--spacing-xl);
-  align-items: stretch;
+  gap: clamp(16px, 3vw, 44px);
+  align-items: center;
 }
 
 .main-carousel__media {
   border-radius: var(--radius-lg);
   overflow: hidden;
-  min-height: 220px;
-  background: var(--color-bg-light);
+  min-height: 260px;
+  background: transparent;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .main-carousel__media img {
   width: 100%;
-  height: 100%;
+  max-width: 640px;
+  height: auto;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .main-carousel__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: var(--spacing-sm);
+  align-items: flex-start;
+  gap: var(--spacing-md);
 }
 
-.main-carousel__meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
-  align-items: center;
+.main-carousel__eyebrow {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: clamp(18px, 2vw, 30px);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-tight);
 }
 
 .main-carousel__title {
-  font-size: var(--font-size-2xl);
+  font-size: clamp(2rem, 3.2vw, 3.5rem);
   font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
-  margin: var(--spacing-xs) 0 0;
+  line-height: 1.12;
+  color: var(--color-text-white);
+  margin: 0;
+  max-width: 560px;
 }
 
 .main-carousel__text {
   margin: 0;
-}
-
-.main-carousel__date {
-  margin: 0;
+  max-width: 540px;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .main-carousel__controls {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: var(--spacing-md);
+  display: flex;
+  justify-content: center;
   align-items: center;
-  margin-top: var(--spacing-lg);
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--spacing-md);
+  z-index: 2;
 }
 
 .main-carousel__dots {
   display: flex;
   justify-content: center;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
 }
 
 .main-carousel__dot {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   padding: 0;
   border-radius: 999px;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.55);
   cursor: pointer;
-  background: rgba(0, 61, 92, 0.15);
+  background: rgba(255, 255, 255, 0.22);
   transition: all var(--transition-base);
 }
 
 .main-carousel__dot:hover {
-  background: rgba(0, 61, 92, 0.28);
+  background: rgba(255, 255, 255, 0.38);
 }
 
 .main-carousel__dot.is-active {
-  width: 28px;
-  background: var(--color-primary);
+  width: 34px;
+  border-color: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 /* About */
+.main-about-section {
+  padding: clamp(36px, 6vw, 88px) 0;
+  background: var(--color-bg-white);
+}
+
+.main-about {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .main-about__text {
   margin: 0;
+  color: var(--color-text-primary);
+  line-height: 1.4;
 }
 
 .main-about__text .text-link {
   font-weight: var(--font-weight-semibold);
+}
+
+.main-band {
+  position: relative;
+  padding: clamp(36px, 5vw, 72px) 0;
+}
+
+.main-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.main-band > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.main-band--requests::before {
+  background: linear-gradient(180deg, #f4f8fc 0%, #eef4f9 100%);
+}
+
+.main-band--projects::before {
+  background: #ffffff;
+}
+
+.main-band .heading-section {
+  margin-bottom: var(--spacing-xl);
 }
 
 /* Projects grid: reuse idea-submission in a grid without extra bottom margins */
@@ -143,21 +210,41 @@
 
 @media (min-width: 768px) {
   .main-carousel__slide-inner {
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1.05fr 0.95fr;
   }
 
   .main-carousel__media {
-    min-height: 320px;
+    min-height: 340px;
   }
 }
 
 @media (max-width: 767px) {
+  .main-hero {
+    padding: var(--spacing-md) 0 var(--spacing-lg);
+  }
+
   .main-carousel__slide {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-2xl) var(--spacing-xl) calc(var(--spacing-3xl) + var(--spacing-sm));
+  }
+
+  .main-carousel__eyebrow {
+    font-size: clamp(16px, 6vw, 22px);
   }
 
   .main-carousel__title {
-    font-size: var(--font-size-xl);
+    font-size: clamp(1.75rem, 8.4vw, 2.5rem);
+  }
+
+  .main-carousel__text {
+    font-size: var(--font-size-lg);
+  }
+
+  .main-carousel__media {
+    min-height: 220px;
+  }
+
+  .main-carousel__media img {
+    max-width: 100%;
   }
 
   /* Match request-detail mobile behavior for idea-submission cards */
@@ -179,5 +266,12 @@
   .main-projects-grid .idea-submission__footer .btn {
     width: 100%;
   }
-}
 
+  .main-band {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .main-about-section {
+    padding: var(--spacing-2xl) 0;
+  }
+}
