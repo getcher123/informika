@@ -196,6 +196,42 @@
   margin-bottom: var(--spacing-xl);
 }
 
+.main-partners-section {
+  padding: clamp(36px, 5vw, 72px) 0;
+  background: var(--color-bg-white);
+}
+
+.main-partners-section .heading-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.main-partners-section .partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.main-partners-section .partners-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 96px;
+}
+
+.main-partners-section .partners-card img {
+  max-width: 120px;
+  max-height: 48px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all var(--transition-base);
+}
+
+.main-partners-section .partners-card:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
 /* Projects grid: reuse idea-submission in a grid without extra bottom margins */
 .main-projects-grid .idea-submission {
   margin-bottom: 0;
